@@ -13,11 +13,11 @@ chapter: false
 
 &emsp; **Email:** 3122410403@sv.sgu.edu.vn
 
-&emsp; **Trường:** Đại học Sài GònGòn
+&emsp; **Trường:** Đại học Sài Gòn
 
 &emsp; **Ngành:** Công nghệ thông tin
 
-&emsp; **Lớp:** DCT1223DCT1223
+&emsp; **Lớp:** DCT1223
 
 &emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
 

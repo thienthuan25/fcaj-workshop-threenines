@@ -17,7 +17,7 @@ chapter: false
 
 &emsp; **Phone Number:** 0376875259
 
-&emsp; **Email:** 3122410403@sv.sgu.edu.vnvn
+&emsp; **Email:** 3122410403@sv.sgu.edu.vn
 
 &emsp; **University:** Saigon University
 
