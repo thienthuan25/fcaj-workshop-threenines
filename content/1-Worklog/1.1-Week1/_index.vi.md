@@ -12,48 +12,49 @@ pre: " <b> 1.1. </b> "
 
 ### Mục tiêu tuần 1:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Kết nối, làm quen với các thành viên trong First Cloud AI Journey, nắm rõ nội quy và quy định tại đơn vị thực tập.
+* Hiểu nền tảng về IAM (Identity and Access Management) — thành phần cốt lõi cho việc quản lý quyền truy cập trên AWS.
+* Thực hành tạo và quản lý Users, Groups, Policies, Roles trong IAM.
+* Nắm vững cách bảo mật tài khoản AWS thông qua MFA và các công cụ bảo mật IAM (IAM Security Tools).
+* Làm quen với AWS Access Keys, AWS CLI, AWS CloudShell và cách sử dụng SDK để tương tác với AWS bằng dòng lệnh.
+* Hiểu rõ mô hình trách nhiệm chung (Shared Responsibility Model) áp dụng cho IAM.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
 | 2   | - Làm quen với AWS console <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                            | 11/05/2026   | 11/05/2026      | https://hcm-rules.awsfcaj.com/1-regulations/ 
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Lên văn phòng học tập trực tiếp <br> - Tìm hiểu IAM (Identity and Access Management): <br>&emsp; + IAM Introduction: Users, Groups, Policies <br>&emsp; + IAM Users & Groups Hands on <br>&emsp; + AWS console simultaneous sign-in <br> - **Thực hành:** <br>&emsp; + Tạo IAM Users <br>&emsp; + Tạo IAM Groups và gán Users vào Group | 12/05/2026   | 12/05/2026      | Ultimate Certified Cloud Practitioner CLF-C02 2026 |
+| 4   | - Tìm hiểu IAM Policies: <br>&emsp; + IAM Policies <br>&emsp; + IAM Policies hands on <br> - Tìm hiểu IAM MFA: <br>&emsp; + IAM MFA Overview <br>&emsp; + IAM MFA Hands on <br> - **Thực hành:** <br>&emsp; + Tạo và gắn custom policy cho User/Group <br>&emsp; + Bật MFA cho tài khoản IAM | 13/05/2026   | 13/05/2026      | Ultimate Certified Cloud Practitioner CLF-C02 2026 |
+| 5   | - Tìm hiểu AWS Access Keys, CLI và SDK: <br>&emsp; + AWS Access Keys, CLI and SDK <br>&emsp; + AWS CLI setup on Windows, Linux <br>&emsp; + AWS CLI hands on <br>&emsp; + AWS CloudShell <br> - **Thực hành:** <br>&emsp; + Tạo Access Key <br>&emsp; + Cài đặt và cấu hình AWS CLI <br>&emsp; + Sử dụng AWS CloudShell trên console | 14/05/2026   | 14/05/2026      | Ultimate Certified Cloud Practitioner CLF-C02 2026 |
+| 6   | - Tìm hiểu IAM Roles và các công cụ bảo mật: <br>&emsp; + IAM Roles for AWS Services <br>&emsp; + IAM Roles hands on <br>&emsp; + IAM security tools <br>&emsp; + IAM security tools hands on <br>&emsp; + IAM best practices <br>&emsp; + Shared Responsibility model for IAM <br> - **Thực hành:** <br>&emsp; + Tạo IAM Role gán cho AWS service <br>&emsp; + Sử dụng IAM Credential Report & Access Advisor <br> - Ôn tập trắc nghiệm tổng hợp về IAM | 15/05/2026   | 15/05/2026      | Ultimate Certified Cloud Practitioner CLF-C02 2026 |
 
 
 ### Kết quả đạt được tuần 1:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Nắm rõ nội quy, quy định tại đơn vị thực tập và làm quen với AWS Management Console.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Hiểu rõ các khái niệm cốt lõi của IAM:
+  * Users, Groups, Policies, Roles
+  * Cơ chế xác thực và phân quyền trên AWS
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Đã tạo và quản lý thành công IAM Users, IAM Groups, đồng thời thực hành đăng nhập đồng thời nhiều phiên trên AWS console.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
+* Hiểu và thực hành tạo, gắn IAM Policies (managed policy & custom policy) cho Users/Groups theo nguyên tắc least privilege.
+
+* Bật và cấu hình thành công MFA (Multi-Factor Authentication) cho tài khoản IAM, tăng cường bảo mật đăng nhập.
+
+* Hiểu về AWS Access Keys, CLI và SDK; cài đặt và cấu hình thành công AWS CLI trên hệ điều hành Windows/Linux, bao gồm:
   * Access Key
   * Secret Key
   * Region mặc định
-  * ...
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Làm quen và thực hành sử dụng AWS CloudShell trực tiếp trên console mà không cần cài đặt local.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Hiểu và thực hành tạo IAM Roles để gán quyền cho các AWS service, thay vì sử dụng access key cố định.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
+* Làm quen với các công cụ bảo mật IAM như IAM Credential Report, IAM Access Advisor và nắm được các best practices khi quản lý IAM.
+
+* Hiểu rõ mô hình Shared Responsibility Model áp dụng riêng cho IAM, phân biệt rõ trách nhiệm của AWS và của khách hàng.
+
+* Hoàn thành ôn tập trắc nghiệm tổng hợp về IAM, củng cố kiến thức đã học trong tuần.
 * ...
-
-
