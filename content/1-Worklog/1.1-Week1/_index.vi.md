@@ -57,4 +57,3 @@ pre: " <b> 1.1. </b> "
 * Hiểu rõ mô hình Shared Responsibility Model áp dụng riêng cho IAM, phân biệt rõ trách nhiệm của AWS và của khách hàng.
 
 * Hoàn thành ôn tập trắc nghiệm tổng hợp về IAM, củng cố kiến thức đã học trong tuần.
-* ...
