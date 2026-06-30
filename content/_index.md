@@ -13,7 +13,7 @@ chapter: false
 {{% /notice %}} -->
 
 ### Student Information:
-&emsp; **Full Name:** Doãn Thị Quế Trinh
+&emsp; **Full Name:** Nguyễn Thiên Thuận
 
 &emsp; **Phone Number:** 0376875259
 
