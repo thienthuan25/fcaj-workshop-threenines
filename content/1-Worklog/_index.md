@@ -15,11 +15,11 @@ pre: " <b> 1. </b> "
 Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows: -->
 This is a work log documenting the entire 12-week internship journey at **First Cloud AI Journey**. It captures the complete process of building the **SmartRoute FinOps** project - from the foundational AWS learning phase through to system deployment and documentation finalization. The contents of each week are as follows:
 
-**Week 1:** [Study Identity and Access Management (IAM) and Elastic Compute Cloud (EC2)](1.1-week1/)
+**Week 1:** [Exploring Identity and Access Management (IAM) and Elastic Compute Cloud (EC2)](1.1-week1/)
 
-**Week 2:** [Study Elastic Load Balancing (ELB), Auto Scaling Groups (ASG), Amazon S3, Database & Analytics services, and other AWS services such as Amazon EC2, AWS Lambda, AWS Batch, and AWS Lightsail](1.2-week2/)
+**Week 2:** [Exploring ELB & ASG (Elastic Load Balancing & Auto Scaling Groups), Amazon S3, Database & Analytics, and other compute services such as: ECS, Lambda, Batch, and Lightsail](1.2-week2/)
 
-**Week 3:** [Doing task B...](1.3-week3/)
+**Week 3:** [Exploring AWS Infrastructure Deployment, Monitoring, Security & Networking](1.3-week3/)
 
 **Week 4:** [Doing task C...](1.4-week4/)
 
