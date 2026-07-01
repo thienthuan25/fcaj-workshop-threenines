@@ -6,13 +6,14 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-{{% notice warning %}}
+<!-- {{% notice warning %}}
 ⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
 {{% /notice %}}
 
 **On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?
 
-Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
+Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows: -->
+This is a work log documenting the entire 12-week internship journey at **First Cloud AI Journey**. It captures the complete process of building the **SmartRoute FinOps** project - from the foundational AWS learning phase through to system deployment and documentation finalization. The contents of each week are as follows:
 
 **Week 1:** [Getting familiar with AWS and basic AWS services](1.1-week1/)
 
