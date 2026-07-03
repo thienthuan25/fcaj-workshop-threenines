@@ -5,111 +5,108 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
-
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+# CloudCost Insight
+## A Unified AWS Serverless Solution for Near Real-Time Cloud Cost Monitoring and Alerting
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+CloudCost Insight is designed to help individuals, teams, or startups using AWS to proactively **monitor, analyze, and alert on** cloud service costs without any manual effort. The platform automatically collects cost data on a scheduled basis from AWS Cost Explorer, stores and analyzes it to detect anomalies (cost spikes, budget threshold breaches), and then sends alerts via Email/Slack. The system is built entirely on an AWS Serverless architecture — no server management, automatic scaling, and extremely low operating cost (under 1–2 USD/month) — and is deployed with Terraform so it can be easily reproduced and cleaned up.
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+*Current Problem*
+With AWS's pay-as-you-go pricing model, costs can easily spiral out of control: a single misconfiguration (forgetting to shut down EC2, enabling a NAT Gateway, excessive logging) can cause the bill to surge without anyone noticing until the end of the billing period. The Billing Console only displays figures and does not proactively alert, while manually tracking many services across multiple environments (dev/test/prod) is time-consuming and error-prone. Third-party FinOps tools are often expensive and overly complex for small-scale needs.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+*Solution*
+The platform uses the **AWS Cost Explorer API** as the cost data source, **Amazon EventBridge** to schedule periodic runs, **AWS Lambda** (Collector) to collect data, and **Amazon S3** for storage. An **Amazon SQS** queue buffers events to reduce coupling, then **AWS Lambda** (Analyzer) analyzes, compares against thresholds, and detects anomalies; failed processing events are routed to an **SQS Dead Letter Queue (DLQ)**. When costs exceed the threshold, **Amazon SNS** sends alerts via Email/Slack. **Amazon CloudWatch** monitors logs/metrics/alarms across the whole system, **AWS IAM** and **AWS Secrets Manager** ensure security, and **Amazon QuickSight** provides a dashboard to visualize cost trends. Users can customize alert thresholds and view centralized cost reports instead of manually checking each service.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+*Benefits and Return on Investment (ROI)*
+The solution helps detect abnormal costs early, avoiding end-of-month "bill shock" and saving time on manual tracking. The system establishes a basic FinOps foundation that can be extended with additional features (cost forecasting, cost allocation by tag/group, optimization recommendations). Monthly operating cost is estimated at under 1–2 USD (mostly within the Free Tier), with no hardware costs since everything runs on AWS. The payback period is almost immediate: catching just one cost anomaly already saves more than a full year of operating cost.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+The platform adopts an AWS Serverless, event-driven, and resilient architecture. Cost data is collected periodically from the Cost Explorer API by the Lambda Collector, stored in S3, and pushed as events through SQS for the Lambda Analyzer to process and detect anomalies; alerts are sent via SNS, and the dashboard is displayed with QuickSight. The entire infrastructure is deployed using Terraform.
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![CloudCost Insight Architecture](/images/CloudCostInsight-diagram.png)
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+<!-- (You can add a second diagram if needed, e.g. a detailed data flow) -->
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+*AWS Services Used*
+- *Amazon EventBridge*: Schedules periodic triggers (cron, e.g. once per day).
+- *AWS Lambda*: Data processing — Collector (cost collection) and Analyzer (anomaly detection) (2 functions).
+- *AWS Cost Explorer API*: AWS's official cost data source.
+- *Amazon S3*: Stores cost data (partitioned by day/month).
+- *Amazon SQS*: Event buffer queue + Dead Letter Queue (DLQ) for error handling.
+- *Amazon SNS*: Sends alerts via Email/Slack when thresholds are exceeded.
+- *Amazon CloudWatch*: Logs, Metrics, Alarms monitoring the whole system.
+- *AWS IAM*: Manages permissions following the least-privilege principle for each Lambda.
+- *AWS Secrets Manager*: Securely stores sensitive information (e.g. Slack webhook).
+- *Amazon QuickSight*: Dashboard to visualize cost trends.
+
+*Component Design*
+- *Scheduling*: EventBridge triggers the Lambda Collector on a predefined cycle.
+- *Data Collection*: The Lambda Collector calls the Cost Explorer API to retrieve cost data.
+- *Data Storage*: Raw cost data is stored in S3, partitioned by day/month.
+- *Event Buffering*: The Collector pushes events into the SQS Queue to decouple collection from analysis.
+- *Processing & Detection*: The Lambda Analyzer reads data from S3, consumes events from SQS, compares against budget thresholds, and detects anomalies; failed events are pushed to the DLQ.
+- *Alerting*: SNS sends Email/Slack notifications to users when costs exceed the threshold.
+- *Monitoring*: CloudWatch collects logs/metrics from both Lambdas and triggers Alarms on errors.
+- *Visualization*: QuickSight reads data from S3 to display a cost-trend dashboard.
+- *Security*: Least-privilege IAM Roles for each component; Secrets Manager stores secrets; S3 blocks public access.
 
 ### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+*Implementation Phases*
+The project consists of 2 parts — building the base infrastructure and developing the processing logic — going through 4 phases:
+1. *Research and architecture design*: Research the Cost Explorer API, the serverless model, and design the AWS architecture (Week 1).
+2. *Provision base infrastructure with Terraform*: Create S3, IAM Role, SNS, SQS, EventBridge (Week 2).
+3. *Develop Lambda functions*: Write the Lambda Collector (Cost Explorer API integration) and the Lambda Analyzer (anomaly detection & alerting logic) (Weeks 3–4).
+4. *Dashboard, testing, deployment*: Build the QuickSight dashboard, perform end-to-end testing, write the bilingual report, and clean up (Weeks 5–6).
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+*Technical Requirements*
+- *Infrastructure (IaC)*: Practical knowledge of Terraform to define all AWS resources (S3, IAM, Lambda, SQS, SNS, EventBridge, CloudWatch). The entire infrastructure must be reproducible with a single command and fully cleaned up with `terraform destroy`.
+- *Processing Logic*: Lambdas written in Python (boto3), calling the Cost Explorer API (`ce:GetCostAndUsage`), processing and writing data to S3, and publishing SQS/SNS events. Anomaly detection logic is based on comparison against budget thresholds and historical cost trends.
+- *Security*: A dedicated least-privilege IAM Role for each Lambda; no hard-coded access keys; secrets (Slack webhook) stored in Secrets Manager; S3 with Block Public Access and encryption enabled.
 
-### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+### 5. Roadmap & Milestones
+- *Internship (Months 1–3)*:
+    - *Month 1*: Learn about AWS and design the architecture.
+    - *Month 2*: Build the system with Terraform.
+    - *Month 3*: Deploy, test, and put into use.
+- *Post-deployment*: Extend with additional features (cost forecasting, allocation by tag).
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
+You can view the cost on the [AWS Pricing Calculator](https://calculator.aws/#/estimate)
+Or download the [budget estimation file](../attachments/budget_estimation.pdf).
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+*Infrastructure Cost*
+- AWS Lambda: 0.00 USD/month (within Free Tier — a few dozen requests/day).
+- Amazon S3: ~0.05 USD/month (small volume, cost data in JSON/CSV).
+- Amazon SQS: 0.00 USD/month (within Free Tier — 1 million requests/month).
+- Amazon SNS: 0.00 USD/month (within Free Tier — 1,000 emails/month).
+- Amazon EventBridge: 0.00 USD/month (within Free Tier).
+- AWS Cost Explorer API: ~0.30 USD/month (~0.01 USD/request, ~1 request/day).
+- Amazon CloudWatch: ~0.10 USD/month (basic logs & alarms).
+- Amazon QuickSight: cost depends on the author plan (Grafana can be used to save cost).
 
-Total: $0.7/month, $8.40/12 months
-
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+*Total*: approximately 0.5–2 USD/month, ~6–24 USD/12 months (excluding QuickSight)
+- *Hardware*: 0 USD (everything runs on AWS, no physical devices required).
 
 ### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
+*Risk Matrix*
+- Calling the Cost Explorer API too often → incurring costs: Medium impact, medium probability.
+- Misconfigured IAM (missing/excessive permissions): High impact, low probability.
+- False/spam alerts due to poorly set thresholds: Low impact, medium probability.
+- Forgetting clean-up → unexpected costs: Medium impact, low probability.
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+*Mitigation Strategies*
+- API cost: Limit call frequency (once/day), cache data, set a CloudWatch Alarm for costs.
+- IAM: Apply least privilege, thoroughly test policies before deployment.
+- Alerting: Fine-tune thresholds based on historical data, add deduplication logic.
+- Clean-up: Use `terraform destroy` and an end-of-project cleanup checklist.
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+*Contingency Plan*
+- Fall back to manual cost checking via the Billing Console if the system fails.
+- Use Terraform (IaC) to quickly restore the entire infrastructure configuration.
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+*Technical Improvements*: Automated, near real-time cost monitoring and alerting, replacing manual checks. A serverless, event-driven, resilient, and easily scalable architecture.
+*Long-term Value*: A basic FinOps foundation that can be reused and extended for future projects (cost forecasting, cost allocation by department/project, resource optimization recommendations).
