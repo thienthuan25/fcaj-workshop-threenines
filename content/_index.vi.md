@@ -28,7 +28,6 @@ chapter: false
 ![Nguyễn Thiên Thuận](/fcaj-workshop-threenines/images/avatar.png)
 
 
-
 ### Nội dung báo cáo
 
 1.  [Worklog](1-Worklog/)
