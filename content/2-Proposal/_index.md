@@ -26,9 +26,8 @@ The solution helps detect abnormal costs early, avoiding end-of-month "bill shoc
 The platform adopts an AWS Serverless, event-driven, and resilient architecture. Cost data is collected periodically from the Cost Explorer API by the Lambda Collector, stored in S3, and pushed as events through SQS for the Lambda Analyzer to process and detect anomalies; alerts are sent via SNS, and the dashboard is displayed with QuickSight. The entire infrastructure is deployed using Terraform.
 
 
-![CloudCost Insight Architecture](/images/CloudCostInsight-diagram.png)
+![CloudCost Insight Architecture](../images/CloudCostInsight-diagram.png)
 
-<!-- (You can add a second diagram if needed, e.g. a detailed data flow) -->
 
 *AWS Services Used*
 - *Amazon EventBridge*: Schedules periodic triggers (cron, e.g. once per day).
