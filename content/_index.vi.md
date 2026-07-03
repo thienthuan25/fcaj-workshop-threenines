@@ -25,7 +25,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 22/06/2026 đến ngày 15/08/20266
 
-![](/fcaj-workshop-threenines/images/avatar.png)
+![Nguyễn Thiên Thuận](/fcaj-workshop-threenines/images/avatar.png)
 
 
 

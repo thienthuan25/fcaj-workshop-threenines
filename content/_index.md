@@ -31,7 +31,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 22/06/2026 to 15/08/2026
 
-![](/fcaj-workshop-threenines/images/avatar.png)
+![Nguyễn Thiên Thuận](/fcaj-workshop-threenines/images/avatar.png)
 
 ### Report Content
 
