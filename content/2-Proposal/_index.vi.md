@@ -27,7 +27,7 @@ Giải pháp giúp phát hiện sớm chi phí bất thường, tránh các hóa
 Nền tảng áp dụng kiến trúc AWS Serverless, event-driven, có khả năng chịu lỗi (resilient). Dữ liệu chi phí được thu thập định kỳ từ Cost Explorer API bởi Lambda Collector, lưu vào S3, đẩy sự kiện qua SQS để Lambda Analyzer xử lý và phát hiện bất thường; cảnh báo được gửi qua SNS, dashboard hiển thị bằng QuickSight. Toàn bộ hạ tầng được triển khai bằng Terraform.
 
 
-![CloudCost Insight Architecture](../images/CloudCostInsight-diagram.png)
+![CloudCost Insight Architecture](/images/CloudCostInsight-diagram.png)
 
 *Dịch vụ AWS sử dụng*
 - *Amazon EventBridge*: Lập lịch kích hoạt định kỳ (cron, ví dụ 1 lần/ngày).
@@ -74,7 +74,6 @@ Dự án gồm 2 phần — xây dựng hạ tầng nền và phát triển logi
 
 ### 6. Ước tính ngân sách
 Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate)
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).
 
 *Chi phí hạ tầng*
 - AWS Lambda: 0,00 USD/tháng (trong Free Tier — vài chục request/ngày).

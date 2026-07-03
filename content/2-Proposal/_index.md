@@ -26,7 +26,7 @@ The solution helps detect abnormal costs early, avoiding end-of-month "bill shoc
 The platform adopts an AWS Serverless, event-driven, and resilient architecture. Cost data is collected periodically from the Cost Explorer API by the Lambda Collector, stored in S3, and pushed as events through SQS for the Lambda Analyzer to process and detect anomalies; alerts are sent via SNS, and the dashboard is displayed with QuickSight. The entire infrastructure is deployed using Terraform.
 
 
-![CloudCost Insight Architecture](../images/CloudCostInsight-diagram.png)
+![CloudCost Insight Architecture](/images/CloudCostInsight-diagram.png)
 
 
 *AWS Services Used*
@@ -74,7 +74,6 @@ The project consists of 2 parts — building the base infrastructure and develop
 
 ### 6. Budget Estimation
 You can view the cost on the [AWS Pricing Calculator](https://calculator.aws/#/estimate)
-Or download the [budget estimation file](../attachments/budget_estimation.pdf).
 
 *Infrastructure Cost*
 - AWS Lambda: 0.00 USD/month (within Free Tier — a few dozen requests/day).
