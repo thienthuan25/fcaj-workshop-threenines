@@ -5,6 +5,8 @@ weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
+
+
 ### Week 2 Goals:
 
 * Understand the core concepts of High Availability, Scalability, and Elasticity. Master and practice with Elastic Load Balancing (ELB) and Auto Scaling Groups (ASG).

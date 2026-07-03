@@ -5,6 +5,8 @@ weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
+
+
 ### Mục tiêu tuần 2:
 
 * Hiểu các khái niệm cốt lõi về tính sẵn sàng cao (High Availability), khả năng mở rộng (Scalability) và độ co giãn (Elasticity). Nắm vững và thực hành với Elastic Load Balancing (ELB) cùng Auto Scaling Groups (ASG).
