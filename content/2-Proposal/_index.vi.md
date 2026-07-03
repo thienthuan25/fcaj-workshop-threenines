@@ -27,7 +27,7 @@ Giải pháp giúp phát hiện sớm chi phí bất thường, tránh các hóa
 Nền tảng áp dụng kiến trúc AWS Serverless, event-driven, có khả năng chịu lỗi (resilient). Dữ liệu chi phí được thu thập định kỳ từ Cost Explorer API bởi Lambda Collector, lưu vào S3, đẩy sự kiện qua SQS để Lambda Analyzer xử lý và phát hiện bất thường; cảnh báo được gửi qua SNS, dashboard hiển thị bằng QuickSight. Toàn bộ hạ tầng được triển khai bằng Terraform.
 
 
-![CloudCost Insight Architecture](/static/images/2-Proposal/CloudCostInsight.jpg)
+![CloudCost Insight Architecture](/fcaj-workshop-threenines/images/2-Proposal/CloudCostInsight.jpg)
 
 *Dịch vụ AWS sử dụng*
 - *Amazon EventBridge*: Lập lịch kích hoạt định kỳ (cron, ví dụ 1 lần/ngày).
