@@ -7,7 +7,7 @@ pre: " <b> 2. </b> "
 ---
 
 
-# CloudCost Insightt
+# CloudCost Insight
 ## Giải pháp AWS Serverless giám sát và cảnh báo chi phí đám mây thời gian gần thực
 
 ### 1. Tóm tắt điều hành
