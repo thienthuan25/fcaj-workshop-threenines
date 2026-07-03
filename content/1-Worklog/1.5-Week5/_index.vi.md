@@ -14,6 +14,7 @@ pre: " <b> 1.5. </b> "
 
 * Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
 * Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hello everyone
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
