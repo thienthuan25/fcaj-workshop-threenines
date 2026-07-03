@@ -11,6 +11,7 @@ permissions:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout source code
