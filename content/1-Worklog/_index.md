@@ -21,7 +21,7 @@ This is a work log documenting the entire 12-week internship journey at **First 
 
 **Week 3:** [Exploring AWS Infrastructure Deployment, Monitoring, Security & Networking](1.3-week3/)
 
-**Week 4:** [Doing task C...](1.4-week4/)
+**Week 4:** [Reseach, system architecture design, proposal writing, and diagram creation](1.4-week4/)
 
 **Week 5:** [Doing task D...](1.5-week5/)
 
