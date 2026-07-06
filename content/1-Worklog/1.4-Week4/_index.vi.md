@@ -8,7 +8,7 @@ pre: " <b> 1.4. </b> "
 
 ### Mục tiêu tuần 4:
 
-* Lên ý tưởng và chốt đề tài cho dự án cá nhân, đảm bảo giải quyết một bài toán thiết thực trên AWS.
+* Lên ý tưởng và chốt đề tài cho dự án, đảm bảo giải quyết một bài toán thiết thực trên AWS.
 * Nghiên cứu và lựa chọn kiến trúc hạ tầng phù hợp (ưu tiên Serverless) để xây dựng hệ thống.
 * Hoàn thiện Proposal với định hướng công nghệ và lộ trình phát triển rõ ràng.
 * Trực quan hóa giải pháp bằng các sơ đồ kiến trúc (Architecture Diagram) chi tiết.

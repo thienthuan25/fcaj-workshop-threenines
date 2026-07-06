@@ -8,7 +8,7 @@ pre: " <b> 1.4. </b> "
 
 ### Week 4 Objectives:
 
-* Brainstorm and finalize the topic for the individual project, ensuring it addresses a practical problem on AWS.
+* Brainstorm and finalize the topic for the project, ensuring it addresses a practical problem on AWS.
 * Research and select an appropriate infrastructure architecture (prioritizing Serverless) for building the system.
 * Complete the project Proposal with a clear technology direction and development roadmap.
 * Visualize the solution using detailed Architecture Diagrams.
