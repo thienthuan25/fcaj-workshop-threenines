@@ -2,6 +2,11 @@
 public/
 hugo_extended_0.134.3_linux-amd64.deb
 content/1-Worklog/overview.md
+.hugo_build.lock
+
+# ===== System & IDE =====
+.DS_Store
+.vscode/
 
 # ===== Terraform =====
 .terraform/
