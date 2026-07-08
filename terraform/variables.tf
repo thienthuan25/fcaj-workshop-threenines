@@ -33,5 +33,5 @@ variable "schedule_expression" {
 variable "cost_threshold_usd" {
   description = "Cost threshold (USD) that triggers an alert"
   type        = number
-  default     = 10
+  default     = -1
 }
