@@ -26,7 +26,7 @@ pre: " <b> 1.7. </b> "
 
 ### Kết quả đạt được tuần 7:
 
-* **Hoàn thành thành phần phân tích & cảnh báo (Analyzer):** Đã phát triển thành công hàm Lambda Analyzer bằng Python và boto3, có khả năng đọc dữ liệu chi phí từ S3, tính tổng chi phí, xác định top dịch vụ tốn kém nhất và so sánh với ngưỡng ngân sách để phát hiện chi phí vượt mức. Đây là "bộ não" phân tích của hệ thống CloudCost Insight.
+* **Hoàn thành thành phần phân tích & cảnh báo (Analyzer):** Đã phát triển thành công hàm Lambda Analyzer bằng Python và boto3, có khả năng đọc dữ liệu chi phí từ S3, tính tổng chi phí, xác định top dịch vụ tốn kém nhất và so sánh với ngưỡng ngân sách để phát hiện chi phí vượt mức.
 
 * **Tích hợp cảnh báo tự động qua email:** Đã tích hợp Amazon SNS để gửi cảnh báo chi tiết qua email khi chi phí vượt ngưỡng. Nội dung cảnh báo bao gồm tổng chi phí, ngưỡng đã đặt và danh sách các dịch vụ tốn kém nhất, giúp người dùng nắm nhanh tình hình và xử lý kịp thời.
 

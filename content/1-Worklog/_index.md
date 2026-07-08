@@ -21,7 +21,7 @@ This is a work log documenting the entire 12-week internship journey at **First 
 
 **Week 6:** [Developing the Lambda Collector & Integrating the AWS Cost Explorer API](1.6-week6/)
 
-**Week 7:** [Doing task G...](1.7-week7/)
+**Week 7:** [Developing the Lambda Analyzer & Intergrating Cost Alerting via SNS](1.7-week7/)
 
 **Week 8:** [Doing task H...](1.8-week8/)
 

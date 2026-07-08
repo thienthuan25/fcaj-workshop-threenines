@@ -26,7 +26,7 @@ pre: " <b> 1.7. </b> "
 
 ### Week 7 Achievements:
 
-* **Completed the analysis and alerting component (Analyzer):** Successfully developed the Lambda Analyzer function using Python and boto3. The function can read cost data from Amazon S3, calculate the total cost, identify the highest-cost AWS services, and compare the total cost against the configured budget threshold to detect cost overruns. This component serves as the analytical "brain" of the CloudCost Insight system.
+* **Completed the analysis and alerting component (Analyzer):** Successfully developed the Lambda Analyzer function using Python and boto3. The function can read cost data from Amazon S3, calculate the total cost, identify the highest-cost AWS services, and compare the total cost against the configured budget threshold to detect cost overruns.
 
 * **Integrated automated email notifications:** Successfully integrated Amazon SNS to send detailed email notifications whenever the cost exceeds the configured threshold. Each notification includes the total cost, the configured threshold, and a list of the highest-cost AWS services, enabling users to quickly understand the situation and respond promptly.
 
