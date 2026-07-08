@@ -34,3 +34,8 @@ output "schedule_rule_name" {
   description = "Name of the scheduling EventBridge rule"
   value       = aws_cloudwatch_event_rule.schedule.name
 }
+
+output "collector_function_name" {
+  description = "Name of Lambda Collector"
+  value       = aws_lambda_function.collector.function_name
+}
