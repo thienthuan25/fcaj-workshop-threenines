@@ -2,7 +2,8 @@
 # Security: Block public access + Enable encryption + Enable versioning
 
 resource "aws_s3_bucket" "cost_data" {
-  bucket = "${var.project_name}-cost-data-${data.aws_caller_identity.current.account_id}"
+  bucket        = "${var.project_name}-cost-data-${data.aws_caller_identity.current.account_id}"
+  force_destroy = true
 }
 
 # Block all public access
