@@ -39,3 +39,8 @@ output "collector_function_name" {
   description = "Name of Lambda Collector"
   value       = aws_lambda_function.collector.function_name
 }
+
+output "analyzer_role_arn" {
+  description = "ARN of IAM Role for Lambda Analyzer"
+  value       = aws_iam_role.analyzer.arn
+}
