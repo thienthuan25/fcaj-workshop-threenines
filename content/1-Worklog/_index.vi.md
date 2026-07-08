@@ -17,9 +17,9 @@ pre: " <b> 1. </b> "
 
 **Tuần 4:** [Nghiên cứu, thiết kế kiến trúc, viết Proposal, vẽ Diagram](1.4-week4/)
 
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
+**Tuần 5:** [Xây dựng hạ tầng nền bằng Terraform (S3, IAM, SNS, SQS, EventBridge)](1.5-week5/)
 
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
+**Tuần 6:** [Phát triển Lambda Collector & tích hợp AWS Cost Explorer API](1.6-week6/)
 
 **Tuần 7:** [Làm công việc G...](1.7-week7/)
 

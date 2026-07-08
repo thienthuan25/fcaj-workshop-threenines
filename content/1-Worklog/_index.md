@@ -17,9 +17,9 @@ This is a work log documenting the entire 12-week internship journey at **First 
 
 **Week 4:** [Reseach, system architecture design, proposal writing, and diagram creation](1.4-week4/)
 
-**Week 5:** [Doing task D...](1.5-week5/)
+**Week 5:** [Provisioning Base Infrastructure with Terraform (S3, IAM, SNS, SQS, EventBridge)](1.5-week5/)
 
-**Week 6:** [Doing task E...](1.6-week6/)
+**Week 6:** [Developing the Lambda Collector & Integrating the AWS Cost Explorer API](1.6-week6/)
 
 **Week 7:** [Doing task G...](1.7-week7/)
 
