@@ -3,7 +3,7 @@
 
 resource "aws_s3_bucket" "cost_data" {
   bucket        = "${var.project_name}-cost-data-${data.aws_caller_identity.current.account_id}"
-  force_destroy = true
+  force_destroy = true # xóa các tài nguyên trong bucket để khi sử dụng lệnh `terraform destroy` sẽ không bị lỗi
 }
 
 # Block all public access

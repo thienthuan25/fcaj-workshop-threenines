@@ -13,6 +13,14 @@ data "aws_iam_policy_document" "analyzer_policy" {
     resources = ["${aws_s3_bucket.cost_data.arn}/*"]
   }
 
+  # ListBucet policy 
+  statement {
+    sid       = "S3ListBucket"
+    effect    = "Allow"
+    actions   = ["s3:ListBucket"]
+    resources = [aws_s3_bucket.cost_data.arn]
+  }
+
   # nhận & xóa message từ SQS chính 
   statement {
     sid    = "SQSConsume"
@@ -82,6 +90,8 @@ resource "aws_lambda_function" "analyzer" {
       BUCKET_NAME        = aws_s3_bucket.cost_data.id
       SNS_TOPIC_ARN      = aws_sns_topic.cost_alerts.arn
       COST_THRESHOLD_USD = var.cost_threshold_usd
+      SPIKE_MULTIPLIER   = var.spike_multiplier # update variable
+      HISTORY_DAYS       = var.history_days     # update variable
     }
   }
 
@@ -93,5 +103,5 @@ resource "aws_lambda_event_source_mapping" "sqs_to_analyzer" {
   event_source_arn = aws_sqs_queue.events.arn
   function_name    = aws_lambda_function.analyzer.arn
   batch_size       = 10
-  enabled           = true
+  enabled          = true
 }

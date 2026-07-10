@@ -33,5 +33,17 @@ variable "schedule_expression" {
 variable "cost_threshold_usd" {
   description = "Cost threshold (USD) that triggers an alert"
   type        = number
-  default     = -1
+  default     = 10
+}
+
+variable "spike_multiplier" {
+  description = "Spike multiplier: if cost > historical average * this multiplier, it is considered an abnormal spike"
+  type        = number
+  default     = 1.5
+}
+
+variable "history_days" {
+  description = "Number of historical days used to calculate the average cost (for spike detection)"
+  type        = number
+  default     = 7
 }
