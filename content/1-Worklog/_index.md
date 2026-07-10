@@ -23,7 +23,7 @@ This is a work log documenting the entire 12-week internship journey at **First 
 
 **Week 7:** [Developing the Lambda Analyzer & Intergrating Cost Alerting via SNS](1.7-week7/)
 
-**Week 8:** [Doing task H...](1.8-week8/)
+**Week 8:** [Enhancing Anomaly Detection, Error Handling (DLQ), and end-to-end testing](1.8-week8/)
 
 **Week 9:** [Doing task I...](1.9-week9/)
 

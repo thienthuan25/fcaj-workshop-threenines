@@ -23,7 +23,7 @@ pre: " <b> 1. </b> "
 
 **Tuần 7:** [Phát triển Lambda Analyzer & tích hợp cảnh báo chi phí qua SNS](1.7-week7/)
 
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
+**Tuần 8:** [Hoàn thiện logic phát hiện bất thường, cơ chế xử lý lỗi (DLQ), và kiểm tra end-to-end](1.8-week8/)
 
 **Tuần 9:** [Làm công việc I...](1.9-week9/)
 
