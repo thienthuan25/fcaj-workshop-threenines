@@ -5,55 +5,33 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nâng cấp logic phân tích của Lambda Analyzer: bổ sung phát hiện bất thường dựa trên trung bình lịch sử (spike detection), không chỉ so ngưỡng cố định.
+* Phân loại mức độ cảnh báo theo 3 cấp: INFO / WARNING / CRITICAL.
+* Hoàn thiện nội dung cảnh báo SNS (kèm mức độ, lý do, phần trăm tăng đột biến).
+* Kiểm thử đầy đủ 3 trường hợp cảnh báo (INFO, WARNING, CRITICAL) bằng dữ liệu mô phỏng.
+* Kiểm chứng cơ chế xử lý lỗi (Dead Letter Queue) đảm bảo hệ thống chịu lỗi (resilient).
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc triển khai trong tuần:
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Nâng cấp logic phát hiện bất thường: <br>&emsp; + Viết hàm đọc dữ liệu chi phí các ngày lịch sử từ S3 và tính chi phí trung bình. <br>&emsp; + Bổ sung logic phát hiện tăng đột biến (chi phí > trung bình × hệ số). <br>&emsp; + Bổ sung 2 biến cấu hình `SPIKE_MULTIPLIER` và `HISTORY_DAYS`. | 29/06/2026 | 29/06/2026 | - Boto3 S3 Client: <br> https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html |
+| 3 | - Phân loại mức độ cảnh báo & hoàn thiện nội dung SNS: <br>&emsp; + Xây dựng logic phân loại INFO / WARNING / CRITICAL theo ngưỡng và mức độ đột biến. <br>&emsp; + Cập nhật nội dung email cảnh báo: thêm mức độ, lý do cảnh báo, phần trăm tăng và trung bình lịch sử. | 30/06/2026 | 30/06/2026 |  |
+| 4 | - Cập nhật Terraform & triển khai code mới: <br>&emsp; + Bổ sung biến `spike_multiplier`, `history_days` vào `variables.tf` và truyền vào Lambda qua biến môi trường. <br>&emsp; + Chạy `terraform apply` triển khai phiên bản Analyzer nâng cấp. | 01/07/2026 | 01/07/2026 | - Terraform aws_lambda_function: <br> https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function |
+| 5 | - Kiểm thử 3 trường hợp INFO / WARNING / CRITICAL: <br>&emsp; + Viết script sinh dữ liệu chi phí mô phỏng (lịch sử + ngày test) và upload lên S3. <br>&emsp; + Test lần lượt từng kịch bản, xác minh kết quả phân loại qua CloudWatch Logs. <br>&emsp; + Xác nhận nhận được email cảnh báo cho các mức WARNING và CRITICAL. | 02/07/2026 | 02/07/2026 | - Testing Lambda functions: <br> https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html <br> - Amazon CloudWatch Logs. |
+| 6 | - Kiểm thử cơ chế xử lý lỗi (DLQ): <br>&emsp; + Gửi message lỗi (trỏ tới file S3 không tồn tại) vào hàng đợi SQS. <br>&emsp; + Xác minh Analyzer xử lý thất bại, message được retry và tự động chuyển vào Dead Letter Queue. <br>&emsp; + Bổ sung quyền `s3:ListBucket` để thông báo lỗi rõ ràng hơn. | 03/07/2026 | 03/07/2026 | - Amazon SQS Dead-Letter Queues: <br> https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html |
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* **Nâng cấp logic phát hiện bất thường thông minh:** Đã hoàn thiện Analyzer với hai tiêu chí phát hiện: (1) so sánh với ngưỡng ngân sách cố định, và (2) phát hiện tăng đột biến dựa trên chi phí trung bình của các ngày lịch sử đọc từ S3. Đây là bước tiến quan trọng, giúp hệ thống phát hiện được cả những trường hợp chi phí tăng bất thường dù chưa vượt ngưỡng tuyệt đối — tương tự cách AWS Cost Anomaly Detection hoạt động, nhưng do tự xây dựng.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* **Phân loại mức độ cảnh báo đa cấp:** Đã triển khai cơ chế phân loại cảnh báo theo 3 mức INFO / WARNING / CRITICAL. Nội dung email cảnh báo được hoàn thiện với đầy đủ mức độ, lý do cụ thể, phần trăm tăng đột biến và chi phí trung bình lịch sử, giúp người dùng đánh giá nhanh mức độ nghiêm trọng.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* **Cấu hình linh hoạt qua biến:** Bổ sung các biến `spike_multiplier` (độ nhạy phát hiện đột biến) và `history_days` (số ngày tính trung bình), cho phép tùy chỉnh hành vi phát hiện mà không cần sửa code — quản lý tập trung qua HCP Terraform.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* **Kiểm thử đầy đủ 3 trường hợp cảnh báo:** Đã xây dựng dữ liệu chi phí mô phỏng và kiểm thử thành công cả 3 kịch bản: INFO (chi phí bình thường, không cảnh báo), WARNING (vượt ngưỡng ngân sách) và CRITICAL (tăng đột biến so với trung bình lịch sử). Kết quả phân loại chính xác trên CloudWatch Logs, email cảnh báo được gửi đúng cho các mức WARNING và CRITICAL.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* **Xác minh cơ chế chịu lỗi (DLQ):** Đã kiểm thử thành công đường xử lý lỗi bằng cách gửi message lỗi (trỏ tới file không tồn tại). Message được retry theo cấu hình và tự động chuyển vào Dead Letter Queue sau khi vượt số lần thử tối đa — đảm bảo hệ thống không mất dữ liệu và không lặp vô hạn khi gặp sự cố. Đồng thời bổ sung quyền `s3:ListBucket` để hệ thống trả về thông báo lỗi rõ ràng, đúng bản chất hơn.
