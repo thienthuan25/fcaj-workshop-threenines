@@ -104,7 +104,7 @@ def classify_severity(total: float, avg: float) -> tuple:
     # tăng đột biến so với trung bình lịch sử
     if avg > 0 and total > avg * SPIKE_MULTIPLIER:
         pct = ((total - avg) / avg) * 100
-        reasons.append(f"Cost spike detected: {pct:.0f}% above historical average {HISTORY_DAYS} day (${avg:.4f})")
+        reasons.append(f"Cost spike detected: {pct:.0f}% above historical average {HISTORY_DAYS} day (${avg:.2f})")
         severity = "CRITICAL"
     
     return severity, reasons
@@ -118,9 +118,9 @@ def send_alert(date_str: str, analysis: dict, severity: str, reasons: list, avg:
         f"[{severity}] AWS COST ALERT - CloudCost Insight",
         "",
         f"Day: {date_str}",
-        f"Total cost: ${total:.4f}",
+        f"Total cost: ${total:.2f}",
         f"Alert threshold: ${COST_THRESHOLD:.2f}",
-        f"Historical average ({HISTORY_DAYS} days): ${avg:.4f}",
+        f"Historical average ({HISTORY_DAYS} days): ${avg:.2f}",
         "",
         "Reasons:"
     ]
@@ -133,7 +133,7 @@ def send_alert(date_str: str, analysis: dict, severity: str, reasons: list, avg:
     ])
     
     for service, cost in analysis["top_services"]:
-        lines.append(f" - {service}: ${cost:.4f}")
+        lines.append(f" - {service}: ${cost:.2f}")
 
     message = "\n".join(lines)
 
@@ -161,7 +161,7 @@ def lambda_handler(event, context):
 
         # 2. Tính trung bình lịch sử để phát hiện tăng đột biến
         avg = get_historical_average(date_str)
-        print(f"[Analyzer] Total: ${total:.4f} | Average {HISTORY_DAYS} Day: ${avg:.4f} | Threshold: ${COST_THRESHOLD:.2f}")
+        print(f"[Analyzer] Total: ${total:.2f} | Average {HISTORY_DAYS} Day: ${avg:.2f} | Threshold: ${COST_THRESHOLD:.2f}")
 
         # 3. Phân loại mức độ & quyết định cảnh báo
         severity, reasons = classify_severity(total, avg)

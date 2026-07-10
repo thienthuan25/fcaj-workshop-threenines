@@ -88,7 +88,7 @@ def lambda_handler(event, context):
 
     # Đẩy event sang SQS
     send_event_to_sqs(start_date, s3_key, round(total_cost, 4))
-    print(f"[Collector] Sent event to SQS. Total daily cost: ${total_cost:.4f}")
+    print(f"[Collector] Sent event to SQS. Total daily cost: ${total_cost:.2f}")
 
     return {
         "statusCode": 200,
