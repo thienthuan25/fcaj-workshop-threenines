@@ -44,3 +44,30 @@ output "analyzer_role_arn" {
   description = "ARN of IAM Role for Lambda Analyzer"
   value       = aws_iam_role.analyzer.arn
 }
+
+#outputs cloudwatch_alarm
+output "alarm_collector_errors" {
+  description = "Alarm name for monitoring Collector errors"
+  value = aws_cloudwatch_metric_alarm.collector_errors.alarm_name
+}
+
+output "alarm_analyzer_errors" {
+  description = "Alarm name for monitoring Analyzer errors"
+  value = aws_cloudwatch_metric_alarm.analyzer_errors.alarm_name
+}
+
+output "alarm_dlq_messages" {
+  description = "Alarm name for monitoring DLQ messages"
+  value = aws_cloudwatch_metric_alarm.dlq_message.alarm_name
+}
+
+#outputs Athena
+output "athena_workgroup" {
+  description = "Athena workgroup name to use in QuickSight"
+  values = aws_athena_workgroup.cloudcost.name
+}
+
+output "glue_database" {
+  description = "Glue database name containing the cost_data table"
+  value = aws_glue_catalog_database.cloudcost.name
+}
