@@ -48,26 +48,38 @@ output "analyzer_role_arn" {
 #outputs cloudwatch_alarm
 output "alarm_collector_errors" {
   description = "Alarm name for monitoring Collector errors"
-  value = aws_cloudwatch_metric_alarm.collector_errors.alarm_name
+  value       = aws_cloudwatch_metric_alarm.collector_errors.alarm_name
 }
 
 output "alarm_analyzer_errors" {
   description = "Alarm name for monitoring Analyzer errors"
-  value = aws_cloudwatch_metric_alarm.analyzer_errors.alarm_name
+  value       = aws_cloudwatch_metric_alarm.analyzer_errors.alarm_name
 }
 
 output "alarm_dlq_messages" {
   description = "Alarm name for monitoring DLQ messages"
-  value = aws_cloudwatch_metric_alarm.dlq_message.alarm_name
+  value       = aws_cloudwatch_metric_alarm.dlq_message.alarm_name
 }
 
-#outputs Athena
-output "athena_workgroup" {
-  description = "Athena workgroup name to use in QuickSight"
-  values = aws_athena_workgroup.cloudcost.name
+
+# outputs API gateway
+output "api_endpoint" {
+  description = "API endpoint URL (for web frontend calls)"
+  value       = "${aws_apigatewayv2_stage.default.invoke_url}/costs"
 }
 
-output "glue_database" {
-  description = "Glue database name containing the cost_data table"
-  value = aws_glue_catalog_database.cloudcost.name
+output "api_function_name" {
+  description = "Lambda API function name"
+  value       = aws_lambda_function.api.function_name
+}
+
+# outputs web hosting
+output "web_dashboard_url" {
+  description = "URL to access Web Dashboard (HTTPS via CloudFront)"
+  value       = "https://${aws_cloudfront_distribution.web.domain_name}"
+}
+
+output "web_bucket_name" {
+  description = "S3 bucket name for static web"
+  value       = aws_s3_bucket.web.id
 }
