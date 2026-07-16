@@ -26,6 +26,16 @@ resource "aws_sns_topic_policy" "cost_alerts" {
         }
         Action   = "SNS:Publish"
         Resource = aws_sns_topic.cost_alerts.arn
+      },
+
+      {
+        Sid    = "AllowCloudWatchAlarmds"
+        Effect = "Allow"
+        Principal = {
+          Service = "cloudwatch.amazonaws.com"
+        }
+        Action   = "SNS:Publish"
+        Resource = aws_sns_topic.cost_alerts.arn
       }
     ]
   })
