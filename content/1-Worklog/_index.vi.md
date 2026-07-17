@@ -25,7 +25,7 @@ pre: " <b> 1. </b> "
 
 **Tuần 8:** [Hoàn thiện logic phát hiện bất thường, cơ chế xử lý lỗi (DLQ), và kiểm tra end-to-end](1.8-week8/)
 
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
+**Tuần 9:** [Bổ sung CloudWatch Alarm & Triển khai Backend Web Dashboard (Lambda API + API Gateway)](1.9-week9/)
 
 **Tuần 10:** [Làm công việc L...](1.10-week10/)
 

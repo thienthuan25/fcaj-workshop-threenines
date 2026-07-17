@@ -25,7 +25,7 @@ This is a work log documenting the entire 12-week internship journey at **First 
 
 **Week 8:** [Enhancing Anomaly Detection, Error Handling (DLQ), and end-to-end testing](1.8-week8/)
 
-**Week 9:** [Doing task I...](1.9-week9/)
+**Week 9:** [Adding CloudWatch Alarm & Building the Web Dashboard Backend (Lambda API + API Gateway)](1.9-week9/)
 
 **Week 10:** [Doing task L...](1.10-week10/)
 
