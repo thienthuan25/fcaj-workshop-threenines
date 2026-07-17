@@ -108,3 +108,21 @@ resource "aws_s3_object" "index" {
   etag         = filemd5("${path.module}/web/index.html")
 }
 
+# upload style.css lên S3
+resource "aws_s3_object" "style" {
+  bucket       = aws_s3_bucket.web.id
+  key          = "style.css"
+  source       = "${path.module}/web/style.css"
+  content_type = "text/css"
+  etag         = filemd5("${path.module}/web/style.css")
+}
+
+# upload script.js lên S3
+resource "aws_s3_object" "script" {
+  bucket       = aws_s3_bucket.web.id
+  key          = "script.js"
+  source       = "${path.module}/web/script.js"
+  content_type = "application/javascript"
+  etag         = filemd5("${path.module}/web/script.js")
+}
+
