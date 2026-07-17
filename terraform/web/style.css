@@ -1,0 +1,154 @@
+/* style.css — CloudCost Insight Dashboard */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #f0f2f5;
+    --text-color: #1a202c;
+    --card-bg: #fff;
+    --label-color: #718096;
+    --heading-color: #2d3748;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --header-bg: linear-gradient(135deg, #232f3e, #ff9900);
+}
+
+body.dark-mode {
+    --bg-color: #1a202c;
+    --text-color: #ffffff;
+    --card-bg: #2d3748;
+    --label-color: #a0aec0;
+    --heading-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 24px;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    background: var(--header-bg);
+    color: #fff;
+    padding: 20px 28px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#theme-toggle,
+#lang-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#theme-toggle:hover,
+#lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header p {
+    opacity: 0.9;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.kpi-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.kpi-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px 24px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 1px 4px var(--shadow-color);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.kpi-card .label {
+    font-size: 13px;
+    color: var(--label-color);
+}
+
+.kpi-card .value {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+.kpi-card .value.danger {
+    color: #e53e3e;
+}
+
+.kpi-card .value.ok {
+    color: #38a169;
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.chart-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 4px var(--shadow-color);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.chart-card h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: var(--heading-color);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.chart-small {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.status {
+    text-align: center;
+    padding: 40px;
+    color: #718096;
+}
+
+@media (max-width: 900px) {
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+}
