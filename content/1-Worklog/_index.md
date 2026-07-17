@@ -27,7 +27,7 @@ This is a work log documenting the entire 12-week internship journey at **First 
 
 **Week 9:** [Adding CloudWatch Alarm & Building the Web Dashboard Backend (Lambda API + API Gateway)](1.9-week9/)
 
-**Week 10:** [Doing task L...](1.10-week10/)
+**Week 10:** [Building the Web Frontend, Deploying and Finalizing the Dashboard](1.10-week10/)
 
 **Week 11:** [Doing task M...](1.11-week11/)
 

@@ -27,7 +27,7 @@ pre: " <b> 1. </b> "
 
 **Tuần 9:** [Bổ sung CloudWatch Alarm & Triển khai Backend Web Dashboard (Lambda API + API Gateway)](1.9-week9/)
 
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
+**Tuần 10:** [Xây dựng Web Frontend, triển khai & hoàn thiện Dashboard](1.10-week10/)
 
 **Tuần 11:** [Làm công việc M...](1.11-week11/)
 
