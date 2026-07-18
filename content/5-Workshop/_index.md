@@ -5,27 +5,30 @@ weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# Building an AWS Cost Monitoring and Alerting System with a Serverless Architecture
 
 #### Overview
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+**CloudCost Insight** is a Serverless system that automatically monitors, analyzes, and alerts users about AWS service costs in near real time without requiring any manual intervention. Instead of signing in to the AWS Billing Console every day to check cloud spending, the system automatically collects cost data, detects anomalies, and proactively sends email notifications whenever spending exceeds a predefined threshold.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+In this lab, we will learn how to build a complete FinOps solution on AWS using a Serverless and event driven architecture. The entire infrastructure is provisioned with Terraform as Infrastructure as Code. The solution is designed to fully automate the entire workflow, from collecting and analyzing cost data to sending alerts and visualizing the results.
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+The system consists of three main workflows. Each workflow has a specific responsibility while working together as part of a complete solution.
 
-#### Content
+- **Data collection and analysis workflow**: Amazon EventBridge schedules the Lambda Collector to run periodically and retrieve cost data from the AWS Cost Explorer API. The collected data is stored in Amazon S3, and an event is published to Amazon SQS. The Lambda Analyzer then processes the event, analyzes the cost data, detects budget threshold violations or unusual cost spikes, and sends notifications through Amazon SNS.
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+- **Monitoring and error handling workflow**: Amazon CloudWatch collects logs and metrics from the Lambda functions and triggers alarms whenever the system encounters failures. Failed processing events are redirected to the Amazon SQS Dead Letter Queue to ensure that no data is lost.
+
+- **Data visualization workflow**: A custom web dashboard retrieves cost data through the Lambda API and Amazon API Gateway. The frontend is hosted on Amazon S3 and delivered through Amazon CloudFront, allowing users to monitor cost trends through an intuitive interface.
+
+#### Contents
+
+1. [Introduction](5.1-Workshop-overview/)
+2. [Prerequisites](5.2-Prerequisite/)
+3. [Provisioning the Infrastructure with Terraform](5.3-Infrastructure/)
+4. [Deploying the Lambda Collector and Lambda Analyzer](5.4-Lambda/)
+5. [Configuring Monitoring and Alerts with CloudWatch Alarms](5.5-Monitoring/)
+6. [Building the Web Dashboard](5.6-Dashboard/)
+7. [System Testing](5.7-Testing/)
+8. [Cleaning Up Resources](5.8-Cleanup/)

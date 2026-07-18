@@ -6,28 +6,29 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+# Xây dựng hệ thống giám sát và cảnh báo chi phí AWS bằng kiến trúc Serverless
 
 #### Tổng quan
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+**CloudCost Insight** là một hệ thống Serverless giúp tự động giám sát, phân tích và cảnh báo chi phí sử dụng dịch vụ AWS theo thời gian gần thực, mà không cần bất kỳ thao tác thủ công nào. Thay vì phải đăng nhập vào Billing Console để kiểm tra chi phí mỗi ngày, hệ thống sẽ tự thu thập dữ liệu, phát hiện bất thường và chủ động gửi cảnh báo qua email khi chi phí vượt ngưỡng.
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+Trong bài lab này, chúng ta sẽ học cách xây dựng một hệ thống FinOps hoàn chỉnh trên AWS theo kiến trúc Serverless và event-driven, sử dụng Terraform để triển khai toàn bộ hạ tầng dưới dạng Infrastructure as Code. Hệ thống được thiết kế để tự động hóa hoàn toàn quy trình từ thu thập, phân tích, cảnh báo cho đến trực quan hóa dữ liệu chi phí.
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
+Hệ thống bao gồm ba luồng chính, mỗi luồng đảm nhận một vai trò riêng biệt nhưng phối hợp chặt chẽ với nhau.
+
++ **Luồng thu thập và phân tích**: Amazon EventBridge lập lịch kích hoạt Lambda Collector định kỳ để gọi Cost Explorer API lấy dữ liệu chi phí, lưu vào S3 và đẩy sự kiện qua SQS. Lambda Analyzer sau đó tiêu thụ sự kiện, phân tích dữ liệu, phát hiện chi phí vượt ngưỡng hoặc tăng đột biến và gửi cảnh báo qua SNS.
+
++ **Luồng giám sát và xử lý lỗi**: Amazon CloudWatch thu thập log và metric của các hàm Lambda, đồng thời kích hoạt Alarm khi hệ thống gặp sự cố. Các sự kiện xử lý lỗi được chuyển vào SQS Dead Letter Queue để đảm bảo không mất dữ liệu.
+
++ **Luồng trực quan hóa**: Một web dashboard tự xây được cung cấp dữ liệu qua Lambda API và Amazon API Gateway, giao diện host trên Amazon S3 và phân phối qua Amazon CloudFront, giúp người dùng theo dõi xu hướng chi phí một cách trực quan.
 
 #### Nội dung
 
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+1. [Giới thiệu](5.1-Workshop-overview/)
+2. [Các bước chuẩn bị](5.2-Prerequisite/)
+3. [Dựng hạ tầng nền bằng Terraform](5.3-Infrastructure/)
+4. [Triển khai Lambda Collector và Lambda Analyzer](5.4-Lambda/)
+5. [Cấu hình giám sát và cảnh báo (CloudWatch Alarm)](5.5-Monitoring/)
+6. [Xây dựng Web Dashboard](5.6-Dashboard/)
+7. [Kiểm thử hệ thống](5.7-Testing/)
+8. [Dọn dẹp tài nguyên](5.8-Cleanup/)

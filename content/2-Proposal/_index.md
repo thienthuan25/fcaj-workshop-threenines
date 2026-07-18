@@ -17,7 +17,7 @@ CloudCost Insight is designed to help individuals, teams, and startups using AWS
 
 *Current Problem*
 
-<br>With AWS's pay-as-you-go pricing model, cloud costs can quickly become difficult to control. A simple configuration mistake—such as forgetting to stop an EC2 instance, enabling a NAT Gateway, or generating excessive logs—can cause the monthly bill to increase dramatically without being noticed until the billing cycle ends. The AWS Billing Console only displays usage data and does not proactively notify users of unusual spending. In addition, manually monitoring multiple AWS services across different environments (development, testing, and production) is time-consuming and prone to oversight. Third-party FinOps solutions are often expensive and overly complex for small-scale users.
+<br>With AWS's pay-as-you-go pricing model, cloud costs can quickly become difficult to control. A simple configuration mistake, such as forgetting to stop an EC2 instance, enabling a NAT Gateway, or generating excessive logs, can cause the monthly bill to increase dramatically without being noticed until the billing cycle ends. The AWS Billing Console only displays usage data and does not proactively notify users of unusual spending. In addition, manually monitoring multiple AWS services across different environments (development, testing, and production) is time-consuming and prone to oversight. Third-party FinOps solutions are often expensive and overly complex for small-scale users.
 
 *Proposed Solution*
 
