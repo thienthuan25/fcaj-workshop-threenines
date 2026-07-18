@@ -22,4 +22,4 @@ In this workshop, we will build the CloudCost Insight system, which consists of 
 
 - **Data visualization workflow** provides a custom web dashboard that allows users to monitor cost trends through an intuitive interface. Cost data is delivered by the Lambda API through Amazon API Gateway. The web application is hosted on Amazon S3 and distributed through Amazon CloudFront over HTTPS. To minimize operating costs, the entire solution runs on a Serverless architecture and remains almost entirely within the AWS Free Tier.
 
-![overview](/fcaj-workshop-template/images/5-Workshop/5.1-Workshop-overview/CloudCostInsightOverview.jpg)
+![overview](/fcaj-workshop-threenines/images/5-Workshop/5.1-Workshop-overview/CloudCostInsightOverview.jpg)

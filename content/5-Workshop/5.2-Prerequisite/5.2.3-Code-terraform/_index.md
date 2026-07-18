@@ -120,4 +120,16 @@ terraform login
 
 ![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_6.png)
 
++ Copy newly created Token to Terminal:
+
+![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_7.png)
+
++ After logging in successfully, initialize Terraform to download providers and connect to the **Workspace**:
+
+```bash
+terraform init
+```
+
+![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_8.png)
+
 After completing these steps, your working environment is fully configured and ready to deploy the **CloudCost Insight** system in the following sections.

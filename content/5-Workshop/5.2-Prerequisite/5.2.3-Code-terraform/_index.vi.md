@@ -120,4 +120,16 @@ terraform login
 
 ![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_6.png)
 
++ Copy Token vừa tạo vào Terminal:
+
+![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_7.png)
+
++ Sau khi đăng nhập thành công, khởi tạo Terraform để tải tài provider và kết nối **Workspace**:
+
+```bash
+terraform init
+```
+
+![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_8.png)
+
 Sau khi hoàn thành các bước trên, môi trường làm việc đã được cấu hình đầy đủ và sẵn sàng để triển khai hệ thống **CloudCost Insight** trong các phần tiếp theo.
