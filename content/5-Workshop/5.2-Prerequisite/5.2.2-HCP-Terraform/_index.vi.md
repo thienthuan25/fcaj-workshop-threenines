@@ -44,4 +44,4 @@ pre : " <b> 5.2.2. </b> "
 
 #### Nội dung tiếp theo
 
-[Chuẩn bị Code Terraform](5.2.3-Code-terraform/)
+- [Chuẩn bị Code Terraform](5.2-Prerequisite/5.2.3-Code-terraform/)

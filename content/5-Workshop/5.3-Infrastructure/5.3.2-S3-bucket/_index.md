@@ -74,4 +74,4 @@ data "aws_caller_identity" "current" {}
 
 #### Next Content
 
-[Create an IAM Role for Lambda](5.3.3-IAM-Role/)
+- [Create an IAM Role for Lambda](5.3-Infrastructure/5.3.3-IAM-Role/)

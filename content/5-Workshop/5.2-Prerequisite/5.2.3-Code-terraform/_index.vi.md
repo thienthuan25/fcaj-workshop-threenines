@@ -136,4 +136,4 @@ Sau khi hoàn thành các bước trên, môi trường làm việc đã đượ
 
 #### Nội dung tiếp theo
 
-[Dựng hạ tầng bằng Terraform](5.3-Infrastructure/)
+- [Dựng hạ tầng bằng Terraform](5-Workshop/5.3-Infrastructure/)

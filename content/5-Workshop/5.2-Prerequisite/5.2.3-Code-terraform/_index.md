@@ -136,4 +136,4 @@ After completing these steps, your working environment is fully configured and r
 
 #### Next Content
 
-[Provision Infrastructure with Terraform](5.3-Infrastructure/)
+- [Provision Infrastructure with Terraform](5-Workshop/5.3-Infrastructure/)

@@ -15,4 +15,4 @@ In this section, you will provision the core infrastructure for the CloudCost In
 #### Contents
 
 - [Declare Input Variables](5.3.1-Variables/)
-- [Test Gateway Endpoint](3.2-test-gwe/)
+- [Create an Amazon S3 Bucket for Cost Data Storage](5.3.2-S3-bucket/)

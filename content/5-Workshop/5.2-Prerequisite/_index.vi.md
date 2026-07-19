@@ -72,6 +72,6 @@ Gắn IAM permission policy sau vào tài khoản AWS user của bạn để có
 
 #### Nội dung
 
-- [Cấu hình AWS Credentials](5.2.1-AWS-Credentials/)
-- [Cấu hình HCP Terraform](5.2.2-HCP-Terraform/)    
-- [Chuẩn bị Code Terraform](5.2.3-Code-terraform/)
+1. [Cấu hình AWS Credentials](5.2.1-AWS-Credentials/)
+2. [Cấu hình HCP Terraform](5.2.2-HCP-Terraform/)    
+3. [Chuẩn bị Code Terraform](5.2.3-Code-terraform/)

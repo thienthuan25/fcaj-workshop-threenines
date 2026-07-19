@@ -27,4 +27,4 @@ Trong workshop này, chúng ta sẽ xây dựng hệ thống CloudCost Insight g
 
 #### Nội dung tiếp theo
 
-[Các bước chuẩn bị](5.2-Prerequisite)
+- [Các bước chuẩn bị](5.2-Prerequisite/)
