@@ -1,18 +1,18 @@
 ---
-title : "Truy cập S3 từ VPC"
+title : "Dựng hạ tầng bằng Terraform"
 date : 2024-01-01 
 weight : 3
 chapter : false
 pre : " <b> 5.3. </b> "
 ---
 
-#### Sử dụng Gateway endpoint
+#### Giới thiệu
 
-Trong phần này, bạn sẽ tạo một Gateway endpoint để truy cập Amazon S3 từ một EC2 instance. Gateway endpoint sẽ cho phép tải một object lên S3 bucket mà không cần sử dụng Internet Công cộng. Để tạo endpoint, bạn phải chỉ định VPC mà bạn muốn tạo endpoint và dịch vụ (trong trường hợp này là S3) mà bạn muốn thiết lập kết nối.
+Trong phần này, chúng ta sẽ dựng các thành phần hạ tầng nền cho hệ thống CloudCost Insight bằng Terraform. Đây là các tài nguyên cốt lõi mà các hàm Lambda sẽ sử dụng ở những phần sau, bao gồm nơi lưu trữ dữ liệu, hàng đợi sự kiện, kênh cảnh bảo và lập lịch.
 
-![overview](/images/5-Workshop/5.3-S3-vpc/diagram2.png)
+![S3, IAM, SNS, SQS + DLQ, EventBridge](/fcaj-workshop-threenines/images/5-Workshop/5.3-Variables/5.3.1-Infrastructure_diagram.jpg)
 
 #### Nội dung
 
-- [Tạo gateway endpoint](3.1-create-gwe/)
+- [Khai báo các biến đầu vào](5.3.1-Variables/)
 - [Test gateway endpoint](3.2-test-gwe/)

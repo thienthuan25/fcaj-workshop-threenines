@@ -68,3 +68,9 @@ Attach the following IAM policy to your AWS IAM user so that it has sufficient p
   ]
 }
 ```
+
+#### Content
+
+- [Configure AWS Credentials](5.2.1-AWS-Credentials/)
+- [Configure HCP Terraform](5.2.2-HCP-Terraform/)
+- [Prepare the Terraform Code](5.2.3-Code-terraform/)
