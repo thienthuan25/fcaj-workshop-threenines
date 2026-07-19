@@ -25,7 +25,7 @@ resource "aws_sqs_queue" "dlq" {
 # If a message fails to be processed more than three times, it is automatically moved to the DLQ to prevent processing from being blocked.
 resource "aws_sqs_queue" "events" {
   name                       = "${var.project_name}-events"
-  visibility_timeout_seconds = 300    # The message visibility timeout must be greater than or equal to the Analyzer Lambda timeout.
+  visibility_timeout_seconds = 300    <!-- The message visibility timeout must be greater than or equal to the Analyzer Lambda timeout. -->
   message_retention_seconds  = 345600 # Messages are retained for 4 days.
 
   # Move failed events to the Dead Letter Queue after three failed processing attempts.
@@ -37,3 +37,5 @@ resource "aws_sqs_queue" "events" {
 ```
 
 #### Next Content
+
+[Create an Amazon EventBridge Schedule](../5.3.6-EventBridge-Rule/)
