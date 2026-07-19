@@ -43,4 +43,4 @@ pre : " <b> 5.2.2. </b> "
 
 #### Next Content
 
-- [Prepare the Terraform Code](5.2-Prerequisite/5.2.3-Code-terraform/)
+- [Prepare the Terraform Code](../5.2.3-Code-terraform/)
