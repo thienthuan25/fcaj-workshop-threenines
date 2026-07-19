@@ -26,4 +26,4 @@ In this workshop, we will build the CloudCost Insight system, which consists of 
 
 #### Next Content
 
-[Prerequisites](5.2-Prerequisite/)
+[Prerequisites](5-Workshop/5.2-Prerequisite/)
