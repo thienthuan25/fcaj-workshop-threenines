@@ -33,4 +33,5 @@ Since this workshop uses HCP Terraform to run Terraform remotely, you need to ad
 
 #### Next Content
 
-- [Configure HCP Terraform](../5.2.2-HCP-Terraform/)
+<!-- - [Configure HCP Terraform](../5.2.2-HCP-Terraform/) -->
+- [Configure HCP Terraform](<{{< relref "5.2.2-HCP-Terraform" >}}>)
