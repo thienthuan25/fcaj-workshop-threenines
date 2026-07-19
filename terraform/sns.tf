@@ -29,7 +29,7 @@ resource "aws_sns_topic_policy" "cost_alerts" {
       },
 
       {
-        Sid    = "AllowCloudWatchAlarmds"
+        Sid    = "AllowCloudWatchAlarms"
         Effect = "Allow"
         Principal = {
           Service = "cloudwatch.amazonaws.com"
