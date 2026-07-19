@@ -1,18 +1,18 @@
 ---
-title : "Access S3 from VPC"
+title : "Provision Infrastructure with Terraform"
 date : 2024-01-01
 weight : 3
 chapter : false
 pre : " <b> 5.3. </b> "
 ---
 
-#### Using Gateway endpoint
+#### Introduction
 
-In this section, you will create **a Gateway eendpoint** to access **Amazon S3** from **an EC2 instance**. **The Gateway endpoint** will allow upload an object to S3 buckets without using **the Public Internet**. To create an endpoint, you must specify the VPC in which you want to create the endpoint, and the service (in this case, S3) to which you want to establish the connection.
+In this section, you will provision the core infrastructure for the CloudCost Insight system using Terraform. These foundational resources will be used by the Lambda functions in the following sections. They include storage for cost data, an event queue, a notification service, and a scheduling service.
 
-![overview](/images/5-Workshop/5.3-S3-vpc/diagram2.png)
+![S3, IAM, SNS, SQS + DLQ, EventBridge](/fcaj-workshop-threenines/images/5-Workshop/5.3-Variables/5.3.1-Infrastructure_diagram.jpg)
 
-#### Content
+#### Contents
 
-- [Create gateway endpoint](3.1-create-gwe/)
-- [Test gateway endpoint](3.2-test-gwe/)
+- [Declare Input Variables](5.3.1-Variables/)
+- [Test Gateway Endpoint](3.2-test-gwe/)
