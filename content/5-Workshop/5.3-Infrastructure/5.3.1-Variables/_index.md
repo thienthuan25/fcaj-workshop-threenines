@@ -65,3 +65,7 @@ variable "history_days" {
   default     = 7 # Calculates the average cost over the most recent 7 days.
 }
 ```
+
+#### Next Content
+
+[Create an Amazon S3 Bucket for Cost Data Storage](5.3.2-S3-bucket/)

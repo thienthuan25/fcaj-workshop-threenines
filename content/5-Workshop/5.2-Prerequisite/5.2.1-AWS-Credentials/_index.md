@@ -30,3 +30,7 @@ Since this workshop uses HCP Terraform to run Terraform remotely, you need to ad
 6. Save your **AWS Access Key ID** and **AWS Secret Access Key**. You will need them to configure AWS credentials in HCP Terraform:
 
 ![Credentials](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.1-AWS-credentials/credentials_5.png)
+
+#### Next Content
+
+[Configure HCP Terraform](5.2.2-HCP-Terraform/)

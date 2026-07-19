@@ -41,3 +41,7 @@ pre : " <b> 5.2.2. </b> "
 ![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_6.png)
 
 ![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_7.png)
+
+#### Nội dung tiếp theo
+
+[Chuẩn bị Code Terraform](5.2.3-Code-terraform/)

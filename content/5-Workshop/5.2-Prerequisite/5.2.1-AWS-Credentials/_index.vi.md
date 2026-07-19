@@ -29,3 +29,7 @@ Vì workshop sử dụng HCP Terraform để chạy Terraform từ xa, bạn c�
 6. Ghi lại **AWS Access Key ID** và **AWS Secret Access Key** của bạn. Bạn sẽ cần chúng để cấu hình AWS credentials trong HCP Terraform:
 
 ![Credentials](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.1-AWS-credentials/credentials_5.png)
+
+#### Nội dung tiếp theo
+
+[Cấu hình HCP Terraform](5.2.2-HCP-Terraform/)

@@ -66,4 +66,8 @@ variable "history_days" {
 }
 ```
 
+#### Nội dung tiếp theo
+
+[Tạo S3 Bucket lưu dữ liệu chi phí](5.3.2-S3-bucket/)
+
 

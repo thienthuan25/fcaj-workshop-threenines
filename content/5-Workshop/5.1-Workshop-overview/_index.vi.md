@@ -24,3 +24,7 @@ Trong workshop này, chúng ta sẽ xây dựng hệ thống CloudCost Insight g
 + **Luồng trực quan hóa** cung cấp một web dashboard tự xây để người dùng theo dõi xu hướng chi phí. Dữ liệu được cung cấp qua Lambda API và Amazon API Gateway, giao diện web được host trên Amazon S3 và phân phối qua Amazon CloudFront với HTTPS. Để tối ưu chi phí, toàn bộ hệ thống chạy trên kiến trúc Serverless và nằm gần như hoàn toàn trong Free Tier của AWS.
 
 ![overview](/fcaj-workshop-threenines/images/5-Workshop/5.1-Workshop-overview/CloudCostInsightOverview.jpg)
+
+#### Nội dung tiếp theo
+
+[Các bước chuẩn bị](5.2-Prerequisite)
