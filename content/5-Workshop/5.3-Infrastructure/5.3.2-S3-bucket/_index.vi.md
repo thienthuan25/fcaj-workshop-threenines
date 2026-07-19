@@ -73,3 +73,5 @@ data "aws_caller_identity" "current" {}
 ```
 
 #### Nội dung tiếp theo
+
+[Tạo IAM Role cho Lambda](5.3.3-IAM-Role/)
