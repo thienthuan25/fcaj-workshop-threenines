@@ -60,4 +60,6 @@ resource "aws_sns_topic_policy" "cost_alerts" {
 }
 ```
 
-#### Next
+#### Next Content
+
+[Create an Amazon SQS Queue and a Dead Letter Queue](../5.3.5-SQS-Queue-DLQ/)
