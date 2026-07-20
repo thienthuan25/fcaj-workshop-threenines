@@ -38,4 +38,4 @@ resource "aws_sqs_queue" "events" {
 
 #### Nội dung tiếp theo
 
-- [Tạo SQS Queue và Dead Letter Queue](../5.3.6-EventBridge-Rule/)
+- [Tạo EventBridge Rule lập lịch](../5.3.6-EventBridge-Rule/)

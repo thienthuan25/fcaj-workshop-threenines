@@ -14,5 +14,11 @@ Trong phần này, chúng ta sẽ dựng các thành phần hạ tầng nền ch
 
 #### Nội dung
 
-- [Khai báo các biến đầu vào](5.3.1-Variables/)
-- [Test gateway endpoint](3.2-test-gwe/)
+1. [Khai báo các biến đầu vào](5.3.1-Variables/)
+2. [Tạo S3 Bucket lưu dữ liệu chi phí](5.3.2-S3-bucket/)
+3. [Tạo IAM Role cho Lambda](5.3.3-IAM-Role/)
+4. [Tạo SNS Topic cảnh báo](5.3.4-SNS-Topic/)
+5. [Tạo SQS Queue và Dead Letter Queue](5.3.5-SQS-Queue-DLQ/)
+6. [Tạo EventBridge Rule lập lịch](5.3.6-EventBridge-Rule/)
+7. [Khai báo Outputs](5.3.7-Outputs/)
+8. [Triển khai hạ tầng](5.3.8-Deploy-infrastructure/)

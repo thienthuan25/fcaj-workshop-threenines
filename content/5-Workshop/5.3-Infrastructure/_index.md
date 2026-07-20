@@ -14,5 +14,11 @@ In this section, you will provision the core infrastructure for the CloudCost In
 
 #### Contents
 
-- [Declare Input Variables](5.3.1-Variables/)
-- [Create an Amazon S3 Bucket for Cost Data Storage](5.3.2-S3-bucket/)
+1. [Declare Input Variables](5.3.1-Variables/)
+2. [Create an Amazon S3 Bucket for Cost Data Storage](5.3.2-S3-bucket/)
+3. [Create an IAM Role for Lambda](5.3.3-IAM-Role/)
+4. [Create an Amazon SNS Topic for Cost Alerts](5.3.4-SNS-Topic/)
+5. [Create an Amazon SQS Queue and a Dead Letter Queue](5.3.5-SQS-Queue-DLQ/)
+6. [Create an Amazon EventBridge Schedule](5.3.6-EventBridge-Rule/)
+7. [Define Terraform Outputs](5.3.7-Outputs/)
+8. [Deploy the Infrastructure](5.3.8-Deploy-infrastructure/)
