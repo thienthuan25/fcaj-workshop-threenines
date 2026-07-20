@@ -50,20 +50,6 @@ variable "cost_threshold_usd" {
   type        = number
   default     = 10
 }
-
-# Defines the multiplier used to detect abnormal cost increases by comparing the current cost with the historical average multiplied by this value
-variable "spike_multiplier" {
-  description = "Spike multiplier: if cost > historical average * this multiplier, it is considered an abnormal spike"
-  type        = number
-  default     = 1.5 # An alert is triggered when the current cost exceeds 1.5 times the historical average.
-}
-
-# Specifies the number of previous days used to calculate the historical average cost
-variable "history_days" {
-  description = "Number of historical days used to calculate the average cost (for spike detection)"
-  type        = number
-  default     = 7 # Calculates the average cost over the most recent 7 days.
-}
 ```
 
 #### Next Content

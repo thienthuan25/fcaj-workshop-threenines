@@ -172,4 +172,5 @@ resource "aws_lambda_function" "collector" {
 ```
 
 #### Next
-```
+
+- [Deploying Lambda Analyzer](../5.4.2-Lambda-Analyzer/)

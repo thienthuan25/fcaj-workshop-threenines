@@ -50,20 +50,6 @@ variable "cost_threshold_usd" {
   type        = number
   default     = 10
 }
-
-# Hệ số nhân dùng để nhận diện sự gia tăng chi phí bất thường. So sánh chi phí hiện tại với chi phí trung bình trong quá khứ nhân với hệ số này
-variable "spike_multiplier" {
-  description = "Spike multiplier: if cost > historical average * this multiplier, it is considered an abnormal spike"
-  type        = number
-  default     = 1.5 # chi phí hiện tại vượt mức 1.5 lần trung bình thì sẽ cảnh báo.
-}
-
-# Số ngày trong quá khứ được lấy ra làm mốc để tính
-variable "history_days" {
-  description = "Number of historical days used to calculate the average cost (for spike detection)"
-  type        = number
-  default     = 7 # tính trung bình chi phí của 7 ngày gần nhất
-}
 ```
 
 #### Nội dung tiếp theo

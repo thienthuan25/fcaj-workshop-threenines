@@ -172,6 +172,8 @@ resource "aws_lambda_function" "collector" {
 
 #### Nội dung tiếp theo
 
+- [Triển khai Lambda Analyzer](../5.4.2-Lambda-Analyzer/)
+
 
 
 
