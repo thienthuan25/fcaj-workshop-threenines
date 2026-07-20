@@ -19,5 +19,5 @@ We will deploy each Lambda function step by step. Each function includes a Pytho
 
 #### Contents
 
-1. [Lambda Collector](5.4.1-Lambda-Collector/)
-2. [Lambda Analyzer](5.4.2-Lambda-Analyzer/)
+1. [Lambda Collector](../5.4-Deploy-Lambda/5.4.1-Lambda-Collector/)
+2. [Lambda Analyzer](../5.4-Deploy-Lambda/5.4.2-Lambda-Analyzer/)
