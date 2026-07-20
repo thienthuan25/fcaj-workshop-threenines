@@ -14,7 +14,7 @@ Trước khi tiến hành triển khai hạ tầng, chúng ta cần tạo thêm 
 # important
 aws_region          = "us-east-1" # region mà bạn muốn đặt cho dự án
 environment         = "dev" # môi trường của dự án (dev, test, prod)
-project_name        = [TÊN_DỰ_ÁN_CỦA_BẠN]
+project_name        = "[TÊN_DỰ_ÁN_CỦA_BẠN]"
 alert_email         = "[EMAIL]" # email mà bạn muốn nhận thông báo
 schedule_expression = "rate(1 day)" # Lịch trình chạy (đặt tùy chọn)
 ```
@@ -46,7 +46,7 @@ terraform apply
 
 4. Kiểm tra và xác nhận Email:
 
-Sau khi triển khai, bạn hãy kiểm tra các tài nguyên đã được tạo trên AWS Console:
+    Sau khi triển khai, bạn hãy kiểm tra các tài nguyên đã được tạo trên AWS Console:
 
 - S3 Bucket:
 

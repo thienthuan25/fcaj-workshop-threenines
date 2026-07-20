@@ -14,7 +14,7 @@ In the first section, we created the `variables.tf` file to declare all input va
 # Required
 aws_region          = "us-east-1" # AWS Region where the infrastructure will be deployed
 environment         = "dev" # Deployment environment such as dev, test, or prod
-project_name        = [YOUR_PROJECT_NAME]
+project_name        = "[YOUR_PROJECT_NAME]"
 alert_email         = "[EMAIL]" # Email address that will receive notifications
 schedule_expression = "rate(1 day)" # Schedule expression for the automated task
 ```
