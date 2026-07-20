@@ -38,3 +38,6 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 ```
 
 #### Nội dung tiếp theo
+
+- [Khai báo Outputs](../5.3.7-Outputs/)
+

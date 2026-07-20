@@ -39,3 +39,5 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 
 #### Next Content
 
+- [Define Terraform Outputs](../5.3.7-Outputs/)
+

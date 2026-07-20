@@ -84,4 +84,4 @@ resource "aws_iam_role_policy" "collector" {
 
 #### Next Content
 
-[Create an Amazon SNS Topic for Cost Alerts](../5.3.4-SNS-Topic/)
+- [Create an Amazon SNS Topic for Cost Alerts](../5.3.4-SNS-Topic/)
