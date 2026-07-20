@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3. </b> "
 ---
 
-#### Introduction
+#### Overview
 
 In this section, you will provision the core infrastructure for the CloudCost Insight system using Terraform. These foundational resources will be used by the Lambda functions in the following sections. They include storage for cost data, an event queue, a notification service, and a scheduling service.
 

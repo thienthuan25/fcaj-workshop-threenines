@@ -74,6 +74,8 @@ Click `Confirm subscription`:
 
 #### Nội dung tiếp theo
 
+- [Triển khai Lambda Collector](5-Workshop/5.4-Deploy-Lambda/)
+
 
 
 

@@ -74,3 +74,5 @@ Click `Confirm subscription`.
 ![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_11.png)
 
 #### Next Content
+
+- [Deploying Lambda Collector](5-Workshop/5.4-Deploy-Lambda)
