@@ -33,7 +33,7 @@ A key feature of the platform is its **custom-built web dashboard**, where **AWS
 
 The platform adopts an AWS Serverless, event-driven, and resilient architecture. Cost data is periodically collected from the AWS Cost Explorer API by the Lambda Collector, stored in Amazon S3, and forwarded through Amazon SQS for processing by the Lambda Analyzer to detect anomalies. Alerts are delivered via Amazon SNS. Cost information is visualized through a custom-built web dashboard, where the Lambda API provides data, Amazon API Gateway exposes the HTTP endpoints, the web interface is hosted on Amazon S3, and Amazon CloudFront distributes the frontend globally. The entire infrastructure is provisioned using Terraform.
 
-![CloudCost Insight Architecture](/fcaj-workshop-threenines/images/2-Proposal/CloudCostInsight.jpg)
+![CloudCost Insight Architecture](/fcaj-workshop-threenines/images/2-Proposal/diagram_1.png)
 
 *AWS Services Used*
 

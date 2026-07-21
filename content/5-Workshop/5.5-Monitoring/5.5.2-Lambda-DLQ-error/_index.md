@@ -33,6 +33,6 @@ resource "aws_cloudwatch_metric_alarm" "dlq_message" {
 
 This alarm uses the `ApproximateNumberOfMessagesVisible` metric of the Dead Letter Queue. Under normal operating conditions, the DLQ should always remain empty. Therefore, as soon as a single message appears in the queue, the alarm is triggered to notify you that a processing failure has occurred and requires investigation.
 
-#### Next
+#### Next Content
 
 - [Deployment](../5.5.3-Deploy)

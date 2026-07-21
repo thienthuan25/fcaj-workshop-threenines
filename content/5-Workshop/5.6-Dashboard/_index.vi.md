@@ -6,32 +6,20 @@ chapter : false
 pre : " <b> 5.6. </b> "
 ---
 
-#### Dọn dẹp tài nguyên
+#### Giới thiệu
 
-Xin chúc mừng bạn đã hoàn thành xong lab này!
-Trong lab này, bạn đã học về các mô hình kiến trúc để truy cập Amazon S3 mà không sử dụng Public Internet.
+Trong phần này, chúng ta sẽ xây dựng một Web Dashboard tự xây để trực quan hóa dữ liệu chi phí. Thay vì dùng một dịch vụ BI có sẵn, chúng ta tự phát triển toàn bộ để làm chủ hoàn toàn giao diện và dữ liệu, đồng thời giữ chi phí ở mức thấp nhât.
 
-+ Bằng cách tạo Gateway endpoint, bạn đã cho phép giao tiếp trực tiếp giữa các tài nguyên EC2 và Amazon S3, mà không đi qua Internet Gateway.
-Bằng cách tạo Interface endpoint, bạn đã mở rộng kết nối S3 đến các tài nguyên chạy trên trung tâm dữ liệu trên chỗ của bạn thông qua AWS Site-to-Site VPN hoặc Direct Connect.
+Web Dash board gồm hai phần chính:
 
-#### Dọn dẹp
-1. Điều hướng đến Hosted Zones trên phía trái của bảng điều khiển Route 53. Nhấp vào tên của  s3.us-east-1.amazonaws.com zone. Nhấp vào Delete và xác nhận việc xóa bằng cách nhập từ khóa "delete".
+- **Backend** gồm một hàm Lambda API đọc dữ liệu chi phí từ S3 và một API Gateway để expose endpoint cho Web gọi.
+- **Frontend** là một trang Web tĩnh dùng `Chart.js` để vẽ biểu đồ, được host lên S3 và phân phối qua CloudFront.
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/diagram_3.png)
 
-2. Disassociate Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+#### Nội dung
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+1. [Backend](../5.6-Dashboard/5.6.1-Backend/)
+2. [Frontend](../5.6-Dashboard/5.6.2-Frontend/)
 
-4.Mở console của CloudFormation và xóa hai stack CloudFormation mà bạn đã tạo cho bài thực hành này:
-+ PLOnpremSetup
-+ PLCloudSetup
 
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
-
-5. Xóa các S3 bucket
-
-+ Mở bảng điều khiển S3
-+ Chọn bucket chúng ta đã tạo cho lab, nhấp chuột và xác nhận là empty. Nhấp Delete và xác nhận delete.
-+ 
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)

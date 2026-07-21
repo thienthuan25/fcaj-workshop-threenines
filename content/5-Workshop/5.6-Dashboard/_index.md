@@ -1,32 +1,24 @@
 ---
-title : "Clean up"
+title : "Web Dashboard"
 date : 2024-01-01
 weight : 6
 chapter : false
 pre : " <b> 5.6. </b> "
 ---
-Congratulations on completing this workshop! 
-In this workshop, you learned architecture patterns for accessing Amazon S3 without using the Public Internet. 
-+ By creating a gateway endpoint, you enabled direct communication between EC2 resources and Amazon S3, without traversing an Internet Gateway. 
-+ By creating an interface endpoint you extended S3 connectivity to resources running in your on-premises data center via AWS Site-to-Site VPN or Direct Connect. 
 
-#### clean up
-1. Navigate to Hosted Zones on the left side of Route 53 console. Click the name of *s3.us-east-1.amazonaws.com* zone. Click Delete and confirm deletion by typing delete. 
+#### Introduction
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+In this section, we will build a custom Web Dashboard to visualize cost data. Instead of using an existing Business Intelligence service, we will develop the entire dashboard ourselves to gain full control over both the user interface and the data while keeping operational costs as low as possible.
 
-2. Disassociate the Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+The Web Dashboard consists of two main components:
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+- **Backend** includes a Lambda API function that reads cost data from S3 and an API Gateway that exposes an endpoint for the web application.
+- **Frontend** is a static website that uses `Chart.js` to render charts. It is hosted on Amazon S3 and distributed through CloudFront.
 
-4. Open the CloudFormation console  and delete the two CloudFormation Stacks that you created for this lab:
-+ PLOnpremSetup
-+ PLCloudSetup
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/diagram_3.png)
 
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
+#### Content
 
-5. Delete S3 buckets
-+ Open S3 console
-+ Choose the bucket we created for the lab, click and confirm empty. Click delete and confirm delete.
+1. [Backend](../5.6-Dashboard/5.6.1-Backend/)
+2. [Frontend](../5.6-Dashboard/5.6.2-Frontend/)
 
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)

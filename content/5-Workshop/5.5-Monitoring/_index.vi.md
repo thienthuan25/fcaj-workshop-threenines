@@ -23,7 +23,7 @@ Lưu ý: Phân biệt hai loại cảnh báo trong hệ thống:
 - Cảnh báo sự cố (từ CloudWatch Alarm) thông báo khi bản thân hệ thống gặp lỗi.
 {{% /notice %}}
 
-![Monitoring](/fcaj-workshop-threenines/images/5-Workshop/5.5-Monitoring/monitoring.jpg)
+![Monitoring](/fcaj-workshop-threenines/images/5-Workshop/5.5-Monitoring/diagram_2.png)
 
 #### Nội dung
 
