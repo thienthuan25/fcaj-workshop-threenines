@@ -20,5 +20,5 @@ Sau khi hoàn thành phần này, hệ thống đã có đầy đủ khả năng
 
 #### Nội dung tiếp theo
 
-- [Dashboard](5.6-Dashboard/)
+- [Dashboard](5-Workshop/5.6-Dashboard/)
 

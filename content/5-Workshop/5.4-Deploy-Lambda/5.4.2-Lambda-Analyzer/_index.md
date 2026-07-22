@@ -319,4 +319,4 @@ resource "aws_lambda_event_source_mapping" "sqs_to_analyzer" {
 
 #### Next Content
 
-- [Monitoring](5.5-Monitoring/)
+- [Monitoring](5-Workshop/5.5-Monitoring/)

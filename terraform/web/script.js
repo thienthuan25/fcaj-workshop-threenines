@@ -1,4 +1,4 @@
-const API_ENDPOINT = "https://lkxmu14555.execute-api.us-east-1.amazonaws.com//costs";
+const API_ENDPOINT = "REPLACE_MY_API_ENDPOINT";
 
 // EN/VI
 const translations = {

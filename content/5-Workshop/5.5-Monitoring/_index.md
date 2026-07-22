@@ -30,4 +30,4 @@ Note: The system includes two different types of alerts:
 
 1. [Configure CloudWatch Alarms for Lambda](../5.5-Monitoring/5.5.1-Lambda-alarm-error/)
 2. [Configure CloudWatch Alarms for the SQS Dead Letter Queue](../5.5-Monitoring/5.5.2-Lambda-DLQ-error/)
-3. [Deploy](../5.5-Monitoring/5.5.3-Deploy/)
+3. [Deployment](../5.5-Monitoring/5.5.3-Deploy/)

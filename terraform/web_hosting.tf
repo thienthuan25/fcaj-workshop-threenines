@@ -121,8 +121,15 @@ resource "aws_s3_object" "style" {
 resource "aws_s3_object" "script" {
   bucket       = aws_s3_bucket.web.id
   key          = "script.js"
-  source       = "${path.module}/web/script.js"
+
+  # tự động chèn URL của API Gateway vào file js
+  content = replace(
+    file("${path.module}/web/script.js"),
+    "REPLACE_MY_API_ENDPOINT",
+    "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs"
+  )
+
   content_type = "application/javascript"
-  etag         = filemd5("${path.module}/web/script.js")
+  etag = filemd5("${path.module}/web/script.js")
 }
 

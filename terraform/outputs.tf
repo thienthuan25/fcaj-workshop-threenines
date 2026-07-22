@@ -65,7 +65,7 @@ output "alarm_dlq_messages" {
 # outputs API gateway
 output "api_endpoint" {
   description = "API endpoint URL (for web frontend calls)"
-  value       = "${aws_apigatewayv2_stage.default.invoke_url}/costs"
+  value = "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs"
 }
 
 output "api_function_name" {

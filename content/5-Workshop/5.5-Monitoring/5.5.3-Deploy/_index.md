@@ -20,4 +20,4 @@ After completing this section, the system will have a complete self monitoring c
 
 #### Next Content
 
-- [Dashboard](5.6-Dashboard/)
+- [Dashboard](5-Workshop/5.6-Dashboard/)

@@ -127,11 +127,11 @@ def lambda_handler(event, context):
         return _cors_response(500, {"error": str(e)})
 ```
 
-The most important part here is the CORS headers included in the response. CORS stands for Cross-Origin Resource Sharing, a mechanism that allows resources to be shared across different origins. This mechanism exists to protect web users. By default, web browsers enforce a strict security policy: they do not allow a web page hosted on one domain to freely access data from another domain. This prevents malicious websites from secretly stealing users' personal information.
+The most important part here is the **CORS headers** included in the response. CORS stands for Cross-Origin Resource Sharing, a mechanism that allows resources to be shared across different origins. This mechanism exists to protect web users. By default, web browsers enforce a strict security policy: they do not allow a web page hosted on one domain to freely access data from another domain. This prevents malicious websites from secretly stealing users' personal information.
 
 However, in our project, the Web Frontend is hosted on Amazon S3 and distributed through CloudFront under its own domain name, while the data is served by API Gateway, which uses a completely different domain. Without CORS, the user's browser would immediately block requests for cost data, preventing the dashboard from displaying charts because it would assume the web page was attempting to access data from another origin without permission.
 
-For this reason, the Lambda function must include the appropriate CORS headers in its response. In particular, the header "Access-Control-Allow-Origin": "*" allows requests from any origin.
+For this reason, the Lambda function must include the appropriate **CORS headers** in its response. In particular, the header "Access-Control-Allow-Origin": "*" allows requests from any origin.
 
 #### Create API Gateway
 
