@@ -197,7 +197,7 @@ async function loadDashboard() {
 const langToggle = document.getElementById("lang-toggle");
 langToggle.addEventListener("click", () => {
     currentLang = currentLang === "vi" ? "en" : "vi";
-    langToggle.textContent = currentLang === "vi" ? "🇻🇳 VI" : "🇬🇧 EN";
+    langToggle.textContent = currentLang === "vi" ? "VI" : "EN";
     applyStaticText();
     if (latestData) renderCharts(latestData); // vẽ lại biểu đồ với nhãn ngôn ngữ mới
 });

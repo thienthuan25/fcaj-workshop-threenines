@@ -87,7 +87,6 @@ Chúng ta sẽ tạo giao diện Web trong thư mục `lambda/web`:
 2. File `style.css` chứa toàn bộ định dạng giao diện:
 
 ```css
-/* style.css — CloudCost Insight Dashboard */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -445,7 +444,7 @@ async function loadDashboard() {
 const langToggle = document.getElementById("lang-toggle");
 langToggle.addEventListener("click", () => {
     currentLang = currentLang === "vi" ? "en" : "vi";
-    langToggle.textContent = currentLang === "vi" ? "🇻🇳 VI" : "🇬🇧 EN";
+    langToggle.textContent = currentLang === "vi" ? "VI" : "EN";
     applyStaticText();
     if (latestData) renderCharts(latestData); // vẽ lại biểu đồ với nhãn ngôn ngữ mới
 });
@@ -629,8 +628,37 @@ terraform output web_dashboard_url
 
 ![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_2.png)
 
-3. Truy cập vào đường link hiện ra trên Terminal, ta sẽ vào giao diện của Website:
+3. Truy cập vào đường link hiện ra trên Terminal, ta sẽ vào giao diện của Website: 
 
 ![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_3.png)
 
 ![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_4.png)
+
+Giao diện thể hiện được **tổng chi phí**, **ngưỡng cảnh báo**, **số ngày theo dõi**, **số ngày bất thường**, và 3 biểu đồ trực quan:
+
+**Biểu đồ 1: Xu hướng chi phí theo ngày (Trend Chart):**
+
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_5.png)
+
+- Trục X (ngang): thể hiện các ngày theo dõi.
+- Trục Y (dọc): thể hiện chi phí ($) mỗi ngày.
+- Đường ngang màu xanh: thể hiện chi phí thực tế biến động theo ngày.
+- Nét đứt màu đỏ: đây là đường ngang cố định, thể hiện ngưỡng ngân sách. Nếu chi phí vượt lên trên đường này thì vượt ngưỡng.
+- Vùng nền màu xanh: được tô dưới đường màu xanh thể hiện xu hướng.
+
+**Biểu đồ 2: Tỷ trọng theo dịch vụ (Service Chart):**
+
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_6.png)
+
+- Mỗi phần của hình tròn là chi phí của mỗi dịch vụ. Phần càng lớn chứng tỏ chi phí của dịch vụ đó càng cao.
+- Trên mỗi phần có tên các dịch vụ nếu chúng ta chọn vào.
+- Mỗi dịch vụ là một màu riêng biệt.
+- Danh sách dịch vụ + màu tương ứng ở phía dưới biểu đồ.
+
+**Biểu đồ 3: Top dịch vụ (Bar Chart):**
+
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_7.png)
+
+- Biểu đồ thể hiện top 5 các dịch vụ có chi phí cao nhất.
+- Trục X (ngang): thể hiện chi phí của dịch vụ.
+- Trục Y (dọc): thể hiện tên dịch vụ tương ứng.

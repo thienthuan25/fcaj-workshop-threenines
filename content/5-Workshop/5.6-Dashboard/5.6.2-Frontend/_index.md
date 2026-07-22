@@ -87,7 +87,6 @@ We will create the Web interface in the `lambda/web` directory:
 2. The `style.css` file contains all the styling definitions for the user interface:
 
 ```css
-/* style.css — CloudCost Insight Dashboard */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -445,7 +444,7 @@ async function loadDashboard() {
 const langToggle = document.getElementById("lang-toggle");
 langToggle.addEventListener("click", () => {
     currentLang = currentLang === "vi" ? "en" : "vi";
-    langToggle.textContent = currentLang === "vi" ? "🇻🇳 VI" : "🇬🇧 EN";
+    langToggle.textContent = currentLang === "vi" ? "VI" : "EN";
     applyStaticText();
     if (latestData) renderCharts(latestData); // Re-render charts with the new language labels
 });
@@ -634,3 +633,32 @@ terraform output web_dashboard_url
 ![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_3.png)
 
 ![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_4.png)
+
+The dashboard displays the **total cost**, **alert threshold**, **number of monitored days**, **number of anomalous days**, and three visualization charts:
+
+**Chart 1: Daily Cost Trend (Trend Chart):**
+
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_5.png)
+
+- The X-axis (horizontal) represents the monitored days.
+- The Y-axis (vertical) represents the daily cost ($).
+- The blue line represents the actual daily cost trend.
+- The red dashed line is a fixed line representing the budget threshold. If the cost rises above this line, it exceeds the configured threshold.
+- The blue shaded area beneath the line highlights the cost trend.
+
+**Chart 2: Cost Share by Service (Service Chart):**
+
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_6.png)
+
+- Each slice of the pie chart represents the cost of an AWS service. The larger the slice, the higher the cost of that service.
+- The name of each service is displayed when you hover over or select its slice.
+- Each service is represented by a distinct color.
+- A legend below the chart shows the corresponding service names and colors.
+
+**Chart 3: Top Cost Services (Bar Chart):**
+
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_7.png)
+
+- The chart displays the top 5 services with the highest costs.
+- The X-axis (horizontal) represents the service cost.
+- The Y-axis (vertical) represents the corresponding service names.
