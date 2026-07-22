@@ -638,7 +638,7 @@ The dashboard displays the **total cost**, **alert threshold**, **number of moni
 
 **Chart 1: Daily Cost Trend (Trend Chart):**
 
-![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_5.png)
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_5en.png)
 
 - The X-axis (horizontal) represents the monitored days.
 - The Y-axis (vertical) represents the daily cost ($).
@@ -648,7 +648,7 @@ The dashboard displays the **total cost**, **alert threshold**, **number of moni
 
 **Chart 2: Cost Share by Service (Service Chart):**
 
-![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_6.png)
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_6en.png)
 
 - Each slice of the pie chart represents the cost of an AWS service. The larger the slice, the higher the cost of that service.
 - The name of each service is displayed when you hover over or select its slice.
@@ -657,8 +657,12 @@ The dashboard displays the **total cost**, **alert threshold**, **number of moni
 
 **Chart 3: Top Cost Services (Bar Chart):**
 
-![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_7.png)
+![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_7en.png)
 
 - The chart displays the top 5 services with the highest costs.
 - The X-axis (horizontal) represents the service cost.
 - The Y-axis (vertical) represents the corresponding service names.
+
+#### Next Content
+
+- [Testing](5-Workshop/5.7-Testing/)

@@ -662,3 +662,7 @@ Giao diện thể hiện được **tổng chi phí**, **ngưỡng cảnh báo**
 - Biểu đồ thể hiện top 5 các dịch vụ có chi phí cao nhất.
 - Trục X (ngang): thể hiện chi phí của dịch vụ.
 - Trục Y (dọc): thể hiện tên dịch vụ tương ứng.
+
+#### Nội dung tiếp theo
+
+- [Kiểm thử hệ thống](5-Workshop/5.7-Testing/)
