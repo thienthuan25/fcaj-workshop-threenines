@@ -17,7 +17,7 @@ We will test the system in four main areas:
 - Error handling mechanism using the **Dead Letter Queue**.
 - Monitoring mechanism using **CloudWatch Alarm** and the **Web Dashboard**.
 
-{{% notice %}}
+{{% notice note %}}
 If your AWS account is new or you have just deployed the system and **Cost Explorer** has not yet had 24 hours to generate cost data, we will continue using the simulated data ([Simulated Data](../5.6-Dashboard/5.6.1-Backend/)) to fully test all anomaly detection scenarios. When deployed on an account with real AWS costs, the system behaves the same way using actual data from **Cost Explorer**.
 {{% /notice %}}
 
@@ -236,3 +236,5 @@ After completing all of the above tests, the **CloudCost Insight** system has be
 - Visualizes cost data through a publicly accessible **Web Dashboard**.
 
 #### Next Content
+
+- [Cleanup](5-Workshop/5.8-Cleanup/)

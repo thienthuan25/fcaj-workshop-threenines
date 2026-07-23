@@ -237,4 +237,4 @@ Sau khi hoàn thành các bước kiểm thử trên, hệ thống **CloudCost I
 
 #### Nội dung tiếp theo
 
-<!-- - [Dọn dẹp tài nguyên](5-Workshop/5.8-Cleanup/) -->
+- [Dọn dẹp tài nguyên](5-Workshop/5.8-Cleanup/)
