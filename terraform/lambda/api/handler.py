@@ -98,7 +98,7 @@ def lambda_handler(event, context):
                 d["status"] = "NORMAL"
 
         # Top dịch vụ tốn chi phí nhất
-        top_services = sorted(service_totals.items(), key=lambda x: x[1], reverse=True)[:10]
+        top_services = sorted(service_totals.items(), key=lambda x: x[1], reverse=True)[:5]
 
         result = {
             "grand_total": round(grand_total, 2),
