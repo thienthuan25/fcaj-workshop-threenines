@@ -263,9 +263,9 @@ resource "aws_lambda_permission" "apigw" {
 
 #### Triển khai và kiểm thử API
 
-1. Trước khi triển khai API, chúng ta cần đảm bảo rằng đã có dữ liệu chi phí trong S3 bucket. Dữ liệu chi phí cần được tổng hợp sau 24 giờ. Thông thường, khi chúng ta chỉ vừa mới triển khai hệ thống thì sẽ chưa có dữ liệu chi phí. Trong trường hợp này, chúng ta có thể sử dụng script để sinh ra dữ liệu mô phỏng.
+1. Trước khi triển khai API, chúng ta cần đảm bảo rằng đã có dữ liệu chi phí trong S3 bucket. Dữ liệu chi phí cần được tổng hợp sau 24 giờ. Thông thường, khi chúng ta chỉ vừa mới triển khai hệ thống thì sẽ chưa có dữ liệu chi phí. Trong trường hợp này, chúng ta có thể sử dụng script để sinh ra dữ liệu mô phỏng:
 
-- Chúng ta sẽ tạo file `lambda/test/test_data.py` để sinh ra dữ liệu giả lập. File này sẽ mô phỏng dữ liệu chi phí và ghi vào S3 bucket:
+- Chúng ta sẽ tạo file `lambda/test/test_data.py` để sinh ra dữ liệu giả lập. File này sẽ mô phỏng dữ liệu chi phí và ghi vào S3 bucket.
 
 ```python
 
@@ -404,13 +404,13 @@ python3 test/test_data.py <BUCKET_NAME>
 
 5. Kiểm tra trên cửa số Console AWS:
 
-- Truy cập vào **Amazon S3**
-- Chọn trên Bucket của bạn:
+- Truy cập vào **Amazon S3**.
+- Chọn trên Bucket của bạn.
 
 ![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_5.png)
 
 - Lúc này, bạn sẽ thấy các thư mục chứa dữ liệu chi phí mô phỏng đã được sinh ra.
-- Truy cập vào các thư mục để kiểm chứng xem dữ liệu chi phí đã có hay chưa ở các file JSON:
+- Truy cập vào các thư mục để kiểm chứng xem dữ liệu chi phí đã có hay chưa ở các file JSON.
 
 ![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_6.png)
 

@@ -10,7 +10,7 @@ pre : " <b> 5.2. </b> "
 
 Before starting this workshop, make sure you have prepared the following:
 
-+ An AWS account with AWS Cost Explorer enabled. Cost Explorer must be enabled in the Billing console before the API can retrieve cost data.
++ An AWS account.
 + The AWS Region used throughout this workshop is N. Virginia (us-east-1).
 + An HCP Terraform account at app.terraform.io for remote state management.
 

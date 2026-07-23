@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.1 </b> "
 ---
 
-Trước tiên, chúng ta tạo file `variables.tf` để khai báo các biến dùng chung cho toàn bộ dự án. Việc tách biến ra riêng giúp dễ tùy chỉnh mà không phải sửa trực tiếp trong code tài nguyên.
+Trước tiên, chúng ta tạo file `lambda/variables.tf` để khai báo các biến dùng chung cho toàn bộ dự án. Việc tách biến ra riêng giúp dễ tùy chỉnh mà không phải sửa trực tiếp trong code tài nguyên.
 
 ```hcl
 # Khai báo region của AWS mà các tài nguyên hạ tầng sẽ được triển khai

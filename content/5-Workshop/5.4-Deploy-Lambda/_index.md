@@ -8,7 +8,7 @@ pre : " <b> 5.4. </b> "
 
 #### Overview
 
-In this section, we will deploy the two Lambda functions that serve as the processing layer of the **CloudCost Insight** system.
+In this section, we will deploy the two Lambda functions that serve as the processing layer of the **CloudCost Insight** system:
 
 - **Lambda Collector** is responsible for collecting cost data from the Cost Explorer API, storing the data in Amazon S3, and sending events to Amazon SQS.
 - **Lambda Analyzer** consumes events from Amazon SQS, analyzes the cost data, and sends alerts through Amazon SNS whenever abnormal costs are detected.

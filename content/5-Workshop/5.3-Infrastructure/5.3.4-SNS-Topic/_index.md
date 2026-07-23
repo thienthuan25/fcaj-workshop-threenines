@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.4 </b> "
 ---
 
-Next, we will create the `sns.tf` file. This file is used to provision the **Amazon Simple Notification Service** (SNS). Its primary purpose is to create a notification channel and connect it to your email address.
+Next, we will create the `lambda/sns.tf` file. This file is used to provision the **Amazon Simple Notification Service** (SNS). Its primary purpose is to create a notification channel and connect it to your email address.
 
 The main objective of **CloudCost Insight** is to detect abnormal cloud spending and notify administrators as quickly as possible. However, a Lambda function cannot send email notifications directly. Therefore, Amazon SNS acts as the messaging service that delivers alert notifications.
 

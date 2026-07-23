@@ -13,7 +13,7 @@ Chúng ta sẽ tạo file `lambda/collector/handler.py`. File này đóng vai tr
 Mỗi khi được EventBridge kích hoạt tự động mỗi ngày, hàm này sẽ thực hiện một luồng ba bước:
 
 1. **Lấy dữ liệu**: Gọi API của dịch vụ AWS Cost Explorer để xuất báo cáo chi tiết về mọi khoản chi phí phát sinh trong ngày hôm qua và phân loại theo từng dịch vụ.
-2. **Lưu trữ**: Đưa toàn bộ dữ liệu vừa lấy được để lưu trữ an toàn vào S3 Bucket, đồng thời tự động phân chia thư mục gọn gàng theo thời gian theo ngày/tháng/năm.
+2. **Lưu trữ**: Đưa toàn bộ dữ liệu vừa lấy được để lưu trữ an toàn vào S3 Bucket, đồng thời tự động phân chia thư mục gọn gàng theo thời gian theo năm/tháng/ngày.
 3. **Kích hoạt xử lý**: Sau khi lưu xong, hàm sẽ tính tổng số tiền đã tiêu, đóng gói thông tin đó cùng với đường dẫn file trên S3 thành một sự kiện rồi gửi vào hàng đợi SQS để ra lệnh cho Lambda Analyzer bắt đầu làm việc.
 
 Việc thu thập dữ liệu và phân tích dữ liệu được phân tách ra giúp cho hệ thông khi gặp lỗi vẫn giữ được dữ liệu gốc một cách an toàn và nguyên vẹn trên S3.

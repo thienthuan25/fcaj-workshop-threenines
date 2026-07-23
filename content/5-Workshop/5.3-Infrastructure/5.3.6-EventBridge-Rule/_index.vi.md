@@ -6,11 +6,11 @@ chapter : false
 pre : " <b> 5.3.6 </b> "
 ---
 
-Tiếp theo, chúng ta sẽ tạo file `eventbridge.tf`. File này được sử dụng để cấu hình dịch vụ **Amazon EventBridge**, trước đây là **CloudWatch Event** nhằm mục đích lập lịch tự động cho hệ thống.
+Tiếp theo, chúng ta sẽ tạo file `lambda/eventbridge.tf`. File này được sử dụng để cấu hình dịch vụ **Amazon EventBridge**, trước đây là **CloudWatch Event** nhằm mục đích lập lịch tự động cho hệ thống.
 
 Hàm Lambda Collector dùng để lấy dữ liệu chi phí sẽ không thể tự động chạy trừ khi có một sự kiện kích hoạt nó. Để hệ thống **CloudCost Insight** có thể liên tục theo dõi và cập nhật chi phí mỗi ngày mà không cần con người can thiệp, chúng ta cần một công cụ lập lịch để có thể tự động kích hoạt nó mỗi ngày.
 
-Dựa trên lịch trình bạn đã cấu hình (1 lần/ngày ở biến `schedule_expression`), EventBridge sẽ tự động kích hoạt hàm **Lambda Collector** đi lấy dữ liệu chi phí, đồng thời file này cung cấp quyền để **EventBridge** được phép gọi hàm Lambda của bạn.
+Dựa trên lịch trình mà chúng ta đã cấu hình (1 lần/ngày ở biến `schedule_expression`), EventBridge sẽ tự động kích hoạt hàm **Lambda Collector** đi lấy dữ liệu chi phí, đồng thời file này cung cấp quyền để **EventBridge** được phép gọi hàm Lambda.
 
 ```hcl
 # Lập lịch 1 lần/ngày

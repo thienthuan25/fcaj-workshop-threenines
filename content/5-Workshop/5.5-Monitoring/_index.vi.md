@@ -17,10 +17,10 @@ Trong phần này, chúng ta sẽ cấu hình CloudWatch Alarm để giám sát 
 
 Các Alarm này sẽ gửi thông báo qua chính SNS topic đã tạo, giúp bạn nhận được email cảnh báo ngay khi hệ thống gặp trục trặc.
 
-{{% notice info %}}
-Lưu ý: Phân biệt hai loại cảnh báo trong hệ thống:
-- Cảnh báo chi phí (từ Analyzer) thông báo chi phí vượt ngưỡng.
-- Cảnh báo sự cố (từ CloudWatch Alarm) thông báo khi bản thân hệ thống gặp lỗi.
+{{% notice note %}}
+Lưu ý: Phân biệt hai loại cảnh báo trong hệ thống:<br><br>
+&bull; Cảnh báo chi phí (từ Analyzer) thông báo chi phí vượt ngưỡng.<br>
+&bull; Cảnh báo sự cố (từ CloudWatch Alarm) thông báo khi bản thân hệ thống gặp lỗi.
 {{% /notice %}}
 
 ![Monitoring](/fcaj-workshop-threenines/images/5-Workshop/5.5-Monitoring/diagram_2.png)

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.5 </b> "
 ---
 
-Next, we will create the `sqs.tf` file. This file provisions the **Amazon Simple Queue Service** (SQS), including a primary queue and a **Dead Letter Queue (DLQ)**.
+Next, we will create the `lambda/sqs.tf` file. This file provisions the **Amazon Simple Queue Service** (SQS), including a primary queue and a **Dead Letter Queue (DLQ)**.
 
 Instead of allowing the Lambda Collector function to invoke the Lambda Analyzer function directly, we place Amazon SQS between them to act as a message buffer.
 

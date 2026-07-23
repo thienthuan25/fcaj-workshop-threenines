@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.3 </b> "
 ---
 
-In this section, we will create the `iam.tf` file to define the **access permissions** through an IAM Role and IAM Policy for a Lambda function called Lambda Collector.
+In this section, we will create the `lambda/iam.tf` file to define the **access permissions** through an IAM Role and IAM Policy for a Lambda function called Lambda Collector.
 
 On AWS, services such as Lambda do not have permission to interact with other AWS resources by default. To allow a Lambda function to perform its tasks, we must explicitly grant the required permissions. Instead of assigning broad Administrator permissions, we follow the principle of least privilege by granting only the permissions required for the function to complete its responsibilities.
 

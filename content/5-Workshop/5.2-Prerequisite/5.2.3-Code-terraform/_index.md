@@ -8,7 +8,19 @@ pre : " <b> 5.2.3. </b> "
 
 #### Required Tools
 
-In this section, you will work in the WSL2 Ubuntu command line environment. Before you begin, make sure the following tools are installed:
+In this workshop, we perform all command-line operations in the **WSL2 (Windows Subsystem for Linux)** environment instead of using Windows **Command Prompt (CMD)** or **PowerShell**. There are several key reasons for this choice:
+
++ **A consistent Linux environment:** Most infrastructure tools such as **Terraform**, the **AWS CLI**, and deployment scripts are designed and optimized for Unix/Linux environments. WSL2 provides a real Linux environment running on Windows, eliminating differences in file paths, environment variables, and command-line behavior that often exist in CMD or PowerShell.
+
++ **Consistency with the production environment:** Most AWS servers and CI/CD pipelines run on Linux. Using WSL2 makes your development environment much closer to the production environment, reducing the risk of issues caused by operating system differences.
+
++ **Excellent support for command-line tools:** WSL2 fully supports Linux utilities such as **bash**, text-processing commands, and file management tools, making it much more convenient to write and execute scripts.
+
++ **Strong compatibility with development tools:** WSL2 integrates seamlessly with editors such as **Visual Studio Code**, allowing you to write code and execute commands within the same environment.
+
+Overall, WSL2 provides a more consistent and stable experience when working with cloud infrastructure tools, especially **Terraform**.
+
+Before you begin, make sure the following tools are installed:
 
 + **Terraform** version 1.5 or later to provision infrastructure using the Infrastructure as Code approach.
 + **AWS CLI** to interact with AWS services and perform testing from the command line.
@@ -133,6 +145,35 @@ terraform init
 ![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_8.png)
 
 After completing these steps, your working environment is fully configured and ready to deploy the **CloudCost Insight** system in the following sections.
+
+#### Preparing Git and Configuring `.gitignore`
+
+Since this project is managed with **Git** and the source code will be pushed to **GitHub**, we need to configure Git to exclude files that should not be committed to the repository. This helps protect sensitive information and keeps the repository clean.
+
+In the project's root directory, create a `.gitignore` file with the following content:
+
+```gitignore
+# ===== Hugo =====
+public/
+.hugo_build.lock
+
+# ===== System & IDE =====
+.DS_Store
+.vscode/
+
+# ===== Terraform =====
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+```
+
+- The `.terraform/` directory: This is where Terraform stores the provider cache downloaded when running `terraform init`. Since this directory is large and can be recreated easily, it should not be committed to the repository.
+
+- The `*.tfstate` and `*.tfstate.*` files: These are Terraform state files that may contain sensitive information. Because this project uses **HCP Terraform** to manage the remote state, the infrastructure state is already stored centrally on HCP Terraform, so there is no need to keep local state files in the repository.
+
+- The `*.tfvars` files: These files contain actual variable values, such as the email address used for alert notifications, so they should not be committed to the repository to avoid exposing sensitive information. Only the template file, `*.tfvars.example`, should be included.
 
 #### Next Content
 

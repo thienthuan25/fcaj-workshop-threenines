@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.2 </b> "
 ---
 
-Trong phần này, chúng ta sẽ tạo file `s3.tf` để định nghĩa bucket lưu trữ dữ liệu chi phí. Bucket này được cấu hình bảo mật đầy đủ:
+Trong phần này, chúng ta sẽ tạo file `lambda/s3.tf` để định nghĩa bucket lưu trữ dữ liệu chi phí. Bucket này được cấu hình bảo mật đầy đủ:
 
 - Chặn truy cập public
 - Bật mã hóa

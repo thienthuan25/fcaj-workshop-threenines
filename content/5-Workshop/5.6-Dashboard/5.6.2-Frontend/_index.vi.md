@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.6.2 </b> "
 ---
 
-Chúng ta sẽ tạo giao diện Web trong thư mục `lambda/web`:
+Chúng ta sẽ tạo giao diện Web trong thư mục `lambda/web`.
 
 1. File `index.html` chứa cấu trúc trang:
 
@@ -634,7 +634,7 @@ terraform output web_dashboard_url
 
 ![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_4.png)
 
-Giao diện thể hiện được **tổng chi phí**, **ngưỡng cảnh báo**, **số ngày theo dõi**, **số ngày bất thường**, và 3 biểu đồ trực quan:
+Giao diện thể hiện được **tổng chi phí**, **ngưỡng cảnh báo**, **số ngày theo dõi**, **số ngày bất thường**, và 3 biểu đồ trực quan.
 
 **Biểu đồ 1: Xu hướng chi phí theo ngày (Trend Chart):**
 

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.2 </b> "
 ---
 
-In this section, we will create the `s3.tf` file to define an Amazon S3 bucket for storing cost data. This bucket is configured with several security and data protection features, including:
+In this section, we will create the `lambda/s3.tf` file to define an Amazon S3 bucket for storing cost data. This bucket is configured with several security and data protection features, including:
 
 - Block public access
 - Server side encryption

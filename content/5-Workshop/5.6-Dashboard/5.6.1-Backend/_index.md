@@ -263,9 +263,9 @@ resource "aws_lambda_permission" "apigw" {
 
 #### Deploy and Test the API
 
-1. Before deploying the API, we need to ensure that cost data already exists in the S3 bucket. Cost data is available only after it has been collected over a 24-hour period. Normally, if you have just deployed the system, no cost data will be available yet. In this case, we can use a script to generate simulated data.
+1. Before deploying the API, we need to ensure that cost data already exists in the S3 bucket. Cost data is available only after it has been collected over a 24-hour period. Normally, if you have just deployed the system, no cost data will be available yet. In this case, we can use a script to generate simulated data:
 
-- Create the file `lambda/test/test_data.py` to generate sample data. This script simulates cost data and uploads it to the S3 bucket:
+- Create the file `lambda/test/test_data.py` to generate sample data. This script simulates cost data and uploads it to the S3 bucket.
 
 ```python
 import sys
@@ -403,13 +403,13 @@ python3 test/test_data.py <BUCKET_NAME>
 
 5. Verify the generated data in the AWS Console:
 
-- Open **Amazon S3**
-- Select your bucket:
+- Open **Amazon S3**.
+- Select your bucket.
 
 ![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_5.png)
 
 - You should now see the folders containing the simulated cost data.
-- Open the folders and verify that the JSON files containing the cost data have been created:
+- Open the folders and verify that the JSON files containing the cost data have been created.
 
 ![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_6.png)
 

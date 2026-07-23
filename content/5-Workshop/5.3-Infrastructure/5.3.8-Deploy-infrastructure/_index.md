@@ -21,7 +21,7 @@ schedule_expression = "rate(1 day)" # Schedule expression for the automated task
 
 After completing all of the files above, open a terminal, navigate to the project directory that contains the Terraform files, and run the following commands to deploy the infrastructure.
 
-1. Preview the resources that Terraform will create:
+1. Preview the resources that Terraform will create.
 
 ```bash
 terraform plan
@@ -29,7 +29,7 @@ terraform plan
 
 ![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_1.png)
 
-2. Deploy the infrastructure:
+2. Deploy the infrastructure.
 
 ```bash
 terraform apply
@@ -37,11 +37,11 @@ terraform apply
 
 ![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_2.png)
 
-- Type `yes` to confirm the deployment:
+- Type `yes` to confirm the deployment.
 
 ![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_3.png)
 
-3. After the deployment is complete, Terraform displays the output values that were defined in `outputs.tf`:
+3. After the deployment is complete, Terraform displays the output values that were defined in `outputs.tf`.
 
 ![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_5.png)
 

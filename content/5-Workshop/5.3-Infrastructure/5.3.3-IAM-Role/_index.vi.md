@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.3 </b> "
 ---
 
-Chúng ta sẽ tạo file `iam.tf` để định nghĩa **Quyền truy cập** (IAM Role và IAM Policy) dành riêng cho một hàm Lambda (được gọi là Lambda Collector).
+Chúng ta sẽ tạo file `lambda/iam.tf` để định nghĩa **Quyền truy cập** (IAM Role và IAM Policy) dành riêng cho một hàm Lambda (được gọi là Lambda Collector).
 
 Trên nền tảng AWS, các dịch vụ (như Lambda) theo mặc định không có quyền tương tác với bất kỳ tài nguyên AWS nào khác. Để hàm Lambda có thể hoạt động, chúng ta bắt buộc phải cấp quyền một các tường minh cho nó. Thay vì cấp cho Lambda một quyền truy cập tất cả (Administrator), thì chúng ta chỉ cung cấp vừa đủ các quyền hạn cần thiết để Lambda hoàn thành đúng nhiệm vụ của nó. Cụ thể:
 

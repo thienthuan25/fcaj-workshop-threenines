@@ -14,5 +14,4 @@ content/1-Worklog/overview.md
 *.tfstate.*
 *.tfvars
 !*.tfvars.example
-# .terraform.lock.hcl
 crash.log

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.4 </b> "
 ---
 
-Tiếp theo, chúng ta sẽ tạo file `sns.tf`, file này được sử dụng để khởi tạo dịch vụ thông báo **Amazon Simple Notification Service** (SNS). Nhiệm vụ chính của file này là tạo ra một kênh giao tiếp và kết nối nó với địa chỉ email của bạn.
+Tiếp theo, chúng ta sẽ tạo file `lambda/sns.tf`, file này được sử dụng để khởi tạo dịch vụ thông báo **Amazon Simple Notification Service** (SNS). Nhiệm vụ chính của file này là tạo ra một kênh giao tiếp và kết nối nó với địa chỉ email của bạn.
 
 Mục đích cốt lõi của hệ thống **CloudCost Insight** là phát hiện khoản chi phí bất thường và cảnh báo kịp thời cho người quản trị. Tuy nhiên, Lambda không tự mình gửi email được. Do đó, chúng ta cần SNS làm cầu nối:
 

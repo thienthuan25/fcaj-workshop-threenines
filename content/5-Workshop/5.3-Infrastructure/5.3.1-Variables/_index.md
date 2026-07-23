@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.1 </b> "
 ---
 
-First, create a file named `variables.tf` to define the input variables shared across the entire project. Keeping variables in a separate file makes the configuration easier to customize without modifying the resource definitions directly.
+First, create a file named `lambda/variables.tf` to define the input variables shared across the entire project. Keeping variables in a separate file makes the configuration easier to customize without modifying the resource definitions directly.
 
 ```hcl
 # Defines the AWS Region where the infrastructure resources will be deployed

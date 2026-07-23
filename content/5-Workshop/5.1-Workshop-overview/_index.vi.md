@@ -9,13 +9,13 @@ pre : " <b> 5.1. </b> "
 
 #### Giới thiệu về kiến trúc Serverless và Event-driven
 
-+ Kiến trúc Serverless cho phép bạn xây dựng và chạy ứng dụng mà không cần quản lý máy chủ. Các dịch vụ như AWS Lambda, Amazon S3, Amazon SQS và Amazon SNS đều là managed service, tự động co giãn theo tải và tính phí theo mức sử dụng, rất phù hợp cho các hệ thống nhỏ gọn cần tối ưu chi phí vận hành.
++ **Kiến trúc Serverless** cho phép bạn xây dựng và chạy ứng dụng mà không cần quản lý máy chủ. Các dịch vụ như AWS Lambda, Amazon S3, Amazon SQS và Amazon SNS đều là managed service, tự động co giãn theo tải và tính phí theo mức sử dụng, rất phù hợp cho các hệ thống nhỏ gọn cần tối ưu chi phí vận hành.
 
-+ Kiến trúc Event-driven giúp các thành phần trong hệ thống giao tiếp với nhau thông qua sự kiện thay vì gọi trực tiếp. Nhờ đó, các thành phần được tách rời (decoupling), giúp hệ thống linh hoạt, dễ mở rộng và có khả năng chịu lỗi tốt hơn. Trong CloudCost Insight, Amazon SQS đóng vai trò đệm sự kiện giữa khâu thu thập và khâu phân tích dữ liệu.
++ **Kiến trúc Event-driven** giúp các thành phần trong hệ thống giao tiếp với nhau thông qua sự kiện thay vì gọi trực tiếp. Nhờ đó, các thành phần được tách rời (decoupling), giúp hệ thống linh hoạt, dễ mở rộng và có khả năng chịu lỗi tốt hơn. Trong CloudCost Insight, Amazon SQS đóng vai trò đệm sự kiện giữa khâu thu thập và khâu phân tích dữ liệu.
 
 #### Tổng quan về workshop
 
-Trong workshop này, chúng ta sẽ xây dựng hệ thống CloudCost Insight gồm ba luồng hoạt động chính, được triển khai hoàn toàn bằng Terraform theo mô hình Infrastructure as Code.
+Trong workshop này, chúng ta sẽ xây dựng hệ thống **CloudCost Insight** gồm ba luồng hoạt động chính, được triển khai hoàn toàn bằng **Terraform** theo mô hình **Infrastructure as Code**.
 
 + **Luồng thu thập và phân tích** chịu trách nhiệm tự động lấy dữ liệu chi phí từ AWS Cost Explorer. Amazon EventBridge lập lịch kích hoạt Lambda Collector định kỳ để thu thập dữ liệu, lưu vào Amazon S3 và đẩy sự kiện qua Amazon SQS. Sau đó Lambda Analyzer tiêu thụ sự kiện, phân tích dữ liệu và phát hiện chi phí bất thường dựa trên ngưỡng ngân sách cùng trung bình chi phí lịch sử.
 

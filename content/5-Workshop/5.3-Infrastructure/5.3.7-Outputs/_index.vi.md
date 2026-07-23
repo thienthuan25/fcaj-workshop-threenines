@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.7 </b> "
 ---
 
-Tiếp theo, chúng ta sẽ tạo file `outputs.tf`. Đây là phần cuối cùng trong phần xây dựng hạ tầng nền. File này được sử dụng để định nghĩa các giá trị đầu ra sau khi Terraform chạy xong.
+Tiếp theo, chúng ta sẽ tạo file `lambda/outputs.tf`. Đây là phần cuối cùng trong phần xây dựng hạ tầng nền. File này được sử dụng để định nghĩa các giá trị đầu ra sau khi Terraform chạy xong.
 
 Khi Terraform triển khai xong hạ tầng trên AWS, nó sẽ tạo ra rất nhiều tài nguyên với các thông số ngẫu nhiên. Ví dụ:
 

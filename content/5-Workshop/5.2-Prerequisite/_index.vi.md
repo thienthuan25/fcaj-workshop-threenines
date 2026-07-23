@@ -11,7 +11,7 @@ pre : " <b> 5.2. </b> "
 
 Trước khi bắt đầu workshop, bạn cần chuẩn bị các điều kiện sau:
 
-+ Một tài khoản AWS đã được kích hoạt AWS Cost Explorer (Cost Explorer cần được bật trong Billing để có thể gọi API lấy dữ liệu chi phí).
++ Một tài khoản AWS.
 + Region sử dụng trong workshop này là N. Virginia (us-east-1).
 + Một tài khoản HCP Terraform (app.terraform.io) để quản lý remote state.
 

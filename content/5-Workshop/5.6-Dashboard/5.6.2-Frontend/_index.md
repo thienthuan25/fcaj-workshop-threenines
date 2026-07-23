@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.6.2 </b> "
 ---
 
-We will create the Web interface in the `lambda/web` directory:
+We will create the Web interface in the `lambda/web` directory.
 
 1. The `index.html` file contains the page structure:
 
@@ -634,7 +634,7 @@ terraform output web_dashboard_url
 
 ![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_4.png)
 
-The dashboard displays the **total cost**, **alert threshold**, **number of monitored days**, **number of anomalous days**, and three visualization charts:
+The dashboard displays the **total cost**, **alert threshold**, **number of monitored days**, **number of anomalous days**, and three visualization charts.
 
 **Chart 1: Daily Cost Trend (Trend Chart):**
 

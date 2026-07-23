@@ -8,13 +8,13 @@ pre : " <b> 5.1. </b> "
 
 #### Introduction to Serverless and Event Driven Architecture
 
-- A Serverless architecture allows you to build and run applications without managing servers. Services such as AWS Lambda, Amazon S3, Amazon SQS, and Amazon SNS are fully managed services that automatically scale according to demand and charge only for actual usage. This approach is well suited for lightweight applications that require low operating costs.
+- **A Serverless architecture** allows you to build and run applications without managing servers. Services such as AWS Lambda, Amazon S3, Amazon SQS, and Amazon SNS are fully managed services that automatically scale according to demand and charge only for actual usage. This approach is well suited for lightweight applications that require low operating costs.
 
-- An Event driven architecture enables system components to communicate through events instead of making direct service calls. This approach decouples individual components, making the system more flexible, easier to scale, and more resilient to failures. In CloudCost Insight, Amazon SQS serves as the event buffer between the data collection stage and the data analysis stage.
+- **An Event driven architecture** enables system components to communicate through events instead of making direct service calls. This approach decouples individual components, making the system more flexible, easier to scale, and more resilient to failures. In CloudCost Insight, Amazon SQS serves as the event buffer between the data collection stage and the data analysis stage.
 
 #### Workshop Overview
 
-In this workshop, we will build the CloudCost Insight system, which consists of three main workflows. The entire solution is provisioned with Terraform by following the Infrastructure as Code approach.
+In this workshop, we will build the **CloudCost Insight** system, which consists of three main workflows. The entire solution is provisioned with **Terraform** by following the **Infrastructure as Code** approach.
 
 - **Data collection and analysis workflow** is responsible for automatically retrieving cost data from the AWS Cost Explorer API. Amazon EventBridge schedules the Lambda Collector to run periodically, collect cost data, store it in Amazon S3, and publish events to Amazon SQS. The Lambda Analyzer then consumes these events, analyzes the data, and detects abnormal spending based on predefined budget thresholds and historical average costs.
 
