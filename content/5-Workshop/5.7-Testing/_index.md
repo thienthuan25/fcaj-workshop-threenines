@@ -236,5 +236,3 @@ After completing all of the above tests, the **CloudCost Insight** system has be
 - Visualizes cost data through a publicly accessible **Web Dashboard**.
 
 #### Next Content
-
-- [Cleanup](5-Workshop/5.8-Cleanup/)
