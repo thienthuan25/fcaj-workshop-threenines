@@ -17,7 +17,9 @@ We will test the system in four main areas:
 - Error handling mechanism using the **Dead Letter Queue**.
 - Monitoring mechanism using **CloudWatch Alarm** and the **Web Dashboard**.
 
+{{% notice %}}
 If your AWS account is new or you have just deployed the system and **Cost Explorer** has not yet had 24 hours to generate cost data, we will continue using the simulated data ([Simulated Data](../5.6-Dashboard/5.6.1-Backend/)) to fully test all anomaly detection scenarios. When deployed on an account with real AWS costs, the system behaves the same way using actual data from **Cost Explorer**.
+{{% /notice %}}
 
 #### 1. Testing the Cost Data Collection Workflow
 
@@ -205,7 +207,7 @@ When the failed event from Step 3 causes the **Analyzer** to fail and a message 
 
 ![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/alarm_2.png)
 
-- After a short period, another email is sent indicating that **cloudcost-insight-analyzer-errors** has transitioned from **ALARM** back to **OK**.
+- After a period of time, you will receive another email indicating that cloudcost-insight-analyzer-errors has transitioned from ALARM back to OK because the Analyzer is no longer encountering new errors, and CloudWatch is no longer receiving any error datapoints. As a result, the alarm automatically returns to the OK state:
 
 ![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/alarm_3.png)
 
