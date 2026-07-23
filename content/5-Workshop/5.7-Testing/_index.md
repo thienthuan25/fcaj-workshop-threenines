@@ -18,7 +18,7 @@ We will test the system in four main areas:
 - Monitoring mechanism using **CloudWatch Alarm** and the **Web Dashboard**.
 
 {{% notice note %}}
-If your AWS account is new or you have just deployed the system and **Cost Explorer** has not yet had 24 hours to generate cost data, we will continue using the simulated data ([Simulated Data](../5.6-Dashboard/5.6.1-Backend/)) to fully test all anomaly detection scenarios. When deployed on an account with real AWS costs, the system behaves the same way using actual data from **Cost Explorer**.
+If your AWS account is new or you have just run the system and 24 hours have not passed for **Cost Explorer** to record cost data, we will continue to use the simulated data ([Simulated Data](../5.6-Dashboard/5.6.1-Backend/)) to fully test all anomaly detection scenarios. When deployed on an account with actual costs, the system operates similarly using real data from **Cost Explorer**.
 {{% /notice %}}
 
 #### 1. Testing the Cost Data Collection Workflow
