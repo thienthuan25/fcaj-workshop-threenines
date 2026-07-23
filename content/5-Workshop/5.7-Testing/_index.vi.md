@@ -17,9 +17,7 @@ Chúng ta sẽ kiểm thử theo 4 nhóm chính:
 - Cơ chế xử lý lỗi bằng **Dead Letter Queue**.
 - Cơ chế giám sát bằng **CloudWatch Alarm** và **Web Dashboard**.
 
-{{% notice note %}}
 Nếu tài khoản AWS của bạn là tài khoản mới hoặc bạn mới chạy hệ thống, chưa qua 24 giờ để **Cost Explorer** ghi nhận dữ liệu chi phí thì chúng ta sẽ tiếp tục sử dụng dữ liệu mô phỏng ([Simulated Data](../5.6-Dashboard/5.6.1-Backend/)) để kiểm thử đầy đủ các trường hợp phát hiện bất thường. Khi triển khai với tài khoản có chi phí thực tế, hệ thống hoạt động tương tự với dữ liệu thật từ **Cost Explorer**.
-{{% /notice %}}
 
 #### 1. Kiểm thử luồng thu thập dữ liệu
 
@@ -237,4 +235,4 @@ Sau khi hoàn thành các bước kiểm thử trên, hệ thống **CloudCost I
 
 #### Nội dung tiếp theo
 
-- [Dọn dẹp tài nguyên](5-Workshop/5.8-Cleanup/)
+<!-- - [Dọn dẹp tài nguyên](5-Workshop/5.8-Cleanup/) -->
