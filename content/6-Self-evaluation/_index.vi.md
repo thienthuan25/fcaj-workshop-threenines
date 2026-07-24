@@ -7,7 +7,7 @@ pre: " <b> 6. </b> "
 ---
 
 
-Trong suốt thời gian thực tập tại **Công ty TNHH Amazon Web Services Việt Nam** từ **ngày 11/05/2026** đến **ngày 31/07/2026**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.
+Trong suốt thời gian thực tập tại **Công ty TNHH Amazon Web Services Việt Nam** từ **ngày 11/05/2026** đến **ngày 31/07/2026**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã học áp dụng vào môi trường làm việc thực tế.
 
 Tôi đã tham gia xây dựng dự án **CloudCost Insight**, một hệ thống Serverless giám sát và cảnh báo chi phí AWS được triển khai hoàn toàn bằng Terraform, qua đó cải thiện kỹ năng lập trình, thiết kế kiến trúc đám mây, quản lý hạ tầng bằng Infrastructure as Code, phân tích và viết báo cáo kỹ thuật.
 

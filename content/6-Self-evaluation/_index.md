@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Throughout my internship at **Amazon Web Services Vietnam Company Limited** from **May 11, 2026** to **July 31, 2026**, I had the opportunity to learn, develop my skills, and apply the knowledge I acquired at university in a real working environment.
+Throughout my internship at **Amazon Web Services Vietnam Company Limited** from **May 11, 2026** to **July 31, 2026**, I had the opportunity to learn, develop my skills, and apply the knowledge I had acquired in a real-world working environment.
 
 During the internship, I participated in developing the **CloudCost Insight** project, a serverless AWS cost monitoring and alerting system fully provisioned with Terraform. Through this project, I improved my programming skills, cloud architecture design capabilities, Infrastructure as Code (IaC) practices, and my ability to analyze and write technical documentation.
 

@@ -42,7 +42,7 @@ I have already recommended this internship program to my friends, and some of th
 
 ### Suggestions and Expectations
 
-Because there are many interns, each person's opportunity to register for office days is somewhat limited. I hope the program can provide additional office space so that more interns have the opportunity to work on-site more frequently.
+Because there are many interns, each person's opportunity to register for office days is somewhat limited. I hope the program can provide more space to work so that more interns have the opportunity to work on-site more frequently.
 
 I sincerely hope to continue being part of the program in the future because there is still so much I want to learn from **First Cloud AI Journey**. During the events, I especially enjoyed listening to the speakers share their knowledge and experiences. I hope that one day I will become one of those speakers myself, standing on stage to present and share my own experiences at future events.
 
