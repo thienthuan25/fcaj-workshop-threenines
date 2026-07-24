@@ -5,55 +5,36 @@ weight: 2
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 11:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai lại toàn bộ hệ thống CloudCost Insight để kiểm chứng khả năng tái lập và đảm bảo hệ thống hoạt động ổn định.
+* Kiểm thử toàn bộ hệ thống và khắc phục các lỗi phát sinh trong quá trình triển khai.
+* Thống nhất với nhóm về việc mỗi thành viên tự triển khai lại project để viết Workshop cá nhân cho riêng mình.
+* Hoàn thành tài liệu Workshop theo hướng dẫn từng bước (step-by-step) dựa trên quá trình triển khai thực tế.
+* Tổng hợp tiến độ hoàn thành Workshop của các thành viên trong nhóm vào cuối tuần.
+* Duy trì phối hợp cùng nhóm: trao đổi kế hoạch trước khi làm và tổng hợp kết quả sau mỗi ngày.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc triển khai trong tuần:
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 2 | - Học tập trực tiếp tại văn phòng. <br>&emsp; + Trao đổi với nhóm về kế hoạch công việc trong ngày trước khi bắt đầu. <br>&emsp; + Thảo luận về tiến độ dự án và kế hoạch hoàn thành Workshop trong tuần cuối. <br>&emsp; + Chia sẻ kinh nghiệm triển khai hệ thống và các vấn đề cần lưu ý khi viết Workshop. <br>&emsp; | 20/07/2026 | 20/07/2026 | |
+| 3 | - Triển khai lại và kiểm thử toàn bộ hệ thống: <br>&emsp; + Trao đổi với nhóm về kế hoạch công việc trong ngày trước khi bắt đầu. <br>&emsp; + Triển khai lại toàn bộ hệ thống CloudCost Insight trên AWS bằng Terraform. <br>&emsp; + Kiểm thử end-to-end toàn bộ hệ thống để xác nhận tất cả các thành phần hoạt động đúng như thiết kế. <br>&emsp; + Khắc phục các lỗi phát sinh trong quá trình triển khai và kiểm thử. <br>&emsp; + Cuối ngày tổng hợp và chia sẻ kết quả với nhóm. | 21/07/2026 | 21/07/2026 | - AWS Management Console. |
+| 4 | - Bắt đầu viết Workshop: <br>&emsp; + Trao đổi với nhóm về kế hoạch công việc trong ngày trước khi bắt đầu. <br>&emsp; + Thống nhất với nhóm rằng mỗi thành viên sẽ tự triển khai lại project để tự xây dựng Workshop cá nhân. <br>&emsp; + Bắt đầu viết Workshop dựa trên quá trình triển khai thực tế của bản thân. <br>&emsp; + Hoàn thiện các phần đầu của Workshop và chuẩn bị hình ảnh minh họa. <br>&emsp; + Cuối ngày tổng hợp và chia sẻ kết quả với nhóm. | 22/07/2026 | 22/07/2026 | - FCAJ Workshop Template. |
+| 5 | - Tiếp tục hoàn thiện Workshop: <br>&emsp; + Trao đổi với nhóm về kế hoạch công việc trong ngày trước khi bắt đầu. <br>&emsp; + Viết tiếp các bước triển khai hệ thống, cấu hình dịch vụ AWS và kiểm thử. <br>&emsp; + Bổ sung hình ảnh minh họa và rà soát nội dung để đảm bảo tính chính xác. <br>&emsp; + Cuối ngày tổng hợp và chia sẻ kết quả với nhóm. | 23/07/2026 | 23/07/2026 | - FCAJ Workshop Template. |
+| 6 | - Hoàn thành Workshop và tổng hợp tiến độ: <br>&emsp; + Trao đổi với nhóm về kế hoạch công việc trong ngày trước khi bắt đầu. <br>&emsp; + Hoàn thiện toàn bộ nội dung Workshop, kiểm tra lại bố cục, hình ảnh và các bước hướng dẫn. <br>&emsp; + Tổng hợp tiến độ hoàn thành Workshop của các thành viên còn lại trong nhóm. <br>&emsp; + Chia sẻ kết quả và chuẩn bị cho giai đoạn nghiệm thu tài liệu. <br>&emsp; + Cuối ngày tổng hợp và chia sẻ kết quả với nhóm. | 24/07/2026 | 24/07/2026 | - FCAJ Workshop Template. |
 
 ### Kết quả đạt được tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* **Triển khai lại và xác minh toàn bộ hệ thống:** Đã triển khai lại hoàn chỉnh hệ thống CloudCost Insight trên AWS bằng Terraform và tiến hành kiểm thử toàn bộ các thành phần. Quá trình này giúp xác nhận rằng toàn bộ hạ tầng và ứng dụng có thể được tái tạo thành công từ mã nguồn, đồng thời khẳng định tính nhất quán của phương pháp Infrastructure as Code.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* **Kiểm thử và khắc phục lỗi:** Đã thực hiện kiểm thử end-to-end toàn bộ hệ thống, bao gồm các luồng thu thập dữ liệu, phân tích chi phí, cảnh báo, giám sát và web dashboard. Trong quá trình kiểm thử, một số lỗi nhỏ đã được phát hiện và khắc phục.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* **Thống nhất phương án viết Workshop:** Nhóm đã thống nhất rằng mỗi thành viên sẽ tự triển khai lại project và tự xây dựng một Workshop cá nhân dựa trên quá trình triển khai của mình. Cách làm này giúp mỗi thành viên hiểu rõ toàn bộ quy trình triển khai, đồng thời tạo ra tài liệu hướng dẫn mang tính thực tiễn và có thể tái sử dụng.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* **Hoàn thành tài liệu Workshop:** Đã hoàn thiện tài liệu Workshop theo hướng dẫn từng bước (step-by-step), mô tả chi tiết toàn bộ quá trình triển khai hệ thống từ chuẩn bị môi trường, xây dựng hạ tầng, phát triển các thành phần của hệ thống, kiểm thử cho đến dọn dẹp tài nguyên. Tài liệu được bổ sung đầy đủ hình ảnh minh họa và kết quả mong đợi ở từng bước để người đọc có thể dễ dàng thực hiện theo.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* **Tổng hợp tiến độ của nhóm:** Vào cuối tuần, đã tổng hợp tiến độ hoàn thành Workshop của các thành viên còn lại trong nhóm nhằm đảm bảo mọi người đều hoàn thành đúng kế hoạch. Đồng thời cùng nhau trao đổi, rà soát và chia sẻ kinh nghiệm để nâng cao chất lượng tài liệu.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* **Phối hợp cùng nhóm:** Duy trì thói quen làm việc nhóm hiệu quả trong suốt tuần. Trước khi bắt đầu công việc mỗi ngày, tôi trao đổi kế hoạch với các thành viên trong nhóm, và cuối mỗi ngày tổng hợp lại kết quả đã làm để cả nhóm cùng nắm tiến độ.
