@@ -6,22 +6,24 @@ chapter: false
 pre: " <b> 1.10. </b> "
 ---
 
+
 ### Mục tiêu tuần 10:
 
 * Xây dựng web frontend cho dashboard (index.html, style.css, script.js), dùng Chart.js trực quan hóa dữ liệu chi phí.
 * Host frontend lên AWS (S3 Web Hosting + CloudFront) với link HTTPS công khai.
-* Kiểm thử end-to-end toàn bộ luồng web dashboard (từ trình duyệt → API → dữ liệu).
-* Hoàn thiện & nâng cấp dashboard: tinh chỉnh biểu đồ, thêm chế độ sáng/tối và chuyển đổi song ngữ EN/VI.
+* Kiểm thử end-to-end toàn bộ luồng web dashboard (từ trình duyệt tới API tới dữ liệu).
+* Hoàn thiện và nâng cấp dashboard: tinh chỉnh biểu đồ, thêm chế độ sáng/tối và chuyển đổi song ngữ EN/VI.
+* Duy trì phối hợp cùng nhóm: trao đổi kế hoạch trước khi làm và tổng hợp kết quả sau mỗi ngày.
 
 ### Các công việc triển khai trong tuần:
 
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | --- | --- | --- | --- |
-| 2 | - Viết web frontend (giao diện & logic): <br>&emsp; + Viết `index.html` (cấu trúc trang) và `style.css` (giao diện). <br>&emsp; + Viết `script.js` gọi API endpoint, xử lý JSON và vẽ biểu đồ bằng Chart.js. <br>&emsp; + Vẽ các biểu đồ: xu hướng chi phí (đường ngưỡng + đánh dấu bất thường), tỷ trọng dịch vụ, top dịch vụ, KPI. | 13/07/2026 | 13/07/2026 | - Chart.js Documentation: <br> https://www.chartjs.org/docs/latest/ <br> - MDN Fetch API: <br> https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API |
-| 3 | - Host frontend lên AWS (S3 + CloudFront): <br>&emsp; + Tạo S3 bucket (Web Hosting) và upload 3 file giao diện bằng Terraform. <br>&emsp; + Cấu hình CloudFront (HTTPS) + Origin Access Control để bảo mật, chặn truy cập public trực tiếp vào S3. <br>&emsp; + Lấy link CloudFront công khai để truy cập dashboard. | 14/07/2026 | 14/07/2026 | - Amazon CloudFront + S3: <br> https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.SimpleDistribution.html <br> - Terraform aws_cloudfront_distribution: <br> https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution |
-| 4 | - Kiểm thử end-to-end web dashboard: <br>&emsp; + Truy cập dashboard qua link CloudFront trên trình duyệt. <br>&emsp; + Xác minh toàn luồng: trình duyệt → CloudFront/S3 (tải giao diện) và trình duyệt → API Gateway → Lambda-API → S3 (lấy dữ liệu). <br>&emsp; + Kiểm tra các biểu đồ hiển thị đúng dữ liệu chi phí và trạng thái bất thường. | 15/07/2026 | 15/07/2026 | - Testing web applications & trình duyệt (Developer Tools). |
-| 5 | - Tinh chỉnh biểu đồ & thêm chế độ sáng/tối: <br>&emsp; + Điều chỉnh kích thước biểu đồ donut (tỷ trọng dịch vụ) nhỏ lại cho cân đối. <br>&emsp; + Bổ sung tooltip hiển thị số tiền kèm ký hiệu `$`. <br>&emsp; + Thêm chức năng chuyển đổi giao diện sáng/tối (dark mode) bằng CSS variables. | 16/07/2026 | 16/07/2026 | - MDN CSS Custom Properties (variables): <br> https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties |
-| 6 | - Thêm chức năng chuyển đổi song ngữ (EN/VI): <br>&emsp; + Xây dựng từ điển song ngữ (Anh/Việt) cho các nhãn, tiêu đề và biểu đồ. <br>&emsp; + Thêm nút chuyển ngôn ngữ, cập nhật giao diện và vẽ lại biểu đồ theo ngôn ngữ được chọn. <br>&emsp; + Kiểm thử lại toàn bộ dashboard ở cả 2 ngôn ngữ. | 17/07/2026 | 17/07/2026 | - Tổng hợp kiến thức JavaScript (DOM manipulation, event handling). |
+| 2 | - Viết web frontend (giao diện và logic): <br>&emsp; + Trao đổi với nhóm về kế hoạch công việc trong ngày trước khi bắt đầu. <br>&emsp; + Viết `index.html` (cấu trúc trang) và `style.css` (giao diện). <br>&emsp; + Viết `script.js` gọi API endpoint, xử lý JSON và vẽ biểu đồ bằng Chart.js. <br>&emsp; + Vẽ các biểu đồ: xu hướng chi phí (đường ngưỡng + đánh dấu bất thường), tỷ trọng dịch vụ, top dịch vụ, KPI. <br>&emsp; + Cuối ngày tổng hợp và chia sẻ kết quả với nhóm. | 13/07/2026 | 13/07/2026 | - Chart.js Documentation: <br> https://www.chartjs.org/docs/latest/ <br> - MDN Fetch API: <br> https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API |
+| 3 | - Host frontend lên AWS (S3 + CloudFront): <br>&emsp; + Trao đổi với nhóm về kế hoạch công việc trong ngày trước khi bắt đầu. <br>&emsp; + Tạo S3 bucket (Web Hosting) và upload 3 file giao diện bằng Terraform. <br>&emsp; + Cấu hình CloudFront (HTTPS) + Origin Access Control để bảo mật, chặn truy cập public trực tiếp vào S3. <br>&emsp; + Lấy link CloudFront công khai để truy cập dashboard. <br>&emsp; + Cuối ngày tổng hợp và chia sẻ kết quả với nhóm. | 14/07/2026 | 14/07/2026 | - Amazon CloudFront + S3: <br> https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.SimpleDistribution.html <br> - Terraform aws_cloudfront_distribution: <br> https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution |
+| 4 | - Kiểm thử end-to-end web dashboard: <br>&emsp; + Trao đổi với nhóm về kế hoạch công việc trong ngày trước khi bắt đầu. <br>&emsp; + Truy cập dashboard qua link CloudFront trên trình duyệt. <br>&emsp; + Xác minh toàn luồng: trình duyệt tới CloudFront/S3 (tải giao diện) và trình duyệt tới API Gateway tới Lambda-API tới S3 (lấy dữ liệu). <br>&emsp; + Kiểm tra các biểu đồ hiển thị đúng dữ liệu chi phí và trạng thái bất thường. <br>&emsp; + Cuối ngày tổng hợp và chia sẻ kết quả với nhóm. | 15/07/2026 | 15/07/2026 | - Testing web applications & trình duyệt (Developer Tools). |
+| 5 | - Tinh chỉnh biểu đồ và thêm chế độ sáng/tối: <br>&emsp; + Trao đổi với nhóm về kế hoạch công việc trong ngày trước khi bắt đầu. <br>&emsp; + Điều chỉnh kích thước biểu đồ donut (tỷ trọng dịch vụ) nhỏ lại cho cân đối. <br>&emsp; + Bổ sung tooltip hiển thị số tiền kèm ký hiệu `$`. <br>&emsp; + Thêm chức năng chuyển đổi giao diện sáng/tối (dark mode) bằng CSS variables. <br>&emsp; + Cuối ngày tổng hợp và chia sẻ kết quả với nhóm. | 16/07/2026 | 16/07/2026 | - MDN CSS Custom Properties (variables): <br> https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties |
+| 6 | - Thêm chức năng chuyển đổi song ngữ (EN/VI): <br>&emsp; + Trao đổi với nhóm về kế hoạch công việc trong ngày trước khi bắt đầu. <br>&emsp; + Xây dựng từ điển song ngữ (Anh/Việt) cho các nhãn, tiêu đề và biểu đồ. <br>&emsp; + Thêm nút chuyển ngôn ngữ, cập nhật giao diện và vẽ lại biểu đồ theo ngôn ngữ được chọn. <br>&emsp; + Kiểm thử lại toàn bộ dashboard ở cả 2 ngôn ngữ. <br>&emsp; + Cuối ngày tổng hợp và chia sẻ kết quả với nhóm. | 17/07/2026 | 17/07/2026 | - Tổng hợp kiến thức JavaScript (DOM manipulation, event handling). |
 
 ### Kết quả đạt được tuần 10:
 
@@ -29,8 +31,10 @@ pre: " <b> 1.10. </b> "
 
 * **Host frontend lên AWS thành công:** Đã đưa web dashboard lên S3 (Web Hosting) kết hợp CloudFront, cấp phát link HTTPS công khai. Áp dụng Origin Access Control để bảo mật, chỉ CloudFront được đọc S3, chặn truy cập public trực tiếp. Nhờ đó, CloudCost Insight chính thức trở thành một product hoàn chỉnh, có thể truy cập qua trình duyệt bằng đường link công khai.
 
-* **Kiểm thử end-to-end web dashboard:** Đã kiểm chứng thành công toàn bộ luồng hoạt động của dashboard: trình duyệt tải giao diện từ CloudFront/S3, đồng thời gọi API Gateway → Lambda-API → S3 để lấy dữ liệu chi phí và hiển thị lên biểu đồ. Toàn bộ luồng vận hành trơn tru, biểu đồ hiển thị đúng dữ liệu và trạng thái bất thường.
+* **Kiểm thử end-to-end web dashboard:** Đã kiểm chứng thành công toàn bộ luồng hoạt động của dashboard: trình duyệt tải giao diện từ CloudFront/S3, đồng thời gọi API Gateway tới Lambda-API tới S3 để lấy dữ liệu chi phí và hiển thị lên biểu đồ. Toàn bộ luồng vận hành trơn tru, biểu đồ hiển thị đúng dữ liệu và trạng thái bất thường.
 
-* **Tinh chỉnh giao diện & thêm chế độ sáng/tối:** Đã điều chỉnh kích thước biểu đồ donut cho cân đối, bổ sung tooltip hiển thị số tiền kèm ký hiệu `$`. Thêm chức năng chuyển đổi giao diện sáng/tối (dark mode) sử dụng CSS variables, giúp người dùng lựa chọn giao diện phù hợp và cải thiện trải nghiệm.
+* **Tinh chỉnh giao diện và thêm chế độ sáng/tối:** Đã điều chỉnh kích thước biểu đồ donut cho cân đối, bổ sung tooltip hiển thị số tiền kèm ký hiệu `$`. Thêm chức năng chuyển đổi giao diện sáng/tối (dark mode) sử dụng CSS variables, giúp người dùng lựa chọn giao diện phù hợp và cải thiện trải nghiệm.
 
 * **Thêm chức năng song ngữ (EN/VI):** Đã xây dựng cơ chế chuyển đổi song ngữ Anh/Việt cho toàn bộ dashboard (nhãn, tiêu đề, nhãn biểu đồ). Chức năng này không chỉ nâng cao trải nghiệm người dùng mà còn phù hợp với yêu cầu song ngữ của chương trình FCAJ. Sau khi hoàn thiện, dashboard được kiểm thử lại ở cả 2 ngôn ngữ, hoàn tất CloudCost Insight thành một product trực quan, chuyên nghiệp và tự động end-to-end.
+
+* **Phối hợp cùng nhóm:** Duy trì thói quen làm việc nhóm hiệu quả trong suốt tuần. Trước khi bắt đầu công việc mỗi ngày, tôi trao đổi kế hoạch với các thành viên trong nhóm, và cuối mỗi ngày tổng hợp lại kết quả đã làm để cả nhóm cùng nắm tiến độ.
