@@ -135,7 +135,7 @@ Tuy nhiên, trong dự án của chúng ta, giao diện Web Frontend được l�
 
 #### Tạo API Gateway
 
-Chúng ta tạo file `terraform/api_gateway.tf` để triển khai Lambda API và expose nó qua HTTP API Gateway. Người dùng sẽ gọi tới endpoint này để lấy dữ liệu.
+1. Chúng ta tạo file `terraform/api_gateway.tf` để triển khai Lambda API và expose nó qua HTTP API Gateway. Người dùng sẽ gọi tới endpoint này để lấy dữ liệu.
 
 ```hcl
 # IAM role cho Lambda API
@@ -261,11 +261,26 @@ resource "aws_lambda_permission" "apigw" {
 }
 ```
 
+2. Mở file `terraform/outputs.tf` và thêm cấu hình sau và cuối file.
+
+```hcl
+# API Gateway
+output "api_endpoint" {
+  description = "API endpoint URL (for web frontend calls)"
+  value       = "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs" # dọn dẹp dấu gạch ngang bị thừa
+}
+
+output "api_function_name" {
+  description = "Lambda API function name"
+  value       = aws_lambda_function.api.function_name
+}
+```
+
 #### Triển khai và kiểm thử API
 
 1. Trước khi triển khai API, chúng ta cần đảm bảo rằng đã có dữ liệu chi phí trong S3 bucket. Dữ liệu chi phí cần được tổng hợp sau 24 giờ. Thông thường, khi chúng ta chỉ vừa mới triển khai hệ thống thì sẽ chưa có dữ liệu chi phí. Trong trường hợp này, chúng ta có thể sử dụng script để sinh ra dữ liệu mô phỏng:
 
-- Chúng ta sẽ tạo file `lambda/test/test_data.py` để sinh ra dữ liệu giả lập. File này sẽ mô phỏng dữ liệu chi phí và ghi vào S3 bucket.
+- Chúng ta sẽ tạo file `terraform/test/test_data.py` để sinh ra dữ liệu giả lập. File này sẽ mô phỏng dữ liệu chi phí và ghi vào S3 bucket.
 
 ```python
 
@@ -434,9 +449,9 @@ terraform output api_endpoint
 
 ![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_13.png)
 
-7. Truy cập vào đường dẫn hiện ra trên Terminal, bạn sẽ thấy dữ liệu trả về dưới dạng JSON:
+7. Truy cập vào đường dẫn hiện ra trên Terminal, bạn sẽ thấy dữ liệu trả về dưới dạng JSON. Bạn cũng có thể bấm chọn **Pretty-print** để xem một cách trực quan hơn:
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_14.png)
+![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_15.png)
 
 #### Nội dung tiếp theo
 

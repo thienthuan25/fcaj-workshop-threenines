@@ -25,7 +25,7 @@ resource "aws_sqs_queue" "dlq" {
 # Nếu một tin nhắn xử lý thất bại quá 3 lần, nó sẽ tự động bị đẩy sang hàng đợi DLQ ở trên để tránh kẹt hệ thống.
 resource "aws_sqs_queue" "events" {
   name                       = "${var.project_name}-events"
-  visibility_timeout_seconds = 300    <!-- Thời gian ẩn tin nhắn khi đang được xử lý, phải >= timeout của Analyzer Lambda. -->
+  visibility_timeout_seconds = 300    # Thời gian ẩn tin nhắn khi đang được xử lý, phải >= timeout của Analyzer Lambda.
   message_retention_seconds  = 345600 # Thời gian giữ tin nhắn ở đây là 4 ngày.
 
   # Di chuyển các sự kiện lỗi đến DLQ sau 3 lần xử lý không thành công.

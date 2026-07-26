@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.3 </b> "
 ---
 
-Chúng ta sẽ tạo file `lambda/iam.tf` để định nghĩa **Quyền truy cập** (IAM Role và IAM Policy) dành riêng cho một hàm Lambda (được gọi là Lambda Collector).
+Chúng ta sẽ tạo file `terraform/iam.tf` để định nghĩa **Quyền truy cập** (IAM Role và IAM Policy) dành riêng cho một hàm Lambda (được gọi là Lambda Collector).
 
 Trên nền tảng AWS, các dịch vụ (như Lambda) theo mặc định không có quyền tương tác với bất kỳ tài nguyên AWS nào khác. Để hàm Lambda có thể hoạt động, chúng ta bắt buộc phải cấp quyền một các tường minh cho nó. Thay vì cấp cho Lambda một quyền truy cập tất cả (Administrator), thì chúng ta chỉ cung cấp vừa đủ các quyền hạn cần thiết để Lambda hoàn thành đúng nhiệm vụ của nó. Cụ thể:
 
@@ -49,14 +49,6 @@ data "aws_iam_policy_document" "collector_policy" {
     effect    = "Allow"
     actions   = ["s3:PutObject"]
     resources = ["${aws_s3_bucket.cost_data.arn}/*"]
-  }
-
-  # Send message to SQS
-  statement {
-    sid       = "SQSSendMessage" # gửi message vào SQS
-    effect    = "Allow"
-    actions   = ["sqs:SendMessage"]
-    resources = ["${aws_sqs_queue.events.arn}"]
   }
 
   # Write logs to CloudWatch

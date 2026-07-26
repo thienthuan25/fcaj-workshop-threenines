@@ -1,5 +1,5 @@
 ---
-title : "Cấu hình CloudWatch Alarm cho Lambda"
+title : "Cấu hình CloudWatch Alarms cho Lambda"
 date : 2024-01-01
 weight : 1
 chapter : false

@@ -18,7 +18,7 @@ from datetime import datetime, timedelta
 # Đọc cấu hình từ biến môi trường (Terraform truyền vào)
 BUCKET_NAME = os.environ["BUCKET_NAME"]
 SNS_TOPIC_ARN = os.environ["SNS_TOPIC_ARN"]
-COST_THRESHOLD = float(os.environ.get("COST_THRESHOLD_USD", "10"))
+COST_THRESHOLD = float(os.environ.get(" COST_THRESHOLD_USD", "10"))
 
 # Hệ số tăng đột biến: chi phí > trung bình * hệ số này  => bất thường
 SPIKE_MULTIPLIER = float(os.environ.get("SPIKE_MULTIPLIER", "1.5"))

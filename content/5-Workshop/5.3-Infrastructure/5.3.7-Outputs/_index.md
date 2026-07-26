@@ -55,54 +55,6 @@ output "schedule_rule_name" {
   description = "Name of the EventBridge scheduling rule"
   value       = aws_cloudwatch_event_rule.schedule.name
 }
-
-output "collector_function_name" {
-  description = "Name of the Lambda Collector function"
-  value       = aws_lambda_function.collector.function_name
-}
-
-output "analyzer_role_arn" {
-  description = "ARN of the IAM role for the Lambda Analyzer"
-  value       = aws_iam_role.analyzer.arn
-}
-
-# CloudWatch monitoring
-output "alarm_collector_errors" {
-  description = "Alarm name for monitoring Collector errors"
-  value       = aws_cloudwatch_metric_alarm.collector_errors.alarm_name
-}
-
-output "alarm_analyzer_errors" {
-  description = "Alarm name for monitoring Analyzer errors"
-  value       = aws_cloudwatch_metric_alarm.analyzer_errors.alarm_name
-}
-
-output "alarm_dlq_messages" {
-  description = "Alarm name for monitoring DLQ messages"
-  value       = aws_cloudwatch_metric_alarm.dlq_message.alarm_name
-}
-
-# API Gateway
-output "api_endpoint" {
-  description = "API endpoint URL for web frontend requests"
-  value       = "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs" # clean up trailing slash
-}
-
-output "api_function_name" {
-  description = "Name of the Lambda API function"
-  value       = aws_lambda_function.api.function_name
-}
-
-# Web Dashboard
-output "web_dashboard_url" {
-  description = "HTTPS URL for accessing the Web Dashboard through CloudFront"
-  value       = "https://${aws_cloudfront_distribution.web.domain_name}"
-}
-
-output "web_bucket_name" {
-  description = "Name of the S3 bucket hosting the static website"
-  value       = aws_s3_bucket.web.id
-}
 ```
 
 #### Next Content

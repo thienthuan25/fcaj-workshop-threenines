@@ -8,30 +8,42 @@ pre : " <b> 5.2.2. </b> "
 
 #### Create an Organization for the Project
 
-1. Go to https://app.terraform.io/app and sign in. If you do not have an account yet, select **Sign up** to create a new account.
+1. Go to [https://app.terraform.io/app](https://app.terraform.io/app) and sign in. If you do not already have an account, click **Sign up** to create a new one.
 
-2. On the main page, choose **Create organization** to create a new organization for the project.
+2. On the main interface, select **Create organization** to start creating an organization for the project.
 
 ![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_1.png)
 
-3. In the organization creation page, select **Personal**, enter an organization name and your email address, then click **Create organization**.
+3. In the **Create organization** window, choose the **Personal** organization type, enter the organization name and email address, then click **Create organization**.
 
 ![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_2.png)
 
-4. After the organization is created, it will appear in your organization list.
+4. After the organization is created, you will see it listed on the Organizations page.
 
 ![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_3.png)
 
-5. Open the organization you just created. From there, create a **Workspace** to store and manage the Terraform state for this project.
+5. Open the organization you just created. Here, we will create a **Workspace** to store and manage the Terraform state for the project.
 
 ![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_4.png)
 
-6. Next, add the following two environment variables to the Workspace and mark both of them as **Sensitive** to protect your credentials.
+6. Select **Default Project**.
 
-`AWS_ACCESS_KEY_ID`  
-`AWS_SECRET_ACCESS_KEY`
+![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_8.png)
 
-+ In the Workspace page, open the **Variables** tab, then click **Add variable**.
+7. Choose **CLI-Driven Workflow**.
+
+![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_9.png)
+
+8. Enter a name for the **Workspace**, then click **Create**.
+
+![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_10.png)
+
+9. Next, add the following two environment variables to the Workspace and mark them as **Sensitive** to protect your AWS credentials.
+
++ `AWS_ACCESS_KEY_ID`
++ `AWS_SECRET_ACCESS_KEY`
+
++ In the Workspace, open the **Variables** tab, then click **Add variable**.
 
 ![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_5.png)
 
@@ -41,6 +53,6 @@ pre : " <b> 5.2.2. </b> "
 
 ![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_7.png)
 
-#### Next Content
+#### Next Section
 
 - [Prepare the Terraform Code](../5.2.3-Code-terraform/)

@@ -42,7 +42,7 @@ python3 --version
 
 #### Cấu hình AWS Credentials cho CLI
 
-Trên cửa sổ terminal của WSL2, cấu hình AWS credentials để AWS CLI có thể xác thực và thực thi các lệnh trong suốt quá trình triển khai cũng như kiểm thử hệ thống:
+Trên cửa sổ terminal, cấu hình AWS credentials để AWS CLI có thể xác thực và thực thi các lệnh trong suốt quá trình triển khai cũng như kiểm thử hệ thống:
 
 ```bash
 aws configure
@@ -70,6 +70,8 @@ aws sts get-caller-identity
 ```
 
 #### Cấu hình nền tảng Terraform
+
+Tại thư mục gốc của dự án, tạo thư mục mới có tên là `terraform`. Thư mục này chứa các file Terraform dùng để triển khai hạ tầng AWS.
 
 Tạo file `version.tf` để khai báo phiên bản Terraform, cấu hình kết nối với HCP Terraform và thiết lập AWS Provider. Thay `TEN-TO-CHUC` bằng tên Organization của bạn và `TEN-WORKSPACE` bằng tên Workspace đã tạo trên HCP Terraform.
 

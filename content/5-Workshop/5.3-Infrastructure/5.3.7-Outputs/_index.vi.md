@@ -56,55 +56,6 @@ output "schedule_rule_name" {
   description = "Name of the scheduling EventBridge rule"
   value       = aws_cloudwatch_event_rule.schedule.name
 }
-
-output "collector_function_name" {
-  description = "Name of Lambda Collector"
-  value       = aws_lambda_function.collector.function_name
-}
-
-output "analyzer_role_arn" {
-  description = "ARN of IAM Role for Lambda Analyzer"
-  value       = aws_iam_role.analyzer.arn
-}
-
-# Hệ thống giám sát lỗi (CloudWatch Alarms)
-output "alarm_collector_errors" {
-  description = "Alarm name for monitoring Collector errors"
-  value       = aws_cloudwatch_metric_alarm.collector_errors.alarm_name
-}
-
-output "alarm_analyzer_errors" {
-  description = "Alarm name for monitoring Analyzer errors"
-  value       = aws_cloudwatch_metric_alarm.analyzer_errors.alarm_name
-}
-
-output "alarm_dlq_messages" {
-  description = "Alarm name for monitoring DLQ messages"
-  value       = aws_cloudwatch_metric_alarm.dlq_message.alarm_name
-}
-
-
-# API Gateway
-output "api_endpoint" {
-  description = "API endpoint URL (for web frontend calls)"
-  value       = "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs" # dọn dẹp dấu gạch ngang bị thừa
-}
-
-output "api_function_name" {
-  description = "Lambda API function name"
-  value       = aws_lambda_function.api.function_name
-}
-
-# Web Dashboard
-output "web_dashboard_url" {
-  description = "URL to access Web Dashboard (HTTPS via CloudFront)"
-  value       = "https://${aws_cloudfront_distribution.web.domain_name}"
-}
-
-output "web_bucket_name" {
-  description = "S3 bucket name for static web"
-  value       = aws_s3_bucket.web.id
-}
 ```
 
 #### Nội dung tiếp theo

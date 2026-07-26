@@ -27,9 +27,21 @@ pre : " <b> 5.2.2. </b> "
 
 ![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_4.png)
 
-6. Tiếp theo, chúng ta thêm hai biến môi trường vào Workspace và đánh dấu chúng là **Sensitive** để bảo mật.
+6. Chọn **Default Project**.
 
-`AWS_ACCESS_KEY_ID`,
+![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_8.png)
+
+7. Chọn **CLI-Driven Workflow**.
+
+![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_9.png)
+
+8. Đặt tên cho **Workspace** và bấm chọn **Create**.
+
+![HCP Terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_10.png)
+
+9. Tiếp theo, chúng ta thêm hai biến môi trường vào Workspace và đánh dấu chúng là **Sensitive** để bảo mật.
+
++ `AWS_ACCESS_KEY_ID`,
 `AWS_SECRET_ACCESS_KEY`
 
 + Trong cửa sổ của Workspace, bạn chọn tab **Variables**, sau đó nhấn **Add variable**.

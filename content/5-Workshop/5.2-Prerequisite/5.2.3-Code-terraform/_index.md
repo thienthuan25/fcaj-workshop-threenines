@@ -42,7 +42,7 @@ python3 --version
 
 #### Configure AWS Credentials for the CLI
 
-In the WSL2 terminal, configure your AWS credentials so that AWS CLI can authenticate and execute commands throughout the deployment and testing process:
+In the terminal, configure your AWS credentials so that AWS CLI can authenticate and execute commands throughout the deployment and testing process:
 
 ```bash
 aws configure
@@ -70,6 +70,8 @@ aws sts get-caller-identity
 ```
 
 #### Configure the Terraform Environment
+
+At the root directory of the project, create a new folder named `terraform`. This folder will contain Terraform files used to deploy AWS infrastructure.
 
 Create a file named `version.tf` to specify the Terraform version, configure the connection to HCP Terraform, and define the AWS provider. Replace `TEN-TO-CHUC` with the name of your organization and replace `TEN-WORKSPACE` with the name of the workspace you created in HCP Terraform.
 

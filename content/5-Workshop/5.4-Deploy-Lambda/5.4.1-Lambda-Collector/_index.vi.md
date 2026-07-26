@@ -8,7 +8,7 @@ pre : " <b> 5.4.1 </b> "
 
 #### Viết Code Lambda Collector
 
-Chúng ta sẽ tạo file `lambda/collector/handler.py`. File này đóng vai trò là bộ phận thu thập dữ liệu chính của toàn bộ hệ thống **CloudCost Insight**.
+Chúng ta sẽ tạo file `terraform/lambda/collector/handler.py`. File này đóng vai trò là bộ phận thu thập dữ liệu chính của toàn bộ hệ thống **CloudCost Insight**.
 
 Mỗi khi được EventBridge kích hoạt tự động mỗi ngày, hàm này sẽ thực hiện một luồng ba bước:
 
@@ -121,13 +121,11 @@ def lambda_handler(event, context):
 
 #### Cấu hình IAM Role và triển khai Collector
 
-Tiếp theo, chúng ta sẽ tạo file `lambda_collector.tf`. File này là cầu nối giúp đưa đoạn code của bạn lên môi trường AWS và cấu hình cách nó hoạt động.
+1. Tiếp theo, chúng ta sẽ tạo file `terraform/lambda_collector.tf`. File này là cầu nối giúp đưa đoạn code của bạn lên môi trường AWS và cấu hình cách nó hoạt động. File này thực hiện ba nhiệm vụ chính:
 
-File này thực hiện ba nhiệm vụ chính:
-
-1. **Đóng gói tự động**: Nó sẽ tự động nén thư mục chứa code Python (`handler.py`) thành một file `.zip` để chuẩn bị tải lên AWS.
-2. **Cấu hình môi trường chạy**: Tạo `Lambda function` trên AWS, tải file zip lên, gắn quyền IAM (đã tạo ở phần trước) và thiết lập môi trường.
-3. **Quản lý Log**: Nó tạo sẵn một nhóm Log trên **CloudWatch** (Log Group) với thời gian lưu trữ 14 ngày để bạn có thể xem lại lịch sử chạy của hàm mà không lo tốn quá nhiều chi phí lưu Log rác.
+-  **Đóng gói tự động**: Nó sẽ tự động nén thư mục chứa code Python (`handler.py`) thành một file `.zip` để chuẩn bị tải lên AWS.
+-  **Cấu hình môi trường chạy**: Tạo `Lambda function` trên AWS, tải file zip lên, gắn quyền IAM (đã tạo ở phần trước) và thiết lập môi trường.
+-  **Quản lý Log**: Nó tạo sẵn một nhóm Log trên **CloudWatch** (Log Group) với thời gian lưu trữ 14 ngày để bạn có thể xem lại lịch sử chạy của hàm mà không lo tốn quá nhiều chi phí lưu Log rác.
 
 Việc cấu hình Terraform ở bước này giúp tự động hóa hoàn toàn quy trình triển khai. Thay vì mỗi lần sửa code, bạn phải tự nén file bằng tay rồi lên giao diện AWS upload, Terraform sẽ tự động so sánh mã băm, đóng gói và cập nhật hàm Lambda chỉ với một câu lệnh.
 
@@ -167,6 +165,63 @@ resource "aws_lambda_function" "collector" {
   }
 
   depends_on = [aws_cloudwatch_log_group.collector] # Đợi Log Group được tạo xong mới bắt đầu tạo Lambda
+}
+```
+
+2. Mở file `terraform/eventbridge.tf` và thêm đoạn cấu hình sau vào cuối file:
+
+```hcl
+# Khi đến giờ sẽ tự động gọi hàm Lambda Collector
+resource "aws_cloudwatch_event_target" "collector" {
+  rule      = aws_cloudwatch_event_rule.schedule.name
+  target_id = "collector-lambda"
+  arn       = aws_lambda_function.collector.arn
+}
+
+# Cho phép EventBridge được gọi Lambda
+resource "aws_lambda_permission" "allow_eventbridge" {
+  statement_id  = "AllowExecutionFromEventBridge"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.collector.function_name
+  principal     = "events.amazonaws.com"
+  source_arn    = aws_cloudwatch_event_rule.schedule.arn
+}
+```
+
+3. Tiếp theo, mở `terraform/iam.tf` và thêm cấu hình sau vào khối `data "aws_iam_policy_document" "collector_policy"`:
+
+```hcl
+# Gửi sự kiện vào SQS Queue chính
+
+  statement {
+
+    sid       = "SQSSendMessage"
+
+    effect    = "Allow"
+
+    actions   = ["sqs:SendMessage"]
+
+    resources = [aws_sqs_queue.events.arn]
+
+  }
+```
+
+4. Mở file `terraform.version.tf` và thêm đoạn cấu hình sau vào khối `required_providers`:
+
+```hcl
+# provider archive
+archive = {
+  source  = "hashicorp/archive"
+  version = "~> 2.4"
+}
+```
+
+5. Tiếp tục, mở file `terraform/outputs.tf` và thêm cấu hình sau vào cuối file:
+
+```hcl
+output "collector_function_name" {
+  description = "Name of Lambda Collector"
+  value       = aws_lambda_function.collector.function_name
 }
 ```
 

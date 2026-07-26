@@ -19,22 +19,6 @@ resource "aws_cloudwatch_event_rule" "schedule" {
   description         = "Trigger the Lambda Collector periodically to collect cost data"
   schedule_expression = var.schedule_expression
 }
-
-# Invoke the Lambda Collector function when the scheduled time is reached.
-resource "aws_cloudwatch_event_target" "collector" {
-  rule      = aws_cloudwatch_event_rule.schedule.name
-  target_id = "collector-lambda"
-  arn       = aws_lambda_function.collector.arn
-}
-
-# Grant Amazon EventBridge permission to invoke the Lambda function.
-resource "aws_lambda_permission" "allow_eventbridge" {
-  statement_id  = "AllowExecutionFromEventBridge"
-  action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.collector.function_name
-  principal     = "events.amazonaws.com"
-  source_arn    = aws_cloudwatch_event_rule.schedule.arn
-}
 ```
 
 #### Next Content

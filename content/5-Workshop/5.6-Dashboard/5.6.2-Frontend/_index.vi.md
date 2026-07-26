@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.6.2 </b> "
 ---
 
-Chúng ta sẽ tạo giao diện Web trong thư mục `lambda/web`.
+Chúng ta sẽ tạo giao diện Web trong thư mục `terraform/web`.
 
 1. File `index.html` chứa cấu trúc trang:
 
@@ -469,7 +469,7 @@ Giao diện gồm nhiều biểu đồ xu hướng chi phí kèm đường ngư�
 
 #### Host Web lên S3 và CloudFront
 
-Chúng ta sẽ tạo file `terraform/web_hosting.tf` để host giao diện lên **S3** và phân phối qua **CloudFront** với HTTPS. Để bảo mật, bucket Web không được mở public trực tiếp mà chỉ cho phép **CloudFront** đọc thông qua **Origin Access Control**.
+1. Chúng ta sẽ tạo file `terraform/web_hosting.tf` để host giao diện lên **S3** và phân phối qua **CloudFront** với HTTPS. Để bảo mật, bucket Web không được mở public trực tiếp mà chỉ cho phép **CloudFront** đọc thông qua **Origin Access Control**.
 
 ```hcl
 # Host Website lên S3 + CloudFront
@@ -611,6 +611,21 @@ resource "aws_s3_object" "script" {
 ```
 
 Việc dùng **Origin Access Control** là một điểm bảo mật quan trọng. Bucket Web hoàn toàn không mở công khai, mọi truy cập phải đi qua CloudFront với HTTPS, tránh lộ dữ liệu ra Internet.
+
+2. Mở file `terraform/outputs.tf` và thêm đoạn cấu hình sau vào cuối file.
+
+```hcl
+# Web Dashboard
+output "web_dashboard_url" {
+  description = "URL to access Web Dashboard (HTTPS via CloudFront)"
+  value       = "https://${aws_cloudfront_distribution.web.domain_name}"
+}
+
+output "web_bucket_name" {
+  description = "S3 bucket name for static web"
+  value       = aws_s3_bucket.web.id
+}
+```
 
 #### Triển khai và truy cập Dashboard
 
