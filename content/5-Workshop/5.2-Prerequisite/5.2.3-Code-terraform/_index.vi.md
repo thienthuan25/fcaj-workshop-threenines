@@ -8,17 +8,19 @@ pre : " <b> 5.2.3. </b> "
 
 #### Công cụ cần cài đặt
 
-Trong workshop này, chúng ta thực hiện các thao tác dòng lệnh trên môi trường WSL2 (Windows Subsystem for Linux) thay vì Command Prompt (CMD) hoặc PowerShell của Windows. Có một số lý do chính cho lựa chọn này:
+Trong workshop này, chúng ta thực hiện các thao tác dòng lệnh trên môi trường **WSL2** (Windows Subsystem for Linux) thay vì **Command Prompt** (CMD) hoặc **PowerShell** của Windows. Có một số lý do chính cho lựa chọn này:
 
-+ **Môi trường Linux thống nhất:** Hầu hết các công cụ hạ tầng như Terraform, AWS CLI và các script triển khai đều được thiết kế và tối ưu cho môi trường Unix/Linux. WSL2 cung cấp một môi trường Linux thật sự ngay trên Windows, giúp tránh các khác biệt về đường dẫn, biến môi trường và cách xử lý dòng lệnh so với CMD hay PowerShell.
++ **Môi trường Linux thống nhất:** Hầu hết các công cụ hạ tầng như **Terraform**, **AWS CLI** và các script triển khai đều được thiết kế và tối ưu cho môi trường Unix/Linux. WSL2 cung cấp một môi trường Linux thật sự ngay trên Windows, giúp tránh các khác biệt về đường dẫn, biến môi trường và cách xử lý dòng lệnh so với CMD hay PowerShell.
 
 + **Đồng nhất với môi trường triển khai thực tế:** Các server và pipeline CI/CD trên AWS thường chạy trên Linux. Làm việc trên WSL2 giúp môi trường phát triển của bạn gần với môi trường production, giảm rủi ro lỗi phát sinh do khác biệt hệ điều hành.
 
-+ **Hỗ trợ tốt các công cụ dòng lệnh:** WSL2 hỗ trợ đầy đủ các tiện ích Linux như bash, các lệnh xử lý chuỗi và quản lý file, giúp việc viết và chạy script trở nên thuận tiện hơn.
++ **Hỗ trợ tốt các công cụ dòng lệnh:** WSL2 hỗ trợ đầy đủ các tiện ích Linux như **bash**, các lệnh xử lý chuỗi và quản lý file, giúp việc viết và chạy script trở nên thuận tiện hơn.
 
-+ **Tương thích tốt với công cụ phát triển:** WSL2 tích hợp mượt mà với các trình soạn thảo như Visual Studio Code, cho phép vừa viết code vừa chạy lệnh trong cùng một môi trường.
++ **Tương thích tốt với công cụ phát triển:** WSL2 tích hợp mượt mà với các trình soạn thảo như **Visual Studio Code**, cho phép vừa viết code vừa chạy lệnh trong cùng một môi trường.
 
 Nhìn chung, WSL2 mang lại trải nghiệm nhất quán và ổn định hơn khi làm việc với các công cụ hạ tầng đám mây, đặc biệt là Terraform.
+
+Đối với hệ điều hành **macOS**, bạn chỉ cần mở Terminal và trải nghiệm sử dụng gần như hoàn toàn tương đồng với môi trường WSL trên Windows.
 
 Trước khi bắt đầu, hãy bảo đảm rằng các công cụ sau đã được cài đặt:
 

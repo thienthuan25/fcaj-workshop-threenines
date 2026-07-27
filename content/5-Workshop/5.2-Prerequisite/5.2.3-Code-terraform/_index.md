@@ -8,7 +8,7 @@ pre : " <b> 5.2.3. </b> "
 
 #### Required Tools
 
-In this workshop, we perform all command-line operations in the **WSL2 (Windows Subsystem for Linux)** environment instead of using Windows **Command Prompt (CMD)** or **PowerShell**. There are several key reasons for this choice:
+In this workshop, we perform all command-line operations in the **WSL2** (Windows Subsystem for Linux) environment instead of using Windows **Command Prompt** (CMD) or **PowerShell**. There are several key reasons for this choice:
 
 + **A consistent Linux environment:** Most infrastructure tools such as **Terraform**, the **AWS CLI**, and deployment scripts are designed and optimized for Unix/Linux environments. WSL2 provides a real Linux environment running on Windows, eliminating differences in file paths, environment variables, and command-line behavior that often exist in CMD or PowerShell.
 
@@ -19,6 +19,8 @@ In this workshop, we perform all command-line operations in the **WSL2 (Windows 
 + **Strong compatibility with development tools:** WSL2 integrates seamlessly with editors such as **Visual Studio Code**, allowing you to write code and execute commands within the same environment.
 
 Overall, WSL2 provides a more consistent and stable experience when working with cloud infrastructure tools, especially **Terraform**.
+
+For **macOS**, you simply need to open the Terminal, and the user experience is almost identical to working in the WSL environment on Windows.
 
 Before you begin, make sure the following tools are installed:
 

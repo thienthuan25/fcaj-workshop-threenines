@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.6 </b> "
 ---
 
-Tiếp theo, chúng ta sẽ tạo file `lambda/eventbridge.tf`. File này được sử dụng để cấu hình dịch vụ **Amazon EventBridge**, trước đây là **CloudWatch Event** nhằm mục đích lập lịch tự động cho hệ thống.
+Tiếp theo, chúng ta sẽ tạo file `terraform/eventbridge.tf`. File này được sử dụng để cấu hình dịch vụ **Amazon EventBridge**, trước đây là **CloudWatch Event** nhằm mục đích lập lịch tự động cho hệ thống.
 
 Hàm Lambda Collector dùng để lấy dữ liệu chi phí sẽ không thể tự động chạy trừ khi có một sự kiện kích hoạt nó. Để hệ thống **CloudCost Insight** có thể liên tục theo dõi và cập nhật chi phí mỗi ngày mà không cần con người can thiệp, chúng ta cần một công cụ lập lịch để có thể tự động kích hoạt nó mỗi ngày.
 
