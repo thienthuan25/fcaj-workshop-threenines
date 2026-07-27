@@ -37,6 +37,7 @@ Alarm này sử dụng metric `ApproximateNumberOfMessagesVisible` của Dead Le
 
 ```hcl
 # Hệ thống giám sát lỗi (CloudWatch Alarms)
+# Xuất tên của các loại cảnh báo ra màn hình sau khi triển khai
 output "alarm_collector_errors" {
   description = "Alarm name for monitoring Collector errors"
   value       = aws_cloudwatch_metric_alarm.collector_errors.alarm_name

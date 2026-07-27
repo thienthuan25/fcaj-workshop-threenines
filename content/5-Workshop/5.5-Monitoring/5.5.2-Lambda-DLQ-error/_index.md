@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.5.2 </b> "
 ---
 
-Next, in the same `terraform/cloudwatch_alarms.tf` file, we will add a CloudWatch Alarm to monitor the **Dead Letter Queue**. This alarm tracks the number of messages in the DLQ and is triggered whenever any failed message is placed into the queue.
+1. Next, in the same `terraform/cloudwatch_alarms.tf` file, we will add a CloudWatch Alarm to monitor the **Dead Letter Queue**. This alarm tracks the number of messages in the DLQ and is triggered whenever any failed message is placed into the queue.
 
 ```hcl
 # Alarm when messages are sent to the Dead Letter Queue
@@ -32,6 +32,27 @@ resource "aws_cloudwatch_metric_alarm" "dlq_message" {
 ```
 
 This alarm uses the `ApproximateNumberOfMessagesVisible` metric of the Dead Letter Queue. Under normal operating conditions, the DLQ should always remain empty. Therefore, as soon as a single message appears in the queue, the alarm is triggered to notify you that a processing failure has occurred and requires investigation.
+
+2. Open the `terraform/outputs.tf` file and add the following configuration to the end of the file:
+
+```hcl
+# CloudWatch Alarm monitoring system
+# Output the names of the alarms to the terminal after deployment
+output "alarm_collector_errors" {
+  description = "Alarm name for monitoring Collector errors"
+  value       = aws_cloudwatch_metric_alarm.collector_errors.alarm_name
+}
+
+output "alarm_analyzer_errors" {
+  description = "Alarm name for monitoring Analyzer errors"
+  value       = aws_cloudwatch_metric_alarm.analyzer_errors.alarm_name
+}
+
+output "alarm_dlq_messages" {
+  description = "Alarm name for monitoring DLQ messages"
+  value       = aws_cloudwatch_metric_alarm.dlq_message.alarm_name
+}
+```
 
 #### Next Content
 
