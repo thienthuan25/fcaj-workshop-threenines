@@ -11,7 +11,8 @@ pre : " <b> 5.4.2 </b> "
 Analyzer cần hai biến để phục vụ logic phát hiện tăng đột biến. Chúng ta cần bổ sung hai biến sau vào `terraform/variables.tf`:
 
 ```hcl
-# Hệ số nhân dùng để nhận diện sự gia tăng chi phí bất thường. So sánh chi phí hiện tại với chi phí trung bình trong quá khứ nhân với hệ số này
+# Hệ số nhân dùng để nhận diện sự gia tăng chi phí bất thường. 
+#  So sánh chi phí hiện tại với chi phí trung bình trong quá khứ nhân với hệ số này
 variable "spike_multiplier" {
   description = "Spike multiplier: if cost > historical average * this multiplier, it is considered an abnormal spike"
   type        = number
@@ -76,30 +77,6 @@ def read_cost_from_s3(s3_key: str) -> dict:
     # Đọc file dữ liệu chi phí (.json) từ S3
     response = s3_client.get_object(Bucket = BUCKET_NAME, Key = s3_key)
     return json.loads(response["Body"].read())
-
-
-
-# def analyze_cost(cost_data: dict) -> dict:
-#     # Phân tích dữ liệu chi phí:
-#     # - tính tổng chi phí trong ngày
-#     # - lấy top dịch vụ tốn nhiều nhất (đưa vào cảnh báo)
-#     total_cost = 0.0
-#     service_costs = {}
-
-#     for result in cost_data.get("ResultsByTime", []):
-#         for group in result.get("Groups", []):
-#             service = group["Keys"][0]
-#             amount = float(group["Metrics"]["UnblendedCost"]["Amount"])
-#             service_costs[service] = service_costs.get(service, 0.0) + amount
-#             total_cost += amount
-
-#     # Sắp xếp dịch vụ theo chi phí giảm dần, lấy tóp 5
-#     top_services = sorted(service_costs.items(), key = lambda x: x[1], reverse = True)[:5]
-
-#     return {
-#         "total_cost": round(total_cost, 4),
-#         "top_services": top_services,
-#     }
 
 def compute_total_and_top(cost_data: dict) -> dict:
     """Tính tổng chi phí + top dịch vụ tốn nhất từ dữ liệu Cost Explorer."""
@@ -228,7 +205,7 @@ def lambda_handler(event, context):
 -  **Đóng gói và triển khai**: Tự động nén mã nguồn Python thành file zip và tải lên nền tảng AWS để tạo thành một hàm thực thi hoàn chỉnh.
 -  **Liên kết tự động**: Thiết lập một luồng kết nối trực tiếp từ hàng đợi SQS tới hàm Analyzer. Cứ mỗi khi có một thông báo mới về chi phí xuất hiện trong hàng đợi, hệ thống sẽ tự động kích hoạt hàm Analyzer để xử lý.
 
-Nếu chỉ có mã nguồn Python thì hệ thống sẽ không biết phải chạy đoạn mã đó như thế nào và lấy quyền truy cập từ đâu. Do đó, file cấu hình Terraform này giúp kết nối các thành phần rời rạc gồm **S3**, **SQS**, **SNS**, và **Lambda** lại với nhau thành một dây chuyền tự động và hoàn toàn khép kín.
+Nếu chỉ có mã nguồn Python thì hệ thống sẽ không biết phải chạy đoạn mã đó như thế nào và lấy quyền truy cập từ đâu. Do đó, file cấu hình Terraform này giúp kết nối các thành phần rời rạc gồm **Amazon S3**, **Simple Queue Service (SQS)**, **Simple Notification Service (SNS)**, và **Lambda** lại với nhau thành một dây chuyền tự động và hoàn toàn khép kín.
 
 ```hcl
 # IAM role cho Analyzer
@@ -300,13 +277,13 @@ data "archive_file" "analyzer_zip" {
   output_path = "${path.module}/build/analyzer.zip"
 }
 
-# log group
+# CloudWatch Log group
 resource "aws_cloudwatch_log_group" "analyzer" {
   name              = "/aws/lambda/${var.project_name}-analyzer"
   retention_in_days = 14
 }
 
-# lambda analyzer function
+# Hàm Lambda analyzer
 resource "aws_lambda_function" "analyzer" {
   function_name = "${var.project_name}-analyzer"
   role          = aws_iam_role.analyzer.arn
@@ -329,7 +306,7 @@ resource "aws_lambda_function" "analyzer" {
   depends_on = [aws_cloudwatch_log_group.analyzer]
 }
 
-# kết nối SQS -> lambda analyzer
+# kết nối SQS đến lambda analyzer
 resource "aws_lambda_event_source_mapping" "sqs_to_analyzer" {
   event_source_arn = aws_sqs_queue.events.arn
   function_name    = aws_lambda_function.analyzer.arn
@@ -341,13 +318,12 @@ resource "aws_lambda_event_source_mapping" "sqs_to_analyzer" {
 2. Mở file `terraform/outputs.tf` và thêm đoạn cấu hình sau vào cuối file:
 
 ```hcl
+# Xuất ARN của IAM Role cấp cho Lambda Analyzer ra màn hình
 output "analyzer_role_arn" {
   description = "ARN of IAM Role for Lambda Analyzer"
   value       = aws_iam_role.analyzer.arn
 }
-```
-
-3. Tiếp tục, chúng ta mở file `terraform/lambda_analyzer.tf` 
+``` 
 
 #### Nội dung tiếp theo
 

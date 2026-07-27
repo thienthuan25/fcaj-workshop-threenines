@@ -193,23 +193,18 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 
 ```hcl
 # Allow sending events to the primary SQS queue
-
 statement {
-
-  sid       = "SQSSendMessage"
-
-  effect    = "Allow"
-
-  actions   = ["sqs:SendMessage"]
-
-  resources = [aws_sqs_queue.events.arn]
-
+    sid = "SQSSendMessage"
+    effect = "Allow"
+    actions = ["sqs:SendMessage"]
+    resources = [aws_sqs_queue.events.arn]
 }
 ```
 
 4.  Finally, open `terraform/outputs.tf` and add the following configuration to the end of the file:
 
 ```hcl
+# Print the name of the Lambda Collector function to the screen after deployment
 output "collector_function_name" {
   description = "Name of Lambda Collector"
   value       = aws_lambda_function.collector.function_name

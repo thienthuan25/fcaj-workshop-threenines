@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.5.2 </b> "
 ---
 
-Next, in the same `lambda/cloudwatch_alarms.tf` file, we will add a CloudWatch Alarm to monitor the **Dead Letter Queue**. This alarm tracks the number of messages in the DLQ and is triggered whenever any failed message is placed into the queue.
+Next, in the same `terraform/cloudwatch_alarms.tf` file, we will add a CloudWatch Alarm to monitor the **Dead Letter Queue**. This alarm tracks the number of messages in the DLQ and is triggered whenever any failed message is placed into the queue.
 
 ```hcl
 # Alarm when messages are sent to the Dead Letter Queue

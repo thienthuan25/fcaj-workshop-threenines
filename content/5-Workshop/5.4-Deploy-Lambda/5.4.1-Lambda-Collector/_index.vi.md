@@ -192,23 +192,18 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 
 ```hcl
 # Gửi sự kiện vào SQS Queue chính
-
-  statement {
-
-    sid       = "SQSSendMessage"
-
-    effect    = "Allow"
-
-    actions   = ["sqs:SendMessage"]
-
-    resources = [aws_sqs_queue.events.arn]
-
-  }
+statement {
+    sid = "SQSSendMessage"
+    effect = "Allow"
+    actions = ["sqs:SendMessage"]
+    resources = [aws_sqs_queue.events.arn]
+}
 ```
 
 4. Tiếp tục, mở file `terraform/outputs.tf` và thêm cấu hình sau vào cuối file:
 
 ```hcl
+# Xuất tên của hàm Lambda Collector ra màn hình sau khi triển khai
 output "collector_function_name" {
   description = "Name of Lambda Collector"
   value       = aws_lambda_function.collector.function_name

@@ -73,27 +73,57 @@ def read_cost_from_s3(s3_key: str) -> dict:
     response = s3_client.get_object(Bucket=BUCKET_NAME, Key=s3_key)
     return json.loads(response["Body"].read())
 
-def analyze_cost(cost_data: dict) -> dict:
-    # Analyze cost data:
-    # - Calculate the total daily cost
-    # - Identify the top cost-consuming services
+def compute_total_and_top(cost_data: dict) -> dict:
+    """Sum total costs + top most expensive services from Cost Explorer data."""
     total_cost = 0.0
     service_costs = {}
-
     for result in cost_data.get("ResultsByTime", []):
-        for group in result.get("Group", []):
-            service = group["Key"][0]
+        for group in result.get("Groups", []):
+            service = group["Keys"][0]
             amount = float(group["Metrics"]["UnblendedCost"]["Amount"])
             service_costs[service] = service_costs.get(service, 0.0) + amount
             total_cost += amount
-
-    # Sort services by cost in descending order and keep the top 5
     top_services = sorted(service_costs.items(), key=lambda x: x[1], reverse=True)[:5]
+    return {"total_cost": round(total_cost, 4), "top_services": top_services}
 
-    return {
-        "total_cost": round(total_cost, 4),
-        "top_services": top_services,
-    }
+def get_historical_average(current_date: str) -> float:
+    # Calculate the average cost of the previous HISTORY_DAYS days before the current date,
+    # read from the files stored in S3. Return 0 if there is no historical data
+    dt = datetime.strptime(current_date, "%Y-%m-%d")
+    totals = []
+    for i in range(1, HISTORY_DAYS + 1):
+        day = dt - timedelta(days = i)
+        key = f"cost-data/year={day.year}/month={day.month:02d}/day={day.day:02d}/cost_{day.strftime('%Y-%m-%d')}.json"
+        try:
+            data = read_cost_from_s3(key)
+            totals.append(compute_total_and_top(data)["total_cost"])
+        except s3_client.exceptions.NoSuchKey:
+            continue
+        except Exception:
+            continue
+    if not totals:
+        return 0.0
+    return round(sum(totals) / len(totals), 4)
+
+def classify_severity(total: float, avg: float) -> tuple:
+    # Classify alert levels based on fixed thresholds and spike detection.
+    # Returns (severity, reasons[])
+
+    reasons = []
+    severity = "INFO"
+
+    # Exceeds budget threshold
+    if total > COST_THRESHOLD:
+        reasons.append(f"Budget threshold exceeded (${COST_THRESHOLD:.2f})")
+        severity = "WARNING"
+
+    # Spike compared to historical average
+    if avg > 0 and total > avg * SPIKE_MULTIPLIER:
+        pct = ((total - avg) / avg) * 100
+        reasons.append(f"Cost spike detected: {pct:.0f}% above historical average {HISTORY_DAYS} day (${avg:.2f})")
+        severity = "CRITICAL"
+    
+    return severity, reasons
 
 def send_alert(date_str: str, analysis: dict) -> None:
     # Send an SNS alert when the cost exceeds the threshold
@@ -158,7 +188,7 @@ def lambda_handler(event, context):
 - **Package and deploy**: Automatically compresses the Python source code into a ZIP file and uploads it to AWS to create a fully functional Lambda function.
 - **Configure automatic integration**: Establishes a direct event source mapping between the Amazon SQS queue and the Analyzer function. Whenever a new cost notification appears in the queue, the Analyzer is automatically invoked to process it.
 
-Without these infrastructure configurations, the Python source code alone would not be enough for AWS to know how to execute the function or what resources it is allowed to access. This Terraform configuration connects **Amazon S3**, **Amazon SQS**, **Amazon SNS**, and **AWS Lambda** into a fully automated and end-to-end processing pipeline.
+Without these infrastructure configurations, the Python source code alone would not be enough for AWS to know how to execute the function or what resources it is allowed to access. This Terraform configuration connects **Amazon S3**, **Simple Queue Service (SQS)**, **Simple Notification Service (SNS)**, and **Lambda** into a fully automated and end-to-end processing pipeline.
 
 ```hcl
 # IAM role for the Analyzer
@@ -174,6 +204,14 @@ data "aws_iam_policy_document" "analyzer_policy" {
     effect    = "Allow"
     actions   = ["s3:GetObject"]
     resources = ["${aws_s3_bucket.cost_data.arn}/*"]
+  }
+
+  # ListBucket policy
+  statement {
+    sid = "S3ListBucket"
+    effect = "Allow"
+    actions = ["s3:ListBucket]
+    resources = [aws_s3_bucket.cost_data.arn8]
   }
 
   # Receive and delete messages from the primary SQS queue
@@ -263,6 +301,7 @@ resource "aws_lambda_event_source_mapping" "sqs_to_analyzer" {
 2. Open the `terraform/outputs.tf` file and add the following configuration to the end of the file:
 
 ```hcl
+# Output IAM Role ARN for Lambda Analyzer to the console
 output "analyzer_role_arn" {
   description = "ARN of the IAM Role for Lambda Analyzer"
   value       = aws_iam_role.analyzer.arn
