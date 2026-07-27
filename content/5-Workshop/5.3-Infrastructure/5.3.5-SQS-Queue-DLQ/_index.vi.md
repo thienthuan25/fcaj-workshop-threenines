@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.5 </b> "
 ---
 
-Tiếp theo, chúng ta sẽ tạo file `lambda/sqs.tf`. File này được sử dụng để khởi tại dịch vụ hàng đợi **Amazon Simple Queue Service** (SQS), bao gồm một hàng đợi chính và một hàng đợi lỗi (Dead Letter Queue - DLQ).
+Tiếp theo, chúng ta sẽ tạo file `terraform/sqs.tf`. File này được sử dụng để khởi tại dịch vụ hàng đợi **Amazon Simple Queue Service** (SQS), bao gồm một hàng đợi chính và một hàng đợi lỗi (Dead Letter Queue - DLQ).
 
 Thay vì để hàm Lambda thu thập dữ liệu (Collector) gọi trực tiếp hàm Lambda phân tích (Analyzer), chúng ta dùng SQS đứng ở giữa làm bộ đệm dữ liệu:
 

@@ -206,7 +206,7 @@ resource "aws_lambda_permission" "allow_eventbridge" {
   }
 ```
 
-4. Mở file `terraform.version.tf` và thêm đoạn cấu hình sau vào khối `required_providers`:
+<!-- 4. Mở file `terraform.version.tf` và thêm đoạn cấu hình sau vào khối `required_providers`:
 
 ```hcl
 # provider archive
@@ -214,9 +214,9 @@ archive = {
   source  = "hashicorp/archive"
   version = "~> 2.4"
 }
-```
+``` -->
 
-5. Tiếp tục, mở file `terraform/outputs.tf` và thêm cấu hình sau vào cuối file:
+4. Tiếp tục, mở file `terraform/outputs.tf` và thêm cấu hình sau vào cuối file:
 
 ```hcl
 output "collector_function_name" {
