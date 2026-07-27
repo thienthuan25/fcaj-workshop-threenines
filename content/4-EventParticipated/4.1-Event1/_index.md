@@ -25,34 +25,34 @@ I attended the event as a participant. Throughout the program, I mainly listened
 
 The event featured many experts and engineers working in the fields of **Cloud Computing**, **DevOps**, and **AI**. The event opened with a presentation by **Nguyen Gia Hung** (Head of Solutions Architect - Vietnam & Cambodia), who shared valuable insights about today's technology market. This was followed by the main speakers of the event:
 
-- Hai Bui - Platform Engineering Manager at GoTymeX.
-- Phuc Dang - Cloud Architect at GoTymeX.
-- Phat Pham - Software Engineer at Katalon.
-- Hieu Nghi - AI Engineer at Renova Cloud.
-- Phong Nguyen - Software Engineer at Simpli.
-- Phap Nguyen - Cloud & AI Engineer at VPBank.
-- Thinh Nguyen - DevOps Engineer at STYL Solutions Pte. Ltd.
-- Chien Pham Minh - AI Researcher & Ambassador at TechX Corp.
+- **Hai Bui** - Platform Engineering Manager at GoTymeX.
+- **Phuc Dang** - Cloud Architect at GoTymeX.
+- **Phat Pham** - Software Engineer at Katalon.
+- **Hieu Nghi** - AI Engineer at Renova Cloud.
+- **Phong Nguyen** - Software Engineer at Simpli.
+- **Phap Nguyen** - Cloud & AI Engineer at VPBank.
+- **Thinh Nguyen** - DevOps Engineer at STYL Solutions Pte. Ltd.
+- **Chien Pham Minh** - AI Researcher & Ambassador at TechX Corp.
 
-### Highlights of the Event
+### Content
 
 The event was divided into multiple sessions covering different topics, focusing on modern technologies built on the AWS platform.
 
-#### Building Modern Platform Engineering & Career Pathways
+#### Topic 1: Building Modern Platform Engineering & Career Pathways
 
 The first session introduced **Platform Engineering**, a trend that is being widely adopted by enterprises to standardize infrastructure and software development processes. The speaker explained the role of Platform Engineering within the **Cloud** and **DevOps** ecosystem while also introducing career pathways and internship opportunities for students and young engineers.
 
-#### GenAIOps Essential – DevOps for Generative AI Applications
+#### Topic 2: GenAIOps Essential – DevOps for Generative AI Applications
 
 This session focused on building and operating **Generative AI** applications on AWS. It introduced DevOps principles for AI, methods for deploying Generative AI models in real-world environments, and several representative services such as **Amazon Bedrock**, **Amazon EKS**, **Langfuse**, and **AgentCore Observability**.
 
 This topic demonstrated that the combination of AI and DevOps is becoming an important trend in the development of modern AI systems.
 
-#### Shipping Code in the Agentic Era
+#### Topic 3: Shipping Code in the Agentic Era
 
 The speaker discussed the transformation of the software development process as **AI Agents** become increasingly popular. The session covered the challenges of developing AI-powered applications, developer tools, productivity improvement strategies, and a live demonstration showing how AI can assist software development.
 
-#### Production-Grade Multimodal GenAI on AWS
+#### Topic 4: Production-Grade Multimodal GenAI on AWS
 
 This was one of the most outstanding sessions of the event. The speaker introduced the architecture for building enterprise-scale Generative AI systems, including:
 
@@ -64,7 +64,7 @@ This was one of the most outstanding sessions of the event. The speaker introduc
 
 This session helped participants understand that building enterprise AI applications involves much more than language models and requires multiple components to ensure efficiency and scalability.
 
-#### From Edge To Origin: CloudFront as Your Foundation
+#### Topic 5: From Edge To Origin: CloudFront as Your Foundation
 
 The final session focused on **Amazon CloudFront** and the role of **CDN** in content delivery.
 

@@ -23,36 +23,36 @@ Tôi tham gia sự kiện với vai trò là người tham dự. Trong suốt ch
 
 ### Danh sách diễn giả
 
-Sự kiện có sự tham gia của nhiều chuyên gia và kỹ sư đang làm việc trong lĩnh vực **Cloud Computing**, **DevOps**, **AI**. Khởi đầu cho sự kiện với sự góp mặt của anh **Nguyễn Gia Hưng** (Head of Solutions Architect - Viet Nam & Cambodia) đem đến cho mọi người những lời chia sẻ về thị trường công nghệ ngày nay. Tiếp theo là sự góp mặt của các diễn giả chính cho sự kiện:
+Sự kiện có sự tham gia của nhiều chuyên gia và kỹ sư đang làm việc trong lĩnh vực **Cloud Computing**, **DevOps**, **AI**. Khởi đầu cho sự kiện với sự góp mặt của anh **Nguyễn Gia Hưng** (Head of Solutions Architect - Việt Nam & Cambodia) đem đến cho mọi người những lời chia sẻ về thị trường công nghệ ngày nay. Tiếp theo là sự góp mặt của các diễn giả chính cho sự kiện:
 
-- Hai Bui - Platform Engineering Manager at GoTymeX.
-- Phuc Dang - Cloud Architect at GoTymeX.
-- Phat Pham - Software Engineer at Katalon.
-- Hieu Nghi - AI Engineer at Renova Cloud.
-- Phong Nguyen - Software Engineer at Simpli.
-- Phap Nguyen - Cloud & AI Engineer at VPBank.
-- Thinh Nguyen - DevOps Engineer at STYL Solutions Pte. Ltd.
-- Chien Pham Minh - AI Researcher & Ambassador at TechX Corp.
+- **Hai Bui** - Platform Engineering Manager tại GoTymeX.
+- **Phuc Dang** - Cloud Architect tại GoTymeX.
+- **Phat Pham** - Software Engineer tại Katalon.
+- **Hieu Nghi** - AI Engineer tại Renova Cloud.
+- **Phong Nguyen** - Software Engineer tại Simpli.
+- **Phap Nguyen** - Cloud & AI Engineer tại VPBank.
+- **Thinh Nguyen** - DevOps Engineer tại STYL Solutions Pte. Ltd.
+- **Chien Pham Minh** - AI Researcher & Ambassador tại TechX Corp.
 
-### Nội Dung Nổi Bật
+### Nội dung
 
 Sự kiện được chia ra thành nhiều phiên chia sẻ với các chủ đề khác nhau, tập trung vào các công nghệ hiện đại trên nền tảng AWS.
 
-#### Building Modern Platform Engineering & Career Pathways
+#### Chủ đề 1: Building Modern Platform Engineering & Career Pathways
 
 Phiên đầu tiên giới thiệu về **Platform Engineering**, một xu hướng đang được nhiều doanh nghiệp áp dụng nhằm chuẩn hóa hạ tầng và quy trình phát triển phần mềm. Diễn giả chia sẻ về vai trò của Platform Engineering trong hệ sinh thái **Cloud** và **DevOps**, đồng thời giới thiệu lộ trình phát triển nghề nghiệp cũng như cơ hội thực tập dành cho sinh viên và kỹ sư trẻ.
 
-#### GenAIOps Essential – DevOps for Generative AI Applications
+#### Chủ đề 2: GenAIOps Essential – DevOps for Generative AI Applications
 
 Nội dung tập trung vào việc xây dựng và vận hành các ứng dụng **Generative AI** trên AWS. Phiên chia sẻ giới thiệu các nguyên tắc DevOps dành cho AI, cách triển khai các mô hình Generative AI trong môi trường thực tế và một số dịch vụ tiêu biểu như **Amazon Bedrock**, **Amazon EKS**, **Langfuse** và **AgentCore Observability**.
 
 Đây là chủ đề cho thấy sự kết hợp giữa AI và DevOps đang trở thành xu hướng quan trọng trong quá trình phát triển các hệ thống AI hiện đại.
 
-#### Shipping Code in the Agentic Era
+#### Chủ đề 3: Shipping Code in the Agentic Era
 
 Diễn giả trình bày về sự thay đổi trong quy trình phát triển phần mềm khi các **AI Agent** ngày càng được sử dụng phổ biến. Nội dung bao gồm những khó khăn khi phát triển ứng dụng tích hợp AI, các công cụ hỗ trợ lập trình, phương pháp nâng cao năng suất làm việc và phần trình diễn minh họa quá trình phát triển ứng dụng với sự hỗ trợ của AI.
 
-#### Production-Grade Multimodal GenAI on AWS
+#### Chủ đề 4: Production-Grade Multimodal GenAI on AWS
 
 Đây là một trong những phiên chia sẻ nổi bật nhất của chương trình. Diễn giả giới thiệu kiến trúc xây dựng hệ thống Generative AI ở quy mô doanh nghiệp, bao gồm:
 
@@ -64,7 +64,7 @@ Diễn giả trình bày về sự thay đổi trong quy trình phát triển ph
 
 Phiên chia sẻ giúp người tham dự hiểu rằng việc xây dựng ứng dụng AI trong doanh nghiệp không chỉ dừng ở mô hình ngôn ngữ mà còn cần nhiều thành phần để đảm bảo hiệu quả và khả năng mở rộng.
 
-#### From Edge To Origin: CloudFront as Your Foundation
+#### Chủ đề 5: From Edge To Origin: CloudFront as Your Foundation
 
 Phiên cuối tập trung vào **Amazon CloudFront** và vai trò của **CDN** trong việc phân phối nội dung.
 
