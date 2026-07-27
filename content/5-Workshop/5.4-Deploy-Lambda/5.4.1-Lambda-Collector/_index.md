@@ -207,17 +207,7 @@ statement {
 }
 ```
 
-4. Open the `terraform/versions.tf` file and add the following configuration to the `required_providers` block:
-
-```hcl
-# Archive provider
-archive = {
-  source  = "hashicorp/archive"
-  version = "~> 2.4"
-}
-```
-
-5. Finally, open `terraform/outputs.tf` and add the following configuration to the end of the file:
+4.  Finally, open `terraform/outputs.tf` and add the following configuration to the end of the file:
 
 ```hcl
 output "collector_function_name" {

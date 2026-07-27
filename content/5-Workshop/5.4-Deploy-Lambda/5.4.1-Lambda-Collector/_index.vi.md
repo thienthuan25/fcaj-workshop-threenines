@@ -125,7 +125,7 @@ def lambda_handler(event, context):
 
 -  **Đóng gói tự động**: Nó sẽ tự động nén thư mục chứa code Python (`handler.py`) thành một file `.zip` để chuẩn bị tải lên AWS.
 -  **Cấu hình môi trường chạy**: Tạo `Lambda function` trên AWS, tải file zip lên, gắn quyền IAM (đã tạo ở phần trước) và thiết lập môi trường.
--  **Quản lý Log**: Nó tạo sẵn một nhóm Log trên **CloudWatch** (Log Group) với thời gian lưu trữ 14 ngày để bạn có thể xem lại lịch sử chạy của hàm mà không lo tốn quá nhiều chi phí lưu Log rác.
+-  **Quản lý Log**: Nó tạo sẵn một nhóm Log trên **CloudWatch Log Group** với thời gian lưu trữ 14 ngày để bạn có thể xem lại lịch sử chạy của hàm mà không lo tốn quá nhiều chi phí lưu Log rác.
 
 Việc cấu hình Terraform ở bước này giúp tự động hóa hoàn toàn quy trình triển khai. Thay vì mỗi lần sửa code, bạn phải tự nén file bằng tay rồi lên giao diện AWS upload, Terraform sẽ tự động so sánh mã băm, đóng gói và cập nhật hàm Lambda chỉ với một câu lệnh.
 
@@ -205,16 +205,6 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 
   }
 ```
-
-<!-- 4. Mở file `terraform.version.tf` và thêm đoạn cấu hình sau vào khối `required_providers`:
-
-```hcl
-# provider archive
-archive = {
-  source  = "hashicorp/archive"
-  version = "~> 2.4"
-}
-``` -->
 
 4. Tiếp tục, mở file `terraform/outputs.tf` và thêm cấu hình sau vào cuối file:
 
