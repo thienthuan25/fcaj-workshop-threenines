@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.7 </b> "
 ---
 
-Next, we will create the `outputs.tf` file. This is the final step in building the core infrastructure. The purpose of this file is to define the output values that Terraform displays after the deployment is complete.
+Next, we will create the `terraform/outputs.tf` file. This is the final step in building the core infrastructure. The purpose of this file is to define the output values that Terraform displays after the deployment is complete.
 
 When Terraform finishes provisioning the infrastructure on AWS, it creates many resources with automatically generated values. For example:
 

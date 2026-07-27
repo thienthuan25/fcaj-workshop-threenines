@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.8 </b> "
 ---
 
-Before deploying the infrastructure, we need to create one more file named `terraform.tfvars`.
+Before deploying the infrastructure, we need to create one more file named `terraform/terraform.tfvars`.
 
 In the first section, we created the `variables.tf` file to declare all input variables, such as the project name, deployment environment, and email address, together with their default values. The `terraform.tfvars` file is where you provide the actual values that will be used for your deployment. Keeping these values separate makes the Terraform code more flexible and reusable. If you want to share the project with someone else or update the email address or project name, you only need to modify the `terraform.tfvars` file without changing the infrastructure configuration in the other Terraform files. Terraform automatically detects and loads values from the `.tfvars` file during execution.
 

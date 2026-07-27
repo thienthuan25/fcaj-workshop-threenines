@@ -6,11 +6,11 @@ chapter : false
 pre : " <b> 5.3.6 </b> "
 ---
 
-Next, we will create the `eventbridge.tf` file. This file configures **Amazon EventBridge**, formerly known as **Amazon CloudWatch Events**, to provide automated scheduling for the system.
+Next, we will create the `terraform/eventbridge.tf` file. This file configures **Amazon EventBridge**, formerly known as **Amazon CloudWatch Events**, to provide automated scheduling for the system.
 
 The Lambda Collector function that retrieves cost data cannot run automatically unless it is triggered by an event. To enable **CloudCost Insight** to continuously monitor and update AWS cost data every day without manual intervention, we need a scheduling service that can invoke the function automatically on a daily basis.
 
-Based on the schedule defined in the `schedule_expression` variable, which is once per day by default, Amazon EventBridge automatically invokes the **Lambda Collector** function to collect cost data. This file also grants EventBridge permission to invoke Lambda function.
+Based on the schedule defined in the `schedule_expression` variable, which is once per day by default, Amazon EventBridge automatically invokes the **Lambda Collector** function to collect cost data. This file also grants **EventBridge** permission to invoke Lambda function.
 
 ```hcl
 # Schedule the Lambda function to run once per day.
