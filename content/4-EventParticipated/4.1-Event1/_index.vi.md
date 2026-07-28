@@ -17,11 +17,11 @@ pre: " <b> 4.1. </b> "
 
 Bên cạnh các nội dung chuyên môn, sự kiện còn giới thiệu về văn hóa doanh nghiệp, định hướng nghề nghiệp, cơ hội thực tập cũng như tạo điều kiện để người tham gia giao lưu, trao đổi trực tiếp với các diễn giả và những người có cùng định hướng phát triển trong lĩnh vực công nghệ. 
 
-### Vai trò tham gia
+### Vai Trò Tham Gia
 
 Tôi tham gia sự kiện với vai trò là người tham dự. Trong suốt chương trình, tôi chủ yếu lắng nghe các bài chia sẻ từ các diễn giả, theo dõi các phiên trình bày kỹ thuật, và tiếp thu những kiến thức mới liên quan đến AWS, DevOps, Platform Engineering và Generative AI. Thông qua sự kiện, tôi có cơ hội hiểu rõ hơn về những xu hướng công nghệ đang được áp dụng trong doanh nghiệp cũng như định hướng phát triển nghề nghiệp trong tương lai.
 
-### Danh sách diễn giả
+### Danh Sách Diễn Giả
 
 Sự kiện có sự tham gia của nhiều chuyên gia và kỹ sư đang làm việc trong lĩnh vực **Cloud Computing**, **DevOps**, **AI**. Khởi đầu cho sự kiện với sự góp mặt của anh **Nguyễn Gia Hưng** (Head of Solutions Architect - Việt Nam & Cambodia) đem đến cho mọi người những lời chia sẻ về thị trường công nghệ ngày nay. Tiếp theo là sự góp mặt của các diễn giả chính cho sự kiện:
 
@@ -34,7 +34,7 @@ Sự kiện có sự tham gia của nhiều chuyên gia và kỹ sư đang làm 
 - **Thinh Nguyen** - DevOps Engineer tại STYL Solutions Pte. Ltd.
 - **Chien Pham Minh** - AI Researcher & Ambassador tại TechX Corp.
 
-### Nội dung
+### Nội Dung
 
 Sự kiện được chia ra thành nhiều phiên chia sẻ với các chủ đề khác nhau, tập trung vào các công nghệ hiện đại trên nền tảng AWS.
 
@@ -87,7 +87,7 @@ Sau khi tham gia sự kiện, tôi học được những kiến thức mới, b
 - Nắm được các lợi ích của Amazon CloudFront trong việc tăng tốc độ truy cập, cải thiện độ tin cậy, tối ưu chi phí và nâng cao bảo mật cho ứng dụng.
 - Nhận thức rõ hơn về những kỹ năng mà doanh nghiệp đang quan tâm đối với các vị trí Cloud Engineer, DevOps Engineer và AI Engineer.
 
-### Ứng dụng vào công việc
+### Ứng Dụng Vào Công Việc
 
 Những kiến thức thu được từ sự kiện có thể được áp dụng vào quá trình học tập cũng như các dự án trong tương lai.
 
@@ -100,7 +100,7 @@ Trong thời gian tới, tôi dự định:
 - Tìm hiểu thêm về **GraphRAG**, **Multi-Agent Systems** và **GenAIOps** để chuẩn bị cho xu hướng phát triển AI trong doanh nghiệp.
 - Tích lũy thêm kiến thức và kỹ năng để có thể tham gia các chương trình thực tập hoặc làm việc trong lĩnh vực **Cloud Computing**, **DevOps** và **AI**.
 
-### Trải nghiệm trong sự kiện
+### Trải Nghiệm Trong Sự Kiện
 
 Sự kiện được tổ chức chuyên nghiệp với nội dung được sắp xếp hợp lý, giúp người tham dự dễ dàng theo dõi từng chủ đề. Không gian tổ chức tại tầng 26 của Bitexco Financial Tower hiện đại, tạo môi trường thuận lợi cho việc học hỏi và giao lưu.
 
@@ -108,7 +108,7 @@ Các diễn giả trình bày rõ ràng, kết hợp giữa kiến thức nền 
 
 Đối với cá nhân tôi, đây là một sự kiện hữu ích vì không chỉ cung cấp kiến thức chuyên môn mà còn giúp định hướng nghề nghiệp rõ ràng hơn trong lĩnh vực điện toán đám mây và trí tuệ nhân tạo.
 
-### Hình ảnh minh chứng tham gia sự kiện
+### Hình Ảnh Minh Chứng Tham Gia Sự Kiện
 
 ![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_1.png)
 
@@ -116,3 +116,16 @@ Các diễn giả trình bày rõ ràng, kết hợp giữa kiến thức nền 
 
 ![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_3.png)
 
+- Dưới đây là một số hình ảnh trong sự kiện được chụp từ các anh chị **Admin** trong **AWS Study Group**:
+
+![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_4.png)
+
+![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_5.png)
+
+![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_6.png)
+
+![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_7.png)
+
+- Và tôi nhận ra tôi trong bức ảnh, đang ngồi chăm chú lắng nghe:
+
+![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_8.png)

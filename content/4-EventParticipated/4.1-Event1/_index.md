@@ -115,3 +115,17 @@ From my perspective, this was a valuable event because it not only provided tech
 ![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_2.png)
 
 ![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_3.png)
+
+- Here are some images from the event captured by the **Admins** in the **AWS Study Group**:
+
+![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_4.png)
+
+![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_5.png)
+
+![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_6.png)
+
+![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_7.png)
+
+- And I recognize myself in the photo, sitting and listening attentively:
+
+![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_8.png)
