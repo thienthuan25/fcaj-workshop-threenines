@@ -118,8 +118,6 @@ Các diễn giả trình bày rõ ràng, kết hợp giữa kiến thức nền 
 
 - Dưới đây là một số hình ảnh trong sự kiện được chụp từ các anh chị **Admin** trong **AWS Study Group**:
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_4.png)
-
 ![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_5.png)
 
 ![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_6.png)

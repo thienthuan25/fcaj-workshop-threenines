@@ -7,6 +7,7 @@ content/1-Worklog/overview.md
 # ===== System & IDE =====
 .DS_Store
 .vscode/
+.cursor/
 
 # ===== Terraform =====
 .terraform/
