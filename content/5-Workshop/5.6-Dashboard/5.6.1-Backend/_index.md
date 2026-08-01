@@ -387,7 +387,7 @@ terraform apply
 terraform output cost_data_bucket_name
 ```
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_1.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_1.png)
 
 4. Run script to generate simulated data:
 
@@ -395,35 +395,35 @@ terraform output cost_data_bucket_name
 python3 test/test_data.py <BUCKET_NAME>
 ```
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_2.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_2.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_3.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_3.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_4.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_4.png)
 
 5. Verify the generated data in the AWS Console:
 
 - Open **Amazon S3**.
 - Select your bucket.
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_5.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_5.png)
 
 - You should now see the folders containing the simulated cost data.
 - Open the folders and verify that the JSON files containing the cost data have been created.
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_6.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_6.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_7.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_7.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_8.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_8.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_9.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_9.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_10.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_10.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_11.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_11.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_12.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_12.png)
 
 6. After verifying that everything works correctly, retrieve the API endpoint URL:
 
@@ -431,11 +431,11 @@ python3 test/test_data.py <BUCKET_NAME>
 terraform output api_endpoint
 ```
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_13.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_13.png)
 
 7. Open the endpoint URL displayed in the Terminal. You should see the API response returned in JSON:
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_14.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_14.png)
 
 #### Next Content
 

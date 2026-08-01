@@ -403,7 +403,7 @@ terraform apply
 terraform output cost_data_bucket_name
 ```
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_1.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_1.png)
 
 4. Chạy Script sinh dữ liệu mô phỏng:
 
@@ -411,35 +411,35 @@ terraform output cost_data_bucket_name
 python3 test/test_data.py <BUCKET_NAME>
 ```
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_2.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_2.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_3.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_3.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_4.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_4.png)
 
 5. Kiểm tra trên cửa số Console AWS:
 
 - Truy cập vào **Amazon S3**.
 - Chọn trên Bucket của bạn.
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_5.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_5.png)
 
 - Lúc này, bạn sẽ thấy các thư mục chứa dữ liệu chi phí mô phỏng đã được sinh ra.
 - Truy cập vào các thư mục để kiểm chứng xem dữ liệu chi phí đã có hay chưa ở các file JSON.
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_6.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_6.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_7.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_7.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_8.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_8.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_9.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_9.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_10.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_10.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_11.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_11.png)
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_12.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_12.png)
 
 6. Sau khi đã kiểm chứng thành công, chúng ta sẽ tiến hành lấy URL endpoint của API:
 
@@ -447,11 +447,11 @@ python3 test/test_data.py <BUCKET_NAME>
 terraform output api_endpoint
 ```
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_13.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_13.png)
 
 7. Truy cập vào đường dẫn hiện ra trên Terminal, bạn sẽ thấy dữ liệu trả về dưới dạng JSON. Bạn cũng có thể bấm chọn **Pretty-print** để xem một cách trực quan hơn:
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_15.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_15.png)
 
 #### Nội dung tiếp theo
 
