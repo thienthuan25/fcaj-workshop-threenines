@@ -8,27 +8,29 @@
 import os
 import json
 import boto3
+import logging
 from datetime import datetime, timedelta
 from collections import defaultdict
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 BUCKET_NAME = os.environ["BUCKET_NAME"]
 COST_THRESHOLD = float(os.environ.get("COST_THRESHOLD_USD", "10"))
 SPIKE_MULTIPLIER = float(os.environ.get("SPIKE_MULTIPLIER", "1.5"))
+HISTORY_DAYS = int(os.environ.get("HISTORY_DAYS", "14"))
 # Số ngày dữ liệu tối đa trả về cho dashboard
 MAX_DAYS = int(os.environ.get("MAX_DAYS", "30"))
 
 s3_client = boto3.client("s3")
 
 
-def _cors_response(status_code: int, body: dict) -> dict:
+def _response(status_code: int, body: dict) -> dict:
     """Trả response kèm CORS header để web frontend gọi được."""
     return {
         "statusCode": status_code,
         "headers": {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type",
+            "Content-Type": "application/json"
         },
         "body": json.dumps(body, default=str),
     }
@@ -88,7 +90,7 @@ def lambda_handler(event, context):
 
         # Tính trạng thái từng ngày (dựa ngưỡng + trung bình động)
         for i, d in enumerate(daily_costs):
-            prev = [x["total"] for x in daily_costs[max(0, i - 7):i]]
+            prev = [x["total"] for x in daily_costs[max(0, i - HISTORY_DAYS):i]]
             avg = sum(prev) / len(prev) if prev else 0
             if avg > 0 and d["total"] > avg * SPIKE_MULTIPLIER:
                 d["status"] = "CRITICAL"
@@ -107,8 +109,8 @@ def lambda_handler(event, context):
             "daily_costs": daily_costs,
             "top_services": [{"service": s, "cost": round(c, 2)} for s, c in top_services],
         }
-        return _cors_response(200, result)
+        return _response(200, result)
 
-    except Exception as e:
-        print(f"[API] Lỗi: {e}")
-        return _cors_response(500, {"error": str(e)})
+    except Exception:
+        logger.exception("Unexpected error while loading cost dashboard data")
+        return _response(500, {"error": "Internal server error"})
