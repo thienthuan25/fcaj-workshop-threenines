@@ -205,20 +205,20 @@ Thông qua sự kiện, tôi không chỉ tiếp thu thêm nhiều kiến thức
 
 ### Hình Ảnh Minh Chứng Tham Gia Sự Kiện
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.2-Event2/event_1.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.2-Event2/event_1.png)
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.2-Event2/event_2.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.2-Event2/event_2.png)
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.2-Event2/event_3.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.2-Event2/event_3.png)
 
 - Dưới đây là một số hình ảnh trong sự kiện được chụp từ các anh chị **Admin** trong **AWS Study Group**:
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.2-Event2/event_4.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.2-Event2/event_4.png)
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.2-Event2/event_5.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.2-Event2/event_5.png)
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.2-Event2/event_6.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.2-Event2/event_6.png)
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.2-Event2/event_7.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.2-Event2/event_7.png)
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.2-Event2/event_8.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.2-Event2/event_8.png)
