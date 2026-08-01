@@ -29,38 +29,38 @@ Trước tiên, chúng ta kiểm tra **Lambda Collector** có thu thập dữ li
 
 - Truy cập vào **Lambda**, chọn **cloudcost-insight-collector**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/testing_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_1.png)
 
 - Chọn mục **Test** và chạy một sự kiện rỗng.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/testing_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_2.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/testing_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_3.png)
 
 - Kết quả kì vọng: 
 
     + Trả về **statusCode: 200**.
     + Log ghi nhận việc gọi **Cost Explorer**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/testing_4.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_4.png)
 
 2. Kiểm tra dữ liệu đã được ghi vào S3 theo đúng cấu trúc phân vùng theo năm/tháng/ngày:
 
 - Truy cập vào **S3** và chọn bucket của bạn.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/testing_5.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_5.png)
 
 - Kết quả kì vọng: Có các thư mục chứa file JSON chứa dữ liệu chi phí.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/testing_6.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_6.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/testing_7.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_7.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/testing_8.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_8.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/testing_9.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_9.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/testing_10.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_10.png)
 
 #### 2. Kiểm thử phát hiện chi phí bất thường theo 3 mức (INFO, WARNING, CRITICAL)
 
@@ -83,25 +83,25 @@ Với mỗi mức cảnh báo, chúng ta gửi sự kiện tương ứng vào SQ
 
 - Truy cập **Lambda**, chọn **cloudcost-insight-analyzer**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/info_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_1.png)
 
 - Chọn Tab **Monitoring**, sau đó chọn **View CloudWatch Logs**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/info_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_2.png)
 
 - Chọn vào Log mới nhất.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/info_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_3.png)
 
 - Kết quả mong đợi: log phân loại đúng mức **NORMAL**, không cần gửi email cảnh báo.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/info_4.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_4.png)
 
 2. WARNING:
 
 - Truy vập vào **Lambda**, chọn **cloudcost-insight-analyzer**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/info_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_1.png)
 
 - Chọn Tab **Test** và test với dữ liệu **JSON** ở múc **WARNING** đã được chạy script sinh dữ liệu mô phỏng chi phí.
 
@@ -115,13 +115,13 @@ Với mỗi mức cảnh báo, chúng ta gửi sự kiện tương ứng vào SQ
 }
 ```
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/warning_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/warning_1.png)
 
 - Kết quả mong đợi: Log ghi nhận mức cảnh báo **WARNING** và email cảnh báo.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/warning_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/warning_2.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/warning_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/warning_3.png)
 
 3. CRITICAL:
 
@@ -137,13 +137,13 @@ Với mỗi mức cảnh báo, chúng ta gửi sự kiện tương ứng vào SQ
 }
 ```
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/critical_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_1.png)
 
 - Kết quả mong đợi: Log ghi nhận mức cảnh báo **CRITICAL** và email cảnh báo.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/critical_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_2.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/critical_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_3.png)
 
 #### 3. Kiểm thử cơ chế xử lý lỗi (Dead Letter Queue)
 
@@ -157,39 +157,39 @@ aws sqs send-message --queue-url $(terraform output -raw sqs_events_queue_url) -
 
 - Kết quả mong đợi: Message được nhận.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dlq_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_1.png)
 
 2. Analyzer retry rồi thất bại:
 
 - Truy cập vào **CloudWatch**, chọn Tab **Log management**, chọn tiếp **/aws/lambda/cloudcost-insight-analyzer**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dlq_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_2.png)
 
 - Chọn vào **Log stream** mới nhất.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dlq_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_3.png)
 
 - Kết quả mong đợi: Log lỗi **NoSuchKey** và lặp lại nhiều lần.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dlq_4.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_4.png)
 
 - Tiếp theo, truy cập vào **SQS**, chọn **cloudcost-insight-dlq**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dlq_5.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_5.png)
 
 - Chọn **Send and receive message**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dlq_6.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_6.png)
 
 - Kéo xuống chọn **Poll for messages**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dlq_7.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_7.png)
 
 - Kết quả mong đợi: Message được gửi vào **Dead Letter Queue**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dlq_8.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_8.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dlq_9.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_9.png)
 
 #### 4. Kiểm thử giám sát bằng CloudWatch Alarm
 
@@ -197,21 +197,21 @@ Khi sự kiện lỗi ở bước 3 khiến **Analyzer** phát sinh lỗi và c�
 
 - Truy cập vào **CloudWatch**, chọn mục **Alarm**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/cloudwatch_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/cloudwatch_1.png)
 
 - Kết quả mong đợi: **cloudcost-insight-analyzer-errors** và **cloudcost-insight-dlq-has-messages** trong trạng thái **In alarm**.
 
 - Email thông báo.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/alarm_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_1.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/alarm_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_2.png)
 
 - Sau một khoảng thời gian, chúng ta sẽ có email chuyển trạng thái của **cloudcost-insight-analyzer-errors** từ **ALARM** sang **OK** vì **Analyzer** không còn lỗi mới nữa, **CloudWatch** không nhận được datapoint lỗi nào. Dó đó Alarm tự chuyển về **OK**.
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/alarm_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_3.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/alarm_4.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_4.png)
 
 #### 5. Kiểm thử Web Dashboard
 
@@ -219,9 +219,9 @@ Cuối cùng, chúng ta kiểm thử giao diện trực quan.
 
 Truy cập vào link URL CloudFront của dashboard trên trình duyệt và xác minh dữ liệu hiển thị đúng:
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dashboard_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_1.png)
 
-![Testing](/fcaj-workshop-threenines/images/5-Workshop/5.7-Testing/dashboard_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_2.png)
 
 Kết quả mong đợi là dashboard hiển thị đầy đủ các chỉ số KPI, biểu đồ xu hướng chi phí kèm đường ngưỡng và đánh dấu ngày bất thường, cùng biểu đồ top dịch vụ. Ngoài ra, dashboard còn có các chức năng chuyển đổi giao diện sáng tối và chuyển đổi ngôn ngữ Anh Việt.
 
