@@ -465,7 +465,7 @@ loadDashboard();
 
 The interface includes multiple charts, such as a daily cost trend chart with a threshold line and anomaly markers, a service cost distribution chart, and a set of overall KPI indicators. It also supports switching between light and dark themes, as well as toggling between English and Vietnamese.
 
-![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_1.png)
+![Dashboard](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_1.png)
 
 #### Host the Web Application on S3 and CloudFront
 
@@ -626,19 +626,19 @@ terraform apply
 terraform output web_dashboard_url
 ```
 
-![Script](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_2.png)
+![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_2.png)
 
 3. Open the URL displayed in the Terminal to access the Dashboard:
 
-![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_3.png)
+![Dashboard](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_3.png)
 
-![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_4.png)
+![Dashboard](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_4.png)
 
 The dashboard displays the **total cost**, **alert threshold**, **number of monitored days**, **number of anomalous days**, and three visualization charts.
 
 **Chart 1: Daily Cost Trend (Trend Chart):**
 
-![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_5en.png)
+![Dashboard](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_5en.png)
 
 - The X-axis (horizontal) represents the monitored days.
 - The Y-axis (vertical) represents the daily cost ($).
@@ -648,7 +648,7 @@ The dashboard displays the **total cost**, **alert threshold**, **number of moni
 
 **Chart 2: Cost Share by Service (Service Chart):**
 
-![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_6en.png)
+![Dashboard](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_6en.png)
 
 - Each slice of the pie chart represents the cost of an AWS service. The larger the slice, the higher the cost of that service.
 - The name of each service is displayed when you hover over or select its slice.
@@ -657,7 +657,7 @@ The dashboard displays the **total cost**, **alert threshold**, **number of moni
 
 **Chart 3: Top Cost Services (Bar Chart):**
 
-![Dashboard](/fcaj-workshop-threenines/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_7en.png)
+![Dashboard](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_7en.png)
 
 - The chart displays the top 5 services with the highest costs.
 - The X-axis (horizontal) represents the service cost.
