@@ -127,7 +127,7 @@ resource "aws_apigatewayv2_authorizer" "dashboard_jwt" {
   api_id          = aws_apigatewayv2_api.dashboard.id
   name            = "${var.project_name}-jwt"
   authorizer_type = "JWT" # Sử dụng chuẩn JWT (JSON Web Token) để xác thực
-  
+
   # Chỉ định vị trí API Gateway sẽ lấy token từ request (lấy từ Header "Authorization")
   identity_sources = [
     "$request.header.Authorization"
@@ -137,8 +137,8 @@ resource "aws_apigatewayv2_authorizer" "dashboard_jwt" {
   jwt_configuration {
     # Token phải được cấp phát cho Client ID này (Cognito App Client)
     audience = [aws_cognito_user_pool_client.dashboard.id]
-    
+
     # URL của tổ chức phát hành token (chính là Cognito User Pool của dự án)
-    issuer   = "https://cognito-idp.${var.aws_region}.amazonaws.com/${aws_cognito_user_pool.dashboard.id}"
+    issuer = "https://cognito-idp.${var.aws_region}.amazonaws.com/${aws_cognito_user_pool.dashboard.id}"
   }
 }
