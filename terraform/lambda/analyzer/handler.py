@@ -33,30 +33,6 @@ def read_cost_from_s3(s3_key: str) -> dict:
     response = s3_client.get_object(Bucket = BUCKET_NAME, Key = s3_key)
     return json.loads(response["Body"].read())
 
-
-
-# def analyze_cost(cost_data: dict) -> dict:
-#     # Phân tích dữ liệu chi phí:
-#     # - tính tổng chi phí trong ngày
-#     # - lấy top dịch vụ tốn nhiều nhất (đưa vào cảnh báo)
-#     total_cost = 0.0
-#     service_costs = {}
-
-#     for result in cost_data.get("ResultsByTime", []):
-#         for group in result.get("Groups", []):
-#             service = group["Keys"][0]
-#             amount = float(group["Metrics"]["UnblendedCost"]["Amount"])
-#             service_costs[service] = service_costs.get(service, 0.0) + amount
-#             total_cost += amount
-
-#     # Sắp xếp dịch vụ theo chi phí giảm dần, lấy tóp 5
-#     top_services = sorted(service_costs.items(), key = lambda x: x[1], reverse = True)[:5]
-
-#     return {
-#         "total_cost": round(total_cost, 4),
-#         "top_services": top_services,
-#     }
-
 def compute_total_and_top(cost_data: dict) -> dict:
     """Tính tổng chi phí + top dịch vụ tốn nhất từ dữ liệu Cost Explorer."""
     total_cost = 0.0
@@ -82,9 +58,11 @@ def get_historical_average(current_date: str) -> float:
             data = read_cost_from_s3(key)
             totals.append(compute_total_and_top(data)["total_cost"])
         except s3_client.exceptions.NoSuchKey:
+            print(f"[Analyzer] Historical file not found, skipping: {key}")
             continue
-        except Exception:
-            continue
+        except Exception as error:
+            print(f"[Analyzer] Failed to read historical file {key}: {error}")
+            raise
     if not totals:
         return 0.0
     return round(sum(totals) / len(totals), 4)
@@ -143,35 +121,45 @@ def send_alert(date_str: str, analysis: dict, severity: str, reasons: list, avg:
         Message = message,
     )
 
+def process_record(record: dict) -> None:
+    """Xử lý một SQS record; exception sẽ được caller báo lại cho Lambda."""
+    body = json.loads(record["body"])
+    date_str = body["date"]
+    s3_key = body["s3_key"]
+
+    print(f"[Analyzer] Processing cost data for date {date_str} (key={s3_key})")
+
+    # 1. Đọc dữ liệu chi phí ngày hiện tại
+    cost_data = read_cost_from_s3(s3_key)
+    analysis = compute_total_and_top(cost_data)
+    total = analysis["total_cost"]
+
+    # 2. Tính trung bình lịch sử để phát hiện tăng đột biến
+    avg = get_historical_average(date_str)
+    print(f"[Analyzer] Total: ${total:.2f} | Average {HISTORY_DAYS} Day: ${avg:.2f} | Threshold: ${COST_THRESHOLD:.2f}")
+
+    # 3. Phân loại mức độ & quyết định cảnh báo
+    severity, reasons = classify_severity(total, avg)
+    if reasons:
+        print(f"[Analyzer] {severity}! Reason: {reasons}. Send alert to SNS.")
+        send_alert(date_str, analysis, severity, reasons, avg)
+    else:
+        print(f"[Analyzer] Normal cost, no need to alert.")
+
+
 def lambda_handler(event, context):
-    """Điểm vào — được SQS kích hoạt. Mỗi record là 1 sự kiện từ Collector."""
+    """Xử lý SQS batch và chỉ retry các record thất bại."""
     processed = 0
+    batch_item_failures = []
 
     for record in event.get("Records", []):
-        body = json.loads(record["body"])
-        date_str = body["date"]
-        s3_key = body["s3_key"]
+        try:
+            process_record(record)
+            processed += 1
+        except Exception as error:
+            message_id = record["messageId"]
+            print(f"[Analyzer] Failed record {message_id}: {error}")
+            batch_item_failures.append({"itemIdentifier": message_id})
 
-        print(f"[Analyzer] Processing cost data for date {date_str} (key={s3_key})")
-
-        # 1. Đọc dữ liệu chi phí ngày hiện tại
-        cost_data = read_cost_from_s3(s3_key)
-        analysis = compute_total_and_top(cost_data)
-        total = analysis["total_cost"]
-
-        # 2. Tính trung bình lịch sử để phát hiện tăng đột biến
-        avg = get_historical_average(date_str)
-        print(f"[Analyzer] Total: ${total:.2f} | Average {HISTORY_DAYS} Day: ${avg:.2f} | Threshold: ${COST_THRESHOLD:.2f}")
-
-        # 3. Phân loại mức độ & quyết định cảnh báo
-        severity, reasons = classify_severity(total, avg)
-        if reasons:
-            print(f"[Analyzer] {severity}! Reason: {reasons}. Send alert to SNS.")
-            send_alert(date_str, analysis, severity, reasons, avg)
-        else:
-            print(f"[Analyzer] Normal cost, no need to alert.")
-
-        processed += 1
-
-    return {"statusCode": 200, "processed": processed}
-
+    print(f"[Analyzer] Processed={processed}, Failed={len(batch_item_failures)}")
+    return {"batchItemFailures": batch_item_failures}
