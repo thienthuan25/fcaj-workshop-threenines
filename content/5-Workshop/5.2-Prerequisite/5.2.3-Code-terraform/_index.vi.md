@@ -36,11 +36,11 @@ aws --version
 python3 --version
 ```
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_1.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_1.png)
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_2.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_2.png)
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_3.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_3.png)
 
 #### Cấu hình AWS Credentials cho CLI
 
@@ -124,21 +124,21 @@ Trong terminal, chuyển đến thư mục chứa các file Terraform, sau đó 
 terraform login
 ```
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_4.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_4.png)
 
 + Mở đường dẫn được hiển thị trên cửa sổ terminal:
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_5.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_5.png)
 
 + Nhập **Description** nếu muốn để dễ dàng nhận biết token.
 + Chọn thời gian hết hạn cho API Token.
 + Nhấn **Generate token**.
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_6.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_6.png)
 
 + Copy Token vừa tạo vào Terminal:
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_7.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_7.png)
 
 + Sau khi đăng nhập thành công, khởi tạo Terraform để tải tài provider và kết nối **Workspace**:
 
@@ -146,7 +146,7 @@ terraform login
 terraform init
 ```
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_8.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_8.png)
 
 Sau khi hoàn thành các bước trên, môi trường làm việc đã được cấu hình đầy đủ và sẵn sàng để triển khai hệ thống **CloudCost Insight** trong các phần tiếp theo.
 

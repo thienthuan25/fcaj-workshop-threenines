@@ -36,11 +36,11 @@ aws --version
 python3 --version
 ```
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_1.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_1.png)
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_2.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_2.png)
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_3.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_3.png)
 
 #### Configure AWS Credentials for the CLI
 
@@ -124,21 +124,21 @@ In the WSL2 terminal, navigate to the directory containing the Terraform files, 
 terraform login
 ```
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_4.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_4.png)
 
 + Open the URL displayed in the terminal:
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_5.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_5.png)
 
 + Enter a **Description** if you want to make the token easier to identify.
 + Select an expiration period for the API token.
 + Click **Generate token**.
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_6.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_6.png)
 
 + Copy newly created Token to Terminal:
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_7.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_7.png)
 
 + After logging in successfully, initialize Terraform to download providers and connect to the **Workspace**:
 
@@ -146,7 +146,7 @@ terraform login
 terraform init
 ```
 
-![Code terraform](/fcaj-workshop-threenines/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_8.png)
+![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_8.png)
 
 After completing these steps, your working environment is fully configured and ready to deploy the **CloudCost Insight** system in the following sections.
 
