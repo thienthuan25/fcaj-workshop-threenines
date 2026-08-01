@@ -27,7 +27,7 @@ After completing all of the files above, open a terminal, navigate to the projec
 terraform plan
 ```
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_1.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_1.png)
 
 2. Deploy the infrastructure.
 
@@ -35,15 +35,15 @@ terraform plan
 terraform apply
 ```
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_2.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_2.png)
 
 - Type `yes` to confirm the deployment.
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_3.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_3.png)
 
 3. After the deployment is complete, Terraform displays the output values that were defined in `outputs.tf`.
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_5.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_5.png)
 
 4. Verify the deployed resources and confirm the email subscription.
 
@@ -51,27 +51,27 @@ terraform apply
 
 - S3 Bucket:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_6.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_6.png)
 
 - SQS Queue:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_7.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_7.png)
 
 - SNS Topic:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_8.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_8.png)
 
 - EventBridge rule:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_9.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_9.png)
 
 - Confirm the email subscription:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_10.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_10.png)
 
 Click `Confirm subscription`.
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_11.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_11.png)
 
 #### Next Content
 

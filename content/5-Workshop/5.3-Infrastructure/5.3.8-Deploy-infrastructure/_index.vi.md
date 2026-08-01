@@ -27,22 +27,22 @@ Sau khi hoàn thành các file trên, tại thư mục dự án chứa các file
 terraform plan
 ```
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_1.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_1.png)
 
 2. Triển khai hạ tầng.
 
 ```bash
 terraform apply
 ```
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_2.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_2.png)
 
 - Gõ `yes` để xác nhận.
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_3.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_3.png)
 
 3. Sau khi hoàn tất, Terraform sẽ hiển thị các giá trị outputs đã khai báo.
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_5.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_5.png)
 
 4. Kiểm tra và xác nhận Email.
 
@@ -50,27 +50,27 @@ terraform apply
 
 - S3 Bucket:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_6.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_6.png)
 
 - SQS Queue:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_7.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_7.png)
 
 - SNS Topic:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_8.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_8.png)
 
 - EventBridge rule:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_9.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_9.png)
 
 - Xác nhận Email:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_10.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_10.png)
 
 Click `Confirm subscription`:
 
-![Deploy Infrastructure](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_11.png)
+![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_11.png)
 
 #### Nội dung tiếp theo
 
