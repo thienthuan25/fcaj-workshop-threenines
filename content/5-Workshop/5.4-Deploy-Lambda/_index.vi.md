@@ -15,7 +15,7 @@ Trong phần này, chúng ta sẽ triển khai hai hàm Lambda làm xử lý c�
 
 Chúng ta sẽ triển khai lần lượt từng hàm, mỗi hàm gồm phần code Python và cấu hình Terraform tương ứng.
 
-![Lambda (Collector + Analyzer)](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/Infrastructure_diagram.jpg)
+![Lambda (Collector + Analyzer)](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/Infrastructure_diagram.jpg)
 
 #### Nội dung
 

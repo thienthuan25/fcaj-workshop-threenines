@@ -15,7 +15,7 @@ In this section, we will deploy the two Lambda functions that serve as the proce
 
 We will deploy each Lambda function step by step. Each function includes a Python implementation and its corresponding Terraform configuration.
 
-![Lambda (Collector + Analyzer)](/fcaj-workshop-threenines/images/5-Workshop/5.3-Infrastructure/Infrastructure_diagram.jpg)
+![Lambda (Collector + Analyzer)](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/Infrastructure_diagram.jpg)
 
 #### Contents
 
