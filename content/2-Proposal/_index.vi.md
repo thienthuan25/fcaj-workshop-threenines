@@ -27,7 +27,7 @@ CloudCost Insight được thiết kế nhằm giúp cá nhân, đội nhóm ho�
 Nền tảng áp dụng kiến trúc AWS Serverless, event-driven, có khả năng chịu lỗi (resilient). Dữ liệu chi phí được thu thập định kỳ từ Cost Explorer API bởi Lambda Collector, lưu vào S3, rồi đẩy sự kiện qua SQS để Lambda Analyzer xử lý và phát hiện bất thường. Cảnh báo được gửi qua SNS. Dữ liệu chi phí được trực quan hóa qua một web dashboard tự xây, trong đó Lambda-API cung cấp dữ liệu, API Gateway expose endpoint, giao diện web host trên S3 và phân phối qua CloudFront. Toàn bộ hạ tầng được triển khai bằng Terraform.
 
 
-![CloudCost Insight Architecture](/fcaj-workshop-threenines/images/2-Proposal/diagram_1.png)
+![CloudCost Insight Architecture](/workshop-fcaj-intern/images/2-Proposal/diagram_1.png)
 
 *Dịch vụ AWS sử dụng*
 - *Amazon EventBridge*: Lập lịch kích hoạt định kỳ (cron, ví dụ 1 lần/ngày).
