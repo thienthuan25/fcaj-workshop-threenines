@@ -14,7 +14,7 @@ terraform apply
 
 2. After the deployment completes successfully, open the AWS Console and verify the list of CloudWatch Alarms. Initially, all alarms should be in the **OK** state because no errors have occurred yet:
 
-![Monitoring](/fcaj-workshop-threenines/images/5-Workshop/5.5-Monitoring/5.5.3-Deploy/deploy_1.png)
+![Monitoring](/workshop-fcaj-intern/images/5-Workshop/5.5-Monitoring/5.5.3-Deploy/deploy_1.png)
 
 After completing this section, the system will have a complete self monitoring capability. Whenever a Lambda function encounters an error or a message is sent to the **Dead Letter Queue**, you will receive an email notification so that the issue can be investigated and resolved promptly.
 
