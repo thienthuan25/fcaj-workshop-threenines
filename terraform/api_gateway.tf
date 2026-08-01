@@ -68,6 +68,7 @@ resource "aws_lambda_function" "api" {
       BUCKET_NAME        = aws_s3_bucket.cost_data.id
       COST_THRESHOLD_USD = var.cost_threshold_usd
       SPIKE_MULTIPLIER   = var.spike_multiplier
+      HISTORY_DAYS       = var.history_days
       MAX_DAYS           = "30"
     }
   }
@@ -83,9 +84,9 @@ resource "aws_apigatewayv2_api" "dashboard" {
 
   # bật CORS để web frontend gọi được
   cors_configuration {
-    allow_origins = ["*"]
+    allow_origins = ["https://${aws_cloudfront_distribution.web.domain_name}"]
     allow_methods = ["GET", "OPTIONS"]
-    allow_headers = ["Content-Type"]
+    allow_headers = ["Content-Type", "Authorization"]
   }
 }
 
@@ -97,11 +98,12 @@ resource "aws_apigatewayv2_integration" "api" {
   payload_format_version = "2.0"
 }
 
-# route: get/costs
 resource "aws_apigatewayv2_route" "costs" {
-  api_id    = aws_apigatewayv2_api.dashboard.id
-  route_key = "GET /costs"
-  target    = "integrations/${aws_apigatewayv2_integration.api.id}"
+  api_id             = aws_apigatewayv2_api.dashboard.id
+  route_key          = "GET /costs"
+  target             = "integrations/${aws_apigatewayv2_integration.api.id}"
+  authorization_type = "JWT"
+  authorizer_id      = aws_apigatewayv2_authorizer.dashboard_jwt.id
 }
 
 # state mặc định (tự động deploy)
@@ -118,4 +120,18 @@ resource "aws_lambda_permission" "apigw" {
   function_name = aws_lambda_function.api.function_name
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_apigatewayv2_api.dashboard.execution_arn}/*/*"
+}
+
+resource "aws_apigatewayv2_authorizer" "dashboard_jwt" {
+  api_id          = aws_apigatewayv2_api.dashboard.id
+  name            = "${var.project_name}-jwt"
+  authorizer_type = "JWT"
+  identity_sources = [
+    "$request.header.Authorization"
+  ]
+
+  jwt_configuration {
+    audience = [aws_cognito_user_pool_client.dashboard.id]
+    issuer   = "https://cognito-idp.${var.aws_region}.amazonaws.com/${aws_cognito_user_pool.dashboard.id}"
+  }
 }
