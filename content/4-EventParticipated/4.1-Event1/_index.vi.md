@@ -110,20 +110,20 @@ Các diễn giả trình bày rõ ràng, kết hợp giữa kiến thức nền 
 
 ### Hình Ảnh Minh Chứng Tham Gia Sự Kiện
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_1.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_1.png)
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_2.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_2.png)
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_3.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_3.png)
 
 - Dưới đây là một số hình ảnh trong sự kiện được chụp từ các anh chị **Admin** trong **AWS Study Group**:
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_5.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_5.png)
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_6.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_6.png)
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_7.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_7.png)
 
 - Và tôi nhận ra tôi trong bức ảnh, đang ngồi chăm chú lắng nghe:
 
-![Event Participated](/fcaj-workshop-threenines/images/4-EventParticipated/4.1-Event1/event_8.png)
+![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_8.png)
