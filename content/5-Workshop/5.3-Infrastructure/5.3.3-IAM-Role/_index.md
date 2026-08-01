@@ -53,14 +53,6 @@ data "aws_iam_policy_document" "collector_policy" {
     resources = ["${aws_s3_bucket.cost_data.arn}/*"]
   }
 
-  # Allow sending messages to the SQS queue.
-  statement {
-    sid       = "SQSSendMessage"
-    effect    = "Allow"
-    actions   = ["sqs:SendMessage"]
-    resources = ["${aws_sqs_queue.events.arn}"]
-  }
-
   # Allow writing logs to Amazon CloudWatch.
   statement {
     sid    = "CloudWatchLogs"
