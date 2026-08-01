@@ -65,7 +65,7 @@ output "alarm_dlq_messages" {
 # outputs API gateway
 output "api_endpoint" {
   description = "API endpoint URL (for web frontend calls)"
-  value = "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs"
+  value       = "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs"
 }
 
 output "api_function_name" {
@@ -82,4 +82,17 @@ output "web_dashboard_url" {
 output "web_bucket_name" {
   description = "S3 bucket name for static web"
   value       = aws_s3_bucket.web.id
+}
+
+output "user_pool_id" {
+  value = aws_cognito_user_pool.dashboard.id
+}
+
+output "user_pool_client_id" {
+  value = aws_cognito_user_pool_client.dashboard.id
+}
+
+output "cognito_hosted_ui_url" {
+  description = "Cognito Hosted UI sign-in endpoint for the dashboard"
+  value       = "https://${aws_cognito_user_pool_domain.dashboard.domain}.auth.${var.aws_region}.amazoncognito.com/login"
 }

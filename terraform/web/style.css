@@ -50,7 +50,9 @@ header {
 }
 
 #theme-toggle,
-#lang-toggle {
+#lang-toggle,
+#login-button,
+#logout-button {
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
@@ -62,7 +64,9 @@ header {
 }
 
 #theme-toggle:hover,
-#lang-toggle:hover {
+#lang-toggle:hover,
+#login-button:hover,
+#logout-button:hover {
     background: rgba(255, 255, 255, 0.3);
 }
 

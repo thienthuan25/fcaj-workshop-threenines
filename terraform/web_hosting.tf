@@ -52,6 +52,10 @@ resource "aws_cloudfront_distribution" "web" {
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
 
+    min_ttl     = 0
+    default_ttl = 0
+    max_ttl     = 0
+
     forwarded_values {
       query_string = false
       cookies {
@@ -101,35 +105,47 @@ resource "aws_s3_bucket_policy" "web" {
 
 # upload index.html lên S3
 resource "aws_s3_object" "index" {
-  bucket       = aws_s3_bucket.web.id
-  key          = "index.html"
-  source       = "${path.module}/web/index.html"
-  content_type = "text/html"
-  etag         = filemd5("${path.module}/web/index.html")
+  bucket        = aws_s3_bucket.web.id
+  key           = "index.html"
+  source        = "${path.module}/web/index.html"
+  content_type  = "text/html"
+  cache_control = "no-cache, no-store, must-revalidate"
+  etag          = filemd5("${path.module}/web/index.html")
 }
 
 # upload style.css lên S3
 resource "aws_s3_object" "style" {
-  bucket       = aws_s3_bucket.web.id
-  key          = "style.css"
-  source       = "${path.module}/web/style.css"
-  content_type = "text/css"
-  etag         = filemd5("${path.module}/web/style.css")
+  bucket        = aws_s3_bucket.web.id
+  key           = "style.css"
+  source        = "${path.module}/web/style.css"
+  content_type  = "text/css"
+  cache_control = "no-cache, no-store, must-revalidate"
+  etag          = filemd5("${path.module}/web/style.css")
 }
 
 # upload script.js lên S3
-resource "aws_s3_object" "script" {
-  bucket       = aws_s3_bucket.web.id
-  key          = "script.js"
-
-  # tự động chèn URL của API Gateway vào file js
-  content = replace(
-    file("${path.module}/web/script.js"),
-    "REPLACE_MY_API_ENDPOINT",
-    "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs"
+locals {
+  rendered_script = replace(
+    replace(
+      replace(
+        file("${path.module}/web/script.js"),
+        "REPLACE_MY_API_ENDPOINT",
+        "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs"
+      ),
+      "REPLACE_MY_COGNITO_DOMAIN",
+      "https://${aws_cognito_user_pool_domain.dashboard.domain}.auth.${var.aws_region}.amazoncognito.com"
+    ),
+    "REPLACE_MY_COGNITO_CLIENT_ID",
+    aws_cognito_user_pool_client.dashboard.id
   )
-
-  content_type = "application/javascript"
-  etag = filemd5("${path.module}/web/script.js")
 }
 
+resource "aws_s3_object" "script" {
+  bucket = aws_s3_bucket.web.id
+  key    = "script.js"
+
+  content       = local.rendered_script
+  content_type  = "application/javascript"
+  cache_control = "no-cache, no-store, must-revalidate"
+  etag          = md5(local.rendered_script)
+}

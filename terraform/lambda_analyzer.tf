@@ -104,4 +104,7 @@ resource "aws_lambda_event_source_mapping" "sqs_to_analyzer" {
   function_name    = aws_lambda_function.analyzer.arn
   batch_size       = 10
   enabled          = true
+
+  # Lambda chỉ retry các record mà Analyzer báo lỗi.
+  function_response_types = ["ReportBatchItemFailures"]
 }
