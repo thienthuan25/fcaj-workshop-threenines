@@ -18,3 +18,5 @@ content/1-Worklog/overview.md
 crash.log
 
 .venv/
+__pycache__/
+*.py[cod]
