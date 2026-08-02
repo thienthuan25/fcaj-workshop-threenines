@@ -16,11 +16,11 @@ terraform destroy
 
 2. Type `yes` to confirm.
 
-![Cleanup](/fcaj-workshop-threenines/images/5-Workshop/5.8-Cleanup/cleanup_1.png)
+![Cleanup](/workshop-fcaj-intern/images/5-Workshop/5.8-Cleanup/cleanup_1.png)
 
 3. Wait for the cleanup process to complete.
 
-![Cleanup](/fcaj-workshop-threenines/images/5-Workshop/5.8-Cleanup/cleanup_2.png)
+![Cleanup](/workshop-fcaj-intern/images/5-Workshop/5.8-Cleanup/cleanup_2.png)
 
 4. After the **destroy** operation is complete, you should verify in the AWS Console that all resources have been deleted successfully. Check each service used in this workshop, including **S3**, **Lambda**, **SNS**, **SQS**, **EventBridge**, **CloudWatch Alarms**, **API Gateway**, and **CloudFront**.
 

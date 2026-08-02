@@ -16,11 +16,11 @@ terraform destroy
 
 2. Gõ `yes` để xác nhận.
 
-![Cleanup](/fcaj-workshop-threenines/images/5-Workshop/5.8-Cleanup/cleanup_1.png)
+![Cleanup](/workshop-fcaj-intern/images/5-Workshop/5.8-Cleanup/cleanup_1.png)
 
 3. Chờ quá trình dọn dẹp hoàn tất.
 
-![Cleanup](/fcaj-workshop-threenines/images/5-Workshop/5.8-Cleanup/cleanup_2.png)
+![Cleanup](/workshop-fcaj-intern/images/5-Workshop/5.8-Cleanup/cleanup_2.png)
 
 4.  Sau khi **destroy** hoàn tất, bạn nên kiểm tra lại trên AWS Console để xác nhận tài nguyên đã được xóa sạch. Kiểm tra lần lượt các dịch vụ đã sử dụng như **S3**, **Lambda**, **SNS**, **SQS**, **EventBridge**, **CloudWatch Alarm**, **API Gateway** và **CloudFront**.
 
