@@ -5,12 +5,12 @@
 
 # được gọi bởi API gateway (HTTP GET). Trả Json kèm CORS header để web gọi được
 
-import os
 import json
-import boto3
 import logging
-from datetime import datetime, timedelta
+import os
 from collections import defaultdict
+
+import boto3
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -29,9 +29,7 @@ def _response(status_code: int, body: dict) -> dict:
     """Trả response kèm CORS header để web frontend gọi được."""
     return {
         "statusCode": status_code,
-        "headers": {
-            "Content-Type": "application/json"
-        },
+        "headers": {"Content-Type": "application/json"},
         "body": json.dumps(body, default=str),
     }
 
@@ -73,7 +71,7 @@ def lambda_handler(event, context):
     try:
         keys = list_cost_files()[-MAX_DAYS:]  # lấy tối đa MAX_DAYS ngày gần nhất
 
-        daily_costs = []          # [{date, total, status}]
+        daily_costs = []  # [{date, total, status}]
         service_totals = defaultdict(float)  # tổng chi phí theo dịch vụ (toàn kỳ)
         grand_total = 0.0
 
@@ -90,7 +88,7 @@ def lambda_handler(event, context):
 
         # Tính trạng thái từng ngày (dựa ngưỡng + trung bình động)
         for i, d in enumerate(daily_costs):
-            prev = [x["total"] for x in daily_costs[max(0, i - HISTORY_DAYS):i]]
+            prev = [x["total"] for x in daily_costs[max(0, i - HISTORY_DAYS) : i]]
             avg = sum(prev) / len(prev) if prev else 0
             if avg > 0 and d["total"] > avg * SPIKE_MULTIPLIER:
                 d["status"] = "CRITICAL"
@@ -100,14 +98,18 @@ def lambda_handler(event, context):
                 d["status"] = "NORMAL"
 
         # Top dịch vụ tốn chi phí nhất
-        top_services = sorted(service_totals.items(), key=lambda x: x[1], reverse=True)[:5]
+        top_services = sorted(service_totals.items(), key=lambda x: x[1], reverse=True)[
+            :5
+        ]
 
         result = {
             "grand_total": round(grand_total, 2),
             "threshold": COST_THRESHOLD,
             "days_count": len(daily_costs),
             "daily_costs": daily_costs,
-            "top_services": [{"service": s, "cost": round(c, 2)} for s, c in top_services],
+            "top_services": [
+                {"service": s, "cost": round(c, 2)} for s, c in top_services
+            ],
         }
         return _response(200, result)
 
