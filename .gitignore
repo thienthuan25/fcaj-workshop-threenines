@@ -16,3 +16,5 @@ content/1-Worklog/overview.md
 *.tfvars
 !*.tfvars.example
 crash.log
+
+.venv/
