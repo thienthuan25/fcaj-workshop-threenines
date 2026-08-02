@@ -2,11 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [main]
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: read
@@ -32,7 +30,7 @@ jobs:
         run: hugo --minify
 
   python:
-    name: Check Python Lambda code
+    name: Lint and test Python Lambda code
     runs-on: ubuntu-latest
 
     steps:
@@ -44,9 +42,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Check Python syntax
+      - name: Install test dependencies
         run: |
-          python -m compileall terraform/lambda terraform/test
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Lint Python code
+        run: ruff check terraform/lambda tests --output-format=github
+
+      - name: Run unit tests
+        run: pytest -q
 
   terraform:
     name: Validate Terraform
@@ -73,6 +78,15 @@ jobs:
       - name: Validate Terraform configuration
         working-directory: terraform
         run: terraform validate
+
+      - name: Create speculative Terraform plan
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        working-directory: terraform
+        env:
+          TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
+        run: |
+          terraform init -input=false
+          terraform plan -input=false -no-color
 
   frontend:
     name: Check dashboard JavaScript
