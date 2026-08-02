@@ -29,7 +29,7 @@ jobs:
       - name: Build Hugo site
         run: hugo --minify
 
-    python:
+  python:
     name: Lint and test Python Lambda code
     runs-on: ubuntu-latest
 
@@ -78,11 +78,9 @@ jobs:
       - name: Validate Terraform configuration
         working-directory: terraform
         run: terraform validate
-      
+
       - name: Create speculative Terraform plan
-        if: >
-          github.event_name == 'pull_request' &&
-          github.event.pull_request.head.repo.full_name == github.repository
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         working-directory: terraform
         env:
           TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
