@@ -85,7 +85,7 @@ jobs:
         env:
           TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
         run: |
-          terraform init -input=false -reconfigure
+          terraform init -input=false
           terraform plan -input=false -no-color
 
   frontend:
