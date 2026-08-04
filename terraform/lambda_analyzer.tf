@@ -90,8 +90,8 @@ resource "aws_lambda_function" "analyzer" {
       BUCKET_NAME        = aws_s3_bucket.cost_data.id
       SNS_TOPIC_ARN      = aws_sns_topic.cost_alerts.arn
       COST_THRESHOLD_USD = var.cost_threshold_usd
-      SPIKE_MULTIPLIER   = var.spike_multiplier # update variable
-      HISTORY_DAYS       = var.history_days     # update variable
+      SPIKE_MULTIPLIER   = var.spike_multiplier
+      HISTORY_DAYS       = var.history_days
     }
   }
 

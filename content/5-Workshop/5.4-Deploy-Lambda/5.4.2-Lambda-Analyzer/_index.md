@@ -24,7 +24,7 @@ variable "spike_multiplier" {
 variable "history_days" {
   description = "Number of historical days used to calculate the average cost (for spike detection)"
   type        = number
-  default     = 7 # Calculate the average cost over the last 7 days.
+  default     = 14 # Calculate the average cost over the last 14 days.
 }
 ```
 
@@ -64,6 +64,12 @@ import json
 BUCKET_NAME = os.environ["BUCKET_NAME"]
 SNS_TOPIC_ARN = os.environ["SNS_TOPIC_ARN"]
 COST_THRESHOLD = float(os.environ.get("COST_THRESHOLD", "10"))
+
+# Spike multiplier: cost > average * multiplier => anomaly
+SPIKE_MULTIPLIER = float(os.environ.get("SPIKE_MULTIPLIER", "1.5"))
+
+# Number of historical days used to calculate the average
+HISTORY_DAYS = int(os.environ.get("HISTORY_DAYS", "14"))
 
 s3_client = boto3.client("s3")
 sns_client = boto3.client("sns")
@@ -150,34 +156,21 @@ def send_alert(date_str: str, analysis: dict) -> None:
     )
 
 def lambda_handler(event, context):
-    # Each record represents one event sent by the Collector
+    """Process SQS batch and only retry failed records."""
     processed = 0
+    batch_item_failures = []
 
     for record in event.get("Records", []):
-        body = json.loads(record["body"])
-        date_str = body["date"]
-        s3_key = body["s3_key"]
+        try:
+            process_record(record)
+            processed += 1
+        except Exception as error:
+            message_id = record["messageId"]
+            print(f"[Analyzer] Failed record {message_id}: {error}")
+            batch_item_failures.append({"itemIdentifier": message_id})
 
-        print(f"[Analyzer] Processing cost data for date {date_str} (key = {s3_key})")
-
-        # Read cost data from Amazon S3
-        cost_data = read_cost_from_s3(s3_key)
-
-        # Process the cost data
-        analysis = analyze_cost(cost_data)
-        total = analysis["total_cost"]
-        print(f"[Analyzer] Total cost for date {date_str}: ${total:.4f} (threshold ${COST_THRESHOLD:.2f})")
-
-        # Compare against the budget threshold and send an alert if necessary
-        if total > COST_THRESHOLD:
-            print(f"[Analyzer] THRESHOLD EXCEEDED! Sending alert via SNS.")
-            send_alert(date_str, analysis)
-        else:
-            print(f"[Analyzer] Cost within threshold, no alert needed.")
-
-        processed += 1
-
-    return {"statusCode": 200, "processed": processed}
+    print(f"[Analyzer] Processed={processed}, Failed={len(batch_item_failures)}")
+    return {"batchItemFailures": batch_item_failures}
 ```
 
 #### Configure the IAM Role and Deploy the Analyzer
@@ -283,6 +276,8 @@ resource "aws_lambda_function" "analyzer" {
       BUCKET_NAME        = aws_s3_bucket.cost_data.id
       SNS_TOPIC_ARN      = aws_sns_topic.cost_alerts.arn
       COST_THRESHOLD_USD = var.cost_threshold_usd
+      SPIKE_MULTIPLIER   = var.spike_multiplier
+      HISTORY_DAYS       = var.history_days
     }
   }
 
@@ -295,6 +290,9 @@ resource "aws_lambda_event_source_mapping" "sqs_to_analyzer" {
   function_name    = aws_lambda_function.analyzer.arn
   batch_size       = 10
   enabled          = true
+
+  # Lambda retries records only when the Analyzer reports an error.
+  function_response_types = ["ResponseBatchItemFailures"]
 }
 ```
 
