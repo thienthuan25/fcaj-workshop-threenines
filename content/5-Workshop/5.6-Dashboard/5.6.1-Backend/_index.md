@@ -84,11 +84,11 @@ def lambda_handler(event, context):
     try:
         keys = list_cost_files()[-MAX_DAYS:]  # Retrieve at most the most recent MAX_DAYS of data
 
-        daily_costs = []          # [{date, total, status}]
-        service_totals = defaultdict(float)  # Total cost by service (entire period)
+        daily_costs = []  # [{date, total, status}]
+        service_totals = defaultdict(float)  # Total cost by service (full term)
         grand_total = 0.0
 
-        # Read each file and aggregate the data
+        # Read each file, synthesize
         for key in keys:
             data = read_cost_file(key)
             day, total, services = parse_daily(data)
@@ -99,9 +99,9 @@ def lambda_handler(event, context):
             for svc, amt in services.items():
                 service_totals[svc] += amt
 
-        # Determine the status for each day (based on threshold + moving average)
+        # Daily status (based on threshold + moving average)
         for i, d in enumerate(daily_costs):
-            prev = [x["total"] for x in daily_costs[max(0, i - 7):i]]
+            prev = [x["total"] for x in daily_costs[max(0, i - HISTORY_DAYS) : i]]
             avg = sum(prev) / len(prev) if prev else 0
             if avg > 0 and d["total"] > avg * SPIKE_MULTIPLIER:
                 d["status"] = "CRITICAL"
@@ -110,21 +110,25 @@ def lambda_handler(event, context):
             else:
                 d["status"] = "NORMAL"
 
-        # Top cost-consuming services
-        top_services = sorted(service_totals.items(), key=lambda x: x[1], reverse=True)[:5]
+        # Top most expensive services
+        top_services = sorted(service_totals.items(), key=lambda x: x[1], reverse=True)[
+            :5
+        ]
 
         result = {
             "grand_total": round(grand_total, 2),
             "threshold": COST_THRESHOLD,
             "days_count": len(daily_costs),
             "daily_costs": daily_costs,
-            "top_services": [{"service": s, "cost": round(c, 2)} for s, c in top_services],
+            "top_services": [
+                {"service": s, "cost": round(c, 2)} for s, c in top_services
+            ],
         }
-        return _cors_response(200, result)
+        return _response(200, result)
 
-    except Exception as e:
-        print(f"[API] Error: {e}")
-        return _cors_response(500, {"error": str(e)})
+    except Exception:
+        logger.exception("Unexpected error while loading cost dashboard data")
+        return _response(500, {"error": "Internal server error"})
 ```
 
 The most important part here is the **CORS headers** included in the response. CORS stands for Cross-Origin Resource Sharing, a mechanism that allows resources to be shared across different origins. This mechanism exists to protect web users. By default, web browsers enforce a strict security policy: they do not allow a web page hosted on one domain to freely access data from another domain. This prevents malicious websites from secretly stealing users' personal information.
@@ -207,6 +211,7 @@ resource "aws_lambda_function" "api" {
       BUCKET_NAME        = aws_s3_bucket.cost_data.id
       COST_THRESHOLD_USD = var.cost_threshold_usd
       SPIKE_MULTIPLIER   = var.spike_multiplier
+      HISTORY_DAYS       = var.history_days
       MAX_DAYS           = "30"
     }
   }

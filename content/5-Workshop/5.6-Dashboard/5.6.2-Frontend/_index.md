@@ -472,14 +472,14 @@ The interface includes multiple charts, such as a daily cost trend chart with a 
 Next, we will create the `terraform/web_hosting.tf` file to host the web interface on **S3** and distribute it through **CloudFront** over HTTPS. For security, the web bucket is **not** publicly accessible. Instead, only **CloudFront** is allowed to read its contents using **Origin Access Control (OAC)**.
 
 ```hcl
-# Host the website on S3 + CloudFront
+# Host Website on S3 + CloudFront
 
 # S3 bucket for static website files
 resource "aws_s3_bucket" "web" {
   bucket = "${var.project_name}-web-${data.aws_caller_identity.current.account_id}"
 }
 
-# Static website hosting configuration
+# static website hosting
 resource "aws_s3_bucket_website_configuration" "web" {
   bucket = aws_s3_bucket.web.id
 
@@ -491,7 +491,7 @@ resource "aws_s3_bucket_website_configuration" "web" {
   }
 }
 
-# CloudFront + Origin Access Control
+# CloudFront + Origin Access Control 
 resource "aws_cloudfront_origin_access_control" "web" {
   name                              = "${var.project_name}-oac"
   origin_access_control_origin_type = "s3"
@@ -522,9 +522,14 @@ resource "aws_cloudfront_distribution" "web" {
 
   default_cache_behavior {
     target_origin_id       = "s3-web"
-    viewer_protocol_policy = "redirect-to-https" # Automatically redirect insecure HTTP requests to HTTPS
+    viewer_protocol_policy = "redirect-to-https" # HTTPS
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
+
+    # help Dashboard always load the latest file version from S3 instead of using the old one
+    min_ttl     = 0
+    default_ttl = 0
+    max_ttl     = 0
 
     forwarded_values {
       query_string = false
@@ -535,21 +540,19 @@ resource "aws_cloudfront_distribution" "web" {
   }
 
   restrictions {
-    # No geographic restrictions
     geo_restriction {
       restriction_type = "none"
     }
   }
 
-  # Default free SSL certificate provided by CloudFront
   viewer_certificate {
     cloudfront_default_certificate = true
   }
 
-  price_class = "PriceClass_100" # Low-cost pricing tier
+  price_class = "PriceClass_100" #cheap
 }
 
-# Bucket policy: Allow CloudFront to read objects from S3
+# bucket policy: Cloudfront đọc S3
 data "aws_iam_policy_document" "web_bucket_policy" {
   statement {
     sid       = "AllowCloudFrontRead"
@@ -575,38 +578,51 @@ resource "aws_s3_bucket_policy" "web" {
   policy = data.aws_iam_policy_document.web_bucket_policy.json
 }
 
-# Upload index.html to S3
+# upload index.html lên S3
 resource "aws_s3_object" "index" {
-  bucket       = aws_s3_bucket.web.id
-  key          = "index.html"
-  source       = "${path.module}/web/index.html"
-  content_type = "text/html"
-  etag         = filemd5("${path.module}/web/index.html")
+  bucket        = aws_s3_bucket.web.id
+  key           = "index.html"
+  source        = "${path.module}/web/index.html"
+  content_type  = "text/html"
+  cache_control = "no-cache, no-store, must-revalidate"
+  etag          = filemd5("${path.module}/web/index.html")
 }
 
-# Upload style.css to S3
+# upload style.css lên S3
 resource "aws_s3_object" "style" {
-  bucket       = aws_s3_bucket.web.id
-  key          = "style.css"
-  source       = "${path.module}/web/style.css"
-  content_type = "text/css"
-  etag         = filemd5("${path.module}/web/style.css")
+  bucket        = aws_s3_bucket.web.id
+  key           = "style.css"
+  source        = "${path.module}/web/style.css"
+  content_type  = "text/css"
+  cache_control = "no-cache, no-store, must-revalidate"
+  etag          = filemd5("${path.module}/web/style.css")
 }
 
-# Upload script.js to S3
-resource "aws_s3_object" "script" {
-  bucket       = aws_s3_bucket.web.id
-  key          = "script.js"
-
-  # Automatically inject the API Gateway URL into the JavaScript file
-  content = replace(
-    file("${path.module}/web/script.js"),
-    "REPLACE_MY_API_ENDPOINT",
-    "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs"
+# upload script.js lên S3
+locals {
+  rendered_script = replace(
+    replace(
+      replace(
+        file("${path.module}/web/script.js"),
+        "REPLACE_MY_API_ENDPOINT",
+        "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs"
+      ),
+      "REPLACE_MY_COGNITO_DOMAIN",
+      "https://${aws_cognito_user_pool_domain.dashboard.domain}.auth.${var.aws_region}.amazoncognito.com"
+    ),
+    "REPLACE_MY_COGNITO_CLIENT_ID",
+    aws_cognito_user_pool_client.dashboard.id
   )
+}
 
-  content_type = "application/javascript"
-  etag = filemd5("${path.module}/web/script.js")
+resource "aws_s3_object" "script" {
+  bucket = aws_s3_bucket.web.id
+  key    = "script.js"
+
+  content       = local.rendered_script
+  content_type  = "application/javascript"
+  cache_control = "no-cache, no-store, must-revalidate"
+  etag          = md5(local.rendered_script)
 }
 ```
 

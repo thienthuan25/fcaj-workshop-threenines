@@ -18,31 +18,31 @@ Chúng ta sẽ tạo file `lambda/api/handler.py`. Hàm này đọc toàn bộ d
 
 # được gọi bởi API gateway (HTTP GET). Trả Json kèm CORS header để web gọi được
 
-import os
 import json
-import boto3
-from datetime import datetime, timedelta
+import logging
+import os
 from collections import defaultdict
+
+import boto3
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 BUCKET_NAME = os.environ["BUCKET_NAME"]
 COST_THRESHOLD = float(os.environ.get("COST_THRESHOLD_USD", "10"))
 SPIKE_MULTIPLIER = float(os.environ.get("SPIKE_MULTIPLIER", "1.5"))
+HISTORY_DAYS = int(os.environ.get("HISTORY_DAYS", "14"))
 # Số ngày dữ liệu tối đa trả về cho dashboard
 MAX_DAYS = int(os.environ.get("MAX_DAYS", "30"))
 
 s3_client = boto3.client("s3")
 
 
-def _cors_response(status_code: int, body: dict) -> dict:
+def _response(status_code: int, body: dict) -> dict:
     """Trả response kèm CORS header để web frontend gọi được."""
     return {
         "statusCode": status_code,
-        "headers": {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type",
-        },
+        "headers": {"Content-Type": "application/json"},
         "body": json.dumps(body, default=str),
     }
 
@@ -84,7 +84,7 @@ def lambda_handler(event, context):
     try:
         keys = list_cost_files()[-MAX_DAYS:]  # lấy tối đa MAX_DAYS ngày gần nhất
 
-        daily_costs = []          # [{date, total, status}]
+        daily_costs = []  # [{date, total, status}]
         service_totals = defaultdict(float)  # tổng chi phí theo dịch vụ (toàn kỳ)
         grand_total = 0.0
 
@@ -101,7 +101,7 @@ def lambda_handler(event, context):
 
         # Tính trạng thái từng ngày (dựa ngưỡng + trung bình động)
         for i, d in enumerate(daily_costs):
-            prev = [x["total"] for x in daily_costs[max(0, i - 7):i]]
+            prev = [x["total"] for x in daily_costs[max(0, i - HISTORY_DAYS) : i]]
             avg = sum(prev) / len(prev) if prev else 0
             if avg > 0 and d["total"] > avg * SPIKE_MULTIPLIER:
                 d["status"] = "CRITICAL"
@@ -111,20 +111,24 @@ def lambda_handler(event, context):
                 d["status"] = "NORMAL"
 
         # Top dịch vụ tốn chi phí nhất
-        top_services = sorted(service_totals.items(), key=lambda x: x[1], reverse=True)[:5]
+        top_services = sorted(service_totals.items(), key=lambda x: x[1], reverse=True)[
+            :5
+        ]
 
         result = {
             "grand_total": round(grand_total, 2),
             "threshold": COST_THRESHOLD,
             "days_count": len(daily_costs),
             "daily_costs": daily_costs,
-            "top_services": [{"service": s, "cost": round(c, 2)} for s, c in top_services],
+            "top_services": [
+                {"service": s, "cost": round(c, 2)} for s, c in top_services
+            ],
         }
-        return _cors_response(200, result)
+        return _response(200, result)
 
-    except Exception as e:
-        print(f"[API] Lỗi: {e}")
-        return _cors_response(500, {"error": str(e)})
+    except Exception:
+        logger.exception("Unexpected error while loading cost dashboard data")
+        return _response(500, {"error": "Internal server error"})
 ```
 
 Điểm quan trọng ở đây là **CORS header** trong response. CORS là viết tắt của cơ chế chia sẻ tài nguyên giữa các nguồn gốc khác nhau. Cơ chế này tồn tại để bảo vệ an toàn cho người dùng Web. Mặc định, các trình duyệt Web đều có một quy tắt bảo mật rất nghiêm ngặt: chúng không ch phép một trang Web ở tên miền này được phép tự ý gọi và lấy dữ liệu từ một tên miền khác. Điều này giúp ngăn chặn các trang Web giả mạo âm thầm đánh cắp thông tin cá nhân của bạn.
@@ -207,6 +211,7 @@ resource "aws_lambda_function" "api" {
       BUCKET_NAME        = aws_s3_bucket.cost_data.id
       COST_THRESHOLD_USD = var.cost_threshold_usd
       SPIKE_MULTIPLIER   = var.spike_multiplier
+      HISTORY_DAYS       = var.history_days
       MAX_DAYS           = "30"
     }
   }

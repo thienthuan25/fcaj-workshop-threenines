@@ -33,7 +33,7 @@ import boto3
 import os
 import json
 import boto3
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # Đọc cấu hình từ biến môi trường
 BUCKET_NAME = os.environ["BUCKET_NAME"]
@@ -45,16 +45,28 @@ s3_client = boto3.client("s3")
 sqs_client = boto3.client("sqs")
 
 def get_cost_data(start_date: str, end_date: str) -> dict:
-    # Gọi Cost Explorer API lấy chi phí theo dịch vụ trong khoảng ngày
-    response = ce_client.get_cost_and_usage(
-        TimePeriod = {"Start": start_date, "End": end_date},
-        Granularity = "DAILY",
-        Metrics = ["UnblendedCost"],
-        GroupBy = [
-            {"Type": "DIMENSION", "Key": "SERVICE"}
-        ]
-    )
-    return response
+    """Lấy toàn bộ trang Cost Explorer data theo dịch vụ."""
+    params = {
+        "TimePeriod": {"Start": start_date, "End": end_date},
+        "Granularity": "DAILY",
+        "Metrics": ["UnblendedCost"],
+        "GroupBy": [{"Type": "DIMENSION", "Key": "SERVICE"}],
+    }
+    results_by_time = []
+
+    while True:
+        response = ce_client.get_cost_and_usage(**params)
+        results_by_time.extend(response.get("ResultsByTime", []))
+
+        next_page_token = response.get("NextPageToken")
+        if not next_page_token:
+            break
+        params["NextPageToken"] = next_page_token
+
+    return {
+        "ResultsByTime": results_by_time,
+        "GroupDefinitions": params["GroupBy"],
+    }
 
 def save_to_s3(data: dict, date_str: str) -> str:
     # Lưu dữ liệu chi phí vào S3, phân vùng theo năm/tháng/ngày
@@ -76,18 +88,15 @@ def send_event_to_sqs(date_str: str, s3_key: str, total_cost: float) -> None:
         "date": date_str,
         "s3_key": s3_key,
         "total_cost": total_cost,
-        "collected_at": datetime.utcnow().isoformat(),
+        "collected_at": datetime.now(timezone.utc).isoformat(),
     }
 
-    sqs_client.send_message(
-        QueueUrl = QUEUE_URL,
-        MessageBody = json.dumps(message)
-    )
+    sqs_client.send_message(QueueUrl=QUEUE_URL, MessageBody=json.dumps(message))
 
 def lambda_handler(event, context):
     # Điểm vào của Lambda - được EventBridge gọi
     # Lấy dữ liệu của ngày hôm qua (Cost Explorer có độ trễ tới 24h)
-    yesterday = datetime.utcnow().date() - timedelta(days = 1)
+    yesterday = datetime.now(timezone.utc).date() - timedelta(days = 1)
     start_date = yesterday.strftime("%Y-%m-%d")
     end_date = (yesterday + timedelta(days = 1)).strftime("%Y-%m-%d")
 
