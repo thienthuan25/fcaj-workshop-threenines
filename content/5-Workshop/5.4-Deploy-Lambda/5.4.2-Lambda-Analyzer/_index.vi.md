@@ -23,7 +23,7 @@ variable "spike_multiplier" {
 variable "history_days" {
   description = "Number of historical days used to calculate the average cost (for spike detection)"
   type        = number
-  default     = 7 # tính trung bình chi phí của 7 ngày gần nhất
+  default     = 14 # tính trung bình chi phí của 14 ngày gần nhất
 }
 ```
 
@@ -54,11 +54,22 @@ Chức năng:
 Sự kiện xử lý lỗi sẽ được SQS tự động chuyển vào DLQ (theo redrive policy)
 """
 
-import boto3
-import os
+"""
+Chức năng:
+    1. Được kích hoạt bởi sự kiện từ SQS (do Collector gửi)
+    2. Đọc dữ liệu chi phí tương ứng từ S3
+    3. So sánh tổng chi phí với ngưỡng ngân sách (threshold) + phát hiện bất thường
+        (tăng đột biến so với mức trung bình lịch sử - nếu có)
+    4. Nếu vượt ngưỡng / bất thường -> gửi cảnh báo qua SNS
+
+Sự kiện xử lý lỗi sẽ được SQS tự động chuyển vào DLQ (theo redrive policy)
+"""
+
 import json
-import boto3
+import os
 from datetime import datetime, timedelta
+
+import boto3
 
 # Đọc cấu hình từ biến môi trường (Terraform truyền vào)
 BUCKET_NAME = os.environ["BUCKET_NAME"]
@@ -68,15 +79,17 @@ COST_THRESHOLD = float(os.environ.get("COST_THRESHOLD_USD", "10"))
 # Hệ số tăng đột biến: chi phí > trung bình * hệ số này  => bất thường
 SPIKE_MULTIPLIER = float(os.environ.get("SPIKE_MULTIPLIER", "1.5"))
 # Số ngày lịch sử dùng để tính trung bình
-HISTORY_DAYS = int(os.environ.get("HISTORY_DAYS", "7"))
+HISTORY_DAYS = int(os.environ.get("HISTORY_DAYS", "14"))
 
 s3_client = boto3.client("s3")
 sns_client = boto3.client("sns")
 
+
 def read_cost_from_s3(s3_key: str) -> dict:
     # Đọc file dữ liệu chi phí (.json) từ S3
-    response = s3_client.get_object(Bucket = BUCKET_NAME, Key = s3_key)
+    response = s3_client.get_object(Bucket=BUCKET_NAME, Key=s3_key)
     return json.loads(response["Body"].read())
+
 
 def compute_total_and_top(cost_data: dict) -> dict:
     """Tính tổng chi phí + top dịch vụ tốn nhất từ dữ liệu Cost Explorer."""
@@ -91,24 +104,28 @@ def compute_total_and_top(cost_data: dict) -> dict:
     top_services = sorted(service_costs.items(), key=lambda x: x[1], reverse=True)[:5]
     return {"total_cost": round(total_cost, 4), "top_services": top_services}
 
+
 def get_historical_average(current_date: str) -> float:
     # Tính chi phí trung bình của HISTORY_DAYS ngày trước trước ngày hiện tại,
     # đọc từ các file đã luuw trong S3. Trả về 0 nếu chưa có lịch sử
     dt = datetime.strptime(current_date, "%Y-%m-%d")
     totals = []
     for i in range(1, HISTORY_DAYS + 1):
-        day = dt - timedelta(days = i)
+        day = dt - timedelta(days=i)
         key = f"cost-data/year={day.year}/month={day.month:02d}/day={day.day:02d}/cost_{day.strftime('%Y-%m-%d')}.json"
         try:
             data = read_cost_from_s3(key)
             totals.append(compute_total_and_top(data)["total_cost"])
         except s3_client.exceptions.NoSuchKey:
+            print(f"[Analyzer] Historical file not found, skipping: {key}")
             continue
-        except Exception:
-            continue
+        except Exception as error:
+            print(f"[Analyzer] Failed to read historical file {key}: {error}")
+            raise
     if not totals:
         return 0.0
     return round(sum(totals) / len(totals), 4)
+
 
 def classify_severity(total: float, avg: float) -> tuple:
     # Phân loại mức độ cảnh báo dựa trên ngưỡng cố định và tăng đột biến.
@@ -125,13 +142,17 @@ def classify_severity(total: float, avg: float) -> tuple:
     # tăng đột biến so với trung bình lịch sử
     if avg > 0 and total > avg * SPIKE_MULTIPLIER:
         pct = ((total - avg) / avg) * 100
-        reasons.append(f"Cost spike detected: {pct:.0f}% above historical average {HISTORY_DAYS} day (${avg:.2f})")
+        reasons.append(
+            f"Cost spike detected: {pct:.0f}% above historical average {HISTORY_DAYS} day (${avg:.2f})"
+        )
         severity = "CRITICAL"
-    
+
     return severity, reasons
 
 
-def send_alert(date_str: str, analysis: dict, severity: str, reasons: list, avg: float) -> None:
+def send_alert(
+    date_str: str, analysis: dict, severity: str, reasons: list, avg: float
+) -> None:
     # Gửi cảnh báo qua SNS khi chi phí vượt ngưỡng
     total = analysis["total_cost"]
 
@@ -143,58 +164,69 @@ def send_alert(date_str: str, analysis: dict, severity: str, reasons: list, avg:
         f"Alert threshold: ${COST_THRESHOLD:.2f}",
         f"Historical average ({HISTORY_DAYS} days): ${avg:.2f}",
         "",
-        "Reasons:"
+        "Reasons:",
     ]
     for r in reasons:
         lines.append(f" - {r}")
-        
-    lines.extend([
-        "",
-        "Top Service by cost:"
-    ])
-    
+
+    lines.extend(["", "Top Service by cost:"])
+
     for service, cost in analysis["top_services"]:
         lines.append(f" - {service}: ${cost:.2f}")
 
     message = "\n".join(lines)
 
     sns_client.publish(
-        TopicArn = SNS_TOPIC_ARN,
-        Subject = f"[{severity}] CloudCost Insight Alert for {date_str}",
-        Message = message,
+        TopicArn=SNS_TOPIC_ARN,
+        Subject=f"[{severity}] CloudCost Insight Alert for {date_str}",
+        Message=message,
     )
 
+
+def process_record(record: dict) -> None:
+    """Xử lý một SQS record; exception sẽ được caller báo lại cho Lambda."""
+    body = json.loads(record["body"])
+    date_str = body["date"]
+    s3_key = body["s3_key"]
+
+    print(f"[Analyzer] Processing cost data for date {date_str} (key={s3_key})")
+
+    # 1. Đọc dữ liệu chi phí ngày hiện tại
+    cost_data = read_cost_from_s3(s3_key)
+    analysis = compute_total_and_top(cost_data)
+    total = analysis["total_cost"]
+
+    # 2. Tính trung bình lịch sử để phát hiện tăng đột biến
+    avg = get_historical_average(date_str)
+    print(
+        f"[Analyzer] Total: ${total:.2f} | Average {HISTORY_DAYS} Day: ${avg:.2f} | Threshold: ${COST_THRESHOLD:.2f}"
+    )
+
+    # 3. Phân loại mức độ & quyết định cảnh báo
+    severity, reasons = classify_severity(total, avg)
+    if reasons:
+        print(f"[Analyzer] {severity}! Reason: {reasons}. Send alert to SNS.")
+        send_alert(date_str, analysis, severity, reasons, avg)
+    else:
+        print("[Analyzer] Normal cost, no need to alert.")
+
+
 def lambda_handler(event, context):
-    """Điểm vào — được SQS kích hoạt. Mỗi record là 1 sự kiện từ Collector."""
+    """Xử lý SQS batch và chỉ retry các record thất bại."""
     processed = 0
+    batch_item_failures = []
 
     for record in event.get("Records", []):
-        body = json.loads(record["body"])
-        date_str = body["date"]
-        s3_key = body["s3_key"]
+        try:
+            process_record(record)
+            processed += 1
+        except Exception as error:
+            message_id = record["messageId"]
+            print(f"[Analyzer] Failed record {message_id}: {error}")
+            batch_item_failures.append({"itemIdentifier": message_id})
 
-        print(f"[Analyzer] Processing cost data for date {date_str} (key={s3_key})")
-
-        # 1. Đọc dữ liệu chi phí ngày hiện tại
-        cost_data = read_cost_from_s3(s3_key)
-        analysis = compute_total_and_top(cost_data)
-        total = analysis["total_cost"]
-
-        # 2. Tính trung bình lịch sử để phát hiện tăng đột biến
-        avg = get_historical_average(date_str)
-        print(f"[Analyzer] Total: ${total:.2f} | Average {HISTORY_DAYS} Day: ${avg:.2f} | Threshold: ${COST_THRESHOLD:.2f}")
-
-        # 3. Phân loại mức độ & quyết định cảnh báo
-        severity, reasons = classify_severity(total, avg)
-        if reasons:
-            print(f"[Analyzer] {severity}! Reason: {reasons}. Send alert to SNS.")
-            send_alert(date_str, analysis, severity, reasons, avg)
-        else:
-            print(f"[Analyzer] Normal cost, no need to alert.")
-
-        processed += 1
-
-    return {"statusCode": 200, "processed": processed}
+    print(f"[Analyzer] Processed={processed}, Failed={len(batch_item_failures)}")
+    return {"batchItemFailures": batch_item_failures}
 ```
 
 #### Cấu hình IAM Role và triển khai Analyzer
@@ -300,6 +332,8 @@ resource "aws_lambda_function" "analyzer" {
       BUCKET_NAME        = aws_s3_bucket.cost_data.id
       SNS_TOPIC_ARN      = aws_sns_topic.cost_alerts.arn
       COST_THRESHOLD_USD = var.cost_threshold_usd
+      SPIKE_MULTIPLIER   = var.spike_multiplier
+      HISTORY_DAYS       = var.history_days
     }
   }
 
@@ -312,6 +346,9 @@ resource "aws_lambda_event_source_mapping" "sqs_to_analyzer" {
   function_name    = aws_lambda_function.analyzer.arn
   batch_size       = 10
   enabled          = true
+
+  # Lambda chỉ retry các record mà Analyzer báo lỗi
+  function_response_types = ["ReportBatchItemFailures"]
 }
 ```
 

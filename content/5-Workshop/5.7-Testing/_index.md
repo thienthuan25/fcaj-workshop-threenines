@@ -8,102 +8,102 @@ pre : " <b> 5.7 </b> "
 
 #### Overview
 
-After deploying all system components, in this section we will perform end-to-end testing of the **CloudCost Insight** system. The objective is to verify that all workflows operate correctly and integrate seamlessly with one another.
+After fully deploying the components, in this section we will test the entire **CloudCost Insight** system end-to-end. The goal is to verify that the flows operate correctly and coordinate closely with each other.
 
-We will test the system in four main areas:
+We will test according to 4 main groups:
 
-- Cost data collection and analysis workflow.
-- Anomaly detection mechanism and three-level email alerts.
-- Error handling mechanism using the **Dead Letter Queue**.
-- Monitoring mechanism using **CloudWatch Alarm** and the **Web Dashboard**.
+- Cost data collection and analysis flow.
+- 3-level anomaly detection and Email alerting mechanism.
+- Error handling mechanism using **Dead Letter Queue**.
+- Monitoring mechanism using **CloudWatch Alarm** and **Web Dashboard**.
 
 {{% notice note %}}
-If your AWS account is new or you have just run the system and 24 hours have not passed for **Cost Explorer** to record cost data, we will continue to use the simulated data ([Simulated Data](../5.6-Dashboard/5.6.1-Backend/)) to fully test all anomaly detection scenarios. When deployed on an account with actual costs, the system operates similarly using real data from **Cost Explorer**.
+If your AWS account is new or you just ran the system and it hasn't been 24 hours for **Cost Explorer** to record cost data, we will continue using simulated data to fully test the anomaly detection scenarios. When deployed with an account having actual costs, the system operates similarly with real data from **Cost Explorer**.
 {{% /notice %}}
 
-#### 1. Testing the Cost Data Collection Workflow
+#### 1. Test Data Collection Flow
 
-First, we verify that the **Lambda Collector** correctly collects cost data and stores it in S3. In the **AWS Console**, open the Lambda Collector function and invoke it with an empty event.
+First, we check whether the **Lambda Collector** collects data and writes it to S3 correctly. On the **AWS Console**, open the Lambda Collector function and run a test with an empty event.
 
-1. Verify **Lambda Collector**:
+1. Check **Lambda Collector**:
 
-- Navigate to **Lambda** and select **cloudcost-insight-collector**.
+- Access **Lambda**, select **cloudcost-insight-collector**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_1.png)
 
-- Select the **Test** tab and invoke it with an empty event.
+- Select the **Test** tab and run an empty event.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_2.png)
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_3.png)
 
-- Expected results:
+- Expected result: 
 
     + Returns **statusCode: 200**.
-    + The log records a successful **Cost Explorer** API call.
+    + Log records the call to **Cost Explorer**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_4.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_4.png)
 
-2. Verify that the data has been stored in S3 using the correct year/month/day partition structure:
+2. Verify data is written to S3 according to the correct year/month/day partitioning structure:
 
-- Navigate to **Amazon S3** and select your bucket.
+- Access **S3** and select your bucket.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_5.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_5.png)
 
-- Expected result: folders containing JSON files with cost data are present.
+- Expected result: There are directories containing JSON files with cost data.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_6.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_6.png)
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_7.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_7.png)
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_8.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_8.png)
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_9.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_9.png)
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_10.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_10.png)
 
-#### 2. Testing Three-Level Cost Anomaly Detection (INFO, WARNING, CRITICAL)
+#### 2. Test Abnormal Cost Detection
 
-To test the three alert levels, we prepare simulated cost data in S3 for each scenario. The classification logic is based on two criteria:
+We will test for 3 alert levels: **INFO**, **WARNING**, **CRITICAL**. To test these three alert levels, we prepare simulated cost data in S3 for each occurrence. The classification logic is based on 2 criteria:
 
 - Budget threshold.
 - Cost spike compared to the historical average.
 
-| Alert Level | Data | Expected Result |
+| Alert level | Data | Expected result |
 | --- | --- | --- |
-| INFO | Low cost, below the threshold | No alert email is sent |
-| WARNING | Cost exceeds the threshold but is not a spike | A WARNING email alert is sent |
-| CRITICAL | Cost spikes significantly above the historical average | A CRITICAL email alert is sent |
+| INFO | Low cost, not exceeding threshold | Do not send alert email |
+| WARNING | Cost exceeds threshold but no spike | Send alert email at WARNING level |
+| CRITICAL | Cost spikes compared to average | Send alert email at CRITICAL level |
 
-For each alert level, we send the corresponding event to SQS and then verify the classification using the Analyzer's CloudWatch Logs.
+For each alert level, we send the corresponding event to SQS, then monitor the classification result based on Analyzer's CloudWatch Logs.
 
 1. INFO:
 
-- The **Analyzer** is automatically triggered after the **Collector** runs.
+- **Analyzer** is automatically triggered after triggering **Collector**.
 
-- Navigate to **Lambda** and select **cloudcost-insight-analyzer**.
+- Access **Lambda**, select **cloudcost-insight-analyzer**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_1.png)
 
-- Open the **Monitoring** tab, then select **View CloudWatch Logs**.
+- Select the **Monitoring** tab, then select **View CloudWatch Logs**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_2.png)
 
-- Open the most recent log stream.
+- Select the newest Log.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_3.png)
 
-- Expected result: the log correctly classifies the event as **NORMAL**, and no alert email is sent.
+- Expected result: log classifies correctly as **NORMAL** level, no need to send alert email.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_4.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_4.png)
 
 2. WARNING:
 
-- Navigate to **Lambda** and select **cloudcost-insight-analyzer**.
+- Access **Lambda**, select **cloudcost-insight-analyzer**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_1.png)
 
-- Open the **Test** tab and invoke the function using the **WARNING** JSON event generated by the simulated cost data script.
+- Select the **Test** tab and test with the **JSON** data at **WARNING** level generated by the cost simulation script.
 
 ```json
 {
@@ -115,17 +115,17 @@ For each alert level, we send the corresponding event to SQS and then verify the
 }
 ```
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/warning_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/warning_1.png)
 
-- Expected result: the log reports a **WARNING** alert level, and a warning email is sent.
+- Expected result: Log records **WARNING** alert level and alert email.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/warning_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/warning_2.png)
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/warning_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/warning_3.png)
 
 3. CRITICAL:
 
-- In the **cloudcost-insight-analyzer** console, continue testing using the **CRITICAL** JSON event generated by the simulated cost data script.
+- In the Console window of **cloudcost-insight-analyzer**, continue testing with the **JSON** data at **CRITICAL** level generated by the cost simulation script.
 
 ```json
 {
@@ -137,104 +137,407 @@ For each alert level, we send the corresponding event to SQS and then verify the
 }
 ```
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_1.png)
 
-- Expected result: the log reports a **CRITICAL** alert level, and a critical alert email is sent.
+- Expected result: Log records **CRITICAL** alert level and alert email.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_2.png)
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_3.png)
 
-#### 3. Testing the Error Handling Mechanism (Dead Letter Queue)
+#### 3. Test Error Handling Mechanism
 
-Next, we test the fault tolerance of the system.
+#### 3.1. Dead Letter Queue
 
-1. In the Terminal, send an invalid event pointing to a non-existent S3 object into the main queue:
+Next, we test the system's fault tolerance.
+
+1. On the Terminal, send an error event pointing to a non-existent file in S3 to the main queue:
 
 ```bash
 aws sqs send-message --queue-url $(terraform output -raw sqs_events_queue_url) --message-body '{"date": "2099-01-01", "s3_key": "cost-data/unknown.json", "total_cost": 0}'
 ```
 
-- Expected result: the message is successfully accepted.
+- Expected result: Message is received.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_1.png)
 
-2. The Analyzer retries the message and eventually fails:
+2. Analyzer retries then fails:
 
-- Navigate to **CloudWatch**, open the **Log management** tab, then select **/aws/lambda/cloudcost-insight-analyzer**.
+- Access **CloudWatch**, select the **Log management** tab, then select **/aws/lambda/cloudcost-insight-analyzer**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_2.png)
 
-- Open the latest **Log stream**.
+- Select the newest **Log stream**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_3.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_3.png)
 
-- Expected result: the logs contain repeated **NoSuchKey** errors.
+- Expected result: **NoSuchKey** error log and repeats multiple times.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_4.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_4.png)
 
-- Next, navigate to **Amazon SQS** and select **cloudcost-insight-dlq**.
+- Next, access **SQS**, select **cloudcost-insight-dlq**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_5.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_5.png)
 
-- Select **Send and receive messages**.
+- Select **Send and receive message**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_6.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_6.png)
 
 - Scroll down and select **Poll for messages**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_7.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_7.png)
 
-- Expected result: the failed message has been moved to the **Dead Letter Queue**.
+- Expected result: Message is sent to the **Dead Letter Queue**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_8.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_8.png)
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_9.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_9.png)
 
-#### 4. Testing CloudWatch Alarm Monitoring
+#### 3.2. SQS Partial Batch Failure
 
-When the failed event from Step 3 causes the **Analyzer** to fail and a message is moved into the **DLQ**, the corresponding **CloudWatch Alarms** transition to the **ALARM** state and send incident notification emails.
+In reality, one execution of the Lambda Analyzer can receive multiple messages from the SQS queue. If only one message fails, failing the entire batch will cause successfully processed messages to be re-processed, leading to duplicate processing and wasted resources.
 
-- Navigate to **CloudWatch** and select **Alarms**.
+The SQS partial batch failure mechanism allows Lambda to return exactly the messages that failed processing. SQS only retries these messages, while the remaining valid messages are acknowledged as successfully processed and are not re-run.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/cloudwatch_1.png)
+In this section, we will send a batch consisting of a valid message and an error message to verify the Analyzer processes each message correctly, only routing the error message to the retry mechanism or Dead Letter Queue.
 
-- Expected result: both **cloudcost-insight-analyzer-errors** and **cloudcost-insight-dlq-has-messages** are in the **In alarm** state.
+1. On the AWS console:
 
-- Notification emails.
+- Access Lambda.
+- Access **cloudcost-insight-analyzer**.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_1.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_1.png)
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_2.png)
+- Open the Configuration -> Trigger tab.
 
-- After a period of time, you will receive another email indicating that cloudcost-insight-analyzer-errors has transitioned from ALARM back to OK because the Analyzer is no longer encountering new errors, and CloudWatch is no longer receiving any error datapoints. As a result, the alarm automatically returns to the OK state:
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_2.png)
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_3.png)
+- Open SQS Trigger and confirm Report batch item failures is enabled.
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_4.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_3.png)
 
-#### 5. Testing the Web Dashboard
+- This feature helps the system operate correctly according to the **Partial Batch Failure** mechanism, saving resources, preventing duplicate processing, and ensuring only truly failed data is routed to the **Dead Letter Queue**.
 
-Finally, we test the visualization interface.
+2. On the **cloudcost-insight-analyzer** Lambda window:
 
-Open the CloudFront URL of the dashboard in your browser and verify that the displayed data is correct.
+- Access the **Test** tab.
+- Create an event with 1 correct record and 1 error record:
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_1.png)
+```json
+{
+  "Records": [
+    {
+      "messageId": "good-message",
+      "body": "{\"date\":\"2026-07-03\",\"s3_key\":\"cost-data/year=2026/month=07/day=03/cost_2026-07-03.json\"}"
+    },
+    {
+      "messageId": "bad-message",
+      "body": "{invalid-json}"
+    }
+  ]
+}
+```
 
-![Testing](/dworkshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_2.png)
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_4.png)
 
-The expected result is that the dashboard displays all KPI metrics, the daily cost trend chart with the threshold line and anomaly markers, and the top services chart. In addition, the dashboard supports both light/dark mode switching and English/Vietnamese language switching.
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_5.png)
 
-#### 6. Testing Summary
+- Click **Test**.
+- Expected result: The error message is routed to DLQ and the correct message is processed successfully.
 
-After completing all of the above tests, the **CloudCost Insight** system has been fully validated as a complete end-to-end automated solution:
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_6.png)
 
-- Automatically collects cost data and stores it using the correct partition structure.
-- Detects anomalies and sends email alerts at three severity levels.
-- Safely handles failures using the **Dead Letter Queue**.
-- Continuously monitors system health using **CloudWatch Alarms**.
-- Visualizes cost data through a publicly accessible **Web Dashboard**.
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_7.png)
 
-#### Next Content
+#### 3.3. Test Error Handling When Analyzer Cannot Read Data From S3
 
-- [Cleanup](5-Workshop/5.8-Cleanup/)
+The Analyzer needs to read cost data files from Amazon S3 to analyze and determine the alert level. If the file does not exist, the s3_key path is incorrect, or an S3 access error occurs, Lambda must not ignore the error and consider the message as successfully processed.
+
+In this section, we will check that the Analyzer fully logs errors on CloudWatch Logs and returns a failure status to SQS. SQS will then automatically retry the message according to the configuration; if the message continues to fail after the allowed number of retries, it will be moved to the Dead Letter Queue for inspection and handling later.
+
+#### 3.3.1. Test missing history file
+
+History files are only used to calculate the average cost level to detect cost spikes, not mandatory data to process the current day's cost. For example, for 2026-06-18 with a cost of $9.00, the Analyzer needs:
+
+- The main file: `2026-06-18.json`: This is mandatory data. If this file does not exist, the Analyzer does not know what the cost for the day to analyze is → the record fails and must be retried.
+
+- History files from 2026-06-17 backwards: This is supplementary data to calculate the 14-day average. If missing, the Analyzer still knows the cost for 2026-06-18 is $9.00, can still compare it with the $10.00 budget threshold, and can still conclude NORMAL.
+
+This allows the system to still operate in the first days after deployment when there isn't enough 14 days of historical data. As data accumulates, the Analyzer will begin calculating the average and trigger the cost spike detection rule.
+
+**1.** On the AWS console, access S3, select your Cost Data Bucket.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_11.png)
+
+**2.** Copy an existing `.json` S3 key, for example:
+
+```
+cost-data/year=2026/month=07/day=03/cost_2026-07-03.json
+```
+
+- Go to **Lambda**, select **cloudcost-insight-analyzer**, open the **Test** tab, and create an event as follows:
+
+```json
+{
+  "Records": [
+    {
+      "messageId": "test-s3-not-found-001",
+      "body": "{\"date\":\"2099-01-01\",\"s3_key\":\"cost-data/not-found.json\",\"total_cost\":0}"
+    }
+  ]
+}
+```
+
+**3.** Expected result:
+
+- Returns the following response:
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_12.png)
+
+- The message with **itemIdentifier** as **test-s3-not-found-001** cannot be processed because the Analyzer cannot read the corresponding data file from Amazon S3. Lambda returns this message ID in the **batchItemFailures** array to notify Amazon SQS that only this message needs to be kept for retry.
+
+- We can view its Log:
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_13.png)
+
+#### 3.3.2. Test invalid history file
+
+**1.** Create the file `cost_2099-01-01.json` with intentionally incorrect content:
+
+```json
+{invalid-json}
+```
+
+**2.** Go to the **Cost Data bucket** and create a folder containing this JSON file with the following directory structure:
+
+`cost-data/year=2099/month=01/day=01/`
+
+Upload the `cost_2099-01-01.json` file to this folder:
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/invalid_1.png)
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/invalid_2.png)
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/invalid_3.png)
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/invalid_4.png)
+
+**3.** Create an event on Lambda:
+
+- Access Lambda, select **cloudcost-insight-analyzer**.
+
+- Open the **Test** tab and create an event as follows:
+
+```json
+{
+  "Records": [
+    {
+      "messageId": "corrupt-history-test",
+      "body": "{\"date\":\"2099-01-02\",\"s3_key\":\"cost-data/year=2026/month=07/day=03/cost_2026-07-03.json\"}"
+    }
+  ]
+}
+```
+
+- Click **Test**.
+
+- Expected result: Returns the following response;
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/invalid_5.png)
+
+- The message with **itemIdentifier** as **corrupt-history-test** cannot be processed because the content of the file `2099-01-01.json` is syntactically invalid JSON. Lambda returns this message ID in the **batchItemFailures** array to notify Amazon SQS that only this message needs to be kept for retry.
+
+- We can view its Log:
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/invalid_6.png)
+
+#### 4. Test Monitoring with CloudWatch Alarm
+
+When the error event in step 3 causes the **Analyzer** to throw an error and a message falls into the **DLQ**, the corresponding **CloudWatch Alarms** will switch to the **ALARM** state and send an incident alert email.
+
+- Access **CloudWatch**, select the **Alarm** section.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/partial_10.png)
+
+- Expected result: **cloudcost-insight-analyzer-errors** and **cloudcost-insight-dlq-has-messages** are in the **In alarm** state.
+
+- Notification email.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_1.png)
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_2.png)
+
+- After a while, we will get an email about the state transition of **cloudcost-insight-analyzer-errors** from **ALARM** to **OK** because the **Analyzer** no longer has new errors, **CloudWatch** receives no more error datapoints. Therefore the Alarm automatically switches back to **OK**.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_3.png)
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_4.png)
+
+#### 5. Dashboard Security
+
+The CloudCost Insight Dashboard displays AWS cost data, so the data is only provided to authenticated users. In this section, we will test the authentication mechanism using Amazon Cognito and verify the API Gateway only accepts requests with valid JWTs.
+
+Additionally, we also verify the CORS configuration to only allow the Dashboard deployed on CloudFront to call the API. The combination of Cognito and CORS helps restrict unauthorized access, protects cost data, and ensures only logged-in users can use the Dashboard.
+
+CORS only restricts where the browser is allowed to call the API. It does not prevent someone from calling the API using curl/Postman. Therefore, we will test both of these security mechanisms:
+
+- CORS.
+- Cognito JWT authentication.
+
+**1.** Retrieve the required values:
+
+```bash
+export API_ENDPOINT=$(terraform output -raw api_endpoint)
+export WEB_ORIGIN=$(terraform output -raw web_dashboard_url)
+export USER_POOL_ID=$(terraform output -raw user_pool_id)
+export USER_POOL_CLIENT_ID=$(terraform output -raw user_pool_client_id)
+export AWS_REGION="us-east-1"
+```
+**2.** Create a test account in the Cognito Console:
+
+- Access **Cognito**.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/cognito_1.png)
+
+- Select the project's **User Pool**.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/cognito_2.png)
+
+- In the **User** tab, select **Create User**.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/cognito_3.png)
+
+- Fill in email, password. Then click **Create User**.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/cognito_4.png)
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/cognito_5.png)
+
+**3.** Test API call without Token:
+
+- When creating a user, **Cognito** by default sets the state to **FORCE_CHANGE_PASSWORD**, meaning the first login will require a password change. To use a fixed password for testing, we need to **set permanent password** via AWS CLI:
+
+```bash
+aws cognito-idp admin-set-user-password \
+  --user-pool-id "$USER_POOL_ID" \
+  --username YOUR_EMAIL \
+  --password "YOUR_FIXED_PASSWORD" \
+  --permanent
+```
+
+- Test calling the API without a Token by using curl:
+
+```bash
+curl -i "$API_ENDPOINT"
+```
+- Expected result:
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/cognito_6.png)
+
+- The 401 Unauthorized status code indicates the request is not authenticated so it is not allowed to access the API. Because the curl command does not send the Authorization: Bearer <JWT> header, the API Gateway does not forward the request to the Lambda to process cost data.
+
+- The www-authenticate: Bearer header indicates the API requires the client to provide a Bearer Token, specifically a JWT issued by Amazon Cognito after a user successfully logs in. This result verifies the JWT Authorizer has been configured and is operating correctly, preventing unauthenticated access to cost data on the Dashboard.
+
+**4.** Test API call with valid Cognito JWT:
+
+- Get the user's ID token:
+
+```bash
+export ID_TOKEN=$(aws cognito-idp initiate-auth \
+  --region "$AWS_REGION" \
+  --auth-flow USER_PASSWORD_AUTH \
+  --client-id "$USER_POOL_CLIENT_ID" \
+  --auth-parameters USERNAME="YOUR_EMAIL",PASSWORD="YOUR_PASSWORD" \
+  --query 'AuthenticationResult.IdToken' \
+  --output text)
+```
+
+- Test:
+
+```bash
+curl -i "$API_ENDPOINT" -H "Authorization: Bearer $ID_TOKEN" -H "Origin: $WEB_ORIGIN"
+```
+
+- Expected result:
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/cognito_7.png)
+
+The status code **200 OK** confirms **API Gateway** successfully verified the token in the authorization header and allowed the request to proceed to the **Lambda API**. The Lambda function then proceeds to read the cost data from **Amazon S3**, aggregate the information, and return a JSON response to the Dashboard. In addition, the **access-control-allow-origin** header confirms the **CORS** mechanism is operating correctly, only allowing the Dashboard deployed on the project's **CloudFront** domain to access the API. The API absolutely does not use a wildcard configuration to prevent strange websites from calling the API directly from the browser. The returned JSON data includes the list of daily costs, anomaly statuses, and the most expensive services. This proves the entire security and data retrieval flow operates perfectly from the step the user logs into **Cognito**, receives the **JWT**, sends the token to **API Gateway** for authentication, and finally receives cost data back from **Lambda**.
+
+**5.** Test CORS from a valid CloudFront domain
+
+- Simulate a **preflight request** from the dashboard:
+
+```bash
+curl -i -X OPTIONS "$API_ENDPOINT" \
+  -H "Origin: $WEB_ORIGIN" \
+  -H "Access-Control-Request-Method: GET" \
+  -H "Access-Control-Request-Headers: authorization,content-type"
+```
+
+- Expected result:
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/cognito_8.png)
+
+The test result shows **API Gateway** successfully processed the **preflight request** from the Dashboard on **CloudFront**. The status code **204 No Content** is the correct response since the **OPTIONS** request is only sent by the browser to check the **CORS** policy, so the API does not need to return content. The **access-control-allow-origin** header confirms only the valid domain of the Dashboard is allowed to call the API. The **access-control-allow-methods** header is limited to two methods, **GET** and **OPTIONS**, to ensure safety for the data reading function. Additionally, the **access-control-allow-headers** header allows the frontend to send the authorization header to attach the **Cognito** token when calling the official API. The browser does not cache this preflight result because the **access-control-max-age** header is set to 0. Thus, the browser has received enough permissions to proceed with sending the data request along with the JWT to the system.
+
+**6.** Test CORS from an invalid domain
+
+- Execute:
+
+```bash
+curl -i -X OPTIONS "$API_ENDPOINT" \
+  -H "Origin: https://evil.example" \
+  -H "Access-Control-Request-Method: GET" \
+  -H "Access-Control-Request-Headers: authorization"
+```
+
+- Expected result:
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/cognito_9.png)
+
+When testing from an invalid domain, the system returns a **204 No Content** code but the **Access-Control-Allow-Origin** header is completely absent. This proves **API Gateway** does not grant **CORS** permissions to strange domains outside the project. The lack of allowing headers will cause the web browser to automatically block fraudulent websites from executing requests to fetch data. This security configuration ensures that only the frontend deployed on **CloudFront** can successfully call the API from the browser environment.
+
+In summary, the security testing scenarios for the Dashboard have been completed successfully. **API Gateway** operates strictly by denying anonymous requests with a **401 Unauthorized** code and only providing data with a **200 OK** code upon receiving a valid token from **Amazon Cognito**. The **CORS** mechanism also works effectively by granting sufficient permissions for the authentic **CloudFront** domain via **preflight requests**, while blocking access from strange domains. The combination of **JWT Authorizer** and **CORS** creates a solid defense layer, ensuring only authenticated users have the right to access the system's AWS cost data.
+
+#### 6. Web Dashboard
+
+Next, we will proceed to access the Dashboard's CloudFront URL link. 
+
+**1.** On the terminal, execute:
+
+```bash
+terraform output web_dashboard_url
+```
+
+- The returned result is the CloudFront URL of the dashboard.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_0.png)
+
+- Access the link and proceed to log in.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_3.png)
+
+- Enter the email and password registered on **Cognito**.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_4.png)
+
+- After successfully logging in, we can access the interface and monitor cost metrics.
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_5.png)
+
+![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_6.png)
+
+#### 6. Overall Test Summary
+
+After completing the testing steps above, the **CloudCost Insight** system has been proven to operate completely and automatically end-to-end:
+
+- Automates cost data collection and stores it with the correct structure.
+- Detects anomalies and alerts via email according to three levels.
+- Handles errors safely with a **Dead Letter Queue**.
+- Self-monitors system health with **CloudWatch Alarm**.
+- Visualizes data via a publicly accessible **Web Dashboard**.
+
+#### Next Steps
+
+- [CI/CD](5-Workshop/5.8-CI-CD/)
