@@ -33,7 +33,7 @@ import boto3
 import os
 import json
 import boto3
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # Đọc cấu hình từ biến môi trường
 BUCKET_NAME = os.environ["BUCKET_NAME"]
@@ -88,18 +88,15 @@ def send_event_to_sqs(date_str: str, s3_key: str, total_cost: float) -> None:
         "date": date_str,
         "s3_key": s3_key,
         "total_cost": total_cost,
-        "collected_at": datetime.utcnow().isoformat(),
+        "collected_at": datetime.now(timezone.utc).isoformat(),
     }
 
-    sqs_client.send_message(
-        QueueUrl = QUEUE_URL,
-        MessageBody = json.dumps(message)
-    )
+    sqs_client.send_message(QueueUrl=QUEUE_URL, MessageBody=json.dumps(message))
 
 def lambda_handler(event, context):
     # Điểm vào của Lambda - được EventBridge gọi
     # Lấy dữ liệu của ngày hôm qua (Cost Explorer có độ trễ tới 24h)
-    yesterday = datetime.utcnow().date() - timedelta(days = 1)
+    yesterday = datetime.now(timezone.utc).date() - timedelta(days = 1)
     start_date = yesterday.strftime("%Y-%m-%d")
     end_date = (yesterday + timedelta(days = 1)).strftime("%Y-%m-%d")
 
