@@ -45,16 +45,28 @@ s3_client = boto3.client("s3")
 sqs_client = boto3.client("sqs")
 
 def get_cost_data(start_date: str, end_date: str) -> dict:
-    # Gọi Cost Explorer API lấy chi phí theo dịch vụ trong khoảng ngày
-    response = ce_client.get_cost_and_usage(
-        TimePeriod = {"Start": start_date, "End": end_date},
-        Granularity = "DAILY",
-        Metrics = ["UnblendedCost"],
-        GroupBy = [
-            {"Type": "DIMENSION", "Key": "SERVICE"}
-        ]
-    )
-    return response
+    """Lấy toàn bộ trang Cost Explorer data theo dịch vụ."""
+    params = {
+        "TimePeriod": {"Start": start_date, "End": end_date},
+        "Granularity": "DAILY",
+        "Metrics": ["UnblendedCost"],
+        "GroupBy": [{"Type": "DIMENSION", "Key": "SERVICE"}],
+    }
+    results_by_time = []
+
+    while True:
+        response = ce_client.get_cost_and_usage(**params)
+        results_by_time.extend(response.get("ResultsByTime", []))
+
+        next_page_token = response.get("NextPageToken")
+        if not next_page_token:
+            break
+        params["NextPageToken"] = next_page_token
+
+    return {
+        "ResultsByTime": results_by_time,
+        "GroupDefinitions": params["GroupBy"],
+    }
 
 def save_to_s3(data: dict, date_str: str) -> str:
     # Lưu dữ liệu chi phí vào S3, phân vùng theo năm/tháng/ngày
