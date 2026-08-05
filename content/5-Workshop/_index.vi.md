@@ -31,4 +31,5 @@ Hệ thống bao gồm ba luồng chính, mỗi luồng đảm nhận một vai 
 5. [Cấu hình giám sát và cảnh báo (CloudWatch Alarm)](5.5-Monitoring/)
 6. [Xây dựng Web Dashboard](5.6-Dashboard/)
 7. [Kiểm thử hệ thống](5.7-Testing/)
-8. [Dọn dẹp tài nguyên](5.8-Cleanup/)
+8. [CI/CD](5.8-CI-CD/)
+9. [Dọn dẹp tài nguyên](5.9-Cleanup/)

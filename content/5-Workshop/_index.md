@@ -31,4 +31,5 @@ The system consists of three main workflows. Each workflow has a specific respon
 5. [Configuring Monitoring and Alerts with CloudWatch Alarms](5.5-Monitoring/)
 6. [Building the Web Dashboard](5.6-Dashboard/)
 7. [System Testing](5.7-Testing/)
-8. [Cleaning Up Resources](5.8-Cleanup/)
+8. [CI/CD](5.8-CI-CD/)
+9. [Cleaning Up Resources](5.9-Cleanup/)
