@@ -645,13 +645,13 @@ output "web_bucket_name" {
 
 #### Deploying and Accessing the Dashboard
 
-1. In the Terminal, deploy the Frontend:
+**1.** In the Terminal, deploy the Frontend:
 
 ```bash
 terraform apply
 ```
 
-2. Retrieve the Dashboard URL:
+**2.** Retrieve the Dashboard URL:
 
 ```bash
 terraform output web_dashboard_url
@@ -659,7 +659,7 @@ terraform output web_dashboard_url
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_2.png)
 
-3. Open the URL displayed in the Terminal to access the Dashboard:
+**3.** Open the URL displayed in the Terminal to access the Dashboard:
 
 ![Dashboard](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_3.png)
 
