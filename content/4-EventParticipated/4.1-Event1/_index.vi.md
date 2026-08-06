@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Bài thu hoạch "First Cloud AI Journey Community Day"
+# Bài thu hoạch "FCAJ Community Day"
 
 - Thời gian: 9:00 - 12:00, ngày 21 tháng 3 năm 2026.
 - Tầng 26, tòa nhà Bitexco Financial Tower, Số 2, đường Hải Triều, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, Việt Nam.

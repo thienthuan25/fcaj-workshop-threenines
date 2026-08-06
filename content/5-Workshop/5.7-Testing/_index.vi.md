@@ -25,7 +25,7 @@ Nếu tài khoản AWS của bạn là tài khoản mới hoặc bạn mới ch�
 
 Trước tiên, chúng ta kiểm tra **Lambda Collector** có thu thập dữ liệu và ghi vào S3 đúng hay không. Trên **AWS Console**, mở hàm Lambda Collector và chạy thử với một sự kiện rỗng.
 
-1. Kiểm tra **Lambda Collector**:
+**1.** Kiểm tra **Lambda Collector**:
 
 - Truy cập vào **Lambda**, chọn **cloudcost-insight-collector**.
 
@@ -44,7 +44,7 @@ Trước tiên, chúng ta kiểm tra **Lambda Collector** có thu thập dữ li
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_4.png)
 
-2. Kiểm tra dữ liệu đã được ghi vào S3 theo đúng cấu trúc phân vùng theo năm/tháng/ngày:
+**2.** Kiểm tra dữ liệu đã được ghi vào S3 theo đúng cấu trúc phân vùng theo năm/tháng/ngày:
 
 - Truy cập vào **S3** và chọn bucket của bạn.
 
@@ -77,7 +77,7 @@ Chúng ta sẽ kiểm thử cho 3 mức cảnh báo: **INFO**, **WARNING**, **CR
 
 Với mỗi mức cảnh báo, chúng ta gửi sự kiện tương ứng vào SQS, sau đó theo dõi kết quả phân loại dựa trên CloudWatch Logs của Analyzer.
 
-1. INFO:
+**1.** INFO:
 
 - **Analyzer** tự động kích hoạt sau khi kích hoạt **Collector**.
 
@@ -97,7 +97,7 @@ Với mỗi mức cảnh báo, chúng ta gửi sự kiện tương ứng vào SQ
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/info_4.png)
 
-2. WARNING:
+**2.** WARNING:
 
 - Truy vập vào **Lambda**, chọn **cloudcost-insight-analyzer**.
 
@@ -123,7 +123,7 @@ Với mỗi mức cảnh báo, chúng ta gửi sự kiện tương ứng vào SQ
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/warning_3.png)
 
-3. CRITICAL:
+**3.** CRITICAL:
 
 - Ở cửa sổ Console của **cloudcost-insight-analyzer**, tiếp tục test với dữ **JSON** ở mức **CRITICAL** đã được chạy script sinh dữ liệu mô phỏng chi phí.
 
@@ -151,7 +151,7 @@ Với mỗi mức cảnh báo, chúng ta gửi sự kiện tương ứng vào SQ
 
 Tiếp theo, chúng ta kiểm thử khả năng chịu lỗi của hệ thống.
 
-1. Trên Terminal, gửi một sự kiện lỗi trỏ tới một file không tồn tại trong S3 vào hàng đợi chính:
+**1.** Trên Terminal, gửi một sự kiện lỗi trỏ tới một file không tồn tại trong S3 vào hàng đợi chính:
 
 ```bash
 aws sqs send-message --queue-url $(terraform output -raw sqs_events_queue_url) --message-body '{"date": "2099-01-01", "s3_key": "cost-data/unknown.json", "total_cost": 0}'
@@ -161,7 +161,7 @@ aws sqs send-message --queue-url $(terraform output -raw sqs_events_queue_url) -
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dlq_1.png)
 
-2. Analyzer retry rồi thất bại:
+**2.** Analyzer retry rồi thất bại:
 
 - Truy cập vào **CloudWatch**, chọn Tab **Log management**, chọn tiếp **/aws/lambda/cloudcost-insight-analyzer**.
 
@@ -201,7 +201,7 @@ Cơ chế SQS partial batch failure cho phép Lambda trả về chính xác nh�
 
 Trong phần này, chúng ta sẽ gửi một batch gồm message hợp lệ và message lỗi để xác minh Analyzer xử lý đúng từng message, chỉ đưa message lỗi vào cơ chế retry hoặc Dead Letter Queue.
 
-1. Trên cửa số AWS:
+**1.** Trên cửa số AWS:
 
 - Truy cập vào Lambda.
 - Truy cập vào **cloudcost-insight-analyzer**.
@@ -218,7 +218,7 @@ Trong phần này, chúng ta sẽ gửi một batch gồm message hợp lệ và
 
 - Tính năng này giúp hệ thống hoạt động chính xác theo cơ chế **Partial Batch Failure**, giúp tiết kiệm tài nguyên, ngăn chặn tình trạng xử lý trùng lặp và đảm bảo chỉ những dữ liệu thật sự bị lỗi mới bị đưa vào **Dead Letter Queue**.
 
-2. Trên cửa sổ Lambda **cloudcost-insight-analyzer**:
+**2.** Trên cửa sổ Lambda **cloudcost-insight-analyzer**:
 
 - Truy cập Tab **Test**.
 - Tạo event có 1 record đúng và 1 record lỗi:
@@ -504,25 +504,25 @@ Tóm lại, các kịch bản kiểm thử bảo mật cho Dashboard đã hoàn 
 
 Tiếp theo, chúng ta sẽ tiến hành truy cập vào đường link URL CloudFront của dashboard. 
 
-**1.** Trên terminal, thực hiện:
+Trên terminal, thực hiện:
 
 ```bash
 terraform output web_dashboard_url
 ```
 
-- Kết quả trả về là URL CloudFront của dashboard.
+Kết quả trả về là URL CloudFront của dashboard.
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_0.png)
 
-- Truy cập vào đường link, tiến hành đăng nhập.
+Truy cập vào đường link, tiến hành đăng nhập.
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_3.png)
 
-- Nhập email và mật khẩu đã đăng kí trên **Cognito**.
+Nhập email và mật khẩu đã đăng kí trên **Cognito**.
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_4.png)
 
-- Sau khi đăng nhập thành công, chúng ta đã có thể truy cập vào giao diện và theo dõi các chỉ số chi phí.
+Sau khi đăng nhập thành công, chúng ta đã có thể truy cập vào giao diện và theo dõi các chỉ số chi phí.
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_5.png)
 

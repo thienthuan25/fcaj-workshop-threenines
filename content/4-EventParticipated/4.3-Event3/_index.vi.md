@@ -21,7 +21,7 @@ Sự kiện **AWS: Enterprise Cloud Architectures and Industry Application** là
 - **Bành Cảm Vĩnh** - Data Engineer tại Renova Cloud.
 - **Như Trần** - Account Manager tại Amazon Web Services Việt Nam.
 - **Nguyễn Ngọc Quỳnh Mai** - Cloud Operations Engineer tại VietNam International Bank (VIB)
-- **Khang Nguyen** - Solution Architect tại CloudKinetics.
+- **Khang Nguyễn** - Solution Architect tại CloudKinetics.
 
 ### Nội Dung
 
@@ -57,4 +57,38 @@ Sự kiện đánh dấu cột mốc năm thứ 3 liên tiếp **Swinburn Việt
 
 - Giao tiếp: Nỗi sợ nói trước đám đông của chính mình và cách chị vượt qua bằng việc tình nguyện tham gia chia sẻ tại nhiều diễn đàn để rèn luyện kỹ năng, từ đó giúp bản thân bình ổn và tự tin hơn.
 
-- Tạo sự kết nối: Để thu hẹp khoảng cách với sếp, chị khuyên các bạn trẻ không nên tìm cách trốn tránh mà hãy chủ động tạo sự hiện diện thông qua những hành động nhỏ như chào hỏi 
+- Tạo sự kết nối: Để thu hẹp khoảng cách với sếp, chị khuyên các bạn trẻ không nên tìm cách trốn tránh mà hãy chủ động tạo sự hiện diện thông qua những hành động nhỏ như chào hỏi vào buổi sáng hoặc đề xuất hỗ trợ công việc. Việc chủ động giao tiếp giúp sếp ghi nhận sự hỗ lực và tiềm năng của bạn.
+
+- Giao tiếp trong công việc, đặt biệt là với khách hàng không chỉ là truyền tải thông tin mà còn là việc biết khi nào cần nhường bước và khi nào cần giữ vững lập trường để bảo về quy trình làm việc hiệu hả. Chị nhấn mạnh việc khong cần phải có câu trả lời ngay lập tức, nhưng cần thái độ cầu thị và trách nhiệm trong công việc tìm kiếm câu trả lời sau đó.
+
+- Chị còn khẳng định cơ hội thực sự không chỉ nằm ở những tin tuyển dụng công khai mà đến từ việc kết nối thông qua các buổi chia sẻ, các mối quan hệ và những việc nhỏ mà người khác thường bỏ qua.
+
+#### Chủ đề 4: Chia sẻ kinh nghiệm thực tế - Khang Nguyễn
+
+- Anh Khang nhấn mạnh dù cơ hội tiếp cận công nghệ và tài liệu ngày nay dễ dàng hơn, nhưng thách thức lớn nhất là xu hướng lạm dụng AI để hoàn thành bài tập mà không hiểu bản chất kỹ thuật.
+
+- Phương pháp học tập để sẵn sàng đi làm:
+  
+  + Luôn đặt câu hỏi "Tại sao?" thay vì chỉ học vẹt.
+  + Sai lầm là một phần tất yếu của quá trình học, quan trọng là phân tích được tại sao mình sai.
+  + Luôn chủ động học vượt kỳ vọng, tìm hiểu sâu hơn các module được dạy ở trên lớp để tạo sự khác biệt khi phỏng vấn.
+
+- Anh Khang chia sẻ 5 yếu tô quan trọng mà doanh nghiệp tìm kiếm ở một ứng viên theo thứ tự ưu tiên: Thái độ, Trình độ, Kinh nghiệm, Trải nghiệm, Tố chất.
+
+#### Những Gì Đã Học Được
+
+**1.** Hiểu rõ sự khác biệt giữa học thuật và thực tế:
+
+Các dự án ở trường thường có môi trường dữ liệu sạch, yêu cầu tĩnh, trong khi doanh nghiệp đòi hỏi khả năng xử lý dữ liệu thực tế lớn, yêu cầu thay đổi thường xuyên và cần tư duy kiến trúc hệ thống tổng thể thay vì chỉ biết sử dụng công cụ.
+
+**2.** Thay vì phức tạp hóa kỹ thuật, người kỹ sư cần đặt mục tiêu kinh doanh lên hàng đầu. Mọi giải pháp kỹ thuật phải mang lại giá trị trực tế cho doanh nghiệp.
+
+**3.** Kỹ năng mềm:
+
+- Giao tiếp không chỉ dành riêng cho người hướng nội. Bạn cần làm việc với nhiều phòng ban, hiểu về **buisiness** để triển khai dự án hiệu quả.
+
+- Cơ hội không tự đến, chúng ta cần phải chủ động kết nối thông qua các buổi chia sẻ và các hành động nhỏ trong công việc hằng ngày.
+
+**4.** Sợ sai là tâm lý bình thường, nhưng cần biết gọi tên nỗi sợ thay vì né tránh. Việc chấp nhận sai lầm và phân tích lý do tại sao mình sai là cách nhanh nhất để trưởng thành.
+
+**5.** Dù AI hỗ trợ công việc rất nhiều trong cuộc sống hằng ngày của chúng ta, nhưng chúng ta cần tránh lạm dụng để làm thay mà không hiểu bản chất. Bí quyết thành công nằm ở việc luôn đặt câu hỏi và tư duy tâm thế luôn sẵn sàng học hỏi, vượt qua thử thách của bản thân trong tương lai.

@@ -231,7 +231,7 @@ def lambda_handler(event, context):
 
 #### Cấu hình IAM Role và triển khai Analyzer
 
-1. Tiếp theo, chúng ta sẽ tạo file `terraform/lambda_analyzer.tf`. File này chịu trách nhiệm xây dựng toàn bộ cơ sở hạ tầng cần thiết trên AWS để chạy hàm Lambda Analyzer, thực hiện các cấu hình tự động bao gồm:
+**1.** Tiếp theo, chúng ta sẽ tạo file `terraform/lambda_analyzer.tf`. File này chịu trách nhiệm xây dựng toàn bộ cơ sở hạ tầng cần thiết trên AWS để chạy hàm Lambda Analyzer, thực hiện các cấu hình tự động bao gồm:
 
 -  **Cấp quyền bảo mật**: Tạo các quyền đặc biệt cho phép hàm Analyzer được phép đọc dữ liệu từ kho lưu trữ S3, lấy tin nhắn từ hàng đợi SQS và gửi cảnh báo qua dịch vụ SNS.
 -  **Đóng gói và triển khai**: Tự động nén mã nguồn Python thành file zip và tải lên nền tảng AWS để tạo thành một hàm thực thi hoàn chỉnh.
@@ -352,7 +352,7 @@ resource "aws_lambda_event_source_mapping" "sqs_to_analyzer" {
 }
 ```
 
-2. Mở file `terraform/outputs.tf` và thêm đoạn cấu hình sau vào cuối file:
+**2.** Mở file `terraform/outputs.tf` và thêm đoạn cấu hình sau vào cuối file:
 
 ```hcl
 # Xuất ARN của IAM Role cấp cho Lambda Analyzer ra màn hình

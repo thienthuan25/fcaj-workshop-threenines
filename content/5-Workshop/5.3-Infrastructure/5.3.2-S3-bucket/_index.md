@@ -18,7 +18,6 @@ In this section, we will create the `terraform/s3.tf` file to define an Amazon S
 # The bucket name follows the format <project_name>-cost-data-<aws_account_id> to ensure global uniqueness.
 resource "aws_s3_bucket" "cost_data" {
   bucket        = "${var.project_name}-cost-data-${data.aws_caller_identity.current.account_id}"
-  force_destroy = true # Allow Terraform to delete the bucket even when it contains objects.
 }
 
 # Block all forms of public access to the bucket.

@@ -6,24 +6,30 @@ chapter : false
 pre : " <b> 5.2. </b> "
 ---
 
-#### General Requirements
+#### General requirements
 
-Before starting this workshop, make sure you have prepared the following:
+Before starting the workshop, you need to prepare the following requirements:
 
-+ An AWS account.
-+ The AWS Region used throughout this workshop is N. Virginia (us-east-1).
-+ An HCP Terraform account at app.terraform.io for remote state management.
+- An AWS account with permission to create and delete resources.
+- The Region used in this workshop is N. Virginia (`us-east-1`).
+- AWS Cost Explorer must be enabled in the AWS Billing Console. Note that Cost Explorer data may have a delay, so the workshop also uses simulated cost data for testing.
+- An HCP Terraform account at [app.terraform.io](https://app.terraform.io) to manage remote state and perform Terraform remote runs.
+- A GitHub account and a GitHub repository to store source code, create Pull Requests, and configure CI/CD.
+- An email address that can receive emails from Amazon SNS to test cost alerts and incident alerts.
 
-#### Required Tools
+#### Tools to install
 
-+ **Terraform** version 1.5 or later to provision infrastructure using Infrastructure as Code.
-+ **AWS CLI** to interact with and test AWS services from the command line.
-+ **Python** version 3.12 for developing the Lambda functions.
-+ A source code editor such as Visual Studio Code.
+- **Git** to manage source code, create branches, commit, and push code to GitHub.
+- **Terraform** (version 1.5 or later) to deploy infrastructure using Infrastructure as Code.
+- **AWS CLI** to configure AWS credentials, operate, and test AWS services from the command line.
+- **Python** (version 3.12) to develop, run unit tests, and check Lambda functions.
+- **Node.js** to check the JavaScript syntax of the Web Dashboard.
+- **Hugo Extended** if you want to run and check the Workshop locally before pushing it to GitHub Pages.
+- A source code editor such as Visual Studio Code.
 
-#### IAM Permissions
+#### IAM permissions
 
-Attach the following IAM policy to your AWS IAM user so that it has sufficient permissions to deploy and clean up the resources used in this workshop. This policy provides the minimum permissions required for the AWS services used by CloudCost Insight.
+Attach the following IAM permission policy to the AWS IAM User or IAM Role used to deploy the workshop. This policy grants permissions for the services used by CloudCost Insight, including Lambda, S3, SQS, SNS, EventBridge, CloudWatch, API Gateway, CloudFront, and Amazon Cognito.
 
 ```json
 {
@@ -42,12 +48,8 @@ Attach the following IAM policy to your AWS IAM user so that it has sufficient p
         "logs:*",
         "apigateway:*",
         "cloudfront:*",
+        "cognito-idp:*",
         "ce:GetCostAndUsage",
-        "secretsmanager:CreateSecret",
-        "secretsmanager:DeleteSecret",
-        "secretsmanager:DescribeSecret",
-        "secretsmanager:GetSecretValue",
-        "secretsmanager:PutSecretValue",
         "iam:CreateRole",
         "iam:DeleteRole",
         "iam:GetRole",
@@ -57,6 +59,10 @@ Attach the following IAM policy to your AWS IAM user so that it has sufficient p
         "iam:PutRolePolicy",
         "iam:DeleteRolePolicy",
         "iam:GetRolePolicy",
+        "iam:ListRolePolicies",
+        "iam:ListAttachedRolePolicies",
+        "iam:TagRole",
+        "iam:UntagRole",
         "iam:CreatePolicy",
         "iam:DeletePolicy",
         "iam:GetPolicy",
