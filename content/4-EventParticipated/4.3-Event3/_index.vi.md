@@ -92,5 +92,3 @@ Các dự án ở trường thường có môi trường dữ liệu sạch, yê
 **4.** Sợ sai là tâm lý bình thường, nhưng cần biết gọi tên nỗi sợ thay vì né tránh. Việc chấp nhận sai lầm và phân tích lý do tại sao mình sai là cách nhanh nhất để trưởng thành.
 
 **5.** Dù AI hỗ trợ công việc rất nhiều trong cuộc sống hằng ngày của chúng ta, nhưng chúng ta cần tránh lạm dụng để làm thay mà không hiểu bản chất. Bí quyết thành công nằm ở việc luôn đặt câu hỏi và tư duy tâm thế luôn sẵn sàng học hỏi, vượt qua thử thách của bản thân trong tương lai.
-
-hello
