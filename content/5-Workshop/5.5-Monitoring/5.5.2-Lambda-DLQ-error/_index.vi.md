@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.5.2 </b> "
 ---
 
-1. Tiếp theo, trong cùng một file `terraform/cloudwatch_alarms.tf`, chúng ta thêm một Alarm giám sát **Dead Letter Queue**. Alarm này theo dõi số lượng message trong DLQ, và được kích hoạt khi có bất kì message lỗi nào rơi vào đây.
+**1.** Tiếp theo, trong cùng một file `terraform/cloudwatch_alarms.tf`, chúng ta thêm một Alarm giám sát **Dead Letter Queue**. Alarm này theo dõi số lượng message trong DLQ, và được kích hoạt khi có bất kì message lỗi nào rơi vào đây.
 
 ```hcl
 # Cảnh báo khi có tin nhắn rơi vào Dead Letter Queue
@@ -33,7 +33,7 @@ resource "aws_cloudwatch_metric_alarm" "dlq_message" {
 
 Alarm này sử dụng metric `ApproximateNumberOfMessagesVisible` của Dead Letter Queue. Khi hệ thống hoạt động bình thường, DLQ luôn trống. Vì vậy, chỉ cần một message xuất hiện, Alarm sẽ kích hoạt và báo cho bạn biết, có sự kiện đã xử lý thất bại cần điều tra.
 
-2. Mở file `terraform/outputs.tf` và thêm cấu hình sau vào cuối file:
+**2.** Mở file `terraform/outputs.tf` và thêm cấu hình sau vào cuối file:
 
 ```hcl
 # Hệ thống giám sát lỗi (CloudWatch Alarms)

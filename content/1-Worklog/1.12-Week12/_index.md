@@ -5,53 +5,36 @@ weight: 2
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 11 Objectives:
 
-### Week 12 Objectives:
+* Redeploy the entire CloudCost Insight system to verify reproducibility and ensure stable system operation.
+* Test the entire system and fix issues encountered during the deployment process.
+* Reach an agreement with the team that each member would redeploy the project independently to create their own personal Workshop.
+* Complete the Workshop documentation in a step-by-step format based on the actual deployment process.
+* Summarize the Workshop completion progress of all team members at the end of the week.
+* Maintain effective teamwork by discussing daily plans before starting work and summarizing progress at the end of each day.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks Completed During the Week:
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task | Start Date | Completion Date | Reference Materials |
+| --- | --- | --- | --- | --- |
+| 2 | - Studied directly at the office. <br>&emsp; + Discussed the daily work plan with the team before starting. <br>&emsp; + Discussed the project progress and the plan for completing the Workshop during the final week. <br>&emsp; + Shared deployment experience and important considerations for writing the Workshop. | 20/07/2026 | 20/07/2026 | |
+| 3 | - Redeployed and tested the entire system: <br>&emsp; + Discussed the daily work plan with the team before starting. <br>&emsp; + Redeployed the complete CloudCost Insight system on AWS using Terraform. <br>&emsp; + Performed end-to-end testing to verify that all system components functioned as designed. <br>&emsp; + Fixed issues encountered during the deployment and testing process. <br>&emsp; + Summarized the day's progress and shared the results with the team. | 21/07/2026 | 21/07/2026 | - AWS Management Console. |
+| 4 | - Started writing the Workshop: <br>&emsp; + Discussed the daily work plan with the team before starting. <br>&emsp; + Agreed that each team member would independently redeploy the project to create their own personal Workshop. <br>&emsp; + Began writing the Workshop based on my own deployment experience. <br>&emsp; + Completed the initial sections of the Workshop and prepared supporting screenshots. <br>&emsp; + Summarized the day's progress and shared the results with the team. | 22/07/2026 | 22/07/2026 | - FCAJ Workshop Template. |
+| 5 | - Continued developing the Workshop: <br>&emsp; + Discussed the daily work plan with the team before starting. <br>&emsp; + Continued documenting the deployment steps, AWS service configuration, and testing procedures. <br>&emsp; + Added screenshots and reviewed the content to ensure accuracy. <br>&emsp; + Summarized the day's progress and shared the results with the team. | 23/07/2026 | 23/07/2026 | - FCAJ Workshop Template. |
+| 6 | - Completed the Workshop and summarized the team's progress: <br>&emsp; + Discussed the daily work plan with the team before starting. <br>&emsp; + Finalized the entire Workshop, reviewing the structure, screenshots, and deployment instructions. <br>&emsp; + Collected the Workshop completion progress of the remaining team members. <br>&emsp; + Shared the results and prepared for the documentation review phase. <br>&emsp; + Summarized the day's progress and shared the results with the team. | 24/07/2026 | 24/07/2026 | - FCAJ Workshop Template. |
 
+### Week 11 Achievements:
 
-### Week 12 Achievements:
+* **Successfully redeployed and validated the entire system:** I successfully redeployed the complete CloudCost Insight system on AWS using Terraform and thoroughly tested all system components. This process confirmed that the entire infrastructure and application could be consistently recreated from the source code, demonstrating the reliability of the Infrastructure as Code approach.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* **Completed system testing and issue resolution:** I performed comprehensive end-to-end testing of the entire system, including data collection, cost analysis, alerting, monitoring, and the web dashboard. During testing, several minor issues were identified and resolved to improve system stability.
 
-* Successfully created and configured an AWS Free Tier account.
+* **Reached a consensus on Workshop development:** The team agreed that each member would independently redeploy the project and create a personal Workshop based on their own deployment experience. This approach enabled every member to gain a deeper understanding of the complete deployment process while producing practical and reusable documentation.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* **Completed the Workshop documentation:** I completed the Workshop in a step-by-step format, providing detailed instructions covering environment preparation, infrastructure deployment, system development, testing, and resource cleanup. The document also includes comprehensive screenshots and expected results for each step, making it easy for others to follow and reproduce the project.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* **Summarized the team's progress:** At the end of the week, I collected and reviewed the Workshop completion progress of the other team members to ensure that everyone completed their assigned work on schedule. We also exchanged feedback and shared experiences to further improve the quality of the documentation.
 
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* **Team collaboration:** Throughout the week, I maintained effective collaboration with the team. Before starting work each day, I discussed the daily plan with the other members, and at the end of each day, I summarized the completed tasks so that everyone could stay updated on the overall progress.

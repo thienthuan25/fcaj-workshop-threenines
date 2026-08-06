@@ -10,24 +10,24 @@ Since this workshop uses HCP Terraform to run Terraform remotely, you need to ad
 
 #### Create an Access Key for an IAM User in the AWS Console
 
-1. Sign in to the AWS Management Console.
-2. In the upper right corner, click your account name, then select **Security Credentials**:
+**1.** Sign in to the AWS Management Console.
+**2.** In the upper right corner, click your account name, then select **Security Credentials**:
 
 ![Credentials](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.1-AWS-credentials/credentials_1.png)
 
-3. After the page opens, under **Access keys**, choose **Create access key**:
+**3.** After the page opens, under **Access keys**, choose **Create access key**:
 
 ![Credentials](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.1-AWS-credentials/credentials_2.png)
 
-4. Select **CLI** as the **Use case**, confirm your selection, then click **Next**:
+**4.** Select **CLI** as the **Use case**, confirm your selection, then click **Next**:
 
 ![Credentials](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.1-AWS-credentials/credentials_3.png)
 
-5. Optionally enter a description for the access key, then click **Create access key**:
+**5.** Optionally enter a description for the access key, then click **Create access key**:
 
 ![Credentials](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.1-AWS-credentials/credentials_4.png)
 
-6. Save your **AWS Access Key ID** and **AWS Secret Access Key**. You will need them to configure AWS credentials in HCP Terraform:
+**6.** Save your **AWS Access Key ID** and **AWS Secret Access Key**. You will need them to configure AWS credentials in HCP Terraform:
 
 ![Credentials](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.1-AWS-credentials/credentials_5.png)
 

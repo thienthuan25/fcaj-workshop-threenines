@@ -10,8 +10,6 @@ pre : " <b> 5.3. </b> "
 
 Trong phần này, chúng ta sẽ dựng các thành phần hạ tầng nền cho hệ thống CloudCost Insight bằng Terraform. Đây là các tài nguyên cốt lõi mà các hàm Lambda sẽ sử dụng ở những phần sau, bao gồm nơi lưu trữ dữ liệu, hàng đợi sự kiện, kênh cảnh bảo và lập lịch.
 
-![S3, IAM, SNS, SQS + DLQ, EventBridge](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/Infrastructure_diagram.jpg)
-
 #### Nội dung
 
 1. [Khai báo các biến đầu vào](5.3.1-Variables/)

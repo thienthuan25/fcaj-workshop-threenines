@@ -8,7 +8,7 @@ pre : " <b> 5.6.2 </b> "
 
 Chúng ta sẽ tạo giao diện Web trong thư mục `terraform/web`.
 
-1. File `index.html` chứa cấu trúc trang:
+**1.** File `index.html` chứa cấu trúc trang:
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +84,7 @@ Chúng ta sẽ tạo giao diện Web trong thư mục `terraform/web`.
 </html>
 ```
 
-2. File `style.css` chứa toàn bộ định dạng giao diện:
+**2.** File `style.css` chứa toàn bộ định dạng giao diện:
 
 ```css
 * {
@@ -242,7 +242,7 @@ header p {
 }
 ```
 
-3. File `script.js` chứa logic gọi API và vẽ biểu đồ bằng **Chart.js**:
+**3.** File `script.js` chứa logic gọi API và vẽ biểu đồ bằng **Chart.js**:
 
 ```javascript
 const API_ENDPOINT = "REPLACE_MY_API_ENDPOINT";
@@ -469,7 +469,7 @@ Giao diện gồm nhiều biểu đồ xu hướng chi phí kèm đường ngư�
 
 #### Host Web lên S3 và CloudFront
 
-1. Chúng ta sẽ tạo file `terraform/web_hosting.tf` để host giao diện lên **S3** và phân phối qua **CloudFront** với HTTPS. Để bảo mật, bucket Web không được mở public trực tiếp mà chỉ cho phép **CloudFront** đọc thông qua **Origin Access Control**.
+**1.** Chúng ta sẽ tạo file `terraform/web_hosting.tf` để host giao diện lên **S3** và phân phối qua **CloudFront** với HTTPS. Để bảo mật, bucket Web không được mở public trực tiếp mà chỉ cho phép **CloudFront** đọc thông qua **Origin Access Control**.
 
 ```hcl
 # Host Website lên S3 + CloudFront
@@ -628,7 +628,7 @@ resource "aws_s3_object" "script" {
 
 Việc dùng **Origin Access Control** là một điểm bảo mật quan trọng. Bucket Web hoàn toàn không mở công khai, mọi truy cập phải đi qua CloudFront với HTTPS, tránh lộ dữ liệu ra Internet.
 
-2. Mở file `terraform/outputs.tf` và thêm đoạn cấu hình sau vào cuối file.
+**2.** Mở file `terraform/outputs.tf` và thêm đoạn cấu hình sau vào cuối file.
 
 ```hcl
 # Web Dashboard
@@ -645,13 +645,13 @@ output "web_bucket_name" {
 
 #### Triển khai và truy cập Dashboard
 
-1. Trên Terminal, triển khai phần Frontend:
+**1.** Trên Terminal, triển khai phần Frontend:
 
 ```bash
 terraform apply
 ```
 
-2. Lấy đường link URL của Dashboard:
+**2.** Lấy đường link URL của Dashboard:
 
 ```bash
 terraform output web_dashboard_url
@@ -659,7 +659,7 @@ terraform output web_dashboard_url
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_2.png)
 
-3. Truy cập vào đường link hiện ra trên Terminal, ta sẽ vào giao diện của Website: 
+**3.** Truy cập vào đường link hiện ra trên Terminal, ta sẽ vào giao diện của Website: 
 
 ![Dashboard](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_3.png)
 

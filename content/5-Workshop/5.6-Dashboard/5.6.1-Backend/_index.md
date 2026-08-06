@@ -266,9 +266,24 @@ resource "aws_lambda_permission" "apigw" {
 }
 ```
 
+**2.** Open the `terraform/outputs.tf` file and add the following configuration at the end of the file.
+
+```hcl
+# API Gateway
+output "api_endpoint" {
+  description = "API endpoint URL (for web frontend calls)"
+  value       = "${trim(aws_apigatewayv2_stage.default.invoke_url, "/")}/costs" # dọn dẹp dấu gạch ngang bị thừa
+}
+
+output "api_function_name" {
+  description = "Lambda API function name"
+  value       = aws_lambda_function.api.function_name
+}
+```
+
 #### Deploy and Test the API
 
-1. Before deploying the API, we need to ensure that cost data already exists in the S3 bucket. Cost data is available only after it has been collected over a 24-hour period. Normally, if you have just deployed the system, no cost data will be available yet. In this case, we can use a script to generate simulated data:
+**1.** Before deploying the API, we need to ensure that cost data already exists in the S3 bucket. Cost data is available only after it has been collected over a 24-hour period. Normally, if you have just deployed the system, no cost data will be available yet. In this case, we can use a script to generate simulated data:
 
 - Create the file `terraform/test/test_data.py` to generate sample data. This script simulates cost data and uploads it to the S3 bucket.
 
@@ -380,13 +395,13 @@ if __name__ == "__main__":
     main()
 ```
 
-2. Next, deploy the infrastructure from the Terminal:
+**2.** Next, deploy the infrastructure from the Terminal:
 
 ```bash
 terraform apply
 ```
 
-3. Retrieve the bucket name:
+**3.** Retrieve the bucket name:
 
 ```bash
 terraform output cost_data_bucket_name
@@ -394,7 +409,7 @@ terraform output cost_data_bucket_name
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_1.png)
 
-4. Run script to generate simulated data:
+**4.** Run script to generate simulated data:
 
 ```bash
 python3 test/test_data.py <BUCKET_NAME>
@@ -406,7 +421,7 @@ python3 test/test_data.py <BUCKET_NAME>
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_4.png)
 
-5. Verify the generated data in the AWS Console:
+**5.** Verify the generated data in the AWS Console:
 
 - Open **Amazon S3**.
 - Select your bucket.
@@ -430,7 +445,7 @@ python3 test/test_data.py <BUCKET_NAME>
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_12.png)
 
-6. After verifying that everything works correctly, retrieve the API endpoint URL:
+**6.** After verifying that everything works correctly, retrieve the API endpoint URL:
 
 ```bash
 terraform output api_endpoint
@@ -438,7 +453,7 @@ terraform output api_endpoint
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_13.png)
 
-7. Open the endpoint URL displayed in the Terminal. You should see the API response returned in JSON:
+**7.** Access the link that appears in the Terminal, you will see the returned data in JSON format. You can also click **Pretty-print** to view it more visually:
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_14.png)
 

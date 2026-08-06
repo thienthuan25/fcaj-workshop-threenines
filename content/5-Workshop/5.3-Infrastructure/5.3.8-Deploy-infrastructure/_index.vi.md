@@ -21,7 +21,7 @@ schedule_expression = "rate(1 day)" # Lịch trình chạy (đặt tùy chọn)
 
 Sau khi hoàn thành các file trên, tại thư mục dự án chứa các file Terraform trên Terminal, chúng ta sẽ thực hiện các lệnh sau để tiến hành triển khai:
 
-1. Xem trước các tài nguyên được tạo.
+**1.** Xem trước các tài nguyên được tạo.
 
 ```bash
 terraform plan
@@ -29,7 +29,7 @@ terraform plan
 
 ![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_1.png)
 
-2. Triển khai hạ tầng.
+**2.** Triển khai hạ tầng.
 
 ```bash
 terraform apply
@@ -40,11 +40,11 @@ terraform apply
 
 ![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_3.png)
 
-3. Sau khi hoàn tất, Terraform sẽ hiển thị các giá trị outputs đã khai báo.
+**3.** Sau khi hoàn tất, Terraform sẽ hiển thị các giá trị outputs đã khai báo.
 
 ![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_5.png)
 
-4. Kiểm tra và xác nhận Email.
+**4.** Kiểm tra và xác nhận Email.
 
     Sau khi triển khai, bạn hãy kiểm tra các tài nguyên đã được tạo trên AWS Console.
 

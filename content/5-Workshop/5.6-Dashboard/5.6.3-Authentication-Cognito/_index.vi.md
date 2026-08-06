@@ -88,7 +88,7 @@ resource "aws_cognito_user_pool_client" "dashboard" {
 
 #### Gắn JWT authorizer vào route API
 
-1. Mở file `terraform/api_gateway.tf` và thêm đoạn code sau:
+**1.** Mở file `terraform/api_gateway.tf` và thêm đoạn code sau:
 
 ```hcl
 # Cấu hình JWT Authorizer cho API Gateway để xác thực người dùng bằng AWS Cognito
@@ -113,7 +113,7 @@ resource "aws_apigatewayv2_authorizer" "dashboard_jwt" {
 }
 ```
 
-2. Cập nhật resource `aws_apigatewayv2_route.costs`:
+**2.** Cập nhật resource `aws_apigatewayv2_route.costs`:
 
 ```hcl
 # Request gọi "GET /costs" phải có JWT hợp lệ
@@ -128,7 +128,7 @@ resource "aws_apigatewayv2_route" "costs" {
 
 Lúc này **API Gateway** chỉ chuyển request đến Lambda khi token Cognito hợp lệ.
 
-3. Cập nhật output trong file `terraform/outputs.tf`:
+**3.** Cập nhật output trong file `terraform/outputs.tf`:
 
 ```hcl
 output "user_pool_id" {

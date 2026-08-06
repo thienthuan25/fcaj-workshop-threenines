@@ -139,7 +139,7 @@ Tuy nhiên, trong dự án của chúng ta, giao diện Web Frontend được l�
 
 #### Tạo API Gateway
 
-1. Chúng ta tạo file `terraform/api_gateway.tf` để triển khai Lambda API và expose nó qua HTTP API Gateway. Người dùng sẽ gọi tới endpoint này để lấy dữ liệu.
+**1.** Chúng ta tạo file `terraform/api_gateway.tf` để triển khai Lambda API và expose nó qua HTTP API Gateway. Người dùng sẽ gọi tới endpoint này để lấy dữ liệu.
 
 ```hcl
 # IAM role cho Lambda API
@@ -266,7 +266,7 @@ resource "aws_lambda_permission" "apigw" {
 }
 ```
 
-2. Mở file `terraform/outputs.tf` và thêm cấu hình sau và cuối file.
+**2.** Mở file `terraform/outputs.tf` và thêm cấu hình sau và cuối file.
 
 ```hcl
 # API Gateway
@@ -283,7 +283,7 @@ output "api_function_name" {
 
 #### Triển khai và kiểm thử API
 
-1. Trước khi triển khai API, chúng ta cần đảm bảo rằng đã có dữ liệu chi phí trong S3 bucket. Dữ liệu chi phí cần được tổng hợp sau 24 giờ. Thông thường, khi chúng ta chỉ vừa mới triển khai hệ thống thì sẽ chưa có dữ liệu chi phí. Trong trường hợp này, chúng ta có thể sử dụng script để sinh ra dữ liệu mô phỏng:
+**1.** Trước khi triển khai API, chúng ta cần đảm bảo rằng đã có dữ liệu chi phí trong S3 bucket. Dữ liệu chi phí cần được tổng hợp sau 24 giờ. Thông thường, khi chúng ta chỉ vừa mới triển khai hệ thống thì sẽ chưa có dữ liệu chi phí. Trong trường hợp này, chúng ta có thể sử dụng script để sinh ra dữ liệu mô phỏng:
 
 - Chúng ta sẽ tạo file `terraform/test/test_data.py` để sinh ra dữ liệu giả lập. File này sẽ mô phỏng dữ liệu chi phí và ghi vào S3 bucket.
 
@@ -396,13 +396,13 @@ if __name__ == "__main__":
     main()
 ```
 
-2. Tiếp theo trên Terminal, chúng ta tiến hành triển khai:
+**2.** Tiếp theo trên Terminal, chúng ta tiến hành triển khai:
 
 ```bash
 terraform apply
 ```
 
-3. Lấy tên bucket:
+**3.** Lấy tên bucket:
 
 ```bash
 terraform output cost_data_bucket_name
@@ -410,7 +410,7 @@ terraform output cost_data_bucket_name
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_1.png)
 
-4. Chạy Script sinh dữ liệu mô phỏng:
+**4.** Chạy Script sinh dữ liệu mô phỏng:
 
 ```bash
 python3 test/test_data.py <BUCKET_NAME>
@@ -422,7 +422,7 @@ python3 test/test_data.py <BUCKET_NAME>
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_4.png)
 
-5. Kiểm tra trên cửa số Console AWS:
+**5.** Kiểm tra trên cửa số Console AWS:
 
 - Truy cập vào **Amazon S3**.
 - Chọn trên Bucket của bạn.
@@ -446,7 +446,7 @@ python3 test/test_data.py <BUCKET_NAME>
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_12.png)
 
-6. Sau khi đã kiểm chứng thành công, chúng ta sẽ tiến hành lấy URL endpoint của API:
+**6.** Sau khi đã kiểm chứng thành công, chúng ta sẽ tiến hành lấy URL endpoint của API:
 
 ```bash
 terraform output api_endpoint
@@ -454,7 +454,7 @@ terraform output api_endpoint
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_13.png)
 
-7. Truy cập vào đường dẫn hiện ra trên Terminal, bạn sẽ thấy dữ liệu trả về dưới dạng JSON. Bạn cũng có thể bấm chọn **Pretty-print** để xem một cách trực quan hơn:
+**7.** Truy cập vào đường dẫn hiện ra trên Terminal, bạn sẽ thấy dữ liệu trả về dưới dạng JSON. Bạn cũng có thể bấm chọn **Pretty-print** để xem một cách trực quan hơn:
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_15.png)
 

@@ -6,21 +6,23 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Xây dựng hệ thống giám sát và cảnh báo chi phí AWS bằng kiến trúc Serverless
+# Xây dựng hệ thống giám sát, phân tích và cảnh báo chi phí AWS bằng kiến trúc Serverless
 
 #### Tổng quan
 
-**CloudCost Insight** là một hệ thống Serverless giúp tự động giám sát, phân tích và cảnh báo chi phí sử dụng dịch vụ AWS theo thời gian gần thực, mà không cần bất kỳ thao tác thủ công nào. Thay vì phải đăng nhập vào Billing Console để kiểm tra chi phí mỗi ngày, hệ thống sẽ tự thu thập dữ liệu, phát hiện bất thường và chủ động gửi cảnh báo qua email khi chi phí vượt ngưỡng.
+**CloudCost Insight** là hệ thống FinOps Serverless giúp tự động thu thập, phân tích, trực quan hóa và cảnh báo chi phí sử dụng dịch vụ AWS theo chu kỳ. Thay vì phải kiểm tra AWS Billing Console thủ công, hệ thống sẽ lấy dữ liệu chi phí từ AWS Cost Explorer, phát hiện các trường hợp vượt ngưỡng hoặc tăng đột biến, sau đó chủ động gửi cảnh báo qua email.
 
-Trong bài lab này, chúng ta sẽ học cách xây dựng một hệ thống FinOps hoàn chỉnh trên AWS theo kiến trúc Serverless và event-driven, sử dụng Terraform để triển khai toàn bộ hạ tầng dưới dạng Infrastructure as Code. Hệ thống được thiết kế để tự động hóa hoàn toàn quy trình từ thu thập, phân tích, cảnh báo cho đến trực quan hóa dữ liệu chi phí.
+Trong workshop này, chúng ta sẽ xây dựng hệ thống theo kiến trúc **Serverless** và **event-driven**, sử dụng **Terraform** để triển khai toàn bộ hạ tầng dưới dạng **Infrastructure as Code**. Hệ thống được thiết kế với khả năng xử lý lỗi, giám sát vận hành, xác thực người dùng cho Dashboard và quy trình CI/CD tự động.
 
-Hệ thống bao gồm ba luồng chính, mỗi luồng đảm nhận một vai trò riêng biệt nhưng phối hợp chặt chẽ với nhau.
+Hệ thống gồm bốn luồng chính phối hợp với nhau:
 
-+ **Luồng thu thập và phân tích**: Amazon EventBridge lập lịch kích hoạt Lambda Collector định kỳ để gọi Cost Explorer API lấy dữ liệu chi phí, lưu vào S3 và đẩy sự kiện qua SQS. Lambda Analyzer sau đó tiêu thụ sự kiện, phân tích dữ liệu, phát hiện chi phí vượt ngưỡng hoặc tăng đột biến và gửi cảnh báo qua SNS.
++ **Luồng thu thập và phân tích chi phí:** Amazon EventBridge kích hoạt Lambda Collector theo lịch định kỳ để gọi AWS Cost Explorer lấy dữ liệu chi phí. Collector lưu dữ liệu vào Amazon S3 và gửi event qua Amazon SQS. Lambda Analyzer nhận event, đọc dữ liệu từ S3, so sánh chi phí với ngưỡng ngân sách và trung bình lịch sử để phát hiện chi phí bất thường.
 
-+ **Luồng giám sát và xử lý lỗi**: Amazon CloudWatch thu thập log và metric của các hàm Lambda, đồng thời kích hoạt Alarm khi hệ thống gặp sự cố. Các sự kiện xử lý lỗi được chuyển vào SQS Dead Letter Queue để đảm bảo không mất dữ liệu.
++ **Luồng xử lý lỗi, giám sát và cảnh báo:** Lambda Analyzer sử dụng cơ chế SQS partial batch failure để chỉ retry các message thất bại. Các message không thể xử lý sau nhiều lần retry được chuyển vào SQS Dead Letter Queue. Amazon CloudWatch thu thập logs, metrics và kích hoạt Alarm khi Lambda gặp lỗi hoặc DLQ có message. Amazon SNS gửi email khi phát hiện chi phí vượt ngưỡng, tăng đột biến hoặc khi hệ thống gặp sự cố.
 
-+ **Luồng trực quan hóa**: Một web dashboard tự xây được cung cấp dữ liệu qua Lambda API và Amazon API Gateway, giao diện host trên Amazon S3 và phân phối qua Amazon CloudFront, giúp người dùng theo dõi xu hướng chi phí một cách trực quan.
++ **Luồng trực quan hóa và bảo mật:** Web Dashboard hiển thị KPI, biểu đồ xu hướng chi phí, ngưỡng cảnh báo và các dịch vụ có chi phí cao nhất. Lambda API đọc dữ liệu từ S3, Amazon API Gateway cung cấp HTTP API, còn giao diện được host trên Amazon S3 và phân phối qua Amazon CloudFront với HTTPS. Amazon Cognito xác thực người dùng và cấp JWT; API Gateway chỉ cho phép request có JWT hợp lệ truy cập dữ liệu. CORS cũng được giới hạn để chỉ domain CloudFront của Dashboard được phép gọi API từ trình duyệt.
+
++ **Luồng kiểm thử và CI/CD:** Mã nguồn được kiểm tra tự động bằng GitHub Actions trước khi merge vào nhánh `main`, bao gồm Hugo Workshop, Python Lambda, Terraform và JavaScript Dashboard. Sau khi thay đổi Terraform được merge vào `main`, GitHub Actions tự động thực hiện Terraform Apply thông qua HCP Terraform. Branch protection và GitHub Environment giúp kiểm soát các thay đổi trước khi cập nhật hạ tầng AWS production.
 
 #### Nội dung
 

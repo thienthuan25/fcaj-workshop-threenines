@@ -130,7 +130,7 @@ def lambda_handler(event, context):
 
 #### Cấu hình IAM Role và triển khai Collector
 
-1. Tiếp theo, chúng ta sẽ tạo file `terraform/lambda_collector.tf`. File này là cầu nối giúp đưa đoạn code của bạn lên môi trường AWS và cấu hình cách nó hoạt động. File này thực hiện ba nhiệm vụ chính:
+**1.** Tiếp theo, chúng ta sẽ tạo file `terraform/lambda_collector.tf`. File này là cầu nối giúp đưa đoạn code của bạn lên môi trường AWS và cấu hình cách nó hoạt động. File này thực hiện ba nhiệm vụ chính:
 
 -  **Đóng gói tự động**: Nó sẽ tự động nén thư mục chứa code Python (`handler.py`) thành một file `.zip` để chuẩn bị tải lên AWS.
 -  **Cấu hình môi trường chạy**: Tạo `Lambda function` trên AWS, tải file zip lên, gắn quyền IAM (đã tạo ở phần trước) và thiết lập môi trường.
@@ -177,7 +177,7 @@ resource "aws_lambda_function" "collector" {
 }
 ```
 
-2. Mở file `terraform/eventbridge.tf` và thêm đoạn cấu hình sau vào cuối file:
+**2.** Mở file `terraform/eventbridge.tf` và thêm đoạn cấu hình sau vào cuối file:
 
 ```hcl
 # Khi đến giờ sẽ tự động gọi hàm Lambda Collector
@@ -197,7 +197,7 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 }
 ```
 
-3. Tiếp theo, mở `terraform/iam.tf` và thêm cấu hình sau vào khối `data "aws_iam_policy_document" "collector_policy"`:
+**3.** Tiếp theo, mở `terraform/iam.tf` và thêm cấu hình sau vào khối `data "aws_iam_policy_document" "collector_policy"`:
 
 ```hcl
 # Gửi sự kiện vào SQS Queue chính
@@ -209,7 +209,7 @@ statement {
 }
 ```
 
-4. Tiếp tục, mở file `terraform/outputs.tf` và thêm cấu hình sau vào cuối file:
+**4.** Tiếp tục, mở file `terraform/outputs.tf` và thêm cấu hình sau vào cuối file:
 
 ```hcl
 # Xuất tên của hàm Lambda Collector ra màn hình sau khi triển khai

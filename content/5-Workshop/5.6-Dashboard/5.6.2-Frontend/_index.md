@@ -8,7 +8,7 @@ pre : " <b> 5.6.2 </b> "
 
 We will create the Web interface in the `lambda/web` directory.
 
-1. The `index.html` file contains the page structure:
+**1.** The `index.html` file contains the page structure:
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +84,7 @@ We will create the Web interface in the `lambda/web` directory.
 </html>
 ```
 
-2. The `style.css` file contains all the styling definitions for the user interface:
+**2.** The `style.css` file contains all the styling definitions for the user interface:
 
 ```css
 * {
@@ -242,7 +242,7 @@ header p {
 }
 ```
 
-3. The `script.js` file contains the logic for calling the API and rendering charts using **Chart.js**:
+**3.** The `script.js` file contains the logic for calling the API and rendering charts using **Chart.js**:
 
 ```javascript
 const API_ENDPOINT = "REPLACE_MY_API_ENDPOINT";
@@ -469,7 +469,7 @@ The interface includes multiple charts, such as a daily cost trend chart with a 
 
 #### Host the Web Application on S3 and CloudFront
 
-Next, we will create the `terraform/web_hosting.tf` file to host the web interface on **S3** and distribute it through **CloudFront** over HTTPS. For security, the web bucket is **not** publicly accessible. Instead, only **CloudFront** is allowed to read its contents using **Origin Access Control (OAC)**.
+**1.** We will create the `terraform/web_hosting.tf` file to host the web interface on **S3** and distribute it through **CloudFront** over HTTPS. For security, the web bucket is **not** publicly accessible. Instead, only **CloudFront** is allowed to read its contents using **Origin Access Control (OAC)**.
 
 ```hcl
 # Host Website on S3 + CloudFront
@@ -627,6 +627,21 @@ resource "aws_s3_object" "script" {
 ```
 
 Using **Origin Access Control (OAC)** is an important security measure. The web bucket is never exposed directly to the public. All access must go through CloudFront over HTTPS, preventing the bucket contents from being directly exposed to the Internet.
+
+**2.** Open the `terraform/outputs.tf` file and add the following configuration block to the end of the file.
+
+```hcl
+# Web Dashboard
+output "web_dashboard_url" {
+  description = "URL to access Web Dashboard (HTTPS via CloudFront)"
+  value       = "https://${aws_cloudfront_distribution.web.domain_name}"
+}
+
+output "web_bucket_name" {
+  description = "S3 bucket name for static web"
+  value       = aws_s3_bucket.web.id
+}
+```
 
 #### Deploying and Accessing the Dashboard
 

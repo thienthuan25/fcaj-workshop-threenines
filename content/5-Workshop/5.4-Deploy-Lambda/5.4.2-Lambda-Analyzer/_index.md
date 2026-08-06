@@ -175,7 +175,7 @@ def lambda_handler(event, context):
 
 #### Configure the IAM Role and Deploy the Analyzer
 
-1. Next, create the file `terraform/lambda_analyzer.tf`. This file is responsible for provisioning all the AWS infrastructure required to run the Lambda Analyzer function. It automatically performs the following tasks:
+**1.** Next, create the file `terraform/lambda_analyzer.tf`. This file is responsible for provisioning all the AWS infrastructure required to run the Lambda Analyzer function. It automatically performs the following tasks:
 
 - **Grant security permissions**: Creates the IAM permissions required for the Analyzer function to read cost data from Amazon S3, receive messages from Amazon SQS, and publish alerts through Amazon SNS.
 - **Package and deploy**: Automatically compresses the Python source code into a ZIP file and uploads it to AWS to create a fully functional Lambda function.
@@ -296,7 +296,7 @@ resource "aws_lambda_event_source_mapping" "sqs_to_analyzer" {
 }
 ```
 
-2. Open the `terraform/outputs.tf` file and add the following configuration to the end of the file:
+**2.** Open the `terraform/outputs.tf` file and add the following configuration to the end of the file:
 
 ```hcl
 # Output IAM Role ARN for Lambda Analyzer to the console

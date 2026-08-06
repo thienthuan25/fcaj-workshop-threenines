@@ -88,7 +88,7 @@ resource "aws_cognito_user_pool_client" "dashboard" {
 
 #### Attach the JWT authorizer to the API route
 
-1. Open the `terraform/api_gateway.tf` file and add the following code:
+**1.** Open the `terraform/api_gateway.tf` file and add the following code:
 
 ```hcl
 # Configure JWT Authorizer for API Gateway to authenticate users with AWS Cognito
@@ -113,7 +113,7 @@ resource "aws_apigatewayv2_authorizer" "dashboard_jwt" {
 }
 ```
 
-2. Update the `aws_apigatewayv2_route.costs` resource:
+**2.** Update the `aws_apigatewayv2_route.costs` resource:
 
 ```hcl
 # Requests calling "GET /costs" must have a valid JWT
@@ -128,7 +128,7 @@ resource "aws_apigatewayv2_route" "costs" {
 
 Now, **API Gateway** will only forward requests to Lambda when the Cognito token is valid.
 
-3. Update output in the `terraform/outputs.tf` file:
+**3.** Update output in the `terraform/outputs.tf` file:
 
 ```hcl
 output "user_pool_id" {

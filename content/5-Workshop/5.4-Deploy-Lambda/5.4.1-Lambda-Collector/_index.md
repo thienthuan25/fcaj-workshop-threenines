@@ -118,7 +118,7 @@ def lambda_handler(event, context):
 
 #### Configure the IAM Role and Deploy the Collector
 
-1. Next, create the file `terraform/lambda_collector.tf`. This file acts as the bridge that deploys your code to AWS and defines how it runs. It performs three main tasks:
+**1.** Next, create the file `terraform/lambda_collector.tf`. This file acts as the bridge that deploys your code to AWS and defines how it runs. It performs three main tasks:
 
 - **Automatic packaging**: Compresses the Python source directory (`handler.py`) into a `.zip` file that is ready to be uploaded to AWS.
 - **Runtime configuration**: Creates the AWS `Lambda function`, uploads the ZIP package, attaches the IAM role created earlier, and configures the runtime environment.
@@ -165,7 +165,7 @@ resource "aws_lambda_function" "collector" {
 }
 ```
 
-2. Open the `terraform/eventbridge.tf` file and add the following configuration to the end of the file:
+**2.** Open the `terraform/eventbridge.tf` file and add the following configuration to the end of the file:
 
 ```hcl
 # Automatically invoke the Lambda Collector on schedule
@@ -185,7 +185,7 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 }
 ```
 
-3. Next, open `terraform/iam.tf` and add the following configuration to the `data "aws_iam_policy_document" "collector_policy"` block:
+**3.** Next, open `terraform/iam.tf` and add the following configuration to the `data "aws_iam_policy_document" "collector_policy"` block:
 
 ```hcl
 # Allow sending events to the primary SQS queue
@@ -197,7 +197,7 @@ statement {
 }
 ```
 
-4.  Finally, open `terraform/outputs.tf` and add the following configuration to the end of the file:
+**4.** Finally, open `terraform/outputs.tf` and add the following configuration to the end of the file:
 
 ```hcl
 # Print the name of the Lambda Collector function to the screen after deployment

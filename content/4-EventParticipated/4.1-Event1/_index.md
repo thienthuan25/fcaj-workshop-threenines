@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Event Report: "First Cloud AI Journey Community Day"
+# Event Report: "FCAJ Community Day"
 
 - Time: 9:00 AM - 12:00 PM, March 21, 2026.
 - Floor 26, Bitexco Financial Tower, No. 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam.

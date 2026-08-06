@@ -6,13 +6,13 @@ chapter : false
 pre : " <b> 5.5.3 </b> "
 ---
 
-1. In the WSL2 terminal, deploy the CloudWatch Alarms you have just configured:
+**1.** In the WSL2 terminal, deploy the CloudWatch Alarms you have just configured:
 
 ```bash
 terraform apply
 ```
 
-2. After the deployment completes successfully, open the AWS Console and verify the list of CloudWatch Alarms. Initially, all alarms should be in the **OK** state because no errors have occurred yet:
+**2.** After the deployment completes successfully, open the AWS Console and verify the list of CloudWatch Alarms. Initially, all alarms should be in the **OK** state because no errors have occurred yet:
 
 ![Monitoring](/workshop-fcaj-intern/images/5-Workshop/5.5-Monitoring/5.5.3-Deploy/deploy_1.png)
 
