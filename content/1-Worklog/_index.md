@@ -29,6 +29,6 @@ This is a work log documenting the entire 12-week internship journey at **First 
 
 **Week 10:** [Building the Web Frontend, Deploying and Finalizing the Dashboard](1.10-week10/)
 
-**Week 11:** [System redeployment, Testing, and Workshop documentation completion](1.11-week11/)
+**Week 11:** [Build CI/CD and deploy writing Workshop content](1.11-week11/)
 
-**Week 12:** [Doing task N...](1.12-week12/)
+**Week 12:** [Complete Workshop, write Blog and record Project Demo](1.12-week12/)
