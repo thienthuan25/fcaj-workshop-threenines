@@ -15,7 +15,7 @@ pre: " <b> 4.4. </b> "
 
 Sự kiện FCAJ Community Day ngày 27 tháng 6 năm 2026 được tổ chức với mục đích chính là tạo không gian kết nối và chia sẻ kiến thức chuyên sâu về công nghệ đám mây và trí tuệ nhân tạo. Chương trình hướng tới việc cung cấp các góc nhìn thực tế về những ứng dụng hiện đại như Voice AI, hệ thống tự động hóa trong vận hành và giải pháp AI trong quản trị nhân sự. Thông qua các phần trình bày từ những diễn giả giàu kinh nghiệm, sự kiện mong muốn truyền cảm hứng và trang bị cho cộng đồng những kỹ năng cần thiết để giải quyết các bài toán kinh doanh cụ thể, đồng thời thúc đẩy tư duy đổi mới sáng tạo trong việc áp dụng công nghệ vào thực tiễn doanh nghiệp.
 
-### Vai Trò Người Tham Gia
+### Vai Trò Tham Gia
 
 Trong sự kiện lần này, tôi tham gia với vai trò là một người tham dự, lắng nghe và tiếp thu các kiến thức thực chiến từ những chuyên gia hàng đầu trong ngành, từ đó nắm bắt các xu hướng công nghệ mới nhất.
 
