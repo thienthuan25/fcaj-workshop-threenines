@@ -40,4 +40,11 @@ jobs:
       - name: Build Hugo site
         run: hugo --minify --baseURL "https://thienthuan25.github.io/workshop-fcaj-intern/"
 
-     
+      # Đẩy thư mục public lên nhánh gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          force_orphan: true
