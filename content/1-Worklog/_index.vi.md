@@ -29,6 +29,6 @@ pre: " <b> 1. </b> "
 
 **Tuần 10:** [Xây dựng Web Frontend, triển khai & hoàn thiện Dashboard](1.10-week10/)
 
-**Tuần 11:** [Triển khai lại hệ thống, kiểm thử và hoàn thiện tài liệu Workshop](1.11-week11/)
+**Tuần 11:** [Xây dựng CI/CD và triển khai viết Workshop](1.11-week11/)
 
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+**Tuần 12:** [Hoàn thiện Workshop, viết Blog và quay Demo Project](1.12-week12/)
