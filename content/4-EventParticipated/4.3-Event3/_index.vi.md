@@ -6,89 +6,191 @@ chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Enterprise Cloud Architectures and Industry Application featuring Cloud Kinetics & Renova
+# Bài Thu Hoạch "FCAJ Community Day"
 
-Mặc dù với sự kiện này, tôi không được tham gia vì không đủ slot để đăng kí. Tuy nhiên, may mắn một điều là sự kiện này có Livestream trực tiếp trên nền tảng YouTube nên tôi có thể theo dõi sự kiện và học hỏi được rất nhiều điều qua sự kiện này.
+- Thời gian: 09:00 - 12:00 ngày 27/06/2026.
+- Địa điểm: Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam.
 
 ### Mục Đích Của Sự Kiện
 
-Sự kiện **AWS: Enterprise Cloud Architectures and Industry Application** là một buổi tham quan thực tế dành cho sinh viên trường **Swinbure Việt Nam**, đặc biệt là cơ sở ở Cần Thơ đến văn phòng AWS. Chương trình tập trung vào việc chia sẻ kiến thức thực tế về điện toán đám mây và định hướng nghề nghiệp trong ngành IT.
+Sự kiện FCAJ Community Day ngày 27 tháng 6 năm 2026 được tổ chức với mục đích chính là tạo không gian kết nối và chia sẻ kiến thức chuyên sâu về công nghệ đám mây và trí tuệ nhân tạo. Chương trình hướng tới việc cung cấp các góc nhìn thực tế về những ứng dụng hiện đại như Voice AI, hệ thống tự động hóa trong vận hành và giải pháp AI trong quản trị nhân sự. Thông qua các phần trình bày từ những diễn giả giàu kinh nghiệm, sự kiện mong muốn truyền cảm hứng và trang bị cho cộng đồng những kỹ năng cần thiết để giải quyết các bài toán kinh doanh cụ thể, đồng thời thúc đẩy tư duy đổi mới sáng tạo trong việc áp dụng công nghệ vào thực tiễn doanh nghiệp.
+
+### Vai Trò Tham Gia
+
+Trong sự kiện lần này, em tham gia với vai trò là một người tham dự, lắng nghe và tiếp thu các kiến thức thực chiến từ những chuyên gia hàng đầu trong ngành, từ đó nắm bắt các xu hướng công nghệ mới nhất.
 
 ### Danh Sách Diễn Giả
 
-- **Nguyễn Trần Minh Duy** - Industry Liaison Officer tại Swinburne Việt Nam.
-- **Nguyễn Gia Hưng** - Head of Solutions Architect Việt Nam & Cambodia.
-- **Bành Cảm Vĩnh** - Data Engineer tại Renova Cloud.
-- **Như Trần** - Account Manager tại Amazon Web Services Việt Nam.
-- **Nguyễn Ngọc Quỳnh Mai** - Cloud Operations Engineer tại VietNam International Bank (VIB)
-- **Khang Nguyễn** - Solution Architect tại CloudKinetics.
+- **Steve Trần** - CTO tại CloudThinker
+- **Trung Vũ**- Founder của Revve AI
+- **Kiệt Trần** - AI Engineer tại Revve AI
+- **Danh Hoàng Hiếu Nghị** - AI Engineer tại Renova Cloud
+- **Phan Kim Bảo** - Cloud Engineer
+- **Nguyên Nguyễn** - Cloud Engineer tại Cloud Kinetics Việt Nam
+- **Trường Trần** - Solutions Sales tại Noventiq Việt Nam
+- **Minh Anh** - Solutions Sales tại Noventiq Việt Nam
+- **Nguyễn Đức Toàn** - Technical Cloud Engineer tại Keyloop
 
-### Nội Dung
+### Nội Dung 
 
-#### Giới Thiệu Và Kết Nối - Nguyễn Ngọc Quỳnh Mai & Nguyễn Trần Minh Duy
+Sự kiện là một buổi chia sẻ chuyên sâu về công nghệ đám mây và trí tuệ nhân tạo, tập trung vào các giải pháp thực tế cho doanh nghiệp.
 
-Sự kiện đánh dấu cột mốc năm thứ 3 liên tiếp **Swinburn Việt Nam** phối hợp cùng với **AWS Việt Nam** tổ chức buổi tham quan thực tế dành cho sinh viên. Tạo cầu nối để sinh viên tiếp cận gần hơn với môi trường công nghệ chuyên nghiệp, đồng thời mở ra cơ hội học hỏi từ những chuyên gia đang làm việc trong lĩnh vực điện toán đám mây tại AWS.
+#### Chủ đề 1: Deep Response Engine: From Detection to Autonomous Resolution - Steve Trần
 
-#### Chủ đề 1: Thực Trạng Thị Trường Lao Động Ngành IT và Tư Duy Sự Nghiệp - Nguyễn Gia Hưng
+- Giải quyết bài toán complexity (độ phức tạp): Khi doanh nghiệp chuyển đổi số và hệ thống ngày càng lớn, độ phức tạp tăng cao. Việc sử dụng nhiều công cụ giám sát (observability tools) thường dẫn đến việc doanh nghiệp phải tuyển thêm nhân sự để vận hành, làm tăng thêm sự phức tạp. Steve nhấn mạnh vai trò của AI trong việc hỗ trợ các kỹ sư cấp cao vận hành hạ tầng chứ không phải thay thế hoàn toàn con người.
 
-- Nhu cầu thị trường Cloud tại Việt Nam: Anh Hưng chia sẻ về sự phát triển mạnh mẽ của công nghệ điện toán đám mây, với việc các tổ chức lớn như ngân hàng, tài chính,... đang đẩy mạnh đưa lên hệ thống Cloud. Nhiều tập đoàn quốc tế đang xây dựng **Talent Hub** tại Việt Nam, tạo ra các như cầu rất lớn về nhân lực IT chất lượng cao.
+- Nên sử dụng kiến trúc MUlti-Agent thay vì Single-Agent trong các hệ thống AI thực tế:
 
-- Đầu tư cơ sở hạ tầng: Phân tích quy mô khổng lồ của việc đầu tư hạ tầng Cloud tại Việt Nam, với chi phí lên tới hàng tỷ đô và thời gian hoàn vốn dài hạn (15 - 20 năm), khẳng định cam kết lâu dài của AWS trong việc xây dựng thế hệ nhân lực tương lai.
+    + Tối ưu hóa việc lựa chọn mô hình cho các tác vụ chuyên biệt.
+    + Tránh tình trạng bị loãng ngữ cảnh khi dồn tất cả dữ liệu vào một tác nhân duy nhất.
+    + Hỗ trợ kiểm soát vai trò và quyền truy cập.
 
-- Nghịch lý tuyển dụng: Thị trường đang có sự phân hóa rõ giữa nhu cầu tuyển dụng **Junior** và **Senior**. Anh Hưng nhấn mạnh rằng các bạn sinh viên cần phải nâng cao kỹ năng thực tế thay vì chỉ tập trung vào kiến thức trên trường lớp, vì yêu cầu của doanh nghiệp hiện nay đã tăng lên rất cao.
+- Tư duy phát triển sản phẩm:
 
--  Tư Duy Về AI Trong Học Tập: Cảnh báo về việc sử dụng lạm dụng AI để làm bài tập thay. Thay vào đó, sinh viên cần sử dụng AI như một trợ lý để giải quyết các vấn đề phức tạp, phục vụ cho nhu cầu thực tế của doanh nghiệp. Ví dụ như làm dự án phải đảm bảo tính **scalable**, **security**, tích hợp **chatbot** và **recommendation** thay vì chỉ làm những website đơn giản như trước đây.
+    + Execution: Quan trọng là bắt tay vào làm ngay thay vì dành quá nhiều thời gian suy nghĩ.
+    + Customer Champion: Cần chọn đúng khách hàng tiên phong để làm việc trực tiếp, từ đó đối chiếu ý tưởng công nghệ với các bài toán thực tế của doanh nghiệp.
+    + Chuyển đổi quy trình; Để triển khai thành công một hệ thống AI, doanh nghiệp thường phải thay đổi hơn 50% quy trình vận hành hiện có để phù hợp với năng lực mới của hệ thống.
 
-#### Chủ đề 2: Thực Tế Ngành Data Engineering và Sự Khác Biệt Giữa Môi Trường Học Thuật - Doanh Nghiệp - Bành Cảm Vĩnh
+#### Chủ đề 2: Voice Agents: Building Human-Like AI Conversations at Scale - Trung Vũ, Kiệt Trần, Danh Hoàng Hiếu Nghị
 
-- Sự khác biệt giữa bài tập ở trường và môi trường thực tế: Anh Vĩnh chỉ ra rằng các project ở trường thường có dữ liệu đã được làm sạch, yêu cầu rõ ràng, thời gian thoải mái và quy mô nhỏ. Trong khi đó, môi trường doanh nghiệp đòi hỏi khả năng xử lý dữ liệu thực tế lớn, yêu cầu thường xuyên thay đổi, cần tư duy **architecture** và chịu trách nhiệm trực tiếp với hiệu quả kinh doanh của công ty.
+Chủ đề này chia sẻ về kiến trúc và những thách thức thực tế khi triển khai các hệ thống giọng nói AI tại Việt Nam.
 
-- Tư duy về công cụ và kiến trúc: Anh nhấn mạnh rằng các công cụ như AWS, OpenStack,... có thể thay đổi liên tục, nhưng cái cốt lõi là kiến trúc hệ thống thì không đổi. Sinh viên cần tập trung nắm vững kiến thức nền tảng hơn là chỉ học thuộc cách sử dụng một công cụ cụ thể.
+- Kiến trúc hệ thống:
 
-- Vài trò của Data Engineer trong doanh nghiệp: Không chỉ là viết code, người làm Data Engineering cần hiểu sâu về **business** để giao tiếp với các phòng ban, từ đó đưa ra yêu cầu chính xác và mang lại giá trị thực cho doanh nghiệp thay vì chỉ xây dựng hệ thống kỹ thuật đơn thuần.
+    + Phân tích hai kiến trúc phổ biến: **Speech-to-Speech** và mô hình ba giai đoạn: **Speech-to-Text** -> **LLM** -. **Text-to-Speech**.
+    + Đối với thị trường Việt nam, mô hình ba giai đoạn được ưu tiên vì tính khả thi và khả năng kiểm soát nội dung tốt hơn đối với ngôn ngữ ít tài nguyên như tiếng Việt.
 
-- Giải quyết vấn đề khi yêu cầu không rõ ràng: Khi đối mặt với việc khách hàng thay đổi yêu cầu liên tục, thay vì đối phó bị động, kỹ sư cần thiết lập quy trình (alignment) giữa các bộ phận để đảm bảo mọi request đều có giá trị thực tế và tối ưu hóa tài nguyên.
+- Thách thức thực tế trong doanh nghiệp:
 
-- Tư duy hướng kết quả: Anh Vĩnh khuyên sinh viên nên tiếp cận vấn đề theo hướng kế quả mong muốn trước để tránh tình trạng **over-engineering**.
+    + Kiểm soát chất lượng: Doanh nghiệp cần đảm bảo AI không đưa ra các câu trả lời sai lệch. Việc chuyển đổi sang dạng văn bản giúp dễ dàng quản lý.
+    + AI không chỉ dừng lại ở việc trả lời câu hỏi mà cần có khả năng thực thi các tác vụ (như khóa thẻ, kiểm tra thông tin) thông qua việc gọi các công cụ bên ngoài.
+    + Human-in-the-loop: Hệ thống cần được thiết kế để có thể chuyển giao (handover) cho nhân viên con người khi AI gặp các tình huống phức tạp hoặc khách hàng có thái độ tiêu cực.
 
-#### Chủ đề 3: Vượt Qua Nỗi Sợ và Nghệ Thuật Giao Tiếp Công Sở - Nguyễn Ngọc Quỳnh Mai & Như Trần
+#### Chủ đề 3: AWS DevOps Agent: Your Always-Available Operations Teammate - Phan Kim Bảo & Nguyên Nguyễn
 
-- Đối mặt với nỗi sợ cá nhân: Chị Như khuyến khích sinh viên gọi tên những nỗi sợ thực sự của bản thân thay vì chỉ nói chung chung là "sợ sai".
+Chủ đề này thảo luận về **AWS DevOps Agent**, công cụ hỗ trợ kỹ sư trong việc vận hành và xử lý sự cố hệ thống.
 
-- Giao tiếp: Nỗi sợ nói trước đám đông của chính mình và cách chị vượt qua bằng việc tình nguyện tham gia chia sẻ tại nhiều diễn đàn để rèn luyện kỹ năng, từ đó giúp bản thân bình ổn và tự tin hơn.
+- Vai trò của DevOps Agent: Hệ thống hoạt động như một cộng sự hỗ sợ kỹ sư vận hành thay vì thay thế con người. Agent giúp tự động hóa quá trình điều tra sự cố, phân tích nguyên nhân gốc rễ và đề xuất phương án giải quyết.
 
-- Tạo sự kết nối: Để thu hẹp khoảng cách với sếp, chị khuyên các bạn trẻ không nên tìm cách trốn tránh mà hãy chủ động tạo sự hiện diện thông qua những hành động nhỏ như chào hỏi vào buổi sáng hoặc đề xuất hỗ trợ công việc. Việc chủ động giao tiếp giúp sếp ghi nhận sự hỗ lực và tiềm năng của bạn.
+- Các trụ cột chính của DevOps Agent:
 
-- Giao tiếp trong công việc, đặt biệt là với khách hàng không chỉ là truyền tải thông tin mà còn là việc biết khi nào cần nhường bước và khi nào cần giữ vững lập trường để bảo về quy trình làm việc hiệu hả. Chị nhấn mạnh việc khong cần phải có câu trả lời ngay lập tức, nhưng cần thái độ cầu thị và trách nhiệm trong công việc tìm kiếm câu trả lời sau đó.
+    + Context Learning: Sử dụng Agent Space (một container logic) để hiểu cấu trúc hệ thống thông qua việc truy cập tài nguyên, cấu hình và tạo ra sơ đồ topology.
+    + Integration: Khả năng mở rộng thông qua MCP (Model Context Protocol) hoặc tích hợp với các dịch vụ khác để truy vấn log hoặc dữ liệu từ các hệ thống bên ngoài.
+    + Collaboration: Hỗ trợ tương tác qua nhiều nền tảng như Slack hoặc ServiceNow.
+    + Convenient: Quy trình thiết lập đơn giản trực tiếp trên AWS Console.
+    + Cost Effective: Chi phí được tính dựa trên thời gian chạy thay vì dựa trên hạ tầng hay số lượng token.
 
-- Chị còn khẳng định cơ hội thực sự không chỉ nằm ở những tin tuyển dụng công khai mà đến từ việc kết nối thông qua các buổi chia sẻ, các mối quan hệ và những việc nhỏ mà người khác thường bỏ qua.
+- Trải nghiệm thực tế:
 
-#### Chủ đề 4: Chia sẻ kinh nghiệm thực tế - Khang Nguyễn
+    + Giảm thời gian xử lý sự cố (MTTR): Ví dụ tại một trường đại học online, DevOps Agent giúp giảm thời gian xử lý vấn đề từ 2 tiếng xuống còn 28 phút (nhanh hơn 77%) .
+    + Điều tra nguyên nhân gốc rễ: Hỗ trợ tìm ra các lỗi cấu hình sai (misconfiguration) trong các hệ thống phức tạp, giúp kỹ sư tiết kiệm đáng kể thời gian thao tác thủ công.
 
-- Anh Khang nhấn mạnh dù cơ hội tiếp cận công nghệ và tài liệu ngày nay dễ dàng hơn, nhưng thách thức lớn nhất là xu hướng lạm dụng AI để hoàn thành bài tập mà không hiểu bản chất kỹ thuật.
+DevOps Agent là công cụ giúp khuếch đại kỹ năng của kỹ sư. Nó hoạt động hiệu quả nhất đối với các tổ chức có quy trình quản trị hạ tầng rõ ràng, lịch sử hệ thống minh bạch và cấu trúc dịch vụ mạch lạc
 
-- Phương pháp học tập để sẵn sàng đi làm:
-  
-  + Luôn đặt câu hỏi "Tại sao?" thay vì chỉ học vẹt.
-  + Sai lầm là một phần tất yếu của quá trình học, quan trọng là phân tích được tại sao mình sai.
-  + Luôn chủ động học vượt kỳ vọng, tìm hiểu sâu hơn các module được dạy ở trên lớp để tạo sự khác biệt khi phỏng vấn.
+#### Chủ đề 5: AI-Powered Productivity: Workforce Planning For Enterprise - Trường Trần & Minh Anh
 
-- Anh Khang chia sẻ 5 yếu tô quan trọng mà doanh nghiệp tìm kiếm ở một ứng viên theo thứ tự ưu tiên: Thái độ, Trình độ, Kinh nghiệm, Trải nghiệm, Tố chất.
+Chủ đề này thảo luận về cách ứng dụng AI, đặc biệt là **Amazon Quick** để giải quyết các thách thức trong quản trị nhân sự và tối ưu hóa quy trình doanh nghiệp.
 
-#### Những Gì Đã Học Được
+- Thách thức hiện tại trong tuyển dụng: Doanh nghiệp thường đối mặt với các vấn đề như tốn quá nhiều thời gian cho việc sàng lọc CV thủ công (1-2 tháng), tỉ lệ bỏ cuộc cao, và thiếu bộ khung dữ liệu chuẩn xác để đánh giá nhân sự, dẫn đến việc tuyển dụng kém hiệu quả.
 
-**1.** Hiểu rõ sự khác biệt giữa học thuật và thực tế:
+- Giải pháp từ AI: Sử dụng AI giúp HR chuyển từ các công việc thủ công sang xây dựng chiến lược nhân sự, đánh giá ứng viên dựa trên bộ khung chuẩn, thay vì cảm tính. Điều này giúp doanh nghiệp tiết kiệm chi phí, thời gian và tăng giá trị cạnh tranh.
 
-Các dự án ở trường thường có môi trường dữ liệu sạch, yêu cầu tĩnh, trong khi doanh nghiệp đòi hỏi khả năng xử lý dữ liệu thực tế lớn, yêu cầu thay đổi thường xuyên và cần tư duy kiến trúc hệ thống tổng thể thay vì chỉ biết sử dụng công cụ.
+- Vai trò của **Amazon Quick** trong doanh nghiệp:
 
-**2.** Thay vì phức tạp hóa kỹ thuật, người kỹ sư cần đặt mục tiêu kinh doanh lên hàng đầu. Mọi giải pháp kỹ thuật phải mang lại giá trị trực tế cho doanh nghiệp.
+    + Tùy biến Agent: Người dùng có thể tạo ra các AI Agent chuyên biệt (ví dụ: HR Talent Review Assistant) để đọc hiểu policy, đọc CV, hoặc phân tích JD.
+    + Khả năng kết nối: Amazon Quick có thể kết nối với nhiều nguồn dữ liệu khác nhau như SharePoint, Outlook, Google Drive, Jira, Salesforce thông qua MCP (Model Context Protocol), cho phép trích xuất và xử lý dữ liệu trực tiếp mà không cần chuyển đổi nhiều nền tảng.
+    + Tự động hóa tác vụ: Amazon Quick không chỉ trả lời câu hỏi mà còn thực hiện các thao tác như: tự động sàng lọc CV (OCR độ chính xác cao), so sánh ứng viên với JD, gợi ý mức lương, và tạo báo cáo tuyển dụng.
 
-**3.** Kỹ năng mềm:
+- Với sự phổ biến của AI trong khâu sàng lọc, các ứng viên nên tập trung tối ưu hóa CV để các từ khóa khớp với JD nhằm vượt qua vòng sàng lọc tự động.
 
-- Giao tiếp không chỉ dành riêng cho người hướng nội. Bạn cần làm việc với nhiều phòng ban, hiểu về **buisiness** để triển khai dự án hiệu quả.
+#### Chủ đề 6: Building Secure Private MCP Connection with Amazon Quickuick - Nguyễn Đức Toàn & Danh Hoàng Hiếu Nghị
 
-- Cơ hội không tự đến, chúng ta cần phải chủ động kết nối thông qua các buổi chia sẻ và các hành động nhỏ trong công việc hằng ngày.
+Chủ đề này đi sâu vào giải pháp kỹ thuật để kết nối **Amazon Quick với các nguồn dữ liệu bên thứ ba một cách an toàn thông qua MCP (Model Context Protocol) trong môi trường doanh nghiệp.
 
-**4.** Sợ sai là tâm lý bình thường, nhưng cần biết gọi tên nỗi sợ thay vì né tránh. Việc chấp nhận sai lầm và phân tích lý do tại sao mình sai là cách nhanh nhất để trưởng thành.
+- Khi kết nối **Amazon Quick** với **MCP Server** qua Internet công cộng, doanh nghiệp đối mặt với nhiều rủi ro như tấn công DDoS, nghe lén dữ liệu (Man-in-the-middle), và vi phạm các chính sách bảo mật nội bộ.
 
-**5.** Dù AI hỗ trợ công việc rất nhiều trong cuộc sống hằng ngày của chúng ta, nhưng chúng ta cần tránh lạm dụng để làm thay mà không hiểu bản chất. Bí quyết thành công nằm ở việc luôn đặt câu hỏi và tư duy tâm thế luôn sẵn sàng học hỏi, vượt qua thử thách của bản thân trong tương lai.
+- Giải pháp kết nối riêng tư (Private Connection):
+
+    + **VPC Connection**: Đưa Amazon Q vào trong môi trường VPC (Virtual Private Cloud) để thiết lập kết nối nội bộ
+    + **Interface Endpoint**: Thiết lập VPC Endpoint và Private DNS giúp các yêu cầu truy vấn đến MCP Server không bao giờ đi qua Internet công cộng
+    + **Cấu trúc kỹ thuật**: Sử dụng Application Load Balancer (ALB) kết hợp với AWS Certificate Manager (ACM) để mã hóa TLS
+
+- Tối ưu hóa và quản lý chi phí:
+
+    + Việc triển khai môi trường bảo mật riêng tư đi kèm với các chi phí hạ tầng bổ sung như Route 53 Resolver, ALB, và chi phí vận hành EC2 cho MCP Server (ước tính khoảng 250 - 350 USD/tháng cho các thành phần hạ tầng) .
+    + Diễn giả nhấn mạnh rằng dù việc thiết lập private connection có chi phí cao hơn, nhưng nó là yếu tố cốt lõi để đảm bảo tuân thủ bảo mật đối với các doanh nghiệp lớn
+
+- Amazon Quick có thể kết nối với hầu hết mọi dịch vụ bên thứ ba (như Zalo, WhatsApp, Jira, hoặc các hệ thống lưu trữ nội bộ) miễn là các hệ thống đó cung cấp API, giúp biến Amazon Q thành một trợ lý trung tâm có khả năng truy xuất dữ liệu real-time một cách an toàn.
+
+### Những Gì Học Được
+
+Sau khi tham gia sự kiện, em đã học được nhiều kiến thức và đã có những góc nhìn thực tế và chuyên sâu về ứng dụng AI trong doanh nghiệp:
+
+**1.** Tư duy thực thi trong kỷ nguyên AI: Thay vì dành quá nhiều thời gian lý thuyết, các doanh nghiệp cần tập trung vào thực thi thông qua các mô hình POC hoặc MVP. Việc chọn đúng Customer Champion để giải quyết các bài toán thực tế là yếu tố sống còn cho các dự án khởi nghiệp.
+
+**2.** Tầm quan trọng của kiến trúc linh hoạt:
+
+- **Multi-Agent Architecture**: Sử dụng nhiều tác nhân chuyên biệt giúp tối ưu hóa hiệu suất, tránh loãng ngữ cảnh và quản lý quyền truy cập tốt hơn .
+- **Kiến trúc Voice AI**: Với các ngôn ngữ ít tài nguyên như tiếng Việt, mô hình ba giai đoạn (STT - LLM - TTS) vẫn là lựa chọn khả thi và dễ kiểm soát nhất để đảm bảo chất lượng phản hồi .
+
+**3.** AI là cộng sự, không phải thay thế: Trong lĩnh vực DevOps và quản trị nhân sự (HR), AI được thiết kế để khuếch đại năng lực của con người. Các DevOps Agent hay Amazon Quick giúp giảm thiểu đáng kể thời gian xử lý sự cố (MTTR) và tự động hóa các tác vụ lặp lại, giúp kỹ sư và chuyên viên HR tập trung vào các chiến lược cấp cao .
+
+**4.** Bảo mật là ưu tiên hàng đầu: Khi triển khai AI trong doanh nghiệp lớn, việc kết nối với các hệ thống bên thứ ba phải tuân thủ nguyên tắc Zero Trust. Việc sử dụng VPC Connection, Interface Endpoint và Private DNS để thiết lập kết nối riêng tư thông qua MCP là giải pháp kỹ thuật cần thiết để đảm bảo dữ liệu doanh nghiệp không bị rò rỉ qua Internet công cộng.
+
+**5.** Tối ưu hóa quy trình: Triển khai công nghệ thành công đòi hỏi doanh nghiệp phải sẵn sàng thay đổi quy trình vận hành cũ (hơn 50%) để phù hợp với năng lực mới của AI
+
+### Ứng Dụng Vào Công Việc
+
+Dựa trên những giá trị thực tế từ sự kiện FCAJ Community Day - June 2026, em đã xây dựng kế hoạch ứng dụng cụ thể vào công việc và học tập như sau:
+
+Những kiến thức thu được từ sự kiện sẽ là nền tảng quan trọng cho quá trình học tập cũng như định hướng nghề nghiệp của em trong tương lai.
+
+Trong thời gian tới, em dự định:
+
+- Tích hợp AI vào quy trình vận hành: Ứng dụng tư duy Multi-Agent và các giải pháp AI như Amazon Quick để tự động hóa các tác vụ lặp lại, từ đó tối ưu hóa hiệu suất làm việc thay vì chỉ tập trung vào các công việc thủ công.
+- Ưu tiên kiến trúc bảo mật trong ứng dụng AI: Áp dụng mô hình kết nối riêng tư (Private MCP Connection), sử dụng VPC và Interface Endpoint cho các dự án tích hợp AI trong doanh nghiệp, đảm bảo tính tuân thủ và bảo mật dữ liệu theo nguyên tắc Zero Trust.
+- Phát triển tư duy thực thi: Chú trọng xây dựng các sản phẩm MVP (Minimum Viable Product) hoặc POC (Proof of Concept) để kiểm chứng giải pháp ngay trên môi trường thực tế, thay vì dành quá nhiều thời gian cho lý thuyết suông.
+- Chuẩn hóa quy trình phát triển theo chuẩn Enterprise: Áp dụng kiến thức về quản lý phiên bản, Audit Log và các quy trình Human-in-the-loop vào các dự án phần mềm để đảm bảo hệ thống có khả năng kiểm soát chất lượng và dễ dàng bảo trì.
+- Tối ưu hóa khả năng giải quyết sự cố: Sử dụng các kỹ thuật quan sát (Observability) và tự động hóa điều tra nguyên nhân gốc rễ để giảm thiểu thời gian xử lý sự cố (MTTR) cho các hệ thống hạ tầng mà em quản lý.
+- Kết hợp đa dạng hệ sinh thái: Không giới hạn ở một nền tảng duy nhất, em sẽ tận dụng khả năng kết nối đa dạng (qua MCP) của các công cụ AI để tích hợp linh hoạt với nhiều hệ thống sẵn có (như Jira, Slack, Microsoft Suite), giúp AI trở thành một trợ lý trung tâm thực thụ.
+- Nâng cao năng lực chuyên môn toàn diện: Song song với việc làm chủ các dịch vụ AI trên AWS, em sẽ không ngừng củng cố nền tảng về Cloud Infrastructure, System Design và DevOps để đảm bảo các hệ thống AI được xây dựng luôn đạt độ tin cậy và khả năng mở rộng tối đa.
+
+### Trải Nghiệm Trong Sự Kiện
+
+Sự kiện FCAJ Community Day được tổ chức chuyên nghiệp với nhiều phiên chia sẻ có tính thực tiễn cao, tập trung vào những vấn đề mà các doanh nghiệp đang quan tâm trong lĩnh vực Cloud Computing và AI. Không khí chương trình diễn ra sôi nổi với sự tham gia của nhiều kỹ sư, chuyên gia và các bạn sinh viên có cùng đam mê công nghệ, tạo điều kiện thuận lợi để giao lưu và học hỏi.
+
+Điểm em ấn tượng nhất là các diễn giả không chỉ giới thiệu lý thuyết mà còn chia sẻ nhiều kinh nghiệm thực tế trong quá trình phát triển sản phẩm, triển khai hệ thống và giải quyết các vấn đề phát sinh trong môi trường production. Đặc biệt, phần chia sẻ về kiến trúc Multi-Agent System, giải pháp DevOps Agent, và cách xây dựng kết nối bảo mật Private MCP đã giúp em có cái nhìn rõ ràng hơn về cách các công nghệ AI được ứng dụng trong doanh nghiệp.
+
+Thông qua sự kiện, em không chỉ tiếp thu thêm nhiều kiến thức chuyên môn mà còn hiểu rõ hơn những kỹ năng mà doanh nghiệp đang tìm kiếm ở một kỹ sư Cloud hoặc AI. Đây là một trải nghiệm ý nghĩa, giúp em có thêm động lực để tiếp tục học tập, hoàn thiện kỹ năng chuyên môn và chuẩn bị tốt hơn cho định hướng nghề nghiệp trong lĩnh vực Cloud Computing, DevOps và Trí tuệ nhân tạo.
+
+### Hình Ảnh Minh Chứng Tham Gia Sự Kiện
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_1.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_2.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_3.png)
+
+Dưới đây là một số hình ảnh trong sự kiện được chụp từ các anh chị **Admin** trong **AWS Study Group**:
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_4.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_5.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_6.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_7.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_8.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_9.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_15.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_11.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_12.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_13.png)
+
+![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_14.png)

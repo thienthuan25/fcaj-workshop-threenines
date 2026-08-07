@@ -8,8 +8,8 @@ pre: " <b> 4.2. </b> "
 
 # Bài Thu Hoạch "FCAJ Community Day"
 
-- Thời gian: 9:00 - 12:00, ngày 23 tháng 5 năm 2026.
-- Tầng 26, tòa nhà Bitexco Financial Tower, Số 2, đường Hải Triều, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, Việt Nam.
+- Thời gian: 09:00 - 12:00 ngày 23/05/2026.
+- Địa điểm: Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam.
 
 ### Mục Đích Của Sự Kiện
 
@@ -17,7 +17,7 @@ Sự kiện **FCAJ Community Day** được tổ chức không chỉ với mục
 
 ### Vai Trò Tham Gia
 
-Trong sự kiện lần này, tôi tham gia với vai trò là một người tham dự, lắng nghe và tiếp thu các kiến thức thực chiến từ những chuyên gia hàng đầu trong ngành, từ đó nắm bắt các xu hướng công nghệ mới nhất.
+Trong sự kiện lần này, em tham gia với vai trò là một người tham dự, lắng nghe và tiếp thu các kiến thức thực chiến từ những chuyên gia hàng đầu trong ngành, từ đó nắm bắt các xu hướng công nghệ mới nhất.
 
 ### Danh Sách Diễn Giả
 
@@ -169,7 +169,7 @@ Các nội dung chính bao gồm:
 
 ### Những Gì Học Được
 
-Sau khi tham gia sự kiện, tôi đã học được nhiều kiến thức và góc nhìn thực tế về xu hướng phát triển của Cloud Computing và AI trong doanh nghiệp, cụ thể:
+Sau khi tham gia sự kiện, em đã học được nhiều kiến thức và góc nhìn thực tế về xu hướng phát triển của Cloud Computing và AI trong doanh nghiệp, cụ thể:
 
 - Hiểu được rằng AI không thay thế hoàn toàn lập trình viên mà đang làm thay đổi cách phát triển phần mềm. Điều quan trọng không chỉ là biết sử dụng AI mà còn phải có kiến thức chuyên môn và khả năng giải quyết bài toán thực tế.
 - Nhận thức được tầm quan trọng của **Prompt Engineering**, đặc biệt là việc cung cấp đầy đủ ngữ cảnh (context) để AI có thể đưa ra kết quả chính xác và phù hợp với yêu cầu.
@@ -183,9 +183,9 @@ Sau khi tham gia sự kiện, tôi đã học được nhiều kiến thức và
 
 ### Ứng Dụng Vào Công Việc
 
-Những kiến thức thu được từ sự kiện sẽ là nền tảng quan trọng cho quá trình học tập cũng như định hướng nghề nghiệp của tôi trong tương lai.
+Những kiến thức thu được từ sự kiện sẽ là nền tảng quan trọng cho quá trình học tập cũng như định hướng nghề nghiệp của em trong tương lai.
 
-Trong thời gian tới, tôi dự định:
+Trong thời gian tới, em dự định:
 
 - Tiếp tục nghiên cứu và thực hành các dịch vụ AI trên nền tảng **Amazon Web Services (AWS)**, đặc biệt là các giải pháp phục vụ xây dựng ứng dụng Generative AI.
 - Áp dụng các nguyên tắc **Prompt Engineering** để nâng cao chất lượng khi sử dụng các mô hình ngôn ngữ lớn trong học tập và phát triển phần mềm.
@@ -199,9 +199,9 @@ Trong thời gian tới, tôi dự định:
 
 Sự kiện được tổ chức chuyên nghiệp với nhiều phiên chia sẻ có tính thực tiễn cao, tập trung vào những vấn đề mà các doanh nghiệp đang quan tâm trong lĩnh vực Cloud Computing và AI. Không khí chương trình diễn ra sôi nổi với sự tham gia của nhiều kỹ sư, chuyên gia và các bạn sinh viên có cùng đam mê công nghệ, tạo điều kiện thuận lợi để giao lưu và học hỏi.
 
-Điểm tôi ấn tượng nhất là các diễn giả không chỉ giới thiệu lý thuyết mà còn chia sẻ nhiều kinh nghiệm thực tế trong quá trình phát triển sản phẩm, triển khai hệ thống và giải quyết các vấn đề phát sinh trong môi trường production. Đặc biệt, phần chia sẻ về Multi-Agent System, CloudFront và kinh nghiệm tham gia Hackathon đã giúp tôi có cái nhìn rõ ràng hơn về cách các công nghệ AI được ứng dụng trong doanh nghiệp.
+Điểm em ấn tượng nhất là các diễn giả không chỉ giới thiệu lý thuyết mà còn chia sẻ nhiều kinh nghiệm thực tế trong quá trình phát triển sản phẩm, triển khai hệ thống và giải quyết các vấn đề phát sinh trong môi trường production. Đặc biệt, phần chia sẻ về Multi-Agent System, CloudFront và kinh nghiệm tham gia Hackathon đã giúp em có cái nhìn rõ ràng hơn về cách các công nghệ AI được ứng dụng trong doanh nghiệp.
 
-Thông qua sự kiện, tôi không chỉ tiếp thu thêm nhiều kiến thức chuyên môn mà còn hiểu rõ hơn những kỹ năng mà doanh nghiệp đang tìm kiếm ở một kỹ sư Cloud hoặc AI. Đây là một trải nghiệm ý nghĩa, giúp tôi có thêm động lực để tiếp tục học tập, hoàn thiện kỹ năng chuyên môn và chuẩn bị tốt hơn cho định hướng nghề nghiệp trong lĩnh vực Cloud Computing, DevOps và Trí tuệ nhân tạo.
+Thông qua sự kiện, em không chỉ tiếp thu thêm nhiều kiến thức chuyên môn mà còn hiểu rõ hơn những kỹ năng mà doanh nghiệp đang tìm kiếm ở một kỹ sư Cloud hoặc AI. Đây là một trải nghiệm ý nghĩa, giúp em có thêm động lực để tiếp tục học tập, hoàn thiện kỹ năng chuyên môn và chuẩn bị tốt hơn cho định hướng nghề nghiệp trong lĩnh vực Cloud Computing, DevOps và Trí tuệ nhân tạo.
 
 ### Hình Ảnh Minh Chứng Tham Gia Sự Kiện
 
