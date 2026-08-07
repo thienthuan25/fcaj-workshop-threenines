@@ -8,8 +8,8 @@ pre: " <b> 4.1. </b> "
 
 # Bài thu hoạch "FCAJ Community Day"
 
-- Thời gian: 9:00 - 12:00, ngày 21 tháng 3 năm 2026.
-- Tầng 26, tòa nhà Bitexco Financial Tower, Số 2, đường Hải Triều, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, Việt Nam.
+- Thời gian: 09:00 - 12:00 ngày 21/03/2026.
+- Địa điểm: Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam.
 
 ### Mục Đích Của Sự Kiện
 
@@ -19,7 +19,7 @@ Bên cạnh các nội dung chuyên môn, sự kiện còn giới thiệu về v
 
 ### Vai Trò Tham Gia
 
-Tôi tham gia sự kiện với vai trò là người tham dự. Trong suốt chương trình, tôi chủ yếu lắng nghe các bài chia sẻ từ các diễn giả, theo dõi các phiên trình bày kỹ thuật, và tiếp thu những kiến thức mới liên quan đến AWS, DevOps, Platform Engineering và Generative AI. Thông qua sự kiện, tôi có cơ hội hiểu rõ hơn về những xu hướng công nghệ đang được áp dụng trong doanh nghiệp cũng như định hướng phát triển nghề nghiệp trong tương lai.
+Em tham gia sự kiện với vai trò là người tham dự. Trong suốt chương trình, em chủ yếu lắng nghe các bài chia sẻ từ các diễn giả, theo dõi các phiên trình bày kỹ thuật, và tiếp thu những kiến thức mới liên quan đến AWS, DevOps, Platform Engineering và Generative AI. Thông qua sự kiện, em có cơ hội hiểu rõ hơn về những xu hướng công nghệ đang được áp dụng trong doanh nghiệp cũng như định hướng phát triển nghề nghiệp trong tương lai.
 
 ### Danh Sách Diễn Giả
 
@@ -78,7 +78,7 @@ Các nội dung chính bao gồm:
 
 ### Những Gì Học Được
 
-Sau khi tham gia sự kiện, tôi học được những kiến thức mới, bao gồm:
+Sau khi tham gia sự kiện, em học được những kiến thức mới, bao gồm:
 
 - Hiểu rõ hơn về **Platform Engineer** và vai trò của nền tảng này trong doanh nghiệp hiện đại.
 - Biết được xu hướng kết hợp giữa **DevOps** và **Generative AI** thông qua mô hình **GenAIOps**.
@@ -91,7 +91,7 @@ Sau khi tham gia sự kiện, tôi học được những kiến thức mới, b
 
 Những kiến thức thu được từ sự kiện có thể được áp dụng vào quá trình học tập cũng như các dự án trong tương lai.
 
-Trong thời gian tới, tôi dự định:
+Trong thời gian tới, em dự định:
 
 - Tiếp tục học sâu hơn về AWS, đặc biệt là các dịch vụ liên quan đến **DevOps** và **AI**.
 - Thực hành triển khai các ứng dụng sử dụng **Amazon Bedrock** để xây dựng chatbot hoặc trợ lý AI.
@@ -104,9 +104,9 @@ Trong thời gian tới, tôi dự định:
 
 Sự kiện được tổ chức chuyên nghiệp với nội dung được sắp xếp hợp lý, giúp người tham dự dễ dàng theo dõi từng chủ đề. Không gian tổ chức tại tầng 26 của Bitexco Financial Tower hiện đại, tạo môi trường thuận lợi cho việc học hỏi và giao lưu.
 
-Các diễn giả trình bày rõ ràng, kết hợp giữa kiến thức nền tảng, kinh nghiệm thực tế và các phần trình diễn trực tiếp, giúp người tham dự dễ hình dung cách áp dụng công nghệ trong doanh nghiệp. Tôi cũng có cơ hội tiếp cận nhiều xu hướng mới về **Cloud Computing**, **DevOps** và **Generative AI**, từ đó có thêm động lực để tiếp tục học tập và phát triển bản thân.
+Các diễn giả trình bày rõ ràng, kết hợp giữa kiến thức nền tảng, kinh nghiệm thực tế và các phần trình diễn trực tiếp, giúp người tham dự dễ hình dung cách áp dụng công nghệ trong doanh nghiệp. em cũng có cơ hội tiếp cận nhiều xu hướng mới về **Cloud Computing**, **DevOps** và **Generative AI**, từ đó có thêm động lực để tiếp tục học tập và phát triển bản thân.
 
-Đối với cá nhân tôi, đây là một sự kiện hữu ích vì không chỉ cung cấp kiến thức chuyên môn mà còn giúp định hướng nghề nghiệp rõ ràng hơn trong lĩnh vực điện toán đám mây và trí tuệ nhân tạo.
+Đối với cá nhân em, đây là một sự kiện hữu ích vì không chỉ cung cấp kiến thức chuyên môn mà còn giúp định hướng nghề nghiệp rõ ràng hơn trong lĩnh vực điện toán đám mây và trí tuệ nhân tạo.
 
 ### Hình Ảnh Minh Chứng Tham Gia Sự Kiện
 
@@ -116,14 +116,10 @@ Các diễn giả trình bày rõ ràng, kết hợp giữa kiến thức nền 
 
 ![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_3.png)
 
-- Dưới đây là một số hình ảnh trong sự kiện được chụp từ các anh chị **Admin** trong **AWS Study Group**:
+Dưới đây là một số hình ảnh trong sự kiện được chụp từ các anh chị **Admin** trong **AWS Study Group**:
 
 ![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_5.png)
 
 ![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_6.png)
 
 ![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_7.png)
-
-- Và tôi nhận ra tôi trong bức ảnh, đang ngồi chăm chú lắng nghe:
-
-![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_8.png)

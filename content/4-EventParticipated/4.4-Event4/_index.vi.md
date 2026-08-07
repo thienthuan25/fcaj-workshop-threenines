@@ -6,189 +6,195 @@ chapter: false
 pre: " <b> 4.4. </b> "
 ---
 
-# Bài Thu Hoạch "FCAJ Community Day"
+# Bài thu hoạch "FCAJ x Agentic AI Build Week"
 
-- Thời gian: 9:00 - 12:00, ngày 27 tháng 6 năm 2026.
-- Tầng 26, tòa nhà Bitexco Financial Tower, Số 2, đường Hải Triều, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, Việt Nam.
+- Thời gian: 9:00 - 12:00, ngày 25 tháng 7 năm 2026.
+- Địa điểm: Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam.
 
 ### Mục Đích Của Sự Kiện
 
-Sự kiện FCAJ Community Day ngày 27 tháng 6 năm 2026 được tổ chức với mục đích chính là tạo không gian kết nối và chia sẻ kiến thức chuyên sâu về công nghệ đám mây và trí tuệ nhân tạo. Chương trình hướng tới việc cung cấp các góc nhìn thực tế về những ứng dụng hiện đại như Voice AI, hệ thống tự động hóa trong vận hành và giải pháp AI trong quản trị nhân sự. Thông qua các phần trình bày từ những diễn giả giàu kinh nghiệm, sự kiện mong muốn truyền cảm hứng và trang bị cho cộng đồng những kỹ năng cần thiết để giải quyết các bài toán kinh doanh cụ thể, đồng thời thúc đẩy tư duy đổi mới sáng tạo trong việc áp dụng công nghệ vào thực tiễn doanh nghiệp.
+Sự kiện FCAJ x Agentic AI Build Week được tổ chức nhằm kết nối và chia sẻ kiến thức chuyên sâu sau cuộc thi Hackathon cùng tên. Mục tiêu cốt lõi của chương trình là tạo không gian để các đội thi trình bày, demo các dự án công nghệ thực tế và lan tỏa những bài học kinh nghiệm quý báu trong quá trình xây dựng giải pháp Agentic AI trên hạ tầng đám mây AWS. Thông qua việc phân tích các bài toán doanh nghiệp, kỹ năng thiết kế kiến trúc hệ thống và cách giải quyết các thách thức dưới áp lực thời gian, sự kiện không chỉ giúp cộng đồng tiếp cận với những ứng dụng công nghệ hiện đại mà còn thúc đẩy tư duy đổi mới sáng tạo, đồng thời trang bị cho người tham gia những kỹ năng thực chiến cần thiết để làm giàu hồ sơ năng lực và chuẩn bị cho các cơ hội nghề nghiệp trong tương lai.
 
 ### Vai Trò Tham Gia
 
-Trong sự kiện lần này, tôi tham gia với vai trò là một người tham dự, lắng nghe và tiếp thu các kiến thức thực chiến từ những chuyên gia hàng đầu trong ngành, từ đó nắm bắt các xu hướng công nghệ mới nhất.
+Với vai trò là người tham dự sự kiện, em đã có cơ hội tiếp cận trực tiếp với những kiến thức thực chiến từ các dự án tiêu biểu sau cuộc thi Hackathon. Thông qua việc lắng nghe các đội thi thuyết trình, demo giải pháp và chia sẻ về quá trình xây dựng sản phẩm, em đã tích lũy được những bài học quý báu về tư duy giải quyết vấn đề, phương pháp thiết kế kiến trúc hệ thống trên nền tảng đám mây AWS và cách thức tối ưu hóa mô hình Agentic AI trong thực tế. Sự kiện không chỉ giúp em mở rộng mạng lưới kết nối với cộng đồng công nghệ mà còn là nguồn cảm hứng lớn để em phát triển tư duy sáng tạo và sẵn sàng áp dụng các công nghệ hiện đại vào những thử thách chuyên môn trong tương lai.
 
-### Danh Sách Diễn Giả
+### Danh sách diễn giả
 
-- **Steve Trần** - CTO tại CloudThinker
-- **Trung Vũ**- Founder của Revve AI
-- **Kiệt Trần** - AI Engineer tại Revve AI
-- **Danh Hoàng Hiếu Nghị** - AI Engineer tại Renova Cloud
-- **Phan Kim Bảo** - Cloud Engineer
-- **Nguyên Nguyễn** - Cloud Engineer tại Cloud Kinetics Việt Nam
-- **Trường Trần** - Solutions Sales tại Noventiq Việt Nam
-- **Minh Anh** - Solutions Sales tại Noventiq Việt Nam
-- **Nguyễn Đức Toàn** - Technical Cloud Engineer tại Keyloop
+- **Giuseppe Marazzotta** - Head of Tech & Solutions Architecture, ASEAN tại Amazon Web Services
+- Team **One Team**
+- Team **Signal Scout**
+- Team **Plan V**
+- Team **3KA**
+- Team **Six Pillars**
 
-### Nội Dung 
+### Nội dung
 
-Sự kiện là một buổi chia sẻ chuyên sâu về công nghệ đám mây và trí tuệ nhân tạo, tập trung vào các giải pháp thực tế cho doanh nghiệp.
+Mở đầu chương trình là phần chia sẻ của ông **Giuseppe Marazzotta**:
 
-#### Chủ đề 1: Deep Response Engine: From Detection to Autonomous Resolution - Steve Trần
+- Ông chia sẻ rằng, sự kiện này là cơ hội tuyệt vời để cộng đồng cùng nhau học hỏi, thực hành và xây dựng các giải pháp dựa trên công nghệ, **Agentic AI** trên nền tảng AWS.
 
-- Giải quyết bài toán complexity (độ phức tạp): Khi doanh nghiệp chuyển đổi số và hệ thống ngày càng lớn, độ phức tạp tăng cao. Việc sử dụng nhiều công cụ giám sát (observability tools) thường dẫn đến việc doanh nghiệp phải tuyển thêm nhân sự để vận hành, làm tăng thêm sự phức tạp. Steve nhấn mạnh vai trò của AI trong việc hỗ trợ các kỹ sư cấp cao vận hành hạ tầng chứ không phải thay thế hoàn toàn con người.
+- Khích lệ tinh thần dám nghĩ dám làm của các đội thi, nhấn mạnh vào khả năng ứng dụng các công cụ mới để giải quyết các bài toán thực tế và phức tạp.
 
-- Nên sử dụng kiến trúc MUlti-Agent thay vì Single-Agent trong các hệ thống AI thực tế:
+- Ông đánh giá cao sự nỗ lực của **AWS Study Group** và cộng đồng **FCAJ** trong việc tạo ra môi trường kết nối, nơi các kỹ sư, sinh viên và những người yêu thích công nghệ có thể tương tác, trao đổi kỹ năng và phát triển sự nghiệp.
 
-    + Tối ưu hóa việc lựa chọn mô hình cho các tác vụ chuyên biệt.
-    + Tránh tình trạng bị loãng ngữ cảnh khi dồn tất cả dữ liệu vào một tác nhân duy nhất.
-    + Hỗ trợ kiểm soát vai trò và quyền truy cập.
+#### Chủ đề 1: AI-Powered Conversation Ordering - One Team
 
-- Tư duy phát triển sản phẩm:
+Phần trình bày của **One Team** về dự án **AI-Powered Conversation Ordering** chia sẻ về hành trình giành giải quán quân tại cuộc thi **Agentic AI Build Week** thông qua việc phát triển chatbot đặt hàng cho KFC.
 
-    + Execution: Quan trọng là bắt tay vào làm ngay thay vì dành quá nhiều thời gian suy nghĩ.
-    + Customer Champion: Cần chọn đúng khách hàng tiên phong để làm việc trực tiếp, từ đó đối chiếu ý tưởng công nghệ với các bài toán thực tế của doanh nghiệp.
-    + Chuyển đổi quy trình; Để triển khai thành công một hệ thống AI, doanh nghiệp thường phải thay đổi hơn 50% quy trình vận hành hiện có để phù hợp với năng lực mới của hệ thống.
+- Nhóm lấy cảm hứng từ những hạn chế của các hệ thống AI tại quầy **drive-through** (ví dụ như McDonald's), nơi AI gặp khó khăn với hội thoại tự nhiên và gây ra các lỗi đặt hàng nghiêm trọng. Nhóm đặt ra mục tiêu tạo ra một giải pháp đặt hàng thông minh, chính xác và tiện lợi hơn cho người dùng.
 
-#### Chủ đề 2: Voice Agents: Building Human-Like AI Conversations at Scale - Trung Vũ, Kiệt Trần, Danh Hoàng Hiếu Nghị
+- Nhóm xây dựng một **Multi-Channel AI Agent**, tập trung chủ yếu trên Zalo và Whatsapp, giúp người dùng không cần chuyển đổi ứng dụng hay phải thực hiện quy trình tạo tài khoản phức tạp. Hệ thống tập trung vào việc hiểu ý định của khách hàng, tích hợp tool để thu thập dữ liệu từ Website KFC thông qua **TinyFish** và lưu trữ trên hạ tầng AWS.
 
-Chủ đề này chia sẻ về kiến trúc và những thách thức thực tế khi triển khai các hệ thống giọng nói AI tại Việt Nam.
+- Thiết kế kiến trúc theo dạng **modular** giúp dễ dàng tùy chỉnh mà không cần xây dựng lại toàn bộ hệ thống.
 
-- Kiến trúc hệ thống:
+- Sử dụng **Agentic Platform** để quản lý luồng hội thoại và có bước xác nhận đơn hàng để ngăn chặn lỗi của AI.
 
-    + Phân tích hai kiến trúc phổ biến: **Speech-to-Speech** và mô hình ba giai đoạn: **Speech-to-Text** -> **LLM** -. **Text-to-Speech**.
-    + Đối với thị trường Việt nam, mô hình ba giai đoạn được ưu tiên vì tính khả thi và khả năng kiểm soát nội dung tốt hơn đối với ngôn ngữ ít tài nguyên như tiếng Việt.
+- Nhóm nhấn mạnh tầm quan trọng của việc xây dựng Network, khả năng cộng tác nhóm hiệu quả dưới áp lực thời gian tại cuộc thi Hackathon, và quan trọng nhất là việc ưu tiên tạo ra sản phẩm giải quyết đúng bài toán thực tế của doanh nghiệp thay vì chỉ tập trung vào kỹ thuật.
 
-- Thách thức thực tế trong doanh nghiệp:
+#### Chủ đề 2: Value Creation & Delivery Canvas - Signal Scout
 
-    + Kiểm soát chất lượng: Doanh nghiệp cần đảm bảo AI không đưa ra các câu trả lời sai lệch. Việc chuyển đổi sang dạng văn bản giúp dễ dàng quản lý.
-    + AI không chỉ dừng lại ở việc trả lời câu hỏi mà cần có khả năng thực thi các tác vụ (như khóa thẻ, kiểm tra thông tin) thông qua việc gọi các công cụ bên ngoài.
-    + Human-in-the-loop: Hệ thống cần được thiết kế để có thể chuyển giao (handover) cho nhân viên con người khi AI gặp các tình huống phức tạp hoặc khách hàng có thái độ tiêu cực.
+Phần trình bày của nhóm **Signal Scout** tập trung vào phương pháp luận và tư duy xây dựng dự án trong môi trường Hackathon.
 
-#### Chủ đề 3: AWS DevOps Agent: Your Always-Available Operations Teammate - Phan Kim Bảo & Nguyên Nguyễn
+- Nhóm đã thiết kế lại mô hình kinh doanh truyền thống để phù hợp với ngữ cảnh **Hackathon** và **Pitching**. Họ lược bỏ các yếu tố về doanh thu hay dòng tiền để tập trung vào tạo giá trị và phân phối giá trị, giúp làm rõ cách dự án giải quyết bài toán cụ thể của thị trường.
 
-Chủ đề này thảo luận về **AWS DevOps Agent**, công cụ hỗ trợ kỹ sư trong việc vận hành và xử lý sự cố hệ thống.
+- Nhóm nhấn mạnh rằng trong một cuộc thi, hệ thống không cần hoàn thiện 100%, mà quan trọng là 70% quyết định chiến thắng nằm ở việc team xác định rõ bài toán cần giải quyết và cách họ xây dựng giải pháp đó như thế nào.
 
-- Vai trò của DevOps Agent: Hệ thống hoạt động như một cộng sự hỗ sợ kỹ sư vận hành thay vì thay thế con người. Agent giúp tự động hóa quá trình điều tra sự cố, phân tích nguyên nhân gốc rễ và đề xuất phương án giải quyết.
+- Quy trình triển khai:
 
-- Các trụ cột chính của DevOps Agent:
+    + Clear Direction: Nhấn mạnh việc cần định hướng rõ ràng ngay từ ban đầu, tránh tranh luận lan man giữa các thành viên.
+    + Teamwork: Để thành công, các thành viên cần biết hạ cái em cá nhân, tin tưởng lẫn nhau và phân chia vai trò rõ ràng.
+    + Tính thực hiện: Một ý tưởng dù hay đến đâu cũng trở nên vô nghĩa nếu chỉ nằm trên giấy. Nhóm đề cao việc phải có bản demo hoạt động được để thuyết phục ban giám khảo.
 
-    + Context Learning: Sử dụng Agent Space (một container logic) để hiểu cấu trúc hệ thống thông qua việc truy cập tài nguyên, cấu hình và tạo ra sơ đồ topology.
-    + Integration: Khả năng mở rộng thông qua MCP (Model Context Protocol) hoặc tích hợp với các dịch vụ khác để truy vấn log hoặc dữ liệu từ các hệ thống bên ngoài.
-    + Collaboration: Hỗ trợ tương tác qua nhiều nền tảng như Slack hoặc ServiceNow.
-    + Convenient: Quy trình thiết lập đơn giản trực tiếp trên AWS Console.
-    + Cost Effective: Chi phí được tính dựa trên thời gian chạy thay vì dựa trên hạ tầng hay số lượng token.
+- Nhóm chia sẻ trải nghiệm về việc vượt qua các thử thách kỹ thuật, quản lý thời gian, và tầm quan trọng của việc xây dựng sản phẩm mang lại giá trị thực tế thay vì chỉ tập trung vào kỹ thuật.
 
-- Trải nghiệm thực tế:
+#### Chủ đề 3: Solution Architect Professional Native App - Plan V
 
-    + Giảm thời gian xử lý sự cố (MTTR): Ví dụ tại một trường đại học online, DevOps Agent giúp giảm thời gian xử lý vấn đề từ 2 tiếng xuống còn 28 phút (nhanh hơn 77%) .
-    + Điều tra nguyên nhân gốc rễ: Hỗ trợ tìm ra các lỗi cấu hình sai (misconfiguration) trong các hệ thống phức tạp, giúp kỹ sư tiết kiệm đáng kể thời gian thao tác thủ công.
+Phần trình bày của nhóm **Plan V** tập trung vào việc giải quyết bài toán của các **Solution Architect** khi phải thiết kế kiến trúc và dự toán chi phí gấp rút cho khách hàng.
 
-DevOps Agent là công cụ giúp khuếch đại kỹ năng của kỹ sư. Nó hoạt động hiệu quả nhất đối với các tổ chức có quy trình quản trị hạ tầng rõ ràng, lịch sử hệ thống minh bạch và cấu trúc dịch vụ mạch lạc
+- Các **SA** thường gặp áp lực khi khách hàng yêu cầu cung cấp sơ đồ kiến trúc, bảng giá chi phí và thậm chí kế hoạch triển khai chỉ trong thời gian ngắn (thường là 1-2 ngày), gây khó khăn cho việc đảm bảo độ chính xác và tối ưu.
 
-#### Chủ đề 5: AI-Powered Productivity: Workforce Planning For Enterprise - Trường Trần & Minh Anh
+- Nhóm phát triển một ứng dụng **AI-Native** cho phép:
 
-Chủ đề này thảo luận về cách ứng dụng AI, đặc biệt là **Amazon Quick** để giải quyết các thách thức trong quản trị nhân sự và tối ưu hóa quy trình doanh nghiệp.
+    + Phân tích ngôn ngữ tự nhiên: Người dùng chỉ cần mô tả yêu cầu, AI sẽ tự động phân tích và chuyển đổi thành sơ đồ kiến trúc.
+    + Tích hợp tài liệu nội bộ: Cho phép upload các policy hoặc quy định của doanh nghiệp để AI tuân thủ theo các kiến trúc sẵn có (ví dụ: yêu cầu về bảo mật, dịch vụ ưu tiên).
+    + Tự động hóa: Hệ thống hỗ trợ tạo **Terraform code** và bản chi phí dự tính, giúp rút ngắn thời gian làm việc đáng kể.
 
-- Thách thức hiện tại trong tuyển dụng: Doanh nghiệp thường đối mặt với các vấn đề như tốn quá nhiều thời gian cho việc sàng lọc CV thủ công (1-2 tháng), tỉ lệ bỏ cuộc cao, và thiếu bộ khung dữ liệu chuẩn xác để đánh giá nhân sự, dẫn đến việc tuyển dụng kém hiệu quả.
+- Hệ thống sử dụng **LLM** làm cốt lõi, nhưng nhóm nhấn mạnh rằng giá trị thực sự nằm ở **High-level Engineering** như quản lý context, quy trình làm việc và bộ nhớ của Agent.
 
-- Giải pháp từ AI: Sử dụng AI giúp HR chuyển từ các công việc thủ công sang xây dựng chiến lược nhân sự, đánh giá ứng viên dựa trên bộ khung chuẩn, thay vì cảm tính. Điều này giúp doanh nghiệp tiết kiệm chi phí, thời gian và tăng giá trị cạnh tranh.
+- Nhóm thực hiện cơ chế xác thực đầu ra để đảm bảo các dịch vụ được chọn không nằm trong danh sách đen và tuân thủ chặt chẽ yêu cầu kỹ thuật của doanh nghiệp.
 
-- Vai trò của **Amazon Quick** trong doanh nghiệp:
+- Sản phẩm giải quyết được các bài toán thực tế của doanh nghiệp thay vì chỉ trình diễn kỹ thuật công nghệ mới.
 
-    + Tùy biến Agent: Người dùng có thể tạo ra các AI Agent chuyên biệt (ví dụ: HR Talent Review Assistant) để đọc hiểu policy, đọc CV, hoặc phân tích JD.
-    + Khả năng kết nối: Amazon Quick có thể kết nối với nhiều nguồn dữ liệu khác nhau như SharePoint, Outlook, Google Drive, Jira, Salesforce thông qua MCP (Model Context Protocol), cho phép trích xuất và xử lý dữ liệu trực tiếp mà không cần chuyển đổi nhiều nền tảng.
-    + Tự động hóa tác vụ: Amazon Quick không chỉ trả lời câu hỏi mà còn thực hiện các thao tác như: tự động sàng lọc CV (OCR độ chính xác cao), so sánh ứng viên với JD, gợi ý mức lương, và tạo báo cáo tuyển dụng.
+- Thách thức lớn nhất của **Agentic AI** là làm sao để đảm bảo tính nhất quán của kết quả đầu ra trong các lần thực hiện khác nhau.
 
-- Với sự phổ biến của AI trong khâu sàng lọc, các ứng viên nên tập trung tối ưu hóa CV để các từ khóa khớp với JD nhằm vượt qua vòng sàng lọc tự động.
+#### Chủ đề 4: Hackathon Journey - 3KA
 
-#### Chủ đề 6: Building Secure Private MCP Connection with Amazon Quickuick - Nguyễn Đức Toàn & Danh Hoàng Hiếu Nghị
+Phần trình bày của nhóm **3KA** là câu chuyện về hành trình vượt qua thử thách của những thành viên lần đầu tham gia một cuộc thi công nghệ thực tế.
 
-Chủ đề này đi sâu vào giải pháp kỹ thuật để kết nối **Amazon Quick với các nguồn dữ liệu bên thứ ba một cách an toàn thông qua MCP (Model Context Protocol) trong môi trường doanh nghiệp.
+- Nhóm xây dựng hệ thống giám sát mật độ người bằng **Computer Vision** thông qua camera thời gian thực, với mục tiêu ứng dụng làm sản phẩm mẫu cho đồ án tốt nghiệp.
 
-- Khi kết nối **Amazon Quick** với **MCP Server** qua Internet công cộng, doanh nghiệp đối mặt với nhiều rủi ro như tấn công DDoS, nghe lén dữ liệu (Man-in-the-middle), và vi phạm các chính sách bảo mật nội bộ.
+- Sử dụng **Amazon Kinesis Streams** để thiết lập kết nối **WebSocket** từ camera.
 
-- Giải pháp kết nối riêng tư (Private Connection):
+- Xây dựng hệ thống xử lý hình ảnh dựa trên **AWS Fargate** kết hợp với **YOLO** để thực hiện các tác vụ phát hiện và theo dõi đối tượng.
 
-    + **VPC Connection**: Đưa Amazon Q vào trong môi trường VPC (Virtual Private Cloud) để thiết lập kết nối nội bộ
-    + **Interface Endpoint**: Thiết lập VPC Endpoint và Private DNS giúp các yêu cầu truy vấn đến MCP Server không bao giờ đi qua Internet công cộng
-    + **Cấu trúc kỹ thuật**: Sử dụng Application Load Balancer (ALB) kết hợp với AWS Certificate Manager (ACM) để mã hóa TLS
+- Dữ liệu được lưu trữ và truy xuất thông qua **DynamoDB** và **S3**.
 
-- Tối ưu hóa và quản lý chi phí:
+- Thử thách gặp phải:
 
-    + Việc triển khai môi trường bảo mật riêng tư đi kèm với các chi phí hạ tầng bổ sung như Route 53 Resolver, ALB, và chi phí vận hành EC2 cho MCP Server (ước tính khoảng 250 - 350 USD/tháng cho các thành phần hạ tầng) .
-    + Diễn giả nhấn mạnh rằng dù việc thiết lập private connection có chi phí cao hơn, nhưng nó là yếu tố cốt lõi để đảm bảo tuân thủ bảo mật đối với các doanh nghiệp lớn
+    + Hầu hết các thành viên trong nhóm chưa từng tham gia Hackathon và không có nền tảng vững chắc về hạ tầng AWS, dẫn đến sự bối rối và mất nhiều thời gian trong giai đoạn đầu.
+    + Phải làm việc xuyên đêm đến 3-4 giờ sáng để kịp hoàn thiện sản phẩm và chuẩn bị bài thuyết trình.
 
-- Amazon Quick có thể kết nối với hầu hết mọi dịch vụ bên thứ ba (như Zalo, WhatsApp, Jira, hoặc các hệ thống lưu trữ nội bộ) miễn là các hệ thống đó cung cấp API, giúp biến Amazon Q thành một trợ lý trung tâm có khả năng truy xuất dữ liệu real-time một cách an toàn.
+- Nhóm nhấn mạnh rằng giá trị của Hackathon không chỉ nằm ở giải thưởng hay kiến thức kỹ thuật, mà nằm ở trải nghiệm thực tế, sự phát triển cá nhân và khả năng làm việc nhóm dưới áp lực cao.
+
+- Kinh nghiệm quan trọng nhất là cần xác định rõ mục tiêu ngay từ sớm để tối ưu hóa thời gian và tránh việc triển khai các cấu trúc tốn kém chi phí.
+
+#### Chủ đề 5: Adaptive AML Workflow Engine - Six Pillars
+
+Phần trình bày của nhóm **Six Pillars** tập trung vào việc áp dụng **Agentic AI** để tối ưu hóa quy trình phòng chống rửa tiền cho các tổ chức tài chính.
+
+- Quy trình điều tra các giao dịch nghi vấn hiện tại vẫn rất thủ công, tốn kém chi phí (20-25 USD/lần review) và gây quá tải cho nhân sự. Một vụ việc truyền thống có thể mất tới 3 giờ để giải quyết.
+
+- Nhóm phát triển hệ thống tự động hóa luồng công việc giúp thay thế các bước xử lý thủ công bằng các Agent chuyên biệt:
+
+    + KYC Agent: Kiểm tra thông tin định danh khách hàng.
+    + Transaction Agent: Phân tích luồng giao dịch.
+    + Evidence Builder: Tổng hợp bằng chứng để đưa ra quyết định.
+
+- Hệ thống không thay thế con người mà đóng vai trò là trợ thủ đắc lực, giúp tăng tốc độ xử lý, đảm bảo tính minh bạch và khả năng mở rộng.
+
+- Nhóm nhấn mạnh tầm quan trọng của việc xác định phạm vi ngay từ đầu để tránh sa lầy vào những yêu cầu quá rộng trong thời gian giới hạn của Hackathon, cũng như việc phân chia nhiệm vụ rõ ràng cho từng thành viên.
 
 ### Những Gì Học Được
 
-Sau khi tham gia sự kiện, tôi đã học được nhiều kiến thức và đã có những góc nhìn thực tế và chuyên sâu về ứng dụng AI trong doanh nghiệp:
+Sau khi tham gia sự kiện này, em đã học được rất nhiều điều thông qua những lời chia sẻ của các anh chị:
 
-**1.** Tư duy thực thi trong kỷ nguyên AI: Thay vì dành quá nhiều thời gian lý thuyết, các doanh nghiệp cần tập trung vào thực thi thông qua các mô hình POC hoặc MVP. Việc chọn đúng Customer Champion để giải quyết các bài toán thực tế là yếu tố sống còn cho các dự án khởi nghiệp.
+**1.** Tư duy về sản phẩm:
 
-**2.** Tầm quan trọng của kiến trúc linh hoạt:
+- Bài học quan trọng nhất là công nghệ dù hiện đại đến đâu cũng trở nên vô nghĩa nếu không giải quyết được một vấn đề cụ thể của doanh nghiệp hoặc người dùng. Thay vì bắt đầu bằng kỹ thuật, hãy bắt đầu bằng việc xác định rõ đối tượng khách hàng và khó khăn họ đang gặp phải.
 
-- **Multi-Agent Architecture**: Sử dụng nhiều tác nhân chuyên biệt giúp tối ưu hóa hiệu suất, tránh loãng ngữ cảnh và quản lý quyền truy cập tốt hơn .
-- **Kiến trúc Voice AI**: Với các ngôn ngữ ít tài nguyên như tiếng Việt, mô hình ba giai đoạn (STT - LLM - TTS) vẫn là lựa chọn khả thi và dễ kiểm soát nhất để đảm bảo chất lượng phản hồi .
+- Một ý tưởng tốt cần được kiểm chứng thông qua sản phẩm cụ thể. Việc có một bản demo hoạt động được có giá trị thuyết phục cao hơn nhiều so với các bản thuyết trình trên giấy.
 
-**3.** AI là cộng sự, không phải thay thế: Trong lĩnh vực DevOps và quản trị nhân sự (HR), AI được thiết kế để khuếch đại năng lực của con người. Các DevOps Agent hay Amazon Quick giúp giảm thiểu đáng kể thời gian xử lý sự cố (MTTR) và tự động hóa các tác vụ lặp lại, giúp kỹ sư và chuyên viên HR tập trung vào các chiến lược cấp cao .
+**2.** Kỹ năng vận hành dự án:
 
-**4.** Bảo mật là ưu tiên hàng đầu: Khi triển khai AI trong doanh nghiệp lớn, việc kết nối với các hệ thống bên thứ ba phải tuân thủ nguyên tắc Zero Trust. Việc sử dụng VPC Connection, Interface Endpoint và Private DNS để thiết lập kết nối riêng tư thông qua MCP là giải pháp kỹ thuật cần thiết để đảm bảo dữ liệu doanh nghiệp không bị rò rỉ qua Internet công cộng.
+- Trong các cuộc thi hoặc dự án ngắn hạn, việc kiểm soát phạm vi là rất quan trọng. Không nên cố gắng xây dựng hệ thống quá cồng kềnh, thay vào đó hãy tập trung vào các chức năng cốt lõi để đảm bảo tính ổn định và khả năng vận hành.
 
-**5.** Tối ưu hóa quy trình: Triển khai công nghệ thành công đòi hỏi doanh nghiệp phải sẵn sàng thay đổi quy trình vận hành cũ (hơn 50%) để phù hợp với năng lực mới của AI
+- Hiểu cách xây dựng các hệ thống tự động hóa dựa trên AI Agents, biết cách quản lý luồng công việc, quản lý ngữ cảnh và bộ nhớ để tạo ra các giải pháp thông minh, có tính nhất quán và khả năng mở rộng.
+
+**3.** Kỹ năng làm việc nhóm và bản lĩnh cá nhân:
+
+- Sự thành công của dự án phụ thuộc vào khả năng cộng tác, biết hạ cái em cá nhân và phân chia vai trò rõ ràng giữa các thành viên (AI, Data, Backend, Business, Presentation).
+
+- Trải nghiệm hackathon rèn luyện khả năng tư duy nhanh, chịu áp lực thời gian và tinh thần không bỏ cuộc khi đối mặt với các lỗi kỹ thuật hay sự cố hệ thống trong môi trường thực tế.
+
+**4**. Tư duy học tập:
+
+- Kiến thức kỹ thuật có thể học qua sách vở hoặc tài liệu, nhưng trải nghiệm thực chiến cùng đồng đội là thứ duy nhất giúp phát triển kỹ năng mềm và tư duy nghề nghiệp chuyên sâu.
+
+- Hãy chủ động tìm kiếm các cơ hội học hỏi như Hackathon. Các cuộc thi này giúp chúng ta trau dồi cả kiến thức chuyên môn và kỹ năng sinh tồn trong môi trường cạnh tranh, nơi sự sáng tạo và khả năng làm việc dưới áp lực là yếu tố quyết định thành công.
 
 ### Ứng Dụng Vào Công Việc
 
-Dựa trên những giá trị thực tế từ sự kiện FCAJ Community Day - June 2026, tôi đã xây dựng kế hoạch ứng dụng cụ thể vào công việc và học tập như sau:
+Dựa trên những giá trị thực tế từ sự kiện **FCAJ x Agentic AI Build Week**, em đã xây dựng kế hoạch ứng dụng cụ thể vào công việc và học tập như sau:
 
-Những kiến thức thu được từ sự kiện sẽ là nền tảng quan trọng cho quá trình học tập cũng như định hướng nghề nghiệp của tôi trong tương lai.
+- Những kiến thức thu được từ sự kiện sẽ là nền tảng quan trọng cho quá trình học tập cũng như định hướng nghề nghiệp của em trong tương lai.
 
-Trong thời gian tới, tôi dự định:
+Trong thời gian tới, em dự định:
 
-- Tích hợp AI vào quy trình vận hành: Ứng dụng tư duy Multi-Agent và các giải pháp AI như Amazon Quick để tự động hóa các tác vụ lặp lại, từ đó tối ưu hóa hiệu suất làm việc thay vì chỉ tập trung vào các công việc thủ công.
-- Ưu tiên kiến trúc bảo mật trong ứng dụng AI: Áp dụng mô hình kết nối riêng tư (Private MCP Connection), sử dụng VPC và Interface Endpoint cho các dự án tích hợp AI trong doanh nghiệp, đảm bảo tính tuân thủ và bảo mật dữ liệu theo nguyên tắc Zero Trust.
-- Phát triển tư duy thực thi: Chú trọng xây dựng các sản phẩm MVP (Minimum Viable Product) hoặc POC (Proof of Concept) để kiểm chứng giải pháp ngay trên môi trường thực tế, thay vì dành quá nhiều thời gian cho lý thuyết suông.
-- Chuẩn hóa quy trình phát triển theo chuẩn Enterprise: Áp dụng kiến thức về quản lý phiên bản, Audit Log và các quy trình Human-in-the-loop vào các dự án phần mềm để đảm bảo hệ thống có khả năng kiểm soát chất lượng và dễ dàng bảo trì.
-- Tối ưu hóa khả năng giải quyết sự cố: Sử dụng các kỹ thuật quan sát (Observability) và tự động hóa điều tra nguyên nhân gốc rễ để giảm thiểu thời gian xử lý sự cố (MTTR) cho các hệ thống hạ tầng mà tôi quản lý.
-- Kết hợp đa dạng hệ sinh thái: Không giới hạn ở một nền tảng duy nhất, tôi sẽ tận dụng khả năng kết nối đa dạng (qua MCP) của các công cụ AI để tích hợp linh hoạt với nhiều hệ thống sẵn có (như Jira, Slack, Microsoft Suite), giúp AI trở thành một trợ lý trung tâm thực thụ.
-- Nâng cao năng lực chuyên môn toàn diện: Song song với việc làm chủ các dịch vụ AI trên AWS, tôi sẽ không ngừng củng cố nền tảng về Cloud Infrastructure, System Design và DevOps để đảm bảo các hệ thống AI được xây dựng luôn đạt độ tin cậy và khả năng mở rộng tối đa.
+- Tích hợp tư duy **Agentic AI** vào vận hành: Ứng dụng mô hình Multi-Agent để tự động hóa các quy trình nghiệp vụ phức tạp, từ việc thu thập thông tin, phân tích dữ liệu đến đưa ra quyết định, giúp tối ưu hóa hiệu suất thay vì chỉ thực hiện các tác vụ thủ công rời rạc.
+
+- Phát triển tư duy thực thi (Execution-first): Tập trung xây dựng các sản phẩm MVP (Minimum Viable Product) hoặc POC (Proof of Concept) để kiểm chứng giá trị thực tế của giải pháp ngay trên môi trường cloud, thay vì dành quá nhiều thời gian cho việc lên kế hoạch trên giấy tờ.
+
+- Chuẩn hóa quy trình AI theo chuẩn Enterprise: Áp dụng kiến thức về quản lý Context, Memory và quy trình Human-in-the-loop vào các dự án, nhằm đảm bảo hệ thống AI có khả năng kiểm soát chất lượng, dễ dàng audit và bảo trì trong dài hạn.
+
+- Kết hợp đa dạng hệ sinh thái: Tận dụng khả năng tích hợp linh hoạt của các công cụ AI với hạ tầng AWS sẵn có để kết nối dữ liệu từ nhiều nguồn khác nhau, giúp AI trở thành một trợ lý trung tâm thực thụ, hỗ trợ đắc lực cho các bài toán kinh doanh thực tế.
 
 ### Trải Nghiệm Trong Sự Kiện
 
-Sự kiện FCAJ Community Day được tổ chức chuyên nghiệp với nhiều phiên chia sẻ có tính thực tiễn cao, tập trung vào những vấn đề mà các doanh nghiệp đang quan tâm trong lĩnh vực Cloud Computing và AI. Không khí chương trình diễn ra sôi nổi với sự tham gia của nhiều kỹ sư, chuyên gia và các bạn sinh viên có cùng đam mê công nghệ, tạo điều kiện thuận lợi để giao lưu và học hỏi.
+Sự kiện **FCAJ x Agentic AI Build Week** được tổ chức rất chuyên nghiệp và đầy cảm hứng, mang lại môi trường thực chiến sôi nổi cho cộng đồng công nghệ. Không khí tại sự kiện không chỉ là trình bày lý thuyết mà còn demo về sản phẩm của các đội thi, tạo điều kiện tuyệt vời để chúng em giao lưu và học hỏi từ những người cùng đam mê.
 
-Điểm tôi ấn tượng nhất là các diễn giả không chỉ giới thiệu lý thuyết mà còn chia sẻ nhiều kinh nghiệm thực tế trong quá trình phát triển sản phẩm, triển khai hệ thống và giải quyết các vấn đề phát sinh trong môi trường production. Đặc biệt, phần chia sẻ về kiến trúc Multi-Agent System, giải pháp DevOps Agent, và cách xây dựng kết nối bảo mật Private MCP đã giúp tôi có cái nhìn rõ ràng hơn về cách các công nghệ AI được ứng dụng trong doanh nghiệp.
+Điểm ấn tượng nhất đối với em chính là tính thực tiễn cao của các dự án được trình bày. Thay vì chỉ nói về lý thuyết, các nhóm đã trực tiếp giải quyết các bài toán thực tế như: giám sát mật độ người bằng Computer Vision, hay xây dựng các Agentic Workflow phức tạp trong lĩnh vực phòng chống rửa tiền. Đặc biệt, việc quan sát cách các đội xử lý sự cố, tối ưu chi phí hạ tầng (như việc điều chỉnh mô hình để giảm chi phí SageMaker) và bảo mật hệ thống đã giúp em có cái nhìn rõ nét về những thử thách thực tế khi triển khai AI trên AWS.
 
-Thông qua sự kiện, tôi không chỉ tiếp thu thêm nhiều kiến thức chuyên môn mà còn hiểu rõ hơn những kỹ năng mà doanh nghiệp đang tìm kiếm ở một kỹ sư Cloud hoặc AI. Đây là một trải nghiệm ý nghĩa, giúp tôi có thêm động lực để tiếp tục học tập, hoàn thiện kỹ năng chuyên môn và chuẩn bị tốt hơn cho định hướng nghề nghiệp trong lĩnh vực Cloud Computing, DevOps và Trí tuệ nhân tạo.
+Thông qua sự kiện, em nhận ra rằng sự thành công không chỉ đến từ việc nắm vững công nghệ, mà còn phụ thuộc vào khả năng xác định phạm vi dự án, kỹ năng phân chia nhiệm vụ và tinh thần làm việc nhóm dưới áp lực lớn. Đây là một trải nghiệm vô cùng quý giá, giúp em củng cố thêm động lực và có định hướng rõ ràng hơn trong việc trở thành một kỹ sư không chỉ giỏi về kỹ thuật mà còn nhạy bén với các giải pháp giải quyết bài toán kinh doanh thực tế.
 
 ### Hình Ảnh Minh Chứng Tham Gia Sự Kiện
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_1.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_1.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_2.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_2.jpg)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_3.png)
+Dưới đây là một số hình ảnh trong sự kiện được chụp từ các anh chị **Admin** trong **AWS Study Group**:
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_4.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_3.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_5.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_4.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_6.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_9.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_7.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_7.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_8.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_5.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_9.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_6.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_15.png)
-
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_11.png)
-
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_12.png)
-
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_13.png)
-
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_14.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_8.png)

@@ -8,8 +8,8 @@ pre: " <b> 4.2. </b> "
 
 # Event Report: "FCAJ Community Day"
 
-- Time: 9:00 AM - 12:00 PM, May 23, 2026.
-- Floor 26, Bitexco Financial Tower, No. 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam.
+- Time: 09:00 AM - 12:00 PM, May 23, 2026.
+- Location: 26th Floor, Bitexco Financial Tower, No. 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam.
 
 ### Purpose of the Event
 
@@ -213,7 +213,7 @@ Through this event, I not only expanded my technical knowledge but also gained a
 
 ![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.2-Event2/event_3.png)
 
-- Below are some additional photos from the event, captured by the **AWS Study Group** administrators:
+Here are some images from the event captured by the **Admins** in the **AWS Study Group**:
 
 ![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.2-Event2/event_4.png)
 

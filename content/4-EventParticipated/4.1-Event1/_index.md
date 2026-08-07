@@ -8,8 +8,8 @@ pre: " <b> 4.1. </b> "
 
 # Event Report: "FCAJ Community Day"
 
-- Time: 9:00 AM - 12:00 PM, March 21, 2026.
-- Floor 26, Bitexco Financial Tower, No. 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam.
+- Time: 09:00 AM - 12:00 PM, March 21, 2026.
+- Location: 26th Floor, Bitexco Financial Tower, No. 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam.
 
 ### Purpose of the Event
 
@@ -116,14 +116,10 @@ From my perspective, this was a valuable event because it not only provided tech
 
 ![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_3.png)
 
-- Here are some images from the event captured by the **Admins** in the **AWS Study Group**:
+Here are some images from the event captured by the **Admins** in the **AWS Study Group**:
 
 ![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_5.png)
 
 ![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_6.png)
 
 ![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_7.png)
-
-- And I recognize myself in the photo, sitting and listening attentively:
-
-![Event Participated](/workshop-fcaj-intern/images/4-EventParticipated/4.1-Event1/event_8.png)

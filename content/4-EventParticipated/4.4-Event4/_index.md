@@ -6,189 +6,195 @@ chapter: false
 pre: " <b> 4.4. </b> "
 ---
 
-# Reflection Report on "FCAJ Community Day"
+# Reflection Report on "FCAJ x Agentic AI Build Week"
 
-- Time: 9:00 AM - 12:00 AM, June 27, 2026.
-- 26th Floor, Bitexco Financial Tower, No. 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam.
+- Time: 09:00 AM - 12:00 PM, July 25, 2026.
+- Location: 26th Floor, Bitexco Financial Tower, No. 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam.
 
 ### Purpose of the Event
 
-The FCAJ Community Day event on June 27, 2026, was organized with the main purpose of creating a space for connection and sharing in-depth knowledge about cloud technology and artificial intelligence. The program aimed to provide practical perspectives on modern applications such as Voice AI, automation systems in operations, and AI solutions in human resource management. Through presentations from experienced speakers, the event sought to inspire and equip the community with the necessary skills to solve specific business problems, while promoting innovative thinking in applying technology to business practice.
+The FCAJ x Agentic AI Build Week event was organized to connect and share in-depth knowledge following the Hackathon of the same name. The core objective of the program was to create a space for participating teams to present, demonstrate practical technology projects, and spread valuable lessons learned during the process of building Agentic AI solutions on the AWS cloud infrastructure. Through analyzing business problems, system architecture design skills, and ways to solve challenges under time pressure, the event not only helped the community access modern technology applications but also promoted innovative thinking while equipping participants with the practical skills necessary to enrich their portfolios and prepare for future career opportunities.
 
 ### Participation Role
 
-At this event, I participated as an attendee, listening to and gaining practical knowledge from leading experts in the industry, thereby keeping up with the latest technology trends.
+As an attendee of the event, I had the opportunity to directly access practical knowledge from outstanding projects following the Hackathon. By listening to the teams' presentations, solution demonstrations, and sharing about the product building process, I accumulated valuable lessons on problem-solving mindsets, system architecture design methods on the AWS cloud platform, and how to optimize Agentic AI models in practice. The event not only helped me expand my network with the technology community but was also a great source of inspiration for me to develop creative thinking and be ready to apply modern technologies to future professional challenges.
 
 ### List of Speakers
 
-- **Steve Trần** - CTO at CloudThinker
-- **Trung Vũ** - Founder of Revve AI
-- **Kiệt Trần** - AI Engineer at Revve AI
-- **Danh Hoàng Hiếu Nghị** - AI Engineer at Renova Cloud
-- **Phan Kim Bảo** - Cloud Engineer
-- **Nguyên Nguyễn** - Cloud Engineer at Cloud Kinetics Vietnam
-- **Trường Trần** - Solutions Sales at Noventiq Vietnam
-- **Minh Anh** - Solutions Sales at Noventiq Vietnam
-- **Nguyễn Đức Toàn** - Technical Cloud Engineer at Keyloop
+- **Giuseppe Marazzotta** - Head of Tech & Solutions Architecture, ASEAN at Amazon Web Services
+- Team **One Team**
+- Team **Signal Scout**
+- Team **Plan V**
+- Team **3KA**
+- Team **Six Pillars**
 
-### Content 
+### Content
 
-The event was an in-depth sharing session on cloud technology and artificial intelligence, focusing on practical solutions for enterprises.
+Opening the program was a sharing session by Mr. **Giuseppe Marazzotta**:
 
-#### Topic 1: Deep Response Engine: From Detection to Autonomous Resolution - Steve Trần
+- He shared that this event is an excellent opportunity for the community to learn together, practice, and build technology-based solutions, specifically **Agentic AI** on the AWS platform.
 
-- Solving the complexity problem: As enterprises undergo digital transformation and systems become larger, complexity increases significantly. The use of multiple observability tools often leads businesses to hire more personnel for operations, further increasing complexity. Steve emphasized the role of AI in supporting senior engineers in operating infrastructure rather than completely replacing people.
+- He encouraged the daring spirit of the competing teams, emphasizing the ability to apply new tools to solve practical and complex problems.
 
-- Multi-Agent architecture should be used instead of Single-Agent architecture in practical AI systems:
+- He highly appreciated the efforts of the **AWS Study Group** and the **FCAJ** community in creating a connecting environment where engineers, students, and technology enthusiasts can interact, exchange skills, and develop their careers.
 
-    + Optimize model selection for specialized tasks.
-    + Avoid context dilution when putting all data into a single agent.
-    + Support role and access control management.
+#### Topic 1: AI-Powered Conversation Ordering - One Team
 
-- Product development mindset:
+The presentation by **One Team** regarding the **AI-Powered Conversation Ordering** project shared the journey to winning the championship at the **Agentic AI Build Week** competition through the development of an ordering chatbot for KFC.
 
-    + Execution: The important thing is to start doing immediately instead of spending too much time thinking.
-    + Customer Champion: It is necessary to choose the right pioneering customers to work with directly, thereby validating technology ideas against real business problems.
-    + Process transformation: To successfully deploy an AI system, enterprises often need to change more than 50% of their existing operational processes to fit the new capabilities of the system.
+- The team was inspired by the limitations of AI systems at **drive-through** counters (such as McDonald's), where AI struggles with natural conversation and causes serious ordering errors. The team set a goal to create a smarter, more accurate, and more convenient ordering solution for users.
 
-#### Topic 2: Voice Agents: Building Human-Like AI Conversations at Scale - Trung Vũ, Kiệt Trần, Danh Hoàng Hiếu Nghị
+- The team built a **Multi-Channel AI Agent**, focusing primarily on Zalo and Whatsapp, helping users without needing to switch applications or perform complex account creation processes. The system focused on understanding customer intentions, integrating tools to collect data from the KFC Website via **TinyFish**, and storing it on the AWS infrastructure.
 
-This topic shared the architecture and practical challenges of deploying AI voice systems in Vietnam.
+- Designing the architecture in a **modular** format makes it easy to customize without needing to rebuild the entire system.
 
-- System architecture:
+- Using the **Agentic Platform** to manage the conversation flow and featuring an order confirmation step to prevent AI errors.
 
-    + Analyzed two common architectures: **Speech-to-Speech** and the three-stage model: **Speech-to-Text** -> **LLM** -> **Text-to-Speech**.
-    + For the Vietnamese market, the three-stage model is preferred because of its feasibility and better content control for a low-resource language such as Vietnamese.
+- The team emphasized the importance of building a Network, effective teamwork under time pressure at the Hackathon, and most importantly, prioritizing the creation of a product that solves actual business problems rather than just focusing on technical aspects.
 
-- Practical challenges in enterprises:
+#### Topic 2: Value Creation & Delivery Canvas - Signal Scout
 
-    + Quality control: Enterprises need to ensure that AI does not provide inaccurate answers. Converting content to text makes management easier.
-    + AI should not stop at answering questions but also needs the ability to execute tasks, such as locking cards and checking information, through calling external tools.
-    + Human-in-the-loop: The system needs to be designed to hand over to human employees when AI encounters complex situations or when customers have a negative attitude.
+The presentation by the **Signal Scout** team focused on the methodology and mindset of project building in a Hackathon environment.
 
-#### Topic 3: AWS DevOps Agent: Your Always-Available Operations Teammate - Phan Kim Bảo & Nguyên Nguyễn
+- The team redesigned the traditional business model to fit the **Hackathon** and **Pitching** context. They eliminated revenue or cash flow factors to focus on value creation and delivery, helping to clarify how the project solves specific market problems.
 
-This topic discussed the **AWS DevOps Agent**, a tool that supports engineers in operating and handling system incidents.
+- The team emphasized that in a competition, the system does not need to be 100% complete. What is important is that 70% of the decision to win lies in the team clearly defining the problem to be solved and how they built that solution.
 
-- The role of DevOps Agent: The system operates as a teammate supporting operations engineers rather than replacing people. The Agent helps automate incident investigation, root cause analysis, and solution recommendations.
+- Implementation process:
 
-- The main pillars of DevOps Agent:
+    + Clear Direction: Emphasized the need for clear direction from the beginning, avoiding rambling debates among members.
+    + Teamwork: To succeed, members must know how to set aside their egos, trust each other, and clearly divide roles.
+    + Practicality: An idea, no matter how good, becomes meaningless if it only remains on paper. The team highly valued having a working demo to convince the judges.
 
-    + Context Learning: Uses Agent Space, a logical container, to understand the system structure through accessing resources and configurations and generating topology diagrams.
-    + Integration: The ability to expand through MCP (Model Context Protocol) or integration with other services to query logs or data from external systems.
-    + Collaboration: Supports interaction through multiple platforms such as Slack or ServiceNow.
-    + Convenient: A simple setup process directly on the AWS Console.
-    + Cost Effective: Costs are calculated based on runtime instead of infrastructure or token quantity.
+- The team shared experiences in overcoming technical challenges, time management, and the importance of building products that bring practical value rather than just focusing on technicalities.
 
-- Practical experience:
+#### Topic 3: Solution Architect Professional Native App - Plan V
 
-    + Reducing incident resolution time (MTTR): For example, at an online university, DevOps Agent helped reduce issue resolution time from 2 hours to 28 minutes, which is 77% faster.
-    + Root cause investigation: Supports identifying misconfigurations in complex systems, helping engineers save a significant amount of manual operation time.
+The presentation by the **Plan V** team focused on solving the problem of **Solution Architects** having to hurriedly design architectures and estimate costs for customers.
 
-DevOps Agent is a tool that amplifies engineers' skills. It works most effectively for organizations with clear infrastructure governance processes, transparent system history, and well-structured services.
+- **SAs** often face pressure when customers request architectural diagrams, cost estimates, and even deployment plans within a short period of time (usually 1-2 days), making it difficult to ensure accuracy and optimization.
 
-#### Topic 5: AI-Powered Productivity: Workforce Planning For Enterprise - Trường Trần & Minh Anh
+- The team developed an **AI-Native** application allowing:
 
-This topic discussed how to apply AI, especially **Amazon Quick**, to solve challenges in human resource management and optimize enterprise processes.
+    + Natural language analysis: Users simply describe requirements, and the AI automatically analyzes and converts them into an architectural diagram.
+    + Internal document integration: Allows uploading corporate policies or regulations so the AI complies with existing architectures (e.g., security requirements, preferred services).
+    + Automation: The system supports generating **Terraform code** and estimated cost sheets, significantly reducing work time.
 
-- Current challenges in recruitment: Enterprises often face issues such as spending too much time on manual CV screening, from one to two months, high dropout rates, and the lack of an accurate data framework to evaluate personnel, leading to inefficient recruitment.
+- The system uses **LLM** as the core, but the team emphasized that the true value lies in **High-level Engineering** such as context management, workflow, and Agent memory.
 
-- AI solutions: Using AI helps HR move from manual tasks to building human resource strategies and evaluating candidates based on standardized frameworks instead of subjective judgment. This helps enterprises save costs and time and increase their competitive value.
+- The team implemented an output validation mechanism to ensure selected services are not on a blacklist and strictly comply with the enterprise's technical requirements.
 
-- The role of **Amazon Quick** in enterprises:
+- The product solves real business problems instead of just demonstrating new technological techniques.
 
-    + Agent customization: Users can create specialized AI Agents, for example, an HR Talent Review Assistant, to understand policies, read CVs, or analyze job descriptions.
-    + Connectivity: Amazon Quick can connect to various data sources such as SharePoint, Outlook, Google Drive, Jira, and Salesforce through MCP (Model Context Protocol), allowing data extraction and processing directly without switching across many platforms.
-    + Task automation: Amazon Quick not only answers questions but also performs tasks such as automatic CV screening with high-accuracy OCR, comparing candidates with job descriptions, recommending salaries, and generating recruitment reports.
+- The biggest challenge of **Agentic AI** is ensuring output consistency across different executions.
 
-- With the widespread use of AI in the screening process, candidates should focus on optimizing their CVs so that keywords match job descriptions in order to pass the automated screening round.
+#### Topic 4: Hackathon Journey - 3KA
 
-#### Topic 6: Building Secure Private MCP Connection with Amazon Quickuick - Nguyễn Đức Toàn & Danh Hoàng Hiếu Nghị
+The presentation by the **3KA** team was a story about the journey of overcoming challenges for members participating in a real-world technology competition for the first time.
 
-This topic explored the technical solution for securely connecting **Amazon Quick** with third-party data sources through MCP (Model Context Protocol) in enterprise environments.
+- The team built a crowd density monitoring system using **Computer Vision** through real-time cameras, aiming to apply it as a prototype for a graduation project.
 
-- When connecting **Amazon Quick** with an **MCP Server** through the public Internet, enterprises face many risks such as DDoS attacks, data eavesdropping through Man-in-the-middle attacks, and violations of internal security policies.
+- Used **Amazon Kinesis Streams** to establish **WebSocket** connections from cameras.
 
-- Private connection solution:
+- Built an image processing system based on **AWS Fargate** combined with **YOLO** to perform object detection and tracking tasks.
 
-    + **VPC Connection**: Place Amazon Q inside a VPC (Virtual Private Cloud) environment to establish an internal connection.
-    + **Interface Endpoint**: Set up VPC Endpoints and Private DNS so that requests to the MCP Server never pass through the public Internet.
-    + **Technical structure**: Use an Application Load Balancer (ALB) combined with AWS Certificate Manager (ACM) for TLS encryption.
+- Data is stored and retrieved via **DynamoDB** and **S3**.
 
-- Optimization and cost management:
+- Challenges faced:
 
-    + Deploying a private security environment comes with additional infrastructure costs such as Route 53 Resolver, ALB, and EC2 operating costs for the MCP Server, estimated at approximately 250 to 350 USD per month for infrastructure components.
-    + The speakers emphasized that although setting up a private connection has higher costs, it is a core factor in ensuring security compliance for large enterprises.
+    + Most team members had never participated in a Hackathon and lacked a solid foundation in AWS infrastructure, leading to confusion and significant time spent in the initial phase.
+    + Had to work overnight until 3-4 AM to complete the product and prepare the presentation in time.
 
-- Amazon Quick can connect with almost any third-party service, such as Zalo, WhatsApp, Jira, or internal storage systems, as long as those systems provide APIs, helping turn Amazon Q into a central assistant capable of securely accessing real-time data.
+- The team emphasized that the value of a Hackathon does not solely lie in awards or technical knowledge, but in practical experience, personal development, and the ability to work as a team under high pressure.
+
+- The most important experience is clearly defining goals early on to optimize time and avoid deploying costly structures.
+
+#### Topic 5: Adaptive AML Workflow Engine - Six Pillars
+
+The presentation by the **Six Pillars** team focused on applying **Agentic AI** to optimize the anti-money laundering workflow for financial institutions.
+
+- The current process of investigating suspicious transactions remains very manual, costly (20-25 USD per review), and overloads personnel. A traditional case can take up to 3 hours to resolve.
+
+- The team developed a workflow automation system that helps replace manual processing steps with specialized Agents:
+
+    + KYC Agent: Checks customer identification information.
+    + Transaction Agent: Analyzes transaction flows.
+    + Evidence Builder: Synthesizes evidence to make decisions.
+
+- The system does not replace humans but acts as an effective assistant, accelerating processing speed, ensuring transparency, and providing scalability.
+
+- The team emphasized the importance of defining the scope from the beginning to avoid getting bogged down in excessively broad requirements during the limited time of the Hackathon, as well as clearly dividing tasks for each member.
 
 ### What I Learned
 
-After participating in the event, I learned a great deal and gained practical and in-depth perspectives on AI applications in enterprises:
+After participating in this event, I learned a great deal through the sharing of the seniors:
 
-**1.** Execution mindset in the AI era: Instead of spending too much time on theory, enterprises need to focus on execution through POC or MVP models. Choosing the right Customer Champion to solve practical problems is a vital factor for startup projects.
+**1.** Product Mindset:
 
-**2.** The importance of flexible architecture:
+- The most important lesson is that technology, no matter how modern, becomes meaningless if it does not solve a specific problem for the enterprise or users. Instead of starting with techniques, start by clearly defining the target customers and the difficulties they are facing.
 
-- **Multi-Agent Architecture**: Using multiple specialized agents helps optimize performance, avoid context dilution, and manage access permissions more effectively.
-- **Voice AI architecture**: For low-resource languages such as Vietnamese, the three-stage model, STT - LLM - TTS, remains the most feasible and controllable option to ensure response quality.
+- A good idea needs to be validated through a specific product. Having a working demo is far more convincing than paper presentations.
 
-**3.** AI is a teammate, not a replacement: In DevOps and human resource management, AI is designed to amplify human capabilities. DevOps Agents and Amazon Quick help significantly reduce incident resolution time, MTTR, and automate repetitive tasks, allowing engineers and HR professionals to focus on higher-level strategies.
+**2.** Project Operation Skills:
 
-**4.** Security is the top priority: When deploying AI in large enterprises, connections to third-party systems must follow the Zero Trust principle. Using VPC Connection, Interface Endpoint, and Private DNS to establish private connections through MCP is a necessary technical solution to ensure that enterprise data is not leaked through the public Internet.
+- In short-term competitions or projects, scope control is crucial. Do not try to build an overly bulky system; instead, focus on core features to ensure stability and operability.
 
-**5.** Process optimization: Successfully deploying technology requires enterprises to be ready to change old operational processes, by more than 50%, to fit the new capabilities of AI.
+- Understanding how to build automated systems based on AI Agents, knowing how to manage workflows, contexts, and memories to create smart, consistent, and scalable solutions.
+
+**3.** Teamwork Skills and Personal Resilience:
+
+- Project success depends on collaboration, knowing how to set aside personal egos, and clearly dividing roles among members (AI, Data, Backend, Business, Presentation).
+
+- The Hackathon experience hones the ability to think quickly, handle time pressure, and maintain a never-give-up spirit when facing technical errors or system incidents in a real-world environment.
+
+**4**. Learning Mindset:
+
+- Technical knowledge can be learned through books or documents, but practical combat experience with teammates is the only thing that helps develop soft skills and deep professional thinking.
+
+- Proactively seek learning opportunities such as Hackathons. These competitions help us cultivate both professional knowledge and survival skills in competitive environments, where creativity and the ability to work under pressure are determining factors for success.
 
 ### Application to Work
 
-Based on the practical value gained from the FCAJ Community Day - June 2026 event, I have developed a specific plan to apply it to my work and studies as follows:
+Based on the practical value from the **FCAJ x Agentic AI Build Week** event, I have developed a specific application plan for my work and studies as follows:
 
-The knowledge gained from the event will be an important foundation for my learning process as well as my future career orientation.
+- The knowledge gained from the event will be an important foundation for my learning process as well as my future career orientation.
 
 In the near future, I plan to:
 
-- Integrate AI into operational processes: Apply Multi-Agent thinking and AI solutions such as Amazon Quick to automate repetitive tasks, thereby optimizing work efficiency instead of only focusing on manual work.
-- Prioritize secure architecture in AI applications: Apply the Private MCP Connection model, using VPC and Interface Endpoint for enterprise AI integration projects, ensuring compliance and data security according to the Zero Trust principle.
-- Develop an execution mindset: Focus on building MVPs (Minimum Viable Products) or POCs (Proofs of Concept) to validate solutions directly in real environments instead of spending too much time on theory alone.
-- Standardize development processes according to Enterprise standards: Apply knowledge of version management, Audit Logs, and Human-in-the-loop processes to software projects to ensure that systems have quality control capabilities and are easy to maintain.
-- Optimize incident resolution capabilities: Use observability techniques and automate root cause investigation to minimize incident resolution time, MTTR, for the infrastructure systems that I manage.
-- Combine diverse ecosystems: Not being limited to a single platform, I will leverage the diverse connectivity capabilities through MCP of AI tools to flexibly integrate with many existing systems, such as Jira, Slack, and Microsoft Suite, helping AI become a true central assistant.
-- Improve comprehensive professional capabilities: Alongside mastering AI services on AWS, I will continuously strengthen my foundation in Cloud Infrastructure, System Design, and DevOps to ensure that the AI systems I build always achieve maximum reliability and scalability.
+- Integrate **Agentic AI** thinking into operations: Apply the Multi-Agent model to automate complex business processes, from gathering information and analyzing data to making decisions, helping to optimize performance instead of just performing isolated manual tasks.
+
+- Develop an execution-first mindset: Focus on building MVP (Minimum Viable Product) or POC (Proof of Concept) products to validate the practical value of solutions directly in the cloud environment, rather than spending too much time planning on paper.
+
+- Standardize AI processes according to Enterprise standards: Apply knowledge of Context management, Memory, and Human-in-the-loop processes in projects to ensure AI systems possess quality control capabilities and are easy to audit and maintain in the long term.
+
+- Combine diverse ecosystems: Leverage the flexible integration capabilities of AI tools with existing AWS infrastructure to connect data from various sources, making AI a true central assistant that provides solid support for actual business problems.
 
 ### Experience During the Event
 
-The FCAJ Community Day event was organized professionally with many highly practical sharing sessions, focusing on issues that enterprises are interested in within Cloud Computing and AI. The program had a lively atmosphere with the participation of many engineers, experts, and students who share a passion for technology, creating favorable conditions for networking and learning.
+The **FCAJ x Agentic AI Build Week** event was highly professional and inspiring, providing a vibrant practical environment for the technology community. The atmosphere at the event consisted not only of theoretical presentations but also product demos from competing teams, creating excellent conditions for us to network and learn from those sharing the same passion.
 
-What impressed me the most was that the speakers not only introduced theory but also shared many practical experiences from product development, system deployment, and solving issues arising in production environments. In particular, the sharing sessions on Multi-Agent System architecture, DevOps Agent solutions, and how to build secure Private MCP connections gave me a clearer view of how AI technologies are applied in enterprises.
+What impressed me the most was the high practicality of the presented projects. Instead of just discussing theory, the teams directly addressed real-world problems such as monitoring crowd density using Computer Vision or building complex Agentic Workflows in the anti-money laundering domain. Particularly, observing how teams handled incidents, optimized infrastructure costs (such as adjusting models to reduce SageMaker costs), and secured systems gave me a clear perspective on the practical challenges of deploying AI on AWS.
 
-Through the event, I not only gained more professional knowledge but also better understood the skills that enterprises are looking for in a Cloud or AI engineer. This was a meaningful experience that gave me more motivation to continue learning, improve my professional skills, and better prepare for my career direction in Cloud Computing, DevOps, and Artificial Intelligence.
+Through the event, I realized that success comes not only from mastering technology but also depends on the ability to define project scopes, task division skills, and the spirit of teamwork under intense pressure. This was an extremely valuable experience, helping me strengthen my motivation and have a clearer direction in becoming an engineer who is not only technically proficient but also perceptive to solutions solving real business problems.
 
 ### Images Proving Participation in the Event
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_1.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_1.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_2.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_2.jpg)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_3.png)
+Here are some images from the event captured by the **Admins** in the **AWS Study Group**:
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_4.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_3.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_5.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_4.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_6.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_9.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_7.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_7.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_8.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_5.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_9.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_6.png)
 
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_15.png)
-
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_11.png)
-
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_12.png)
-
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_13.png)
-
-![FCAJ Community Day](/workshop-fcaj-intern/images/4-EventParticipated/4.4-Event4/event_14.png)
+![FCAJ x Agentic AI Build Week](/workshop-fcaj-intern/images/4-EventParticipated/4.5-Event5/event_8.png)
