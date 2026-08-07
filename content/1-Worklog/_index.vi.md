@@ -7,7 +7,7 @@ pre: " <b> 1. </b> "
 ---
 
 
-Đây là nhật ký công việc được ghi chép trong suốt 12 tuần thực tập tại **First Cloud AI Journey**. Nội dung phản ánh toàn bộ hành trình xây dựng dự án **SmartRoute FinOps** - từ giai đoạn học nền tảng AWS cho đến triển khai hệ thống và hoàn thiện tài liệu. Nội dung các tuần như sau:
+Đây là nhật ký công việc được ghi chép trong suốt 12 tuần thực tập tại **First Cloud AI Journey**. Nội dung phản ánh toàn bộ hành trình xây dựng dự án **CloudCost Insight** - từ giai đoạn học nền tảng AWS cho đến triển khai hệ thống và hoàn thiện tài liệu. Nội dung các tuần như sau:
 
 **Tuần 1:** [Tìm hiểu về IAM (Identity and Access Management), EC2 (Elastic Compute Cloud)](1.1-week1/)
 

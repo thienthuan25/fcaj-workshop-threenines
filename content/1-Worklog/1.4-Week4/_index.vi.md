@@ -28,11 +28,7 @@ pre: " <b> 1.4. </b> "
 ### Kết quả đạt được tuần 4:
 
 * **Họp nhóm và chốt ý tưởng dự án:** Tuần làm việc bắt đầu bằng buổi họp nhóm để cùng nhau thảo luận, đề xuất và định hướng đề tài. Sau khi trao đổi, tôi đã hoàn thành việc lên ý tưởng và chốt đề tài dự án cá nhân **CloudCost Insight**, một hệ thống giám sát và cảnh báo chi phí AWS. Quá trình lên ý tưởng xuất phát từ một bài toán thực tế: với mô hình pay-as-you-go, chi phí AWS rất dễ vượt tầm kiểm soát nếu không được theo dõi chủ động.
-
 * **Lý do lựa chọn đề tài:** Trong quá trình nghiên cứu, tôi đã tham khảo **AWS Cost Anomaly Detection**, tính năng cảnh báo chi phí bất thường có sẵn của AWS. Việc này giúp khẳng định giám sát chi phí là một nhu cầu thực tế được chính AWS công nhận. Trên cơ sở đó, tôi lựa chọn hướng đi cốt lõi là thay vì sử dụng dịch vụ managed có sẵn, dự án sẽ **tự xây dựng toàn bộ luồng thu thập, phân tích và cảnh báo bằng kiến trúc Serverless kết hợp Terraform (IaC)**. Hướng tiếp cận này nhằm ba mục đích: học tập và làm chủ hoàn toàn kiến trúc hạ tầng AWS, rèn luyện kỹ năng Infrastructure as Code, và chủ động tùy biến logic phát hiện theo từng ngưỡng ngân sách riêng.
-
 * **Hoàn thiện bộ tài liệu đề xuất:** Đã viết xong Proposal dự án rõ ràng, chi tiết hóa mục tiêu, phạm vi và định hướng công nghệ. Đồng thời hoàn thành các sơ đồ kiến trúc tổng quan và luồng dữ liệu, giúp trực quan hóa cách các dịch vụ Serverless tương tác để phát hiện và cảnh báo chi phí bất thường.
-
 * **Xử lý sự cố môi trường phát triển:** Khắc phục thành công lỗi Git submodule trong template khởi tạo, thiết lập môi trường phát triển đồng bộ và sẵn sàng bước vào giai đoạn lập trình, cấu hình hạ tầng ở các tuần tiếp theo.
-
 * **Phối hợp cùng nhóm:** Duy trì thói quen làm việc nhóm hiệu quả trong suốt tuần. Trước khi bắt đầu công việc mỗi ngày, tôi trao đổi kế hoạch với các thành viên trong nhóm, và cuối mỗi ngày tổng hợp lại kết quả đã làm để cả nhóm cùng nắm tiến độ.

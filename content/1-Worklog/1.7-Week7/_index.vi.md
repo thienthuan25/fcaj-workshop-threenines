@@ -29,13 +29,8 @@ pre: " <b> 1.7. </b> "
 ### Kết quả đạt được tuần 7:
 
 * **Hoàn thành thành phần phân tích và cảnh báo (Analyzer):** Đã phát triển thành công hàm Lambda Analyzer bằng Python và boto3, có khả năng đọc dữ liệu chi phí từ S3, tính tổng chi phí, xác định top dịch vụ tốn kém nhất và so sánh với ngưỡng ngân sách để phát hiện chi phí vượt mức.
-
 * **Tích hợp cảnh báo tự động qua email:** Đã tích hợp Amazon SNS để gửi cảnh báo chi tiết qua email khi chi phí vượt ngưỡng. Nội dung cảnh báo bao gồm tổng chi phí, ngưỡng đã đặt và danh sách các dịch vụ tốn kém nhất, giúp người dùng nắm nhanh tình hình và xử lý kịp thời.
-
 * **Kiến trúc tự động và tách rời (decoupling):** Đã cấu hình Event Source Mapping để SQS tự động kích hoạt Lambda Analyzer, hoàn thiện luồng xử lý bất đồng bộ giữa khâu thu thập (Collector) và phân tích (Analyzer). Kiến trúc này giúp hệ thống linh hoạt, dễ mở rộng và chịu tải tốt hơn.
-
 * **Bảo mật theo nguyên tắc Least Privilege:** Đã tạo IAM Role riêng biệt cho Analyzer, tách bạch với Collector. Analyzer chỉ được cấp quyền tối thiểu cần thiết (đọc S3, nhận message từ SQS, publish SNS), tuân thủ chặt chẽ best practice bảo mật của AWS, một điểm cộng quan trọng về mặt thiết kế an toàn.
-
 * **Kiểm chứng luồng cảnh báo end-to-end:** Đã kiểm thử thành công bằng phương pháp đặt tạm ngưỡng cảnh báo `threshold = -1`, giúp xác minh logic phát hiện vượt ngưỡng một cách độc lập với độ trễ 24h của Cost Explorer API (khi chi phí thực tế của tài khoản đang ở mức \$0). Kết quả là Analyzer phát hiện chính xác chi phí vượt ngưỡng, ghi log đầy đủ trên CloudWatch và gửi thành công email cảnh báo qua SNS, xác nhận toàn bộ luồng phân tích và cảnh báo hoạt động hoàn chỉnh.
-
 * **Phối hợp cùng nhóm:** Duy trì thói quen làm việc nhóm hiệu quả trong suốt tuần. Trước khi bắt đầu công việc mỗi ngày, tôi trao đổi kế hoạch với các thành viên trong nhóm, và cuối mỗi ngày tổng hợp lại kết quả đã làm để cả nhóm cùng nắm tiến độ.

@@ -28,15 +28,9 @@ pre: " <b> 1.10. </b> "
 ### Kết quả đạt được tuần 10:
 
 * **Hoàn thành web frontend cho Dashboard:** Đã xây dựng giao diện Dashboard được tổ chức thành 3 file riêng biệt (`index.html`, `style.css`, `script.js`) theo nguyên tắc separation of concerns. Dashboard dùng thư viện Chart.js để trực quan hóa dữ liệu chi phí với các biểu đồ xu hướng chi phí theo ngày, đường ngưỡng, đánh dấu ngày bất thường, tỷ trọng theo dịch vụ, top dịch vụ tốn chi phí và các chỉ số KPI.
-
 * **Host frontend lên AWS thành công:** Đã đưa Web Dashboard lên S3 kết hợp CloudFront và cung cấp đường dẫn HTTPS để người dùng truy cập. Origin Access Control được áp dụng để chỉ CloudFront có quyền đọc nội dung từ S3, ngăn truy cập public trực tiếp vào web bucket.
-
 * **Bổ sung xác thực với Amazon Cognito:** Đã triển khai Cognito User Pool, App Client và Cognito Domain để quản lý người dùng. Dashboard sử dụng Authorization Code Flow với PKCE để người dùng đăng nhập và nhận JWT. API Gateway được cấu hình JWT Authorizer, chỉ cho phép request có token hợp lệ truy cập dữ liệu chi phí. CORS cũng được giới hạn để chỉ domain CloudFront của dự án có thể gọi API từ trình duyệt.
-
 * **Kiểm thử end-to-end Web Dashboard:** Đã kiểm chứng thành công toàn bộ luồng hoạt động: người dùng truy cập Dashboard qua CloudFront, đăng nhập bằng Cognito, nhận JWT, sau đó Dashboard gọi API Gateway tới Lambda API và S3 để lấy dữ liệu chi phí. Biểu đồ hiển thị đúng dữ liệu và trạng thái bất thường.
-
 * **Tinh chỉnh giao diện và thêm chế độ sáng/tối:** Đã điều chỉnh kích thước biểu đồ donut cho cân đối, bổ sung tooltip hiển thị số tiền kèm ký hiệu `$`. Thêm chức năng chuyển đổi giao diện sáng/tối bằng CSS variables, giúp người dùng lựa chọn giao diện phù hợp và cải thiện trải nghiệm sử dụng.
-
 * **Thêm chức năng song ngữ (EN/VI):** Đã xây dựng cơ chế chuyển đổi song ngữ Anh/Việt cho nhãn, tiêu đề, thông báo xác thực và nhãn biểu đồ. Dashboard được kiểm thử lại ở cả hai ngôn ngữ, bảo đảm giao diện và dữ liệu hiển thị nhất quán.
-
 * **Phối hợp cùng nhóm:** Duy trì thói quen làm việc nhóm hiệu quả trong suốt tuần. Trước khi bắt đầu công việc mỗi ngày, tôi trao đổi kế hoạch với các thành viên trong nhóm, và cuối mỗi ngày tổng hợp lại kết quả đã làm để cả nhóm cùng nắm tiến độ.

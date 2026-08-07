@@ -30,17 +30,10 @@ pre: " <b> 1.11. </b> "
 ### Results Achieved in Week 11:
 
 * **Completed the CI process:** Built a GitHub Actions workflow in the `ci.yml` file to automatically check source code when there is a Pull Request to the `main` branch. CI builds the Hugo Workshop, checks Python Lambda code, verifies Terraform formatting and configuration, and checks Dashboard JavaScript syntax.
-
 * **Added unit tests and Terraform Plan CI:** Built unit tests for Lambda Collector, Analyzer, and API using pytest and mock AWS clients, helping to verify processing logic without calling actual AWS resources. Terraform fmt, validate, and Terraform plan were also configured through HCP Terraform to detect infrastructure issues before merging.
-
 * **Completed Terraform CD:** Created the `terraform-apply.yml` workflow to automatically deploy Terraform changes to AWS after changes are merged into the `main` branch. The workflow uses HCP Terraform to manage state and remote runs, while GitHub Environment `production` is used to manage tokens and control the deployment process.
-
 * **Protected the main branch:** Configured branch protection for the `main` branch, requiring changes to go through a Pull Request and pass mandatory CI checks before merging. This mechanism helps limit unchecked changes and reduce the risk of deploying faulty Terraform configurations to the production environment.
-
 * **Redeployed, tested, and fixed issues:** Redeployed the CloudCost Insight system using Terraform and performed end-to-end testing. The cost collection, cost analysis, SQS, DLQ, SNS, CloudWatch, Cognito, API Gateway, and Dashboard flows were tested to ensure proper operation. Issues that arose during testing were recorded and fixed.
-
 * **Began writing the Workshop:** Built the structure and began writing the Workshop step-by-step based on the actual deployment process. The implemented content includes environment preparation, infrastructure configuration, Lambda, Dashboard, Cognito, system testing, and CI/CD. The written sections were supplemented with code samples, illustrative images, logs, and expected results to help readers follow along.
-
 * **Tracked the Workshop-writing progress of the team:** Summarized the Workshop-writing progress of the remaining team members. Members discussed, reviewed, and shared deployment experiences to continue improving the documentation in the next phase.
-
 * **Collaborated with the team:** Maintained effective teamwork throughout the week. Before starting work each day, I discussed the plan with team members, and at the end of each day, I summarized the completed results so that the entire team could keep track of progress.

@@ -29,15 +29,9 @@ pre: " <b> 1.12. </b> "
 ### Results Achieved in Week 12:
 
 * **Completed the step-by-step Workshop:** Continued writing, reviewing, and completing the CloudCost Insight Workshop based on step-by-step instructions. The Workshop describes the entire process, from environment preparation, infrastructure deployment using Terraform, Lambda development, Dashboard, Cognito, system testing, and CI/CD to resource cleanup.
-
 * **Added complete testing and security content:** Added important testing sections, including SQS partial batch failure, Dead Letter Queue, S3 error handling in Analyzer, JWT authentication using Amazon Cognito, CORS testing, and frontend updates to avoid using old cached versions. These sections include expected results, logs, and illustrative images.
-
 * **Verified and updated the Workshop:** Verified that the Hugo Workshop builds successfully and reviewed its structure, code samples, images, and content links. The Workshop was updated on GitHub Pages so that it can be accessed and followed.
-
 * **Researched and published blog posts:** Researched how to develop technical blog content and completed three posts on AWS Study Group. The posts share experiences from building CloudCost Insight, introduce Amazon EventBridge Scheduler, and propose a direction for expanding the system into an AI FinOps Agent using Amazon Bedrock AgentCore.
-
 * **Prepared the project demo:** Prepared the demo script and checked the AWS environment, simulated cost data, Dashboard, Cognito authentication, SNS alerts, and monitoring components. The demo content was organized according to the actual operational flow of the system.
-
 * **Completed the CloudCost Insight demo recording:** Recorded a demo video presenting the architecture and main workflows of CloudCost Insight, including cost data collection, anomaly analysis, alerts, error handling, monitoring, a Dashboard with user authentication, and the automated CI/CD process.
-
 * **Collaborated with the team:** Maintained discussions about work plans before implementation and summarized results at the end of each day. Sharing progress helped team members stay informed about the implementation status of the Workshop, blog posts, and group demo video.

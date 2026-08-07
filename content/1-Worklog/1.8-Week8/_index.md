@@ -28,13 +28,8 @@ pre: " <b> 1.8. </b> "
 ### Week 8 Achievements:
 
 * **Enhanced Intelligent Anomaly Detection:** Successfully upgraded the Analyzer with two detection criteria: (1) comparing costs against a fixed budget threshold, and (2) detecting cost spikes based on the historical average calculated from previous days' data stored in S3. This is a significant improvement, enabling the system to identify abnormal cost increases even when the absolute threshold has not been exceeded, similar to AWS Cost Anomaly Detection while being fully implemented from scratch.
-
 * **Implemented Multi-Level Alert Classification:** Successfully introduced a three-level alert classification mechanism: INFO, WARNING, and CRITICAL. The email notifications were enhanced to include the alert severity, the specific reason for the alert, the percentage increase, and the historical average cost. In addition, the currency format was standardized to improve readability.
-
 * **Validated All Three Alert Scenarios:** Created simulated cost datasets and successfully tested all three scenarios: INFO (normal cost, no alert), WARNING (budget threshold exceeded), and CRITICAL (significant spike compared to the historical average). The Analyzer correctly classified each scenario in CloudWatch Logs, and email notifications were successfully delivered for both the WARNING and CRITICAL levels.
-
 * **Verified the Fault-Tolerance Mechanism (DLQ):** Successfully tested the error-handling workflow by sending an invalid message that referenced a non-existent file. The message was retried according to the configured retry policy and was automatically moved to the Dead Letter Queue after exceeding the maximum retry limit, ensuring that no data was lost and preventing infinite processing loops when failures occurred.
-
 * **Completed End-to-End System Validation:** Successfully verified the fully automated workflow by triggering only the Lambda Collector. The system automatically executed the remaining workflow through S3, SQS, the Analyzer, and SNS without any manual intervention. The results confirmed that all components were correctly integrated, the system accurately detected WARNING and CRITICAL events, and complete email notifications were delivered successfully, demonstrating that CloudCost Insight operated reliably as a fully automated end-to-end system.
-
 * **Team Collaboration:** Maintained effective collaboration throughout the week. Before starting work each day, I discussed the daily plan with my teammates, and at the end of each day, I summarized the completed tasks to keep everyone informed of the project's progress.

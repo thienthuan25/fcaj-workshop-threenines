@@ -35,43 +35,36 @@ pre: " <b> 1.3. </b> "
   * Elastic Beanstalk for rapid application deployment without the need to manage underlying infrastructure
   * AWS CI/CD toolset: CodeCommit, CodeBuild, CodeDeploy, CodePipeline, CodeArtifact
   * Systems Manager (SSM): manage EC2 without SSH via Session Manager, store configuration with Parameter Store
-
 * Understood the rationale and methods for deploying global applications on AWS:
   * Route 53 for DNS routing
   * CloudFront as a CDN for global content delivery
   * S3 Transfer Acceleration and AWS Global Accelerator to improve data transfer speeds
   * AWS Outposts, Wavelength, and Local Zones for specialized use cases
-
 * Understood cloud integration and messaging services:
   * SQS (Simple Queue Service) for message queuing
   * SNS (Simple Notification Service) for pub/sub messaging
   * Kinesis for real-time data stream processing
   * Amazon MQ as a message broker compatible with open messaging protocols
-
 * Mastered cloud monitoring tools:
   * CloudWatch Metrics, Alarms, and Logs for resource monitoring and alerting
   * EventBridge for building event-driven workflows
   * CloudTrail for auditing API call history
   * X-Ray for tracing and analyzing application performance
   * AWS Health Dashboard for monitoring the status of AWS services
-
 * Gained a comprehensive understanding of security and compliance on AWS:
   * WAF, Shield, and Network Firewall for DDoS and network attack protection
   * KMS and CloudHSM for data encryption
   * Secrets Manager for managing sensitive credentials
   * GuardDuty, Inspector, Macie, Security Hub, and Detective for threat detection and investigation
   * IAM Access Analyzer, Config, and Artifact for governance and compliance
-
 * Understood AWS network architecture:
   * VPC, Subnet (public/private), Internet Gateway, NAT Gateway
   * Differentiated between Security Groups and NACLs
   * VPC Flow Logs, VPC Peering, VPC Endpoints
   * PrivateLink, Direct Connect, Site-to-Site VPN, Client VPN, and Transit Gateway
-
 * Gained an overview of AWS Machine Learning services:
   * Rekognition (image/video recognition), Transcribe (speech-to-text), Polly (text-to-speech), Translate
   * Lex + Connect for chatbots and contact centers
   * Comprehend (natural language processing), SageMaker AI (building and training ML models)
   * Kendra (intelligent search), Personalize (personalized recommendations), Textract (text extraction from documents)
-
 * Completed the review and consolidation of all AWS Cloud Practitioner knowledge after 3 weeks of study.
