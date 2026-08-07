@@ -9,6 +9,7 @@ pre: " <b> 1.1. </b> "
 
 ### Mục tiêu tuần 1:
 
+
 * Hiểu nền tảng về IAM (Identity and Access Management): Users, Groups, Policies, Roles, MFA và các công cụ bảo mật IAM.
 * Làm quen với AWS Access Keys, AWS CLI, AWS CloudShell và mô hình Shared Responsibility cho IAM.
 * Hiểu và thực hành các kiến thức cơ bản về EC2: instance types, security groups, SSH, EC2 instance roles, purchasing options.
@@ -30,33 +31,22 @@ pre: " <b> 1.1. </b> "
 * Hiểu rõ các khái niệm cốt lõi của IAM:
   * Users, Groups, Policies, Roles
   * Cơ chế xác thực và phân quyền trên AWS
-
 * Đã tạo và quản lý thành công IAM Users, IAM Groups, đồng thời thực hành đăng nhập đồng thời nhiều phiên trên AWS console.
-
-* Hiểu và thực hành tạo, gắn IAM Policies cho Users/Groups; bật và cấu hình MFA cho tài khoản IAM, tăng cường bảo mật đăng nhập.
-
+* Hiểu và thực hành tạo, gắn IAM Policies cho Users/Groups; bật và cấu hình MFA cho tài khoản IAM, tăng cường bảo mật đăng nhập.=
 * Hiểu về AWS Access Keys, CLI, SDK; cài đặt và cấu hình thành công AWS CLI trên Windows/Linux, gồm:
   * Access Key
   * Secret Key
   * Region mặc định
-
 * Làm quen và thực hành sử dụng AWS CloudShell trực tiếp trên console.
-
 * Hiểu và thực hành tạo IAM Roles để gán quyền cho AWS services, làm quen với các IAM security tools (Credential Report, Access Advisor) và mô hình Shared Responsibility cho IAM.
-
 * Thiết lập thành công AWS Budget để theo dõi chi phí trong quá trình học và thực hành.
-
 * Hiểu các khái niệm cơ bản của EC2:
   * Instance types
   * Security Groups & các cổng (ports) phổ biến
   * EC2 User Data
-
 * Tạo thành công EC2 instance, sử dụng EC2 User Data để tự động dựng một website đơn giản; cấu hình Security Group cho phép truy cập đúng cổng cần thiết.
-
 * Thực hành kết nối SSH vào EC2 từ cả Windows và Linux, biết cách xử lý các lỗi SSH thường gặp; sử dụng EC2 Instance Connect như một phương thức kết nối thay thế.
-
 * Hiểu về EC2 Instance Roles, các tùy chọn purchasing (On-Demand, Reserved, Spot, Savings Plans...) và mô hình Shared Responsibility áp dụng cho EC2.
-
 * Hiểu về EC2 Instance Storage:
   * EBS (Elastic Block Store) và tính năng Multi-Attach
   * EBS Snapshots
@@ -64,5 +54,4 @@ pre: " <b> 1.1. </b> "
   * EC2 Instance Store
   * Amazon FSx
   * Mô hình Shared Responsibility cho EC2 storage
-
 * Thực hành tạo, gắn EBS volume vào EC2 instance, tạo EBS Snapshot để sao lưu dữ liệu và tạo AMI từ instance đang chạy để phục vụ việc nhân bản/khởi tạo instance mới.

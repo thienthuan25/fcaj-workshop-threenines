@@ -28,11 +28,7 @@ pre: " <b> 1.4. </b> "
 ### Week 4 Achievements:
 
 * **Team discussion and project topic selection:** The week began with a team meeting to discuss, propose, and define project ideas. After the discussion, I finalized my individual project topic, **CloudCost Insight**, a Serverless AWS cost monitoring and alerting system. The idea originated from a real-world problem: under the pay-as-you-go pricing model, AWS costs can quickly become difficult to control without proactive monitoring.
-
 * **Reason for choosing the project:** During the research phase, I studied **AWS Cost Anomaly Detection**, AWS's built-in service for detecting abnormal cost increases. This confirmed that cost monitoring is a real-world requirement recognized by AWS itself. Based on this, I decided that instead of relying on an existing managed service, the project would **build the entire data collection, analysis, and alerting pipeline from scratch using a Serverless architecture and Terraform (Infrastructure as Code)**. This approach serves three main objectives: gaining a deep understanding of AWS infrastructure architecture, strengthening Infrastructure as Code skills, and implementing customizable anomaly detection logic based on user-defined budget thresholds.
-
 * **Completed the project proposal:** Finished writing a comprehensive project proposal, clearly defining the objectives, scope, and technology stack. I also completed the high-level architecture diagram and the data flow diagram, providing a clear visualization of how the Serverless services interact to detect and alert on abnormal AWS costs.
-
 * **Resolved development environment issues:** Successfully fixed the Git submodule issue in the project template, established a consistent development environment, and prepared the project for the implementation and infrastructure configuration phases in the following weeks.
-
 * **Team collaboration:** Maintained effective collaboration throughout the week. Before starting work each day, I discussed the daily plan with team members, and at the end of each day, I summarized the completed work so that everyone could stay updated on the project's progress.

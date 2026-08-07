@@ -29,13 +29,8 @@ pre: " <b> 1.8. </b> "
 ### Kết quả đạt được tuần 8:
 
 * **Nâng cấp logic phát hiện bất thường thông minh:** Đã hoàn thiện Analyzer với hai tiêu chí phát hiện: (1) so sánh với ngưỡng ngân sách cố định, và (2) phát hiện tăng đột biến dựa trên chi phí trung bình của các ngày lịch sử đọc từ S3. Đây là bước tiến quan trọng, giúp hệ thống phát hiện được cả những trường hợp chi phí tăng bất thường dù chưa vượt ngưỡng tuyệt đối, tương tự cách AWS Cost Anomaly Detection hoạt động nhưng do tự xây dựng.
-
 * **Phân loại mức độ cảnh báo đa cấp:** Đã triển khai cơ chế phân loại cảnh báo theo 3 mức INFO / WARNING / CRITICAL. Nội dung email cảnh báo được hoàn thiện với đầy đủ mức độ, lý do cụ thể, phần trăm tăng đột biến và chi phí trung bình lịch sử, đồng thời chuẩn hóa định dạng hiển thị số tiền cho gọn gàng, dễ đọc.
-
 * **Kiểm thử đầy đủ 3 trường hợp cảnh báo:** Đã xây dựng dữ liệu chi phí mô phỏng và kiểm thử thành công cả 3 kịch bản: INFO (chi phí bình thường, không cảnh báo), WARNING (vượt ngưỡng ngân sách) và CRITICAL (tăng đột biến so với trung bình lịch sử). Kết quả phân loại chính xác trên CloudWatch Logs, email cảnh báo được gửi đúng cho các mức WARNING và CRITICAL.
-
 * **Xác minh cơ chế chịu lỗi (DLQ):** Đã kiểm thử thành công đường xử lý lỗi bằng cách gửi message lỗi (trỏ tới file không tồn tại). Message được retry theo cấu hình và tự động chuyển vào Dead Letter Queue sau khi vượt số lần thử tối đa, đảm bảo hệ thống không mất dữ liệu và không lặp vô hạn khi gặp sự cố.
-
 * **Kiểm thử end-to-end toàn hệ thống:** Đã kiểm chứng thành công toàn bộ luồng hoạt động tự động, chỉ cần kích hoạt từ Lambda Collector, hệ thống tự động chạy qua các thành phần S3, SQS, Analyzer, SNS mà không cần can thiệp thủ công. Kết quả xác nhận các thành phần tích hợp chính xác với nhau, hệ thống phát hiện đúng mức WARNING và CRITICAL, và gửi email cảnh báo hoàn chỉnh, chứng minh CloudCost Insight vận hành ổn định như một hệ thống hoàn chỉnh, tự động end-to-end.
-
 * **Phối hợp cùng nhóm:** Duy trì thói quen làm việc nhóm hiệu quả trong suốt tuần. Trước khi bắt đầu công việc mỗi ngày, tôi trao đổi kế hoạch với các thành viên trong nhóm, và cuối mỗi ngày tổng hợp lại kết quả đã làm để cả nhóm cùng nắm tiến độ.

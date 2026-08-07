@@ -29,15 +29,9 @@ pre: " <b> 1.12. </b> "
 ### Kết quả đạt được tuần 12:
 
 * **Hoàn thiện Workshop step-by-step:** Đã tiếp tục viết, rà soát và hoàn thiện Workshop CloudCost Insight theo hướng dẫn từng bước. Workshop mô tả toàn bộ quy trình từ chuẩn bị môi trường, triển khai hạ tầng bằng Terraform, xây dựng Lambda, Dashboard, Cognito, kiểm thử hệ thống, CI/CD cho đến dọn dẹp tài nguyên.
-
 * **Bổ sung đầy đủ nội dung kiểm thử và bảo mật:** Đã bổ sung các phần kiểm thử quan trọng như SQS partial batch failure, Dead Letter Queue, xử lý lỗi S3 tại Analyzer, xác thực JWT bằng Amazon Cognito, kiểm thử CORS và cập nhật frontend để tránh sử dụng phiên bản bị cache cũ. Các phần được kèm theo kết quả mong đợi, log và hình ảnh minh họa.
-
 * **Kiểm tra và cập nhật Workshop:** Đã kiểm tra Hugo Workshop build thành công, rà soát bố cục, code mẫu, hình ảnh và liên kết nội dung. Workshop được cập nhật lên GitHub Pages để có thể truy cập và thực hiện theo.
-
 * **Nghiên cứu và đăng bài blog:** Đã nghiên cứu cách xây dựng nội dung blog kỹ thuật và hoàn thành ba bài viết trên AWS Study Group. Các bài viết chia sẻ trải nghiệm xây dựng CloudCost Insight, giới thiệu Amazon EventBridge Scheduler và đề xuất hướng mở rộng hệ thống thành AI FinOps Agent với Amazon Bedrock AgentCore.
-
 * **Chuẩn bị demo project:** Đã chuẩn bị kịch bản demo, kiểm tra môi trường AWS, dữ liệu chi phí mô phỏng, Dashboard, Cognito authentication, cảnh báo SNS và các thành phần giám sát. Các nội dung demo được sắp xếp theo luồng hoạt động thực tế của hệ thống.
-
 * **Hoàn thành quay demo CloudCost Insight:** Đã quay video demo trình bày kiến trúc và các luồng hoạt động chính của CloudCost Insight, bao gồm thu thập dữ liệu chi phí, phân tích bất thường, cảnh báo, xử lý lỗi, giám sát, Dashboard có xác thực người dùng và quy trình CI/CD tự động.
-
 * **Phối hợp cùng nhóm:** Duy trì trao đổi kế hoạch công việc trước khi thực hiện và tổng hợp kết quả vào cuối mỗi ngày. Việc chia sẻ tiến độ giúp các thành viên nắm được tình hình thực hiện Workshop, bài blog và video demo của nhóm.

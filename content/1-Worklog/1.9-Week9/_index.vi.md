@@ -28,13 +28,8 @@ pre: " <b> 1.9. </b> "
 ### Kết quả đạt được tuần 9:
 
 * **Bổ sung giám sát sự cố bằng CloudWatch Alarm:** Đã cấu hình các Alarm giám sát sức khỏe hệ thống, cảnh báo khi Lambda Collector/Analyzer gặp lỗi (metric `Errors`) và khi có message rơi vào Dead Letter Queue. Các Alarm gửi thông báo qua SNS, giúp người vận hành được báo ngay khi hệ thống gặp sự cố, đảm bảo hệ thống giám sát luôn hoạt động tin cậy.
-
 * **Kiểm thử thành công cơ chế cảnh báo sự cố:** Đã kiểm thử thành công luồng Alarm, SNS và Email bằng cách gửi message lỗi để kích hoạt Alarm. Xác nhận nhận được email cảnh báo với đầy đủ thông tin (tên Alarm, lý do, metric, thời điểm). Đồng thời rút ra đặc điểm quan trọng: CloudWatch Alarm chỉ gửi thông báo tại thời điểm **chuyển trạng thái** (OK sang ALARM), không gửi lặp khi đã ở trạng thái ALARM.
-
 * **Cập nhật sơ đồ kiến trúc theo hướng web dashboard tự xây:** Đã loại bỏ hướng Athena + QuickSight (dịch vụ managed có phí) và chuyển sang hướng **tự xây web dashboard**: Lambda-API + API Gateway (backend cung cấp dữ liệu) và CloudFront + S3 Web Hosting (frontend). Sơ đồ thể hiện rõ 2 luồng riêng là tải giao diện web và lấy dữ liệu qua API, định hướng biến CloudCost Insight thành một product hoàn chỉnh do mình làm chủ.
-
 * **Triển khai backend cung cấp dữ liệu (Lambda-API):** Đã phát triển thành công hàm Lambda-API đọc và tổng hợp dữ liệu chi phí từ S3 (tổng chi phí, chi phí theo ngày kèm trạng thái, top dịch vụ tốn kém nhất), trả về JSON kèm CORS header để frontend gọi được. Hàm áp dụng IAM Role riêng theo nguyên tắc Least Privilege, chỉ được cấp quyền đọc S3 và ghi log.
-
 * **Tạo API Gateway và kiểm thử thành công:** Đã tạo HTTP API Gateway với route `GET /costs` (bật CORS), cấp quyền cho API Gateway gọi Lambda. Kiểm thử API thành công bằng cách gọi endpoint trực tiếp trên trình duyệt và nhận về dữ liệu JSON đúng cấu trúc, xác nhận tầng backend của web dashboard đã hoạt động, sẵn sàng cho việc xây dựng giao diện frontend ở tuần tiếp theo.
-
 * **Phối hợp cùng nhóm:** Duy trì thói quen làm việc nhóm hiệu quả trong suốt tuần. Trước khi bắt đầu công việc mỗi ngày, tôi trao đổi kế hoạch với các thành viên trong nhóm, và cuối mỗi ngày tổng hợp lại kết quả đã làm để cả nhóm cùng nắm tiến độ.

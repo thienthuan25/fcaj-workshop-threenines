@@ -30,17 +30,10 @@ pre: " <b> 1.11. </b> "
 ### Kết quả đạt được tuần 11:
 
 * **Hoàn thành quy trình CI:** Đã xây dựng workflow GitHub Actions tại file `ci.yml` để tự động kiểm tra mã nguồn khi có Pull Request vào nhánh `main`. CI thực hiện build Hugo Workshop, kiểm tra mã Python Lambda, kiểm tra định dạng và cấu hình Terraform, đồng thời kiểm tra cú pháp JavaScript của Dashboard.
-
 * **Bổ sung unit test và Terraform Plan CI:** Đã xây dựng unit test cho Lambda Collector, Analyzer và API bằng pytest cùng mock AWS client, giúp kiểm tra logic xử lý mà không cần gọi tài nguyên AWS thật. Đồng thời đã cấu hình Terraform fmt, validate và Terraform plan thông qua HCP Terraform để phát hiện lỗi hạ tầng trước khi merge.
-
 * **Hoàn thành CD Terraform:** Đã tạo workflow `terraform-apply.yml` để tự động triển khai thay đổi Terraform lên AWS sau khi thay đổi được merge vào nhánh `main`. Workflow sử dụng HCP Terraform để quản lý state và remote run, đồng thời sử dụng GitHub Environment `production` để quản lý token cũng như kiểm soát quá trình deploy.
-
 * **Bảo vệ nhánh main:** Đã cấu hình branch protection cho nhánh `main`, yêu cầu thay đổi phải thông qua Pull Request và vượt qua các CI checks bắt buộc trước khi merge. Cơ chế này giúp hạn chế thay đổi không được kiểm tra và giảm rủi ro triển khai Terraform lỗi lên môi trường production.
-
 * **Triển khai lại, kiểm thử và khắc phục lỗi:** Đã triển khai lại hệ thống CloudCost Insight bằng Terraform và tiến hành kiểm thử end-to-end. Các luồng thu thập dữ liệu, phân tích chi phí, SQS, DLQ, SNS, CloudWatch, Cognito, API Gateway và Dashboard được kiểm tra để bảo đảm hoạt động đúng. Các lỗi phát sinh trong quá trình kiểm thử đã được ghi nhận và khắc phục.
-
 * **Bắt đầu triển khai viết Workshop:** Đã xây dựng cấu trúc và bắt đầu viết Workshop theo hướng dẫn từng bước, dựa trên quy trình triển khai thực tế. Nội dung đã triển khai bao gồm chuẩn bị môi trường, cấu hình hạ tầng, Lambda, Dashboard, Cognito, kiểm thử hệ thống và CI/CD. Các phần đã viết được bổ sung code mẫu, hình ảnh minh họa, log và kết quả mong đợi để người đọc dễ thực hiện theo.
-
 * **Theo dõi tiến độ viết Workshop của nhóm:** Đã tổng hợp tiến độ viết Workshop của các thành viên còn lại trong nhóm. Các thành viên cùng trao đổi, rà soát và chia sẻ kinh nghiệm triển khai để tiếp tục hoàn thiện tài liệu trong giai đoạn tiếp theo.
-
 * **Phối hợp cùng nhóm:** Duy trì thói quen làm việc nhóm hiệu quả trong suốt tuần. Trước khi bắt đầu công việc mỗi ngày, tôi trao đổi kế hoạch với các thành viên trong nhóm, và cuối mỗi ngày tổng hợp lại kết quả đã làm để cả nhóm cùng nắm tiến độ.

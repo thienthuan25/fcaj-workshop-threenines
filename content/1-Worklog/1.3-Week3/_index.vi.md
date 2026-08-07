@@ -35,43 +35,36 @@ pre: " <b> 1.3. </b> "
   * Elastic Beanstalk để triển khai ứng dụng nhanh mà không cần quản lý hạ tầng
   * Bộ công cụ CI/CD của AWS: CodeCommit, CodeBuild, CodeDeploy, CodePipeline, CodeArtifact
   * Systems Manager (SSM): quản lý EC2 không cần SSH thông qua Session Manager, lưu trữ cấu hình với Parameter Store
-
 * Nắm được lý do và cách triển khai ứng dụng toàn cầu trên AWS:
   * Route 53 cho DNS routing
   * CloudFront như CDN phân phối nội dung toàn cầu
   * S3 Transfer Acceleration và AWS Global Accelerator để tăng tốc độ truyền tải
   * AWS Outposts, Wavelength, Local Zones cho các use case đặc thù
-
 * Hiểu các dịch vụ tích hợp và truyền thông điệp:
   * SQS (Simple Queue Service) cho hàng đợi tin nhắn
   * SNS (Simple Notification Service) cho pub/sub messaging
   * Kinesis cho xử lý dữ liệu streaming theo thời gian thực
   * Amazon MQ cho message broker tương thích với các giao thức mở
-
 * Nắm vững các công cụ giám sát đám mây:
   * CloudWatch Metrics, Alarms, Logs để theo dõi và cảnh báo tài nguyên
   * EventBridge để xây dựng các luồng xử lý sự kiện
   * CloudTrail để kiểm tra lịch sử API call
   * X-Ray để truy vết và phân tích hiệu suất ứng dụng
   * AWS Health Dashboard để theo dõi trạng thái dịch vụ AWS
-
 * Hiểu toàn diện về bảo mật và tuân thủ trên AWS:
   * WAF, Shield và Network Firewall để chống DDoS và tấn công mạng
   * KMS và CloudHSM để mã hóa dữ liệu
   * Secrets Manager để quản lý thông tin bí mật
   * GuardDuty, Inspector, Macie, Security Hub, Detective để phát hiện và điều tra mối đe dọa
   * IAM Access Analyzer, Config, Artifact cho kiểm soát và tuân thủ
-
 * Hiểu kiến trúc mạng AWS:
   * VPC, Subnet (public/private), Internet Gateway, NAT Gateway
   * Phân biệt Security Group và NACL
   * VPC Flow Logs, VPC Peering, VPC Endpoints
   * PrivateLink, Direct Connect, Site-to-Site VPN, Client VPN và Transit Gateway
-
 * Nắm tổng quan các dịch vụ Machine Learning của AWS:
   * Rekognition (nhận diện hình ảnh/video), Transcribe (speech-to-text), Polly (text-to-speech), Translate
   * Lex + Connect cho chatbot và contact center
   * Comprehend (xử lý ngôn ngữ tự nhiên), SageMaker AI (xây dựng và huấn luyện ML model)
   * Kendra (tìm kiếm thông minh), Personalize (gợi ý cá nhân hóa), Textract (trích xuất văn bản từ tài liệu)
-
 * Hoàn thành ôn tập và tổng kết toàn bộ kiến thức AWS Cloud Practitioner sau 3 tuần học.

@@ -28,15 +28,9 @@ pre: " <b> 1.10. </b> "
 ### Week 10 Achievements:
 
 * **Completed web frontend for the Dashboard:** Built the Dashboard UI organized into 3 separate files (`index.html`, `style.css`, `script.js`) following the separation of concerns principle. The Dashboard uses the Chart.js library to visualize cost data with charts for daily cost trends, threshold lines, anomaly markers, service proportion, top costly services, and KPI metrics.
-
 * **Successfully hosted frontend on AWS:** Deployed the Web Dashboard to S3 combined with CloudFront and provided an HTTPS link for users to access. Origin Access Control was applied so that only CloudFront has permission to read content from S3, preventing direct public access to the web bucket.
-
 * **Added authentication with Amazon Cognito:** Deployed a Cognito User Pool, App Client, and Cognito Domain to manage users. The Dashboard uses the Authorization Code Flow with PKCE for users to log in and receive a JWT. API Gateway is configured with a JWT Authorizer, allowing only requests with valid tokens to access cost data. CORS is also restricted so that only the project's CloudFront domain can call the API from the browser.
-
 * **End-to-end testing of the Web Dashboard:** Successfully verified the entire operational flow: the user accesses the Dashboard via CloudFront, logs in with Cognito, receives a JWT, and then the Dashboard calls API Gateway to the Lambda API and S3 to retrieve cost data. The charts correctly display the data and anomaly statuses.
-
 * **UI refinement and light/dark mode addition:** Adjusted the size of the donut chart for balance and added tooltips displaying amounts with the `$` symbol. Added a light/dark UI toggle using CSS variables, helping users choose a suitable interface and improving the user experience.
-
 * **Added bilingual functionality (EN/VI):** Built an English/Vietnamese bilingual toggle mechanism for labels, titles, authentication messages, and chart labels. The Dashboard was retested in both languages, ensuring consistent UI and data display.
-
 * **Team coordination:** Maintained effective teamwork habits throughout the week. Before starting work each day, I discussed the plan with team members, and at the end of each day, summarized the completed tasks so the whole team stayed updated on the progress.

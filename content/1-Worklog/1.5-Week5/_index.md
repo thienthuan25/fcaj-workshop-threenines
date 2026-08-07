@@ -27,11 +27,7 @@ pre: " <b> 1.5. </b> "
 ### Week 5 Achievements:
 
 * **Successfully established the Infrastructure as Code foundation:** Built a complete Terraform project structure and configured HCP Terraform for remote state management. Using remote state centralizes infrastructure state storage, supports state locking, and provides a solid foundation for team collaboration and future project expansion.
-
 * **Successfully deployed the core infrastructure following security best practices:** Defined and provisioned all essential infrastructure components, including S3 (cost data storage), IAM (access control), SNS (notifications), SQS and DLQ (event buffering and error handling), and EventBridge (scheduled execution). All resources follow AWS security best practices: the S3 bucket blocks public access and enables encryption, IAM Roles follow the Principle of Least Privilege, and no sensitive information is hard-coded.
-
 * **Implemented a resilient error-handling mechanism:** Configured a Dead Letter Queue (DLQ) with a redrive policy for the SQS queue, ensuring that failed events are retained instead of being lost. This demonstrates a fault-tolerant system design approach.
-
 * **Successfully deployed and verified the infrastructure:** Executed `terraform apply` successfully to provision the entire infrastructure on AWS. Verified each resource through the AWS Management Console to ensure the deployed configuration matched the design. Also confirmed the SNS email subscription so the system is ready to receive alerts. The infrastructure foundation is now fully prepared for developing the Lambda functions in the following weeks.
-
 * **Team collaboration:** Maintained effective collaboration throughout the week. Before starting work each day, I discussed the daily plan with team members, and at the end of each day, I summarized the completed work so that everyone could stay updated on the project's progress.

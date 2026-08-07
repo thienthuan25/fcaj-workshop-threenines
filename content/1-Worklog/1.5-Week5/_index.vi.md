@@ -27,11 +27,7 @@ pre: " <b> 1.5. </b> "
 ### Kết quả đạt được tuần 5:
 
 * **Thiết lập thành công nền tảng Infrastructure as Code:** Đã xây dựng cấu trúc dự án Terraform hoàn chỉnh và cấu hình HCP Terraform để quản lý remote state. Việc dùng remote state giúp trạng thái hạ tầng được lưu tập trung, hỗ trợ khóa trạng thái (state locking), là nền tảng quan trọng cho việc phối hợp và mở rộng dự án về sau.
-
 * **Triển khai đầy đủ hạ tầng nền theo chuẩn bảo mật:** Hoàn thành việc định nghĩa và triển khai các thành phần cốt lõi gồm S3 (lưu trữ dữ liệu chi phí), IAM (phân quyền), SNS (cảnh báo), SQS và DLQ (đệm sự kiện và xử lý lỗi), EventBridge (lập lịch). Toàn bộ tuân thủ best practice bảo mật của AWS: bucket S3 chặn truy cập public và bật mã hóa, IAM Role được cấp quyền theo nguyên tắc Least Privilege, không hard-code thông tin nhạy cảm.
-
 * **Áp dụng cơ chế xử lý lỗi (resilience):** Cấu hình Dead Letter Queue (DLQ) kèm redrive policy cho hàng đợi SQS, giúp hệ thống không mất dữ liệu khi có sự kiện xử lý thất bại, thể hiện tư duy thiết kế hệ thống có khả năng chịu lỗi.
-
 * **Triển khai và kiểm chứng thực tế:** Đã chạy `terraform apply` thành công, đưa toàn bộ hạ tầng lên AWS. Tiến hành kiểm tra từng tài nguyên trên AWS Console để xác nhận cấu hình đúng như thiết kế, đồng thời xác nhận subscription email của SNS để sẵn sàng nhận cảnh báo. Hạ tầng nền đã sẵn sàng cho giai đoạn phát triển các hàm Lambda ở các tuần tiếp theo.
-
 * **Phối hợp cùng nhóm:** Duy trì thói quen làm việc nhóm hiệu quả trong suốt tuần. Trước khi bắt đầu công việc mỗi ngày, tôi trao đổi kế hoạch với các thành viên trong nhóm, và cuối mỗi ngày tổng hợp lại kết quả đã làm để cả nhóm cùng nắm tiến độ.

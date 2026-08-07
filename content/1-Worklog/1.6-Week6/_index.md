@@ -28,13 +28,8 @@ pre: " <b> 1.6. </b> "
 ### Week 6 Achievements:
 
 * **Completed the data collection component (Collector):** Successfully developed the Lambda Collector function using Python and boto3, integrating it directly with the AWS Cost Explorer API to automatically retrieve daily AWS service cost data. This is the first component in the CloudCost Insight data pipeline.
-
 * **Designed an efficient storage structure:** Cost data is stored in S3 as JSON files and partitioned by the `year/month/day` directory structure, making future querying and visualization in the dashboard more efficient and scalable.
-
 * **Implemented automation and decoupling:** Deployed the Lambda function using Terraform and connected it to EventBridge, allowing the system to collect cost data automatically on a scheduled basis without manual intervention. The Collector publishes events to SQS, decoupling the data collection and analysis stages to improve the system's flexibility and resilience.
-
 * **Followed security best practices and dynamic configuration:** Added the `sqs:SendMessage` permission to the IAM Role while adhering to the Principle of Least Privilege. All configuration values, including the S3 bucket name and SQS queue URL, are provided through environment variables instead of being hard-coded, following AWS security best practices.
-
 * **Verified the end-to-end data collection workflow:** Successfully tested the Lambda function in the AWS Console and confirmed that the complete workflow operates correctly—from retrieving cost data through the Cost Explorer API, storing it in S3, to publishing events to SQS. CloudWatch Logs recorded all execution details, confirming that the Collector component is fully functional and ready for integration with the Lambda Analyzer in the following week.
-
 * **Team collaboration:** Maintained effective collaboration throughout the week. Before starting work each day, I discussed the daily plan with team members, and at the end of each day, I summarized the completed work so that everyone could stay updated on the project's progress.

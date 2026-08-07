@@ -29,13 +29,8 @@ pre: " <b> 1.6. </b> "
 ### Kết quả đạt được tuần 6:
 
 * **Hoàn thành thành phần thu thập dữ liệu (Collector):** Đã phát triển thành công hàm Lambda Collector bằng Python và boto3, tích hợp trực tiếp với AWS Cost Explorer API để tự động lấy dữ liệu chi phí sử dụng dịch vụ theo ngày. Đây là mắt xích đầu tiên trong luồng dữ liệu của hệ thống CloudCost Insight.
-
 * **Thiết kế lưu trữ khoa học:** Dữ liệu chi phí được ghi vào S3 dưới dạng JSON và phân vùng theo cấu trúc year/month/day, giúp việc truy vấn và trực quan hóa (dashboard) ở các giai đoạn sau thuận tiện và tối ưu.
-
 * **Tự động hóa và tách rời (decoupling):** Đã triển khai Lambda bằng Terraform và nối với EventBridge để hệ thống tự động thu thập dữ liệu định kỳ mà không cần thao tác thủ công. Collector đẩy sự kiện vào SQS để tách rời khâu thu thập và phân tích, tăng tính linh hoạt và độ bền cho hệ thống.
-
 * **Tuân thủ bảo mật và cấu hình động:** Bổ sung quyền `sqs:SendMessage` cho IAM Role theo đúng nguyên tắc Least Privilege. Toàn bộ cấu hình (tên bucket, URL hàng đợi) được truyền qua biến môi trường thay vì hard-code, tuân thủ best practice bảo mật của AWS.
-
 * **Kiểm chứng luồng thu thập end-to-end:** Đã kiểm thử thành công hàm Lambda trên Console và xác minh toàn bộ luồng hoạt động đúng, từ việc Lambda gọi Cost Explorer API, ghi dữ liệu vào S3 cho đến gửi sự kiện vào SQS. CloudWatch Logs ghi nhận đầy đủ, xác nhận thành phần Collector đã sẵn sàng để tích hợp với Lambda Analyzer ở tuần tiếp theo.
-
 * **Phối hợp cùng nhóm:** Duy trì thói quen làm việc nhóm hiệu quả trong suốt tuần. Trước khi bắt đầu công việc mỗi ngày, tôi trao đổi kế hoạch với các thành viên trong nhóm, và cuối mỗi ngày tổng hợp lại kết quả đã làm để cả nhóm cùng nắm tiến độ.

@@ -28,13 +28,8 @@ pre: " <b> 1.7. </b> "
 ### Week 7 Achievements:
 
 * **Completed the Analysis and Alerting Component (Analyzer):** Successfully developed the Lambda Analyzer using Python and boto3. The function can read cost data from S3, calculate the total cost, identify the top cost-consuming services, and compare the total cost against the configured budget threshold to detect cost overruns.
-
 * **Integrated Automatic Email Alerts:** Successfully integrated Amazon SNS to send detailed email notifications whenever costs exceed the configured threshold. Each notification includes the total cost, the configured threshold, and the list of the most expensive AWS services, enabling users to quickly assess the situation and take appropriate action.
-
 * **Implemented an Automated and Decoupled Architecture:** Configured Event Source Mapping so that SQS automatically triggers the Lambda Analyzer, completing the asynchronous workflow between the Collector and the Analyzer. This architecture improves flexibility, scalability, and overall system resilience.
-
 * **Applied the Principle of Least Privilege:** Created a dedicated IAM Role for the Analyzer, separate from the Collector. The Analyzer was granted only the minimum permissions required (read access to S3, receive messages from SQS, and publish notifications to SNS), fully complying with AWS security best practices and strengthening the overall security of the system.
-
 * **Verified the End-to-End Alerting Workflow:** Successfully validated the complete workflow by temporarily setting `threshold = -1`, allowing the threshold detection logic to be tested independently of the 24-hour delay of the Cost Explorer API (while the actual AWS account cost remained at \$0). The Analyzer correctly detected the threshold violation, generated detailed CloudWatch Logs, and successfully delivered the alert email through SNS, confirming that the entire analysis and alerting pipeline functioned correctly from end to end.
-
 * **Team Collaboration:** Maintained effective collaboration throughout the week. Before starting work each day, I discussed the daily plan with my teammates, and at the end of each day, I summarized the completed tasks to keep everyone informed of the project's progress.
