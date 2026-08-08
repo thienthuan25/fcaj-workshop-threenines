@@ -164,7 +164,6 @@ The main topics included:
 5. Technical recommendations:
 
 - Focus on backend engineering skills rather than AI alone, because secure data management and databases are the true foundation of enterprise systems.
-
 - Use **Infrastructure as Code** (Terraform) to manage infrastructure instead of performing manual configurations, making deployments reproducible and easier to version-control.
 
 6. Key takeaway: A successful system should not only function correctly but also be secure, reliable, and designed to serve people.

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.6. </b> "
 ---
 
-#### Introduction
+### Introduction
 
 In this section, we will build a custom Web Dashboard to visualize cost data. Instead of using an existing Business Intelligence service, we will develop the entire dashboard ourselves to gain full control over both the user interface and the data while keeping operational costs as low as possible.
 
@@ -17,7 +17,7 @@ The Web Dashboard consists of two main components:
 
 ![Dashboard](/workshop-fcaj-intern/images/5-Workshop/2-Proposal/diagram_architecture.png)
 
-#### Content
+### Content
 
 1. [Backend](../5.6-Dashboard/5.6.1-Backend/)
 2. [Frontend](../5.6-Dashboard/5.6.2-Frontend/)

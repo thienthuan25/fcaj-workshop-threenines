@@ -7,7 +7,7 @@ pre : " <b> 5.2.2. </b> "
 ---
 
 
-#### Tạo Organization cho dự án
+### Tạo Organization cho dự án
 
 **1.** Truy cập [https://app.terraform.io/app](https://app.terraform.io/app) và đăng nhập. Nếu chưa có tài khoản, bạn hãy chọn **Sign up** để tạo tài khoản mới.
 
@@ -54,6 +54,6 @@ pre : " <b> 5.2.2. </b> "
 
 ![HCP Terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_7.png)
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Chuẩn bị Code Terraform](../5.2.3-Code-terraform/)

@@ -57,6 +57,6 @@ output "schedule_rule_name" {
 }
 ```
 
-#### Next Content
+### Next Content
 
 - [Deploy the Infrastructure](../5.3.8-Deploy-infrastructure/)

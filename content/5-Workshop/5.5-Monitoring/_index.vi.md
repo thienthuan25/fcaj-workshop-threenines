@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.5 </b> "
 ---
 
-#### Tổng quan
+### Tổng quan
 
 Ở các phần trước, hệ thống đã có thể tự động thu thập, phân tích và gửi cảnh báo chi phí. Tuy nhiên, khi chúng ta thêm một lớp giám sát để đảm bảo bản thân hệ thống luôn hoạt động tin cậy. Nếu một hàm Lambda gặp lỗi mà không ai biết, hệ thống sẽ không còn hoạt động chính xác.
 
@@ -25,7 +25,7 @@ Lưu ý: Phân biệt hai loại cảnh báo trong hệ thống:<br><br>
 
 ![Monitoring](/workshop-fcaj-intern/images/5-Workshop/5.5-Monitoring/diagram_2.png)
 
-#### Nội dung
+### Nội dung
 
 1. [Cấu hình CloudWatch Alarm cho Lambda](../5.5-Monitoring/5.5.1-Lambda-alarm-error/)
 2. [Cấu hình CloudWatch Alarm cho SQS DLQ](../5.5-Monitoring/5.5.2-Lambda-DLQ-error/)

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.6.1 </b> "
 ---
 
-#### Viết Code Lambda API
+### Viết Code Lambda API
 
 Chúng ta sẽ tạo file `lambda/api/handler.py`. Hàm này đọc toàn bộ dữ liệu chi phí trong S3, tổng hợp thành JSON (tổng chi phí, chi phí theo ngày kèm trạng thái, top dịch vụ) và trả về cho Web Frontend.
 
@@ -137,7 +137,7 @@ Tuy nhiên, trong dự án của chúng ta, giao diện Web Frontend được l�
 
 Đó là lý do hàm trả về kết quả phải đính kèm các thống số **CORS header**. Đặc biệt là thông số `"Access-Control-Allow-Origin": "*"` giúp cho phép truy cập từ mọi nguồn khác nhau.
 
-#### Tạo API Gateway
+### Tạo API Gateway
 
 **1.** Chúng ta tạo file `terraform/api_gateway.tf` để triển khai Lambda API và expose nó qua HTTP API Gateway. Người dùng sẽ gọi tới endpoint này để lấy dữ liệu.
 
@@ -281,7 +281,7 @@ output "api_function_name" {
 }
 ```
 
-#### Triển khai và kiểm thử API
+### Triển khai và kiểm thử API
 
 **1.** Trước khi triển khai API, chúng ta cần đảm bảo rằng đã có dữ liệu chi phí trong S3 bucket. Dữ liệu chi phí cần được tổng hợp sau 24 giờ. Thông thường, khi chúng ta chỉ vừa mới triển khai hệ thống thì sẽ chưa có dữ liệu chi phí. Trong trường hợp này, chúng ta có thể sử dụng script để sinh ra dữ liệu mô phỏng:
 
@@ -458,7 +458,7 @@ terraform output api_endpoint
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_15.png)
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Frontend](../5.6.2-Frontend/)
 

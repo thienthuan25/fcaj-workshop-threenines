@@ -52,6 +52,6 @@ resource "aws_cloudwatch_metric_alarm" "analyzer_errors" {
 }
 ```
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Cấu hình CloudWatch Alarm cho SQS DLQ](../5.5.2-Lambda-DLQ-error/)

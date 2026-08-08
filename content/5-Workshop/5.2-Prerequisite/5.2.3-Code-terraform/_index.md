@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.2.3. </b> "
 ---
 
-#### Required Tools
+### Required Tools
 
 In this workshop, we perform all command-line operations in the **WSL2** (Windows Subsystem for Linux) environment instead of using Windows **Command Prompt** (CMD) or **PowerShell**. There are several key reasons for this choice:
 
@@ -42,7 +42,7 @@ python3 --version
 
 ![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_3.png)
 
-#### Configure AWS Credentials for the CLI
+### Configure AWS Credentials for the CLI
 
 In the terminal, configure your AWS credentials so that AWS CLI can authenticate and execute commands throughout the deployment and testing process:
 
@@ -71,7 +71,7 @@ Verify that the credentials are working correctly:
 aws sts get-caller-identity
 ```
 
-#### Configure the Terraform Environment
+### Configure the Terraform Environment
 
 At the root directory of the project, create a new folder named `terraform`. This folder will contain Terraform files used to deploy AWS infrastructure.
 
@@ -116,7 +116,7 @@ provider "aws" {
 }
 ```
 
-#### Connect and Initialize Terraform
+### Connect and Initialize Terraform
 
 In the WSL2 terminal, navigate to the directory containing the Terraform files, then run the following command to authenticate Terraform CLI with HCP Terraform:
 
@@ -150,7 +150,7 @@ terraform init
 
 After completing these steps, your working environment is fully configured and ready to deploy the **CloudCost Insight** system in the following sections.
 
-#### Preparing Git and Configuring `.gitignore`
+### Preparing Git and Configuring `.gitignore`
 
 Since this project is managed with **Git** and the source code will be pushed to **GitHub**, we need to configure Git to exclude files that should not be committed to the repository. This helps protect sensitive information and keeps the repository clean.
 
@@ -179,6 +179,6 @@ crash.log
 
 - The `*.tfvars` files: These files contain actual variable values, such as the email address used for alert notifications, so they should not be committed to the repository to avoid exposing sensitive information. Only the template file, `*.tfvars.example`, should be included.
 
-#### Next Content
+### Next Content
 
 - [Provision Infrastructure with Terraform](5-Workshop/5.3-Infrastructure/)

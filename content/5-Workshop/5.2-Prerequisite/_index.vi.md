@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.2. </b> "
 ---
 
-#### Yêu cầu chung
+### Yêu cầu chung
 
 Trước khi bắt đầu workshop, bạn cần chuẩn bị các điều kiện sau:
 
@@ -17,7 +17,7 @@ Trước khi bắt đầu workshop, bạn cần chuẩn bị các điều kiện
 - Một tài khoản GitHub và một GitHub repository để lưu trữ mã nguồn, tạo Pull Request và cấu hình CI/CD.
 - Một địa chỉ email có thể nhận email từ Amazon SNS để kiểm thử cảnh báo chi phí và cảnh báo sự cố.
 
-#### Công cụ cần cài đặt
+### Công cụ cần cài đặt
 
 - **Git** để quản lý mã nguồn, tạo branch, commit và push code lên GitHub.
 - **Terraform** (phiên bản 1.5 trở lên) để triển khai hạ tầng dưới dạng Infrastructure as Code.
@@ -27,7 +27,7 @@ Trước khi bắt đầu workshop, bạn cần chuẩn bị các điều kiện
 - **Hugo Extended** nếu bạn muốn chạy và kiểm tra Workshop trên máy local trước khi push lên GitHub Pages.
 - Một trình soạn thảo mã nguồn như Visual Studio Code.
 
-#### IAM permissions
+### IAM permissions
 
 Gắn IAM permission policy sau vào AWS IAM User hoặc IAM Role dùng để triển khai workshop. Policy này cấp quyền cho các dịch vụ được CloudCost Insight sử dụng, bao gồm Lambda, S3, SQS, SNS, EventBridge, CloudWatch, API Gateway, CloudFront và Amazon Cognito.
 
@@ -75,7 +75,7 @@ Gắn IAM permission policy sau vào AWS IAM User hoặc IAM Role dùng để tr
 }
 ```
 
-#### Nội dung
+## Nội dung
 
 1. [Cấu hình AWS Credentials](5.2.1-AWS-Credentials/)
 2. [Cấu hình HCP Terraform](5.2.2-HCP-Terraform/)

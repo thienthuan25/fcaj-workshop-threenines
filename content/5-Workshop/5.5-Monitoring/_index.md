@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.5 </b> "
 ---
 
-#### Overview
+### Overview
 
 In the previous sections, the system was configured to automatically collect, analyze, and send cost alerts. However, we also need a monitoring layer to ensure that the system itself continues to operate reliably. If a Lambda function fails without anyone noticing, the system will no longer function correctly.
 
@@ -25,7 +25,7 @@ Note: The system includes two different types of alerts:<br><br>
 
 ![Monitoring](/workshop-fcaj-intern/images/5-Workshop/5.5-Monitoring/diagram_2.png)
 
-#### Next Content
+### Next Content
 
 1. [Configure CloudWatch Alarms for Lambda](../5.5-Monitoring/5.5.1-Lambda-alarm-error/)
 2. [Configure CloudWatch Alarms for the SQS Dead Letter Queue](../5.5-Monitoring/5.5.2-Lambda-DLQ-error/)

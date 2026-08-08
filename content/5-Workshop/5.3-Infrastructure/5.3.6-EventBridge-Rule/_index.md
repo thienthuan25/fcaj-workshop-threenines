@@ -21,7 +21,7 @@ resource "aws_cloudwatch_event_rule" "schedule" {
 }
 ```
 
-#### Next Content
+### Next Content
 
 - [Define Terraform Outputs](../5.3.7-Outputs/)
 

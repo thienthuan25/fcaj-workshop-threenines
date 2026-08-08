@@ -18,6 +18,6 @@ terraform apply
 
 After completing this section, the system will have a complete self monitoring capability. Whenever a Lambda function encounters an error or a message is sent to the **Dead Letter Queue**, you will receive an email notification so that the issue can be investigated and resolved promptly.
 
-#### Next Content
+### Next Content
 
 - [Dashboard](5-Workshop/5.6-Dashboard/)

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.4.1 </b> "
 ---
 
-#### Viết Code Lambda Collector
+### Viết Code Lambda Collector
 
 Chúng ta sẽ tạo file `terraform/lambda/collector/handler.py`. File này đóng vai trò là bộ phận thu thập dữ liệu chính của toàn bộ hệ thống **CloudCost Insight**.
 
@@ -128,7 +128,7 @@ def lambda_handler(event, context):
     }
 ```
 
-#### Cấu hình IAM Role và triển khai Collector
+### Cấu hình IAM Role và triển khai Collector
 
 **1.** Tiếp theo, chúng ta sẽ tạo file `terraform/lambda_collector.tf`. File này là cầu nối giúp đưa đoạn code của bạn lên môi trường AWS và cấu hình cách nó hoạt động. File này thực hiện ba nhiệm vụ chính:
 
@@ -219,7 +219,7 @@ output "collector_function_name" {
 }
 ```
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Triển khai Lambda Analyzer](../5.4.2-Lambda-Analyzer/)
 

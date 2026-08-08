@@ -6,11 +6,11 @@ chapter : false
 pre : " <b> 5.3. </b> "
 ---
 
-#### Tổng quan
+### Tổng quan
 
 Trong phần này, chúng ta sẽ dựng các thành phần hạ tầng nền cho hệ thống CloudCost Insight bằng Terraform. Đây là các tài nguyên cốt lõi mà các hàm Lambda sẽ sử dụng ở những phần sau, bao gồm nơi lưu trữ dữ liệu, hàng đợi sự kiện, kênh cảnh bảo và lập lịch.
 
-#### Nội dung
+### Nội dung
 
 1. [Khai báo các biến đầu vào](5.3.1-Variables/)
 2. [Tạo S3 Bucket lưu dữ liệu chi phí](5.3.2-S3-bucket/)

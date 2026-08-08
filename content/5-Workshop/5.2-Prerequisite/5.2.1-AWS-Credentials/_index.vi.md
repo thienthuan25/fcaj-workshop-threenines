@@ -8,7 +8,7 @@ pre : " <b> 5.2.1. </b> "
 
 Vì workshop sử dụng HCP Terraform để chạy Terraform từ xa, bạn cần thêm AWS credentials vào Workspace Variables trên HCP thay vì cấu hình trực tiếp trong code.
 
-#### Tạo Access key cho IAM user trong AWS Console
+### Tạo Access key cho IAM user trong AWS Console
 **1.** Đăng nhập vào cửa số Console AWS.
 **2.** Ở góc trên cùng bên phải, chọn vào tên tài khoản của bạn, sau đó chọn **Security Credentials**:
 
@@ -30,6 +30,6 @@ Vì workshop sử dụng HCP Terraform để chạy Terraform từ xa, bạn c�
 
 ![Credentials](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.1-AWS-credentials/credentials_5.png)
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Cấu hình HCP Terraform](../5.2.2-HCP-Terraform/)

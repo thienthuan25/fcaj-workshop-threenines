@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.7 </b> "
 ---
 
-#### Tổng Quan
+### Tổng Quan
 
 Sau khi đã triển khai đầy đủ các thành phần, trong phần này chúng ta sẽ kiểm thử toàn bộ hệ thống **CloudCost Insight** từ đầu đến cuối. Mục tiêu là xác minh các luồng hoạt động đúng và phối hợp chặt chẽ với nhau.
 
@@ -21,7 +21,7 @@ Chúng ta sẽ kiểm thử theo 4 nhóm chính:
 Nếu tài khoản AWS của bạn là tài khoản mới hoặc bạn mới chạy hệ thống, chưa qua 24 giờ để **Cost Explorer** ghi nhận dữ liệu chi phí thì chúng ta sẽ tiếp tục sử dụng dữ liệu mô phỏng để kiểm thử đầy đủ các trường hợp phát hiện bất thường. Khi triển khai với tài khoản có chi phí thực tế, hệ thống hoạt động tương tự với dữ liệu thật từ **Cost Explorer**.
 {{% /notice %}}
 
-#### 1. Kiểm Thử Luồng Thu Thập Dữ Liệu
+### 1. Kiểm Thử Luồng Thu Thập Dữ Liệu
 
 Trước tiên, chúng ta kiểm tra **Lambda Collector** có thu thập dữ liệu và ghi vào S3 đúng hay không. Trên **AWS Console**, mở hàm Lambda Collector và chạy thử với một sự kiện rỗng.
 
@@ -62,7 +62,7 @@ Trước tiên, chúng ta kiểm tra **Lambda Collector** có thu thập dữ li
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_10.png)
 
-#### 2. Kiểm Thử Phát Hiện Chi Phí Bất Thường
+### 2. Kiểm Thử Phát Hiện Chi Phí Bất Thường
 
 Chúng ta sẽ kiểm thử cho 3 mức cảnh báo: **INFO**, **WARNING**, **CRITICAL**. Để kiểm thử ba mức cảnh báo, chúng ta chuẩn bị dữ liệu chi phí đã mô phỏng trong S3 cho từng trường hợp xảy ra. Logic phân loại dựa trên 2 tiêu chí:
 
@@ -145,7 +145,7 @@ Với mỗi mức cảnh báo, chúng ta gửi sự kiện tương ứng vào SQ
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_3.png)
 
-#### 3. Kiểm Thử Cơ Chế Xử Lý Lỗi
+### 3. Kiểm Thử Cơ Chế Xử Lý Lỗi
 
 #### 3.1. Dead Letter Queue
 
@@ -351,7 +351,7 @@ Upload file `cost_2099-01-01.json` vào thư mục này:
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/invalid_6.png)
 
-#### 4. Kiểm thử giám sát bằng CloudWatch Alarm
+### 4. Kiểm thử giám sát bằng CloudWatch Alarm
 
 Khi sự kiện lỗi ở bước 3 khiến **Analyzer** phát sinh lỗi và có message rơi vào **DLQ**, các **CloudWatch Alarm** tương ứng sẽ chuyển sang trạng thái **ALARM** và gửi email cảnh báo sự cố.
 
@@ -373,7 +373,7 @@ Khi sự kiện lỗi ở bước 3 khiến **Analyzer** phát sinh lỗi và c�
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_4.png)
 
-#### 5. Bảo Mật Dashboard
+### 5. Bảo Mật Dashboard
 
 Dashboard CloudCost Insight hiển thị dữ liệu chi phí AWS, vì vậy dữ liệu chỉ được cung cấp cho người dùng đã được xác thực. Trong phần này, chúng ta sẽ kiểm thử cơ chế xác thực bằng Amazon Cognito và kiểm tra API Gateway chỉ chấp nhận các request có JWT hợp lệ.
 
@@ -500,7 +500,7 @@ Khi kiểm thử từ một domain không hợp lệ, hệ thống trả về m�
 
 Tóm lại, các kịch bản kiểm thử bảo mật cho Dashboard đã hoàn tất thành công. **API Gateway** hoạt động chặt chẽ khi từ chối các request vô danh bằng mã **401 Unauthorized** và chỉ cung cấp dữ liệu với mã **200 OK** khi nhận được token hợp lệ từ **Amazon Cognito**. Cơ chế **CORS** cũng phát huy tác dụng khi cấp đủ quyền cho domain **CloudFront** chính chủ thông qua **preflight request**, đồng thời chặn đứng truy cập từ các domain lạ. Sự kết hợp giữa **JWT Authorizer** và **CORS** tạo nên một lớp bảo vệ vững chắc, đảm bảo chỉ người dùng đã xác thực mới có quyền truy cập vào dữ liệu chi phí AWS của hệ thống.
 
-#### 6. Web Dashboard
+### 6. Web Dashboard
 
 Tiếp theo, chúng ta sẽ tiến hành truy cập vào đường link URL CloudFront của dashboard. 
 
@@ -528,7 +528,7 @@ Sau khi đăng nhập thành công, chúng ta đã có thể truy cập vào gia
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_6.png)
 
-#### 6. Tổng Kết Kiểm Thử
+### 7. Tổng Kết Kiểm Thử
 
 Sau khi hoàn thành các bước kiểm thử trên, hệ thống **CloudCost Insight** đã được kiểm chứng hoạt động hoàn chỉnh và tự động end-to-end:
 
@@ -538,6 +538,6 @@ Sau khi hoàn thành các bước kiểm thử trên, hệ thống **CloudCost I
 - Tự giám sát sức khỏe hệ thống bằng **CloudWatch Alarm**.
 - Trực quan hóa dữ liệu qua **Web Dashboard** có thể truy cập công khai.
 
-#### Nội Dung Tiếp Theo
+### Nội Dung Tiếp Theo
 
 - [CI/CD](5-Workshop/5.8-CI-CD/)

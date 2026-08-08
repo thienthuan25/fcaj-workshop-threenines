@@ -72,6 +72,6 @@ resource "aws_iam_role_policy" "collector" {
 }
 ```
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Tạo SNS Topic cảnh báo](../5.3.4-SNS-Topic/)

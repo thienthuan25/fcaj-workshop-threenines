@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.2.3. </b> "
 ---
 
-#### Công cụ cần cài đặt
+### Công cụ cần cài đặt
 
 Trong workshop này, chúng ta thực hiện các thao tác dòng lệnh trên môi trường **WSL2** (Windows Subsystem for Linux) thay vì **Command Prompt** (CMD) hoặc **PowerShell** của Windows. Có một số lý do chính cho lựa chọn này:
 
@@ -42,7 +42,7 @@ python3 --version
 
 ![Code terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.3-Code-terraform/code_terraform_3.png)
 
-#### Cấu hình AWS Credentials cho CLI
+### Cấu hình AWS Credentials cho CLI
 
 Trên cửa sổ terminal, cấu hình AWS credentials để AWS CLI có thể xác thực và thực thi các lệnh trong suốt quá trình triển khai cũng như kiểm thử hệ thống:
 
@@ -71,7 +71,7 @@ Kiểm tra lại credentials để bảo đảm việc xác thực đã thành c
 aws sts get-caller-identity
 ```
 
-#### Cấu hình nền tảng Terraform
+### Cấu hình nền tảng Terraform
 
 Tại thư mục gốc của dự án, tạo thư mục mới có tên là `terraform`. Thư mục này chứa các file Terraform dùng để triển khai hạ tầng AWS.
 
@@ -116,7 +116,7 @@ provider "aws" {
 }
 ```
 
-#### Kết nối và khởi tạo tài nguyên
+### Kết nối và khởi tạo tài nguyên
 
 Trong terminal, chuyển đến thư mục chứa các file Terraform, sau đó chạy lệnh dưới đây để đăng nhập và kết nối Terraform CLI với HCP Terraform:
 
@@ -150,7 +150,7 @@ terraform init
 
 Sau khi hoàn thành các bước trên, môi trường làm việc đã được cấu hình đầy đủ và sẵn sàng để triển khai hệ thống **CloudCost Insight** trong các phần tiếp theo.
 
-#### Chuẩn bị Git và cấu hình .gitignore
+### Chuẩn bị Git và cấu hình .gitignore
 
 Vì dự án được quản lý bằng **Git** và đẩy mã nguồn lên **GitHub**, chúng ta cần cấu hình để loại bỏ các file không nên đưa lên repository. Việc này giúp bảo vệ thông tin nhạy cảm và giữ cho repository gọn gàng.
 
@@ -179,6 +179,6 @@ crash.log
 
 - Các file `*.tfvars`: Đây là nơi chứa giá trị biến thật như email nhận cảnh báo, nên không đưa lên repository để tránh lộ thông tin. Chúng ta chỉ giữ lại file mẫu `*.tfvars.example`.
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Dựng hạ tầng bằng Terraform](5-Workshop/5.3-Infrastructure/)

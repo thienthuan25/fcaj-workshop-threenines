@@ -52,6 +52,6 @@ resource "aws_cloudwatch_metric_alarm" "analyzer_errors" {
 }
 ```
 
-#### Next
+### Next
 
 - [Configure CloudWatch Alarms for the SQS Dead Letter Queue](../5.5.2-Lambda-DLQ-error/)

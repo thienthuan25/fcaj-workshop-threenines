@@ -8,7 +8,7 @@ pre : " <b> 5.2.1. </b> "
 
 Since this workshop uses HCP Terraform to run Terraform remotely, you need to add your AWS credentials to the Workspace Variables in HCP instead of configuring them directly in the code.
 
-#### Create an Access Key for an IAM User in the AWS Console
+### Create an Access Key for an IAM User in the AWS Console
 
 **1.** Sign in to the AWS Management Console.
 **2.** In the upper right corner, click your account name, then select **Security Credentials**:
@@ -31,6 +31,6 @@ Since this workshop uses HCP Terraform to run Terraform remotely, you need to ad
 
 ![Credentials](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.1-AWS-credentials/credentials_5.png)
 
-#### Next Content
+### Next Content
 
 - [Configure HCP Terraform](../5.2.2-HCP-Terraform/)

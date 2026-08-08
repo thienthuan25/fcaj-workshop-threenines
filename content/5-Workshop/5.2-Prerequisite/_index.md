@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.2. </b> "
 ---
 
-#### General requirements
+### General requirements
 
 Before starting the workshop, you need to prepare the following requirements:
 
@@ -17,7 +17,7 @@ Before starting the workshop, you need to prepare the following requirements:
 - A GitHub account and a GitHub repository to store source code, create Pull Requests, and configure CI/CD.
 - An email address that can receive emails from Amazon SNS to test cost alerts and incident alerts.
 
-#### Tools to install
+### Tools to install
 
 - **Git** to manage source code, create branches, commit, and push code to GitHub.
 - **Terraform** (version 1.5 or later) to deploy infrastructure using Infrastructure as Code.
@@ -27,7 +27,7 @@ Before starting the workshop, you need to prepare the following requirements:
 - **Hugo Extended** if you want to run and check the Workshop locally before pushing it to GitHub Pages.
 - A source code editor such as Visual Studio Code.
 
-#### IAM permissions
+### IAM permissions
 
 Attach the following IAM permission policy to the AWS IAM User or IAM Role used to deploy the workshop. This policy grants permissions for the services used by CloudCost Insight, including Lambda, S3, SQS, SNS, EventBridge, CloudWatch, API Gateway, CloudFront, and Amazon Cognito.
 
@@ -75,7 +75,7 @@ Attach the following IAM permission policy to the AWS IAM User or IAM Role used 
 }
 ```
 
-#### Content
+### Content
 
 1. [Configure AWS Credentials](5.2.1-AWS-Credentials/)
 2. [Configure HCP Terraform](5.2.2-HCP-Terraform/)

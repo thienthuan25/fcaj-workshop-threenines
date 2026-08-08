@@ -18,7 +18,7 @@ terraform apply
 
 Sau khi hoàn thành phần này, hệ thống đã có đầy đủ khả năng tự giám sát. Bất cứ khi nào một hàm Lambda gặp lỗi hoặc có sự kiện rơi vào **Dead Letter Queue**, bạn sẽ nhận được email cảnh báo để xử lý kịp thời.
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Dashboard](5-Workshop/5.6-Dashboard/)
 

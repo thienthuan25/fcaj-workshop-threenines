@@ -8,7 +8,7 @@ pre : " <b> 5.6.3 </b> "
 
 In this section, we will protect the CloudCost Insight Dashboard using **Amazon Cognito**. After completion, only authenticated users will be able to call **API Gateway** to view AWS cost data.
 
-#### Authentication Architecture
+### Authentication Architecture
 
 The authentication flow works as follows:
 
@@ -21,7 +21,7 @@ The authentication flow works as follows:
 
 The frontend uses **Authorization Code Flow with PKCE**. This mechanism is suitable for browser-based applications because it does not require storing a client secret in JavaScript.
 
-#### Objectives
+### Objectives
 
 - Create an **Amazon Cognito User Pool** to manage users.
 - Create an **App Client** for the Web Dashboard.
@@ -31,7 +31,7 @@ The frontend uses **Authorization Code Flow with PKCE**. This mechanism is suita
 
 **CORS** only restricts where a browser is allowed to call an API; it does not prevent someone from calling the API using **curl/Postman**. Therefore, we will restrict **CORS** and add **JWT authentication** with **Cognito**.
 
-#### Restrict CORS to the exact CloudFront Dashboard
+### Restrict CORS to the exact CloudFront Dashboard
 
 Open the `terraform/api_gateway.tf` file, find and replace the following code:
 
@@ -48,7 +48,7 @@ allow_headers = ["Content-Type", "Authorization"]
 
 The configuration above tightens CORS security for API Gateway. It allows only the project's **CloudFront** domain to call the API, limits access to read-only operations (**GET**), and allows the frontend to include an authentication token through the **Authorization** header.
 
-#### Create Cognito User Pool
+### Create Cognito User Pool
 
 We will create the `terraform/cognito.tf` file:
 
@@ -86,7 +86,7 @@ resource "aws_cognito_user_pool_client" "dashboard" {
 }
 ```
 
-#### Attach the JWT authorizer to the API route
+### Attach the JWT authorizer to the API route
 
 **1.** Open the `terraform/api_gateway.tf` file and add the following code:
 
@@ -145,7 +145,7 @@ output "cognito_hosted_ui_url" {
 }
 ```
 
-#### Integrate authentication into the Web Dashboard
+### Integrate authentication into the Web Dashboard
 
 For the Frontend to automatically redirect users to the **Cognito** login page and attach the Token when calling the API, we need to update the `terraform/web/script.js` file with the exact content below:
 
@@ -497,6 +497,6 @@ logoutButton.addEventListener("click", signOut);
 initializeDashboard();
 ```
 
-#### Next steps
+### Next steps
 
 - [System Testing](5-Workshop/5.7-Testing/)

@@ -8,7 +8,7 @@ pre: " <b> 5. </b> "
 
 # Xây dựng hệ thống giám sát, phân tích và cảnh báo chi phí AWS bằng kiến trúc Serverless
 
-#### Tổng quan
+### Tổng quan
 
 **CloudCost Insight** là hệ thống FinOps Serverless giúp tự động thu thập, phân tích, trực quan hóa và cảnh báo chi phí sử dụng dịch vụ AWS theo chu kỳ. Thay vì phải kiểm tra AWS Billing Console thủ công, hệ thống sẽ lấy dữ liệu chi phí từ AWS Cost Explorer, phát hiện các trường hợp vượt ngưỡng hoặc tăng đột biến, sau đó chủ động gửi cảnh báo qua email.
 
@@ -24,7 +24,7 @@ Hệ thống gồm bốn luồng chính phối hợp với nhau:
 
 + **Luồng kiểm thử và CI/CD:** Mã nguồn được kiểm tra tự động bằng GitHub Actions trước khi merge vào nhánh `main`, bao gồm Hugo Workshop, Python Lambda, Terraform và JavaScript Dashboard. Sau khi thay đổi Terraform được merge vào `main`, GitHub Actions tự động thực hiện Terraform Apply thông qua HCP Terraform. Branch protection và GitHub Environment giúp kiểm soát các thay đổi trước khi cập nhật hạ tầng AWS production.
 
-#### Nội dung
+### Nội dung
 
 1. [Giới thiệu](5.1-Workshop-overview/)
 2. [Các bước chuẩn bị](5.2-Prerequisite/)

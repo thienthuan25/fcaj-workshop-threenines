@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.4.2 </b> "
 ---
 
-#### Bổ sung biến cấu hình cho Analyzer
+### Bổ sung biến cấu hình cho Analyzer
 
 Analyzer cần hai biến để phục vụ logic phát hiện tăng đột biến. Chúng ta cần bổ sung hai biến sau vào `terraform/variables.tf`:
 
@@ -27,7 +27,7 @@ variable "history_days" {
 }
 ```
 
-#### Viết code Lambda Analyzer
+### Viết code Lambda Analyzer
 
 Chúng ta sẽ tạo file `terraform/lambda/analyzer/handler.py` chứa mã nguồn python của  hàm Lambda Analyzer.
 
@@ -229,7 +229,7 @@ def lambda_handler(event, context):
     return {"batchItemFailures": batch_item_failures}
 ```
 
-#### Cấu hình IAM Role và triển khai Analyzer
+### Cấu hình IAM Role và triển khai Analyzer
 
 **1.** Tiếp theo, chúng ta sẽ tạo file `terraform/lambda_analyzer.tf`. File này chịu trách nhiệm xây dựng toàn bộ cơ sở hạ tầng cần thiết trên AWS để chạy hàm Lambda Analyzer, thực hiện các cấu hình tự động bao gồm:
 
@@ -362,6 +362,6 @@ output "analyzer_role_arn" {
 }
 ``` 
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Giám sát](5-Workshop/5.5-Monitoring/)

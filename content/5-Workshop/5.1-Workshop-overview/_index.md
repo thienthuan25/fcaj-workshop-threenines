@@ -6,13 +6,13 @@ chapter : false
 pre : " <b> 5.1. </b> "
 ---
 
-#### Introduction to Serverless and Event-driven Architecture
+### Introduction to Serverless and Event-driven Architecture
 
 + **Serverless architecture** allows you to build and operate applications without managing servers. Services such as AWS Lambda, Amazon S3, Amazon SQS, Amazon SNS, and Amazon API Gateway are managed services that can automatically scale based on load and charge according to usage. This architecture is suitable for CloudCost Insight because the system has a low number of requests, runs on a scheduled basis, and needs to optimize operational costs.
 
 + **Event-driven architecture** allows components to communicate with each other through events instead of calling each other directly. Components are decoupled, easier to scale, and more resilient to failures. In CloudCost Insight, Amazon SQS acts as an intermediate queue between Lambda Collector and Lambda Analyzer; the Dead Letter Queue stores messages that cannot be processed successfully after the allowed number of retries.
 
-#### Workshop overview
+### Workshop overview
 
 In this workshop, we will build the **CloudCost Insight** system to automatically monitor, analyze, and alert on AWS costs. The entire infrastructure is deployed using **Terraform** following the **Infrastructure as Code** model, making it possible to recreate, update, and clean up resources consistently.
 
@@ -30,6 +30,6 @@ The system includes the following main workflows:
 
 After completing the workshop, you will have a basic FinOps system that can automatically collect cost data, detect anomalies, send alerts, visualize data, protect the Dashboard with user authentication, and deploy infrastructure through a CI/CD process.
 
-#### Next content
+### Next content
 
 - [Prerequisites](5-Workshop/5.2-Prerequisite/)

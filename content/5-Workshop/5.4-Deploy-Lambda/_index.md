@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.4. </b> "
 ---
 
-#### Overview
+### Overview
 
 In this section, we will deploy the two Lambda functions that serve as the processing layer of the **CloudCost Insight** system:
 
@@ -17,7 +17,7 @@ We will deploy each Lambda function step by step. Each function includes a Pytho
 
 ![Lambda (Collector + Analyzer)](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/Infrastructure_diagram.jpg)
 
-#### Contents
+### Contents
 
 1. [Lambda Collector](../5.4-Deploy-Lambda/5.4.1-Lambda-Collector/)
 2. [Lambda Analyzer](../5.4-Deploy-Lambda/5.4.2-Lambda-Analyzer/)

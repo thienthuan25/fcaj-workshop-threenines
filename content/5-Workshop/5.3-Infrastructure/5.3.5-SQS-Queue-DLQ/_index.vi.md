@@ -36,6 +36,6 @@ resource "aws_sqs_queue" "events" {
 }
 ```
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Tạo EventBridge Rule lập lịch](../5.3.6-EventBridge-Rule/)

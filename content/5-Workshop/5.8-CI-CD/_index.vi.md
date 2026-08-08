@@ -12,7 +12,7 @@ Mỗi thay đổi được thực hiện trên nhánh riêng và gửi qua **Pul
 
 Sau khi gộp mã, workflow CD tự động chạy **Terraform Apply** thông qua **HCP Terraform** để cập nhật hạ tầng **AWS**. Quy trình này giúp giảm rủi ro triển khai thủ công, phát hiện lỗi sớm và bảo đảm môi trường triển khai luôn nhất quán với mã nguồn.
 
-#### Tạo Workflow CI
+### Tạo Workflow CI
 
 **1.** Đầu tiên, chúng ta sẽ cấu hình file **ci.yml** trong thư mục **.github/workflows**:
 
@@ -654,7 +654,7 @@ Quá trình gộp mã thành công sẽ hiện thông báo xác nhận.
 
 ![Terraform Plan CI](/workshop-fcaj-intern/images/5-Workshop/5.8-CI-CD/terraformplan_11.png)
 
-**4.** CD Terraform
+### Tạo Workflow CD
 
 Vì **Terraform** chạy từ xa trên **HCP Terraform**, hệ thống **GitHub** không trực tiếp gọi **AWS**. Bước tiếp theo yêu cầu chuẩn bị môi trường sản xuất được bảo vệ để hệ thống yêu cầu phê duyệt trước khi thực thi lệnh áp dụng hạ tầng.
 
@@ -835,3 +835,7 @@ Chúng ta đã hoàn thành phần tích hợp và triển khai liên tục cho 
 Khi quá trình sáp nhập hoàn tất, hệ thống tự động cập nhật hạ tầng **AWS** qua **HCP Terraform**.
 
 Sự kết hợp với môi trường bảo vệ của **GitHub** đảm bảo việc triển khai luôn an toàn, nhất quán và hạn chế tối đa thao tác thủ công.
+
+### Nội dung tiếp theo
+
+[Dọn dẹp tài nguyên](5-Workshop/5.9-Cleanup/)
