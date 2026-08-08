@@ -24,7 +24,6 @@ I attended the event as a participant. Throughout the program, I mainly listened
 ### List of Speakers
 
 The event featured many experts and engineers working in the fields of **Cloud Computing**, **DevOps**, and **AI**. The event opened with a presentation by **Nguyen Gia Hung** (Head of Solutions Architect - Vietnam & Cambodia), who shared valuable insights about today's technology market. This was followed by the main speakers of the event:
-
 - **Hai Bui** - Platform Engineering Manager at GoTymeX.
 - **Phuc Dang** - Cloud Architect at GoTymeX.
 - **Phat Pham** - Software Engineer at Katalon.
@@ -55,7 +54,6 @@ The speaker discussed the transformation of the software development process as 
 #### Topic 4: Production-Grade Multimodal GenAI on AWS
 
 This was one of the most outstanding sessions of the event. The speaker introduced the architecture for building enterprise-scale Generative AI systems, including:
-
 - Modern AI application architecture.
 - Multimodal Search with **Nova Embeddings**.
 - GraphRAG for enterprise knowledge management.
@@ -69,7 +67,6 @@ This session helped participants understand that building enterprise AI applicat
 The final session focused on **Amazon CloudFront** and the role of **CDN** in content delivery.
 
 The main topics included:
-
 - CloudFront for various types of workloads.
 - Cost optimization with CloudFront.
 - Security capabilities.
@@ -79,7 +76,6 @@ The main topics included:
 ### What I Learned
 
 After attending the event, I gained the following knowledge:
-
 - A better understanding of **Platform Engineering** and its role in modern enterprises.
 - An understanding of the trend of integrating **DevOps** with **Generative AI** through the **GenAIOps** model.
 - Exposure to new AI technologies on AWS such as **Amazon Bedrock**, **Nova Embeddings**, **GraphRAG**, and **Multi-Agent**.
@@ -92,7 +88,6 @@ After attending the event, I gained the following knowledge:
 The knowledge gained from the event can be applied to both my studies and future projects.
 
 In the future, I plan to:
-
 - Continue studying AWS in greater depth, especially services related to **DevOps** and **AI**.
 - Practice deploying applications using **Amazon Bedrock** to build chatbots or AI assistants.
 - Learn more about **Platform Engineering** and **Infrastructure as Code** to improve my infrastructure management skills.

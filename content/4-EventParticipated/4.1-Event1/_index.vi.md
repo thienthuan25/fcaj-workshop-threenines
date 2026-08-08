@@ -24,7 +24,6 @@ Em tham gia sự kiện với vai trò là người tham dự. Trong suốt chư
 ### Danh Sách Diễn Giả
 
 Sự kiện có sự tham gia của nhiều chuyên gia và kỹ sư đang làm việc trong lĩnh vực **Cloud Computing**, **DevOps**, **AI**. Khởi đầu cho sự kiện với sự góp mặt của anh **Nguyễn Gia Hưng** (Head of Solutions Architect - Việt Nam & Cambodia) đem đến cho mọi người những lời chia sẻ về thị trường công nghệ ngày nay. Tiếp theo là sự góp mặt của các diễn giả chính cho sự kiện:
-
 - **Hai Bui** - Platform Engineering Manager tại GoTymeX.
 - **Phuc Dang** - Cloud Architect tại GoTymeX.
 - **Phat Pham** - Software Engineer tại Katalon.
@@ -55,7 +54,6 @@ Diễn giả trình bày về sự thay đổi trong quy trình phát triển ph
 #### Chủ đề 4: Production-Grade Multimodal GenAI on AWS
 
 Đây là một trong những phiên chia sẻ nổi bật nhất của chương trình. Diễn giả giới thiệu kiến trúc xây dựng hệ thống Generative AI ở quy mô doanh nghiệp, bao gồm:
-
 - Kiến trúc ứng dụng AI hiện đại.
 - Tìm kiếm đa phương thức (Multimodal Search) với **Nova Embeddings**.
 - GraphRAG phục vụ quản lý tri thức doanh nghiệp.
@@ -69,7 +67,6 @@ Phiên chia sẻ giúp người tham dự hiểu rằng việc xây dựng ứng
 Phiên cuối tập trung vào **Amazon CloudFront** và vai trò của **CDN** trong việc phân phối nội dung.
 
 Các nội dung chính bao gồm:
-
 - CloudFront cho nhiều loại hệ thống khác nhau.
 - Tối ưu chi phí khi sử dụng CloudFront.
 - Các tính năng bảo mật.
@@ -79,7 +76,6 @@ Các nội dung chính bao gồm:
 ### Những Gì Học Được
 
 Sau khi tham gia sự kiện, em học được những kiến thức mới, bao gồm:
-
 - Hiểu rõ hơn về **Platform Engineer** và vai trò của nền tảng này trong doanh nghiệp hiện đại.
 - Biết được xu hướng kết hợp giữa **DevOps** và **Generative AI** thông qua mô hình **GenAIOps**.
 - Tiếp cận các công nghệ AI mới trên AWS như **Amazon Bedrock**, **Nova Embeddings**, **GraphRAG** và **Multi-Agent**.
@@ -92,7 +88,6 @@ Sau khi tham gia sự kiện, em học được những kiến thức mới, bao
 Những kiến thức thu được từ sự kiện có thể được áp dụng vào quá trình học tập cũng như các dự án trong tương lai.
 
 Trong thời gian tới, em dự định:
-
 - Tiếp tục học sâu hơn về AWS, đặc biệt là các dịch vụ liên quan đến **DevOps** và **AI**.
 - Thực hành triển khai các ứng dụng sử dụng **Amazon Bedrock** để xây dựng chatbot hoặc trợ lý AI.
 - Tìm hiểu về **Platform Engineering** và **Infrastructure as Code** để nâng cao khả năng quản lý hạ tầng.

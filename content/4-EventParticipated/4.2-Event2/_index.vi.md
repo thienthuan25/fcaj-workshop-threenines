@@ -50,12 +50,12 @@ Một prompt tốt cần tuân thủ cấu trúc:
 Chủ đề này tập trung vào việc tận dụng AI để tối ưu hóa hiệu suất làm việc cho doanh nghiệp, cụ thể thông qua các trợ lý AI tự động.
 
 Các nội dung chính gồm:
-* Giải quyết bài toán thời gian: Tác giả nhấn mạnh việc quản lý, thường thì chúng ta sẽ mất rất nhiều thời gian để tập hợp dữ liệu và làm báo cáo thủ công. **Amazon Quick** được giới thiệu như một giải pháp thông minh giúp giảm tải công việc này.
-* Hệ sinh thái thích hợp: **Amazon Quick** kết nối với các hệ sinh thái phổ biến như **Microsoft (PowerBI, Word, Outlook, Teams)** và **Google (Gmail, Calender)** thông qua **platform Agent**, cho phép người dùng tự xây dựng các Agent phục vụ mục đích cá nhân hoặc doanh nghiệp.
-* Các tính năng nổi bật:<br>
-&bull; **BI (Business Intelligence)**: Tự động phân tích chuyên sâu khi nhận dữ liệu đầu vào.<br>
-&bull; **Inside & Chat**: Cho phép tương tác trực tiếp với dữ liệu để hiểu thông tin.<br>
-&bull; **Automation**: Tự động hóa hoàn toàn quy trình công việc thông qua **automation flow**.<br>
+- Giải quyết bài toán thời gian: Tác giả nhấn mạnh việc quản lý, thường thì chúng ta sẽ mất rất nhiều thời gian để tập hợp dữ liệu và làm báo cáo thủ công. **Amazon Quick** được giới thiệu như một giải pháp thông minh giúp giảm tải công việc này.
+- Hệ sinh thái thích hợp: **Amazon Quick** kết nối với các hệ sinh thái phổ biến như **Microsoft (PowerBI, Word, Outlook, Teams)** và **Google (Gmail, Calender)** thông qua **platform Agent**, cho phép người dùng tự xây dựng các Agent phục vụ mục đích cá nhân hoặc doanh nghiệp.
+- Các tính năng nổi bật:
+    - **BI (Business Intelligence)**: Tự động phân tích chuyên sâu khi nhận dữ liệu đầu vào.
+    - **Inside & Chat**: Cho phép tương tác trực tiếp với dữ liệu để hiểu thông tin.
+    - **Automation**: Tự động hóa hoàn toàn quy trình công việc thông qua **automation flow**.
 - Demo thực tế: Phần demo cho thấy khả năng nhập dữ liệu Excel để tạo Dashboard tự động và yêu cầu AI tóm tắt nội dung cuộc họp từ file record, giúp người dùng không chuyên về kỹ thuật cũng có thể xử lý dữ liệu phức tạp một cách dễ dàng.
 
 #### Chủ Đề 3: From Edge To Origin: CloudFront as Your Foundation - Thinh Nguyen
@@ -63,7 +63,9 @@ Các nội dung chính gồm:
 Chủ đề này tập trung vào vai trò của **Amazon CloudFront** không chỉ là dịch vụ CDN truyền thống mà còn là nền tảng bảo mật, tối ưu hóa ứng dụng toàn diện.
 
 Các nội dung chính bao gồm:
+
 1. Khả năng bảo mật nâng cao:
+
 - **VPC Private Origin**: Tạo đường truyền riêng biệt từ **CloudFront** vào **private subnet**, giúp ẩn hạ tầng **backend** khỏi internet công cộng.
 - **Mutual TLS**: Yêu cầu xác thực chứng chỉ từ cả hai phía (client và server), phù hợp cho các hệ thống tài chính hoặc nội dung bản quyền.
 - **Chặn tấn công theo khu vực/IP**: Giảm tải cho server bằng cách chặn các truy cập độc hại ngay tại lớp **Edge** trước khi chúng chạm tới **Origin**.
