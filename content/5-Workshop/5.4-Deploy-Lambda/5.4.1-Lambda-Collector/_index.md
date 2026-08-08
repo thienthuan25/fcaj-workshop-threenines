@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.4.1 </b> "
 ---
 
-#### Write the Lambda Collector Code
+### Write the Lambda Collector Code
 
 We will create the file `terraform/lambda/collector/handler.py`. This file serves as the primary data collection component of the entire **CloudCost Insight** system.
 
@@ -116,7 +116,7 @@ def lambda_handler(event, context):
     }
 ```
 
-#### Configure the IAM Role and Deploy the Collector
+### Configure the IAM Role and Deploy the Collector
 
 **1.** Next, create the file `terraform/lambda_collector.tf`. This file acts as the bridge that deploys your code to AWS and defines how it runs. It performs three main tasks:
 
@@ -207,6 +207,6 @@ output "collector_function_name" {
 }
 ```
 
-#### Next
+### Next
 
 - [Deploy Lambda Analyzer](../5.4.2-Lambda-Analyzer/)

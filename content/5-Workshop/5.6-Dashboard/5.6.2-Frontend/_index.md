@@ -6,6 +6,8 @@ chapter : false
 pre : " <b> 5.6.2 </b> "
 ---
 
+### Create interface
+
 We will create the Web interface in the `lambda/web` directory.
 
 **1.** The `index.html` file contains the page structure:
@@ -467,7 +469,7 @@ The interface includes multiple charts, such as a daily cost trend chart with a 
 
 ![Dashboard](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_1.png)
 
-#### Host the Web Application on S3 and CloudFront
+### Host the Web Application on S3 and CloudFront
 
 **1.** We will create the `terraform/web_hosting.tf` file to host the web interface on **S3** and distribute it through **CloudFront** over HTTPS. For security, the web bucket is **not** publicly accessible. Instead, only **CloudFront** is allowed to read its contents using **Origin Access Control (OAC)**.
 
@@ -643,7 +645,7 @@ output "web_bucket_name" {
 }
 ```
 
-#### Deploying and Accessing the Dashboard
+### Deploying and Accessing the Dashboard
 
 **1.** In the Terminal, deploy the Frontend:
 
@@ -694,6 +696,6 @@ The dashboard displays the **total cost**, **alert threshold**, **number of moni
 - The X-axis (horizontal) represents the service cost.
 - The Y-axis (vertical) represents the corresponding service names.
 
-#### Next Content
+### Next Content
 
-- [Testing](5-Workshop/5.7-Testing/)
+- [Authentication with Amazon Cognito](../5.6.3-Authentication-Cognito/)

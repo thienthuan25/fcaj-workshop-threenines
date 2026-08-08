@@ -12,7 +12,7 @@ Each change is made on a separate branch and submitted via a **Pull Request**, w
 
 After merging, the CD workflow automatically runs **Terraform Apply** via **HCP Terraform** to update the **AWS** infrastructure. This process helps reduce manual deployment risks, detects errors early, and ensures the deployment environment is always consistent with the source code.
 
-#### Create CI Workflow
+### Create CI Workflow
 
 **1.** First, we will configure the **ci.yml** file in the **.github/workflows** directory:
 
@@ -654,7 +654,7 @@ A successful merge will display a confirmation message.
 
 ![Terraform Plan CI](/workshop-fcaj-intern/images/5-Workshop/5.8-CI-CD/terraformplan_11.png)
 
-**4.** CD Terraform
+### Create CD Workflow
 
 Because **Terraform** runs remotely on **HCP Terraform**, the **GitHub** system does not directly call **AWS**. The next step requires preparing a protected production environment so the system demands approval before executing the infrastructure apply command.
 
@@ -835,3 +835,7 @@ We have completed the continuous integration and deployment section for the **Cl
 When the merge process is complete, the system automatically updates the **AWS** infrastructure via **HCP Terraform**.
 
 The combination with **GitHub's** protected environment ensures the deployment is always safe, consistent, and minimizes manual operations.
+
+### Next Content
+
+[Clean up](5-Workshop/5.9-Cleanup/)

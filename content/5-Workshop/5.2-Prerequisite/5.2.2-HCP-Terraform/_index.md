@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.2.2. </b> "
 ---
 
-#### Create an Organization for the Project
+### Create an Organization for the Project
 
 **1.** Go to [https://app.terraform.io/app](https://app.terraform.io/app) and sign in. If you do not already have an account, click **Sign up** to create a new one.
 
@@ -53,6 +53,6 @@ pre : " <b> 5.2.2. </b> "
 
 ![HCP Terraform](/workshop-fcaj-intern/images/5-Workshop/5.2-Prerequisite/5.2.2-HCP-Terraform/hcp_terraform_7.png)
 
-#### Next Section
+### Next Section
 
 - [Prepare the Terraform Code](../5.2.3-Code-terraform/)

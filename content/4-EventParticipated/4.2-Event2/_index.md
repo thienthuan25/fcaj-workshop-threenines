@@ -22,7 +22,6 @@ At this event, I participated as an attendee, listening to and absorbing practic
 ### List of Speakers
 
 This edition of **FCAJ Community Day** featured many leading experts and engineers in the fields of **Cloud Computing**, **DevOps**, and **AI**. The event began with an inspiring presentation by **Nguyen Gia Hung** (Head of Solutions Architect - Vietnam & Cambodia). This was followed by the main speakers:
-
 - **Tinh Truong** - Platform Engineer at GoTymeX.
 - **Anh Pham** - Cloud Consultant at G-AsiaPacific Vietnam.
 - **Thinh Nguyen** - DevOps Engineer at STYL Solutions Pte. Ltd.
@@ -51,16 +50,12 @@ A good prompt should follow the structure:
 This topic focused on leveraging AI to optimize business productivity, specifically through AI-powered assistants.
 
 The main points included:
-
 - Solving time-consuming tasks: The speaker emphasized that organizations often spend a significant amount of time collecting data and preparing reports manually. **Amazon Quick** was introduced as an intelligent solution to reduce this workload.
-
 - Ecosystem integration: **Amazon Quick** integrates with popular ecosystems such as **Microsoft (PowerBI, Word, Outlook, Teams)** and **Google (Gmail, Calendar)** through **Platform Agents**, allowing users to build their own AI Agents for personal or business purposes.
-
 - Key features:<br>
 &bull; **BI (Business Intelligence)**: Automatically performs in-depth analysis once input data is received.<br>
 &bull; **Insight & Chat**: Enables direct interaction with data to better understand information.<br>
 &bull; **Automation**: Fully automates workflows through **automation flows**.<br>
-
 - Live demonstration: The demo showcased the ability to import Excel data to automatically generate dashboards and instruct AI to summarize meeting recordings, enabling even non-technical users to process complex data with ease.
 
 #### Topic 3: From Edge To Origin: CloudFront as Your Foundation - Thinh Nguyen
@@ -70,17 +65,12 @@ This session focused on the role of **Amazon CloudFront**, highlighting that it 
 The main topics included:
 
 1. Advanced security capabilities:
-
 - **VPC Private Origin**: Creates a dedicated connection from **CloudFront** to a **private subnet**, hiding backend infrastructure from the public Internet.
-
 - **Mutual TLS**: Requires certificate authentication from both the client and the server, making it suitable for financial systems or copyrighted content.
-
 - **Geo/IP-based attack blocking**: Reduces server workload by blocking malicious requests directly at the **Edge** layer before they reach the **Origin**.
 
 2. Performance optimization:
-
 - **Content Compression**: Compresses content to significantly reduce payload size (up to 82%), improving page loading speed.
-
 - **Reducing GPU workload on EC2**: CloudFront offloads tasks such as TCP and TLS handshakes from EC2, allowing servers to focus solely on business logic.
 
 3. Multi-layer caching: A caching mechanism across **Points of Presence (PoPs)** that efficiently distributes content and reduces latency for end users regardless of their geographic location.
@@ -92,17 +82,13 @@ This session shared the journey of building a product within 36 hours during Vie
 1. **Product idea (UTMorpho)**: The team focused on solving the problem of wasted time and tokens when using AI for UI design. Instead of asking AI to regenerate the entire interface whenever small modifications were needed, **UTMorpho** allows users to edit the generated interface directly.
 
 2. System architecture: The team adopted a **serverless** architecture combined with three specialized AI Agents to process user input:
-
 - Agent 1: Analyzes user-provided images or sketches.
 - Agent 2: Generates layouts, CSS, and component structures.
 - Agent 3: Produces the final UI code based on the requirements.
 
 3. Challenges encountered:
-
 - Token limits: Continuous AI usage frequently resulted in **token limit** errors during development.
-
 - Over-generation: AI sometimes generated unnecessary features, making the codebase more difficult to manage.
-
 - Exhaustion: Time pressure and fatigue around 4–5 AM forced the team to change their strategy by focusing on optimizing the editing experience instead of adding too many features.
 
 4. Lessons learned: The team emphasized the importance of keeping ideas simple and focusing on solving one specific problem instead of trying to implement too many complex features within a limited timeframe.
@@ -118,19 +104,13 @@ The main topics included:
 2. The misconception of *Temperature = 0*: Many developers believe that setting *temperature = 0* makes the model completely deterministic (identical input always produces identical output). In reality, even with *temperature = 0*, slight differences may still occur due to GPU computation and underlying software libraries.
 
 3. Challenges in production:
-
 - Variations in generated outputs may affect critical applications where absolute consistency is required.
-
 - Some models operating at *temperature = 0* (*greedy decoding* mode) may repeatedly generate the same tokens.
 
 4. Mitigation strategies:
-
 - Testing and validation: Emphasize comprehensive testing to ensure the system can properly handle unexpected outputs.
-
 - **Downstream** design: Services consuming LLM outputs should be designed to handle variations gracefully rather than expecting perfect consistency.
-
 - Optimized parameters: In some cases, setting *temperature = 0.1* instead of 0 produces more stable outputs and helps avoid repetitive generation.
-
 - Using specialized features: Utilize features such as **JSON Mode** provided by API vendors to enforce structured output formats.
 
 5. Key takeaway: Always read the **official documentation** for each specific model instead of relying solely on general experience, as different models may behave differently.
@@ -144,27 +124,19 @@ The main topics included:
 1. Business challenges: Traditional credit-scoring models are often unsuitable for startups because they lack three years of financial history, physical collateral, and established credit records. The system therefore needs to leverage alternative data sources such as intellectual property, growth potential, and founder information.
 
 2. Multi-Agent architecture:
-
 - Instead of relying on a single Agent, which is limited by context windows and cannot effectively handle multiple areas of expertise, the system is divided into specialized Agents: **Financial Analyst**, **Research Agent**, **Team Evaluator**, and **Risk Assessor**.
-
 - A **Manager Agent** coordinates tasks and consolidates results from all specialized Agents.
 
 3. Enterprise standards:
-
 - **Security & Compliance**: Emphasizes compliance with security regulations, customer data protection, and preventing **MCP attack vectors**.
-
 - **Audit Trail**: Every AI decision must be traceable for auditing purposes, especially when dealing with regulatory authorities.
-
 - **Human-in-the-loop**: AI serves only as a decision-support tool, while humans remain responsible for reviewing and approving final lending decisions.
 
 4. Deployment experience:
-
 - The deployment process consists of the following stages: Build Core -> Internal Testing -> SIT (System Integration Testing) -> UAT (User Acceptance Testing) -> Pilot -> Scale.
 
 5. Technical recommendations:
-
 - Focus on backend engineering skills rather than AI alone, because secure data management and databases are the true foundation of enterprise systems.
-
 - Use **Infrastructure as Code** (Terraform) to manage infrastructure instead of performing manual configurations, making deployments reproducible and easier to version-control.
 
 6. Key takeaway: A successful system should not only function correctly but also be secure, reliable, and designed to serve people.
@@ -172,7 +144,6 @@ The main topics included:
 ### What I Learned
 
 After attending the event, I gained valuable knowledge and practical insights into the development trends of Cloud Computing and AI in enterprises, including:
-
 - Understanding that AI does not completely replace software engineers but is transforming the way software is developed. What truly matters is not only knowing how to use AI but also possessing domain expertise and the ability to solve real-world problems.
 - Recognizing the importance of **Prompt Engineering**, especially the need to provide sufficient context so that AI can generate accurate and relevant responses.
 - Learning how enterprises leverage AI services on AWS to build AI assistants, automate workflows, and support decision-making.
@@ -188,7 +159,6 @@ After attending the event, I gained valuable knowledge and practical insights in
 The knowledge gained from this event will serve as an important foundation for both my academic studies and my future career development.
 
 In the future, I plan to:
-
 - Continue studying and practicing AI services on the **Amazon Web Services (AWS)** platform, especially solutions for building Generative AI applications.
 - Apply **Prompt Engineering** principles to improve the quality of interactions with Large Language Models in both learning and software development.
 - Explore **Amazon CloudFront**, Edge security solutions, and performance optimization techniques in greater depth for future website and cloud deployment projects.

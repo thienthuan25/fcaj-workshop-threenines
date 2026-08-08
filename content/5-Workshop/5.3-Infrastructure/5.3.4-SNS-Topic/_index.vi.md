@@ -58,6 +58,6 @@ resource "aws_sns_topic_policy" "cost_alerts" {
 }
 ```
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Tạo SQS Queue và Dead Letter Queue](../5.3.5-SQS-Queue-DLQ/)

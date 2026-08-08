@@ -52,6 +52,6 @@ variable "cost_threshold_usd" {
 }
 ```
 
-#### Next Content
+### Next Content
 
 - [Create an Amazon S3 Bucket for Cost Data Storage](../5.3.2-S3-bucket/)

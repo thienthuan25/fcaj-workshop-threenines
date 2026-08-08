@@ -36,6 +36,6 @@ resource "aws_sqs_queue" "events" {
 }
 ```
 
-#### Next Content
+### Next Content
 
 - [Create an Amazon EventBridge Schedule](../5.3.6-EventBridge-Rule/)

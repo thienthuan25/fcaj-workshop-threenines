@@ -8,7 +8,7 @@ pre : " <b> 5.6.3 </b> "
 
 Trong phần này, chúng ta sẽ bảo vệ CloudCost Insight Dashboard bằng **Amazon Cognito**. Sau khi hoàn thành, chỉ người dùng đã đăng nhập mới có thể gọi **API Gateway** để xem dữ liệu chi phí AWS.
 
-#### Kiến trúc xác thực
+### Kiến trúc xác thực
 
 Luồng xác thực hoạt động như sau:
 
@@ -21,7 +21,7 @@ Luồng xác thực hoạt động như sau:
 
 Frontend sử dụng **Authorization Code Flow với PKCE**. Đây là cơ chế phù hợp cho ứng dụng chạy trên trình duyệt vì không cần lưu client secret trong JavaScript.
 
-#### Mục tiêu
+### Mục tiêu
 
 - Tạo **Amazon Cognito User Pool** để quản lý người dùng.
 - Tạo **App Client** cho Web Dashboard.
@@ -31,7 +31,7 @@ Frontend sử dụng **Authorization Code Flow với PKCE**. Đây là cơ chế
 
 **CORS** chỉ giới hạn nơi trình duyệt được phép gọi API, nó không ngăn ai đó gọi API bằng **curl/Postman**. Vì vậy, chúng ta sẽ giới hạn **CORS** và thêm **JWT authentication** bằng **Cognito**.
 
-#### Giới hạn CORS về đúng dashboard CloudFront
+### Giới hạn CORS về đúng dashboard CloudFront
 
 Mở file `terraform/api_gateway.tf`, tìm và thay đoạn code:
 
@@ -48,7 +48,7 @@ allow_headers = ["Content-Type", "Authorization"]
 
 Đoạn cấu hình trên nhằm siết chặt bảo mật CORS cho API Gateway. Nó chỉ cho phép duy nhất trên miền **CloudFront** của dự án được phép gọi API, giới hạn ở quyền đọc dữ liệu (**GET**), và cấp phép cho Frontend gửi kèm Token xác thực thông qua header **Authorization**.
 
-#### Tạo Cognito User Pool
+### Tạo Cognito User Pool
 
 Chúng ta sẽ tạo file `terraform/cognito.tf`:
 
@@ -86,7 +86,7 @@ resource "aws_cognito_user_pool_client" "dashboard" {
 }
 ```
 
-#### Gắn JWT authorizer vào route API
+### Gắn JWT authorizer vào route API
 
 **1.** Mở file `terraform/api_gateway.tf` và thêm đoạn code sau:
 
@@ -145,7 +145,7 @@ output "cognito_hosted_ui_url" {
 }
 ```
 
-#### Tích hợp xác thực vào Web Dashboard
+### Tích hợp xác thực vào Web Dashboard
 
 Để Frontend có thể tự động chuyển hướng người dùng đến trang đăng nhập **Cognito** và đính kèm Token khi gọi API, chúng ta cần cập nhật file `terraform/web/script.js` với nội dung chính xác như sau:
 
@@ -497,6 +497,6 @@ logoutButton.addEventListener("click", signOut);
 initializeDashboard();
 ```
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Kiểm thử hệ thống](5-Workshop/5.7-Testing/)

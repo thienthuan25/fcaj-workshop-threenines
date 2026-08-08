@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.6. </b> "
 ---
 
-#### Giới thiệu
+### Giới thiệu
 
 Trong phần này, chúng ta sẽ xây dựng một Web Dashboard tự xây để trực quan hóa dữ liệu chi phí. Thay vì dùng một dịch vụ BI có sẵn, chúng ta tự phát triển toàn bộ để làm chủ hoàn toàn giao diện và dữ liệu, đồng thời giữ chi phí ở mức thấp nhât.
 
@@ -17,7 +17,7 @@ Web Dash board gồm hai phần chính:
 
 ![Dashboard](/workshop-fcaj-intern/images/5-Workshop/2-Proposal/diagram_architecture.png)
 
-#### Nội dung
+### Nội dung
 
 1. [Backend](../5.6-Dashboard/5.6.1-Backend/)
 2. [Frontend](../5.6-Dashboard/5.6.2-Frontend/)

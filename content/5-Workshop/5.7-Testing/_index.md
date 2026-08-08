@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.7 </b> "
 ---
 
-#### Overview
+### Overview
 
 After fully deploying the components, in this section we will test the entire **CloudCost Insight** system end-to-end. The goal is to verify that the flows operate correctly and coordinate closely with each other.
 
@@ -21,7 +21,7 @@ We will test according to 4 main groups:
 If your AWS account is new or you just ran the system and it hasn't been 24 hours for **Cost Explorer** to record cost data, we will continue using simulated data to fully test the anomaly detection scenarios. When deployed with an account having actual costs, the system operates similarly with real data from **Cost Explorer**.
 {{% /notice %}}
 
-#### 1. Test Data Collection Flow
+### 1. Test Data Collection Flow
 
 First, we check whether the **Lambda Collector** collects data and writes it to S3 correctly. On the **AWS Console**, open the Lambda Collector function and run a test with an empty event.
 
@@ -62,7 +62,7 @@ First, we check whether the **Lambda Collector** collects data and writes it to 
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/testing_10.png)
 
-#### 2. Test Abnormal Cost Detection
+### 2. Test Abnormal Cost Detection
 
 We will test for 3 alert levels: **INFO**, **WARNING**, **CRITICAL**. To test these three alert levels, we prepare simulated cost data in S3 for each occurrence. The classification logic is based on 2 criteria:
 
@@ -145,7 +145,7 @@ For each alert level, we send the corresponding event to SQS, then monitor the c
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/critical_3.png)
 
-#### 3. Test Error Handling Mechanism
+### 3. Test Error Handling Mechanism
 
 #### 3.1. Dead Letter Queue
 
@@ -351,7 +351,7 @@ Upload the `cost_2099-01-01.json` file to this folder:
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/invalid_6.png)
 
-#### 4. Test Monitoring with CloudWatch Alarm
+### 4. Test Monitoring with CloudWatch Alarm
 
 When the error event in step 3 causes the **Analyzer** to throw an error and a message falls into the **DLQ**, the corresponding **CloudWatch Alarms** will switch to the **ALARM** state and send an incident alert email.
 
@@ -373,7 +373,7 @@ When the error event in step 3 causes the **Analyzer** to throw an error and a m
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/alarm_4.png)
 
-#### 5. Dashboard Security
+### 5. Dashboard Security
 
 The CloudCost Insight Dashboard displays AWS cost data, so the data is only provided to authenticated users. In this section, we will test the authentication mechanism using Amazon Cognito and verify the API Gateway only accepts requests with valid JWTs.
 
@@ -500,7 +500,7 @@ When testing from an invalid domain, the system returns a **204 No Content** cod
 
 In summary, the security testing scenarios for the Dashboard have been completed successfully. **API Gateway** operates strictly by denying anonymous requests with a **401 Unauthorized** code and only providing data with a **200 OK** code upon receiving a valid token from **Amazon Cognito**. The **CORS** mechanism also works effectively by granting sufficient permissions for the authentic **CloudFront** domain via **preflight requests**, while blocking access from strange domains. The combination of **JWT Authorizer** and **CORS** creates a solid defense layer, ensuring only authenticated users have the right to access the system's AWS cost data.
 
-#### 6. Web Dashboard
+### 6. Web Dashboard
 
 Next, we will proceed to access the Dashboard's CloudFront URL link. 
 
@@ -528,7 +528,7 @@ After successfully logging in, we can access the interface and monitor cost metr
 
 ![Testing](/workshop-fcaj-intern/images/5-Workshop/5.7-Testing/dashboard_6.png)
 
-#### 6. Overall Test Summary
+### 7. Overall Test Summary
 
 After completing the testing steps above, the **CloudCost Insight** system has been proven to operate completely and automatically end-to-end:
 
@@ -538,6 +538,6 @@ After completing the testing steps above, the **CloudCost Insight** system has b
 - Self-monitors system health with **CloudWatch Alarm**.
 - Visualizes data via a publicly accessible **Web Dashboard**.
 
-#### Next Steps
+### Next Steps
 
 - [CI/CD](5-Workshop/5.8-CI-CD/)

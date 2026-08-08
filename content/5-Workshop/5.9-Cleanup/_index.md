@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.9. </b> "
 ---
 
-#### Cleanup
+### Cleanup
 
 **1.** We will use **Terraform** to delete all the resources that were created, including **Lambda**, **IAM Roles**, **SNS**, **SQS**, **EventBridge**, **CloudWatch Alarms**, **API Gateway**, **CloudFront**, and the **S3** buckets.
 
@@ -44,7 +44,7 @@ terraform destroy
 - Disable or delete the **Access Key** of your **IAM User** if it is no longer in use to maintain security.
 - Verify that the **SNS Subscription** has been removed along with the SNS topic.
 
-#### Summary
+### Summary
 
 After completing the steps above, all resources of the **CloudCost Insight** system have been completely removed, ensuring that no additional charges will be incurred. Being able to clean up the entire infrastructure with a single command clearly demonstrates the advantages of managing infrastructure as **Infrastructure as Code (IaC)** using **Terraform**.
 

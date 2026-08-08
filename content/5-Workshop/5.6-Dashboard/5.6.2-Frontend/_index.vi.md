@@ -6,6 +6,8 @@ chapter : false
 pre : " <b> 5.6.2 </b> "
 ---
 
+### Tạo giao diện
+
 Chúng ta sẽ tạo giao diện Web trong thư mục `terraform/web`.
 
 **1.** File `index.html` chứa cấu trúc trang:
@@ -467,7 +469,7 @@ Giao diện gồm nhiều biểu đồ xu hướng chi phí kèm đường ngư�
 
 ![Dashboard](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.2-Frontend/frontend_1.png)
 
-#### Host Web lên S3 và CloudFront
+### Host Web lên S3 và CloudFront
 
 **1.** Chúng ta sẽ tạo file `terraform/web_hosting.tf` để host giao diện lên **S3** và phân phối qua **CloudFront** với HTTPS. Để bảo mật, bucket Web không được mở public trực tiếp mà chỉ cho phép **CloudFront** đọc thông qua **Origin Access Control**.
 
@@ -643,7 +645,7 @@ output "web_bucket_name" {
 }
 ```
 
-#### Triển khai và truy cập Dashboard
+### Triển khai và truy cập Dashboard
 
 **1.** Trên Terminal, triển khai phần Frontend:
 
@@ -694,6 +696,6 @@ Giao diện thể hiện được **tổng chi phí**, **ngưỡng cảnh báo**
 - Trục X (ngang): thể hiện chi phí của dịch vụ.
 - Trục Y (dọc): thể hiện tên dịch vụ tương ứng.
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Xác thực với Amazon Cognito](../5.6.3-Authentication-Cognito/)

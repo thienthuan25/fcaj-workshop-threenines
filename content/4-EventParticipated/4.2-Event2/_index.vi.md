@@ -22,7 +22,6 @@ Trong sự kiện lần này, em tham gia với vai trò là một người tham
 ### Danh Sách Diễn Giả
 
 Sự kiện FCAJ Community Day lần này với sự tham gia của nhiều chuyên gia và kỹ sư hàng đầu trong lĩnh vực **Điện toán đám mây (Cloud)**, **DevOps** và **AI**. Mở đầu với phần chia sẻ rất hay từ anh **Nguyễn Gia Hưng** (Head of Solutions Architect - Việt Nam & Cambodia). Sau đó đến phần chính với các diễn giả:
-
 - **Tinh Truong** - Platform Engineer tại GoTymeX.
 - **Anh Pham** - Cloud Consultant tại G-AsiaPacific Vietnam.
 - **Thinh Nguyen** - DevOps Engineer tại STYL Solutions Pte. Ltd.
@@ -51,16 +50,12 @@ Một prompt tốt cần tuân thủ cấu trúc:
 Chủ đề này tập trung vào việc tận dụng AI để tối ưu hóa hiệu suất làm việc cho doanh nghiệp, cụ thể thông qua các trợ lý AI tự động.
 
 Các nội dung chính gồm:
-
 - Giải quyết bài toán thời gian: Tác giả nhấn mạnh việc quản lý, thường thì chúng ta sẽ mất rất nhiều thời gian để tập hợp dữ liệu và làm báo cáo thủ công. **Amazon Quick** được giới thiệu như một giải pháp thông minh giúp giảm tải công việc này.
-
 - Hệ sinh thái thích hợp: **Amazon Quick** kết nối với các hệ sinh thái phổ biến như **Microsoft (PowerBI, Word, Outlook, Teams)** và **Google (Gmail, Calender)** thông qua **platform Agent**, cho phép người dùng tự xây dựng các Agent phục vụ mục đích cá nhân hoặc doanh nghiệp.
-
-- Các tính năng nổi bật:<br>
-&bull; **BI (Business Intelligence)**: Tự động phân tích chuyên sâu khi nhận dữ liệu đầu vào.<br>
-&bull; **Inside & Chat**: Cho phép tương tác trực tiếp với dữ liệu để hiểu thông tin.<br>
-&bull; **Automation**: Tự động hóa hoàn toàn quy trình công việc thông qua **automation flow**.<br>
-
+- Các tính năng nổi bật:
+    - **BI (Business Intelligence)**: Tự động phân tích chuyên sâu khi nhận dữ liệu đầu vào.
+    - **Inside & Chat**: Cho phép tương tác trực tiếp với dữ liệu để hiểu thông tin.
+    - **Automation**: Tự động hóa hoàn toàn quy trình công việc thông qua **automation flow**.
 - Demo thực tế: Phần demo cho thấy khả năng nhập dữ liệu Excel để tạo Dashboard tự động và yêu cầu AI tóm tắt nội dung cuộc họp từ file record, giúp người dùng không chuyên về kỹ thuật cũng có thể xử lý dữ liệu phức tạp một cách dễ dàng.
 
 #### Chủ Đề 3: From Edge To Origin: CloudFront as Your Foundation - Thinh Nguyen
@@ -72,15 +67,11 @@ Các nội dung chính bao gồm:
 1. Khả năng bảo mật nâng cao:
 
 - **VPC Private Origin**: Tạo đường truyền riêng biệt từ **CloudFront** vào **private subnet**, giúp ẩn hạ tầng **backend** khỏi internet công cộng.
-
 - **Mutual TLS**: Yêu cầu xác thực chứng chỉ từ cả hai phía (client và server), phù hợp cho các hệ thống tài chính hoặc nội dung bản quyền.
-
 - **Chặn tấn công theo khu vực/IP**: Giảm tải cho server bằng cách chặn các truy cập độc hại ngay tại lớp **Edge** trước khi chúng chạm tới **Origin**.
 
 2. Tối ưu hóa hiệu năng:
-
 - **Content Compression**: Tính năng nén nội dung giúp giảm dung lượng gói tin đáng kể (lên đến 82%), cải thiện tốc độ tải trang.
-
 - **Giảm tải GPU cho EC2**: CloudFront thay thế EC2 xử lý các tác vụ như bắt tay TCP, TLS, giúp server chỉ tập trung xử lý logic nghiệp vụ.
 
 3. Catching đa tầng: Cơ chế lưu trữ thông tin tại các **Point of Presence (PoP) giúp phân phối dữ liệu hiệu quả, giảm độ trễ cho người dùng cuối dù ở bất kỳ đâu trên thế giới.
@@ -92,13 +83,11 @@ Chủ đề này kể về hành trình 36 giờ xây dựng sản phẩm tại 
 1. **Ý tưởng sản phẩm (UTMorpho)**: Nhóm tập trung giải quyết bài toán lãng phí thời gian và token khi người sử dụng AI để thiết kể UI. Thay vì phải yêu cầu AI tạo lại toàn bộ giao diện mỗi khi muốn chỉnh sửa chi tiết, **UTMorpho** cho phép chỉnh sửa trực tiếp trên giao diện đã được tạo.
 
 2. Kiến trúc hệ thống: Nhóm sử dụng kiến trúc **serverless** kết hợp với 3 Agent AI chuyên biệt để xử lý dữ liệu đầu vào:
-
 - Agent 1: Phân tích hình ảnh/bản vẽ phác thảo từ người dùng.
 - Agent 2: Tạo layout, CSS và cấu trúc thành phần.
 - Agent 3: Hoàn thiện code giao diện dựa trên yêu cầu.
 
 3. Thách thức gặp phải:
-
 - Giới hạn Token: Việc sử dụng AI liên tục dẫn đến việt báo lỗi **limit** giữa chừng.
 - Over-generation: AI tự ý tạo thêm những tính năng không cần thiết, gây khó khăn trong việc kiểm soát code.
 - Kiệt sức: Áp lực thời gian và mệt mỏi vào lúc 4-5 giờ sáng khiến nhóm phải thay đổi chiến thuật, tập trung tối ưu trải nghiệm chỉnh sửa thay vì thêm quá nhiều tính năng.
@@ -116,19 +105,13 @@ Các nội dung chính bao gồm:
 2. Lầm tưởng về *Temperature = 0*: Nhiều lập trình viên cho rằng đặt *temperature = 0* sẽ giúp mô hình trở nên hoàn toàn định tính (đầu vào giống nhau thì đâu ra luôn luôn giống nhau). Tuy nhiên, thực tế là ngay khi cả *temperature = 0*, vẫn tồn tại sự khác biệt nhỏ giữa các lần chạy cho bản chất của GPU và thư viện cung cấp.
 
 3. Thách thức trong production: 
-
 - Sự khác biệt trong kết quả đầu ra có thể ảnh hưởng đến các ứng dụng quan trọng, nơi cần sự nhất quán tuyệt đổi.
-
 - Một số mô hình khi đặt *temperator = 0* (chế dộ *greaddy decoding*) có thể bị lặp từ.
 
 4. Chiến lược giảm thiểu:
-
 - Thử nghiệm và kiểm thử: Nhấn mạnh tầm quan trọng của việc kiểm thử sâu và rộng để đảm bảo hệ thống có thể xử lý các output không mong muốn.
-
 - Thiết kế **Downstream**: Các services nhận kết quả từ LLM cần được thiết kế để xử lý linh hoạt thay vì mong đợi một kết quả hoàn hảo.
-
 - Tham số tối ưu: Đôi khi đặt *temperature = 0.1* thay vì 0 lại cho kết quả ổn định hơn đối với một số mô hình, giúp tránh lỗi lặp từ.
-
 - Sử dụng tính năng chuyên biệt: Tận dụng các tham số như **JSON mode** của các nhà cung cấp API để buộc mô hình tuân thủ định dạng dữ liệu.
 
 5. Thông điệp cốt lõi: Luôn đọc kỹ **official documentation** của từng model cụ thể thay vì áp dụng kinh nghiệm chung, vì cách vận hành của mỗi model có thể khác nhau.
@@ -144,25 +127,18 @@ Các nội dung chính bao gồm:
 2. Kiến trúc Multi-Agent: 
 
 - Thay vì dùng một agent duy nhất, vốn dễ bị giới hạn bởi context window và khó đảm nhiệm nhiều chuyên môn cùng lúc thì hệ thống được chia thành các tác tử chuyên biệt: **Financial Analyst**, **Research Agent**, **Team Evaluator**, và **Risk Assessor**.
-
 - Hệ thống sử dụng một **Manager Agent** để điều phối nhiệm vụ và tổng hợp kết quả.
 
 3. Tiêu chuẩn doanh nghiệp:
-
 - **Security & Compliance**: Nhấn mạnh tầm quan trọng của việc tuân thủ các quy định bảo mật, bảo về dữ liệu khách hàng và tránh các lỗi **MCP attack vector**.
-
 - **Audit Trail**: Mọi quyết định của AI cần được lưu vết để phục vụ kiểm tra, đặc biệt là khi đối mặt với cơ quan quản lý.
-
 - **Human-in-the-loop**: AI chỉ đóng vai trò hỗ trợ, con người đóng vai trò review và phê duyệt cuối cùng để chịu trách nhiệm cho các quyết định giải ngân.
 
 4. Kinh nghiệm triển khai:
-
 - Quy trình gồm các giai đoạn: Build Core -> Internal Testing -> SIT (System Integration Testing) -> UAT (User Acceptance Testing) -> Pilot -> Scale
 
 5. Lời khuyên kỹ thuật:
-
 - Tập trung vào kỹ năng backedn thay vì chỉ biết mỗi AI, vì dữ liệu và cơ sở dữ liệu an toàn mới là nền tảng.
-
 - Sử dụng **Infrastructure as Code** (Terraform) để quản lý hạ tầng thay vì thao tác thủ công, giúp dễ dàng sao chép và quản lý phiên bản.
 
 6. Thông điệp cốt lõi: Hệ thống không chỉ cần chạy được, mà còn phải đảm bảo tính an toàn, đáng tin cậy và phục vụ mọi người.
@@ -170,7 +146,6 @@ Các nội dung chính bao gồm:
 ### Những Gì Học Được
 
 Sau khi tham gia sự kiện, em đã học được nhiều kiến thức và góc nhìn thực tế về xu hướng phát triển của Cloud Computing và AI trong doanh nghiệp, cụ thể:
-
 - Hiểu được rằng AI không thay thế hoàn toàn lập trình viên mà đang làm thay đổi cách phát triển phần mềm. Điều quan trọng không chỉ là biết sử dụng AI mà còn phải có kiến thức chuyên môn và khả năng giải quyết bài toán thực tế.
 - Nhận thức được tầm quan trọng của **Prompt Engineering**, đặc biệt là việc cung cấp đầy đủ ngữ cảnh (context) để AI có thể đưa ra kết quả chính xác và phù hợp với yêu cầu.
 - Hiểu thêm về cách doanh nghiệp ứng dụng các dịch vụ AI trên AWS để xây dựng trợ lý AI, tự động hóa quy trình làm việc và hỗ trợ ra quyết định.
@@ -186,7 +161,6 @@ Sau khi tham gia sự kiện, em đã học được nhiều kiến thức và g
 Những kiến thức thu được từ sự kiện sẽ là nền tảng quan trọng cho quá trình học tập cũng như định hướng nghề nghiệp của em trong tương lai.
 
 Trong thời gian tới, em dự định:
-
 - Tiếp tục nghiên cứu và thực hành các dịch vụ AI trên nền tảng **Amazon Web Services (AWS)**, đặc biệt là các giải pháp phục vụ xây dựng ứng dụng Generative AI.
 - Áp dụng các nguyên tắc **Prompt Engineering** để nâng cao chất lượng khi sử dụng các mô hình ngôn ngữ lớn trong học tập và phát triển phần mềm.
 - Tìm hiểu sâu hơn về **Amazon CloudFront**, các giải pháp bảo mật Edge và tối ưu hiệu năng để áp dụng vào các dự án triển khai website hoặc hệ thống trên AWS.

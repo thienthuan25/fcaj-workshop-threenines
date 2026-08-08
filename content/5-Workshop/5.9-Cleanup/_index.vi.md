@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.9. </b> "
 ---
 
-#### Dọn dẹp
+### Dọn dẹp
 
 **1.** Chúng ta sẽ dùng **Terraform** để xóa toàn bộ tài nguyên đã tạo, bao gồm **Lambda**, **IAM Role**, **SNS**, **SQS**, **EventBridge**, **CloudWatch Alarm**, **API Gateway**, **CloudFront**, và các bucket **S3**.
 
@@ -44,7 +44,7 @@ terraform destroy
 - Vô hiệu hóa hoặc xóa **Access Key** của **IAM User** nếu không còn sử dụng để đảm bảo an toàn.
 - Kiểm tra và xác nhận đăng ký (Subscription) trên SNS đã được xóa cùng với topic.
 
-#### Tổng kết
+### Tổng kết
 
 Sau khi hoàn thành các bước trên, toàn bộ tài nguyên của hệ thống **Cloudcost Insight** đã được dọn dẹp sạch sẽ, đảm bảo không phát sinh thêm bất kì chi phí nào. Việc dọn dẹp dễ dàng chỉ với một câu lệnh thể hiện lợi ích rõ ràng của việc quản lý hạ tầng bằng **Infrastructure as Code** với **Terraform**.
 

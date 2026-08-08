@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.6.1 </b> "
 ---
 
-#### Write the Lambda API Code
+### Write the Lambda API Code
 
 We will create the file `lambda/api/handler.py`. This function reads all cost data stored in S3, aggregates it into a JSON response (total cost, daily costs with status, and top services), and returns it to the Web Frontend.
 
@@ -137,7 +137,7 @@ However, in our project, the Web Frontend is hosted on Amazon S3 and distributed
 
 For this reason, the Lambda function must include the appropriate **CORS headers** in its response. In particular, the header "Access-Control-Allow-Origin": "*" allows requests from any origin.
 
-#### Create API Gateway
+### Create API Gateway
 
 Next, we create the file `terraform/api_gateway.tf` to deploy the Lambda API and expose it through an HTTP API Gateway. Users will call this endpoint to retrieve cost data.
 
@@ -281,7 +281,7 @@ output "api_function_name" {
 }
 ```
 
-#### Deploy and Test the API
+### Deploy and Test the API
 
 **1.** Before deploying the API, we need to ensure that cost data already exists in the S3 bucket. Cost data is available only after it has been collected over a 24-hour period. Normally, if you have just deployed the system, no cost data will be available yet. In this case, we can use a script to generate simulated data:
 
@@ -457,6 +457,6 @@ terraform output api_endpoint
 
 ![Script](/workshop-fcaj-intern/images/5-Workshop/5.6-Dashboard/5.6.1-Backend/backend_14.png)
 
-#### Next Content
+### Next Content
 
 - [Frontend](../5.6.2-Frontend/)

@@ -71,6 +71,6 @@ resource "aws_s3_bucket_lifecycle_configuration" "cost_data" {
 data "aws_caller_identity" "current" {}
 ```
 
-#### Next Content
+### Next Content
 
 - [Create an IAM Role for Lambda](../5.3.3-IAM-Role/)

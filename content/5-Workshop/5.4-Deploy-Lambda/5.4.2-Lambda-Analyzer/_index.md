@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.4.2 </b> "
 ---
 
-#### Add Configuration Variables for the Analyzer
+### Add Configuration Variables for the Analyzer
 
 The Analyzer requires two variables to support the spike detection logic. Add the following variables to `terraform/variables.tf`:
 
@@ -28,7 +28,7 @@ variable "history_days" {
 }
 ```
 
-#### Write the Lambda Analyzer Code
+### Write the Lambda Analyzer Code
 
 Create the file `terraform/lambda/analyzer/handler.py`, which contains the Python source code for the Lambda Analyzer function.
 
@@ -173,7 +173,7 @@ def lambda_handler(event, context):
     return {"batchItemFailures": batch_item_failures}
 ```
 
-#### Configure the IAM Role and Deploy the Analyzer
+### Configure the IAM Role and Deploy the Analyzer
 
 **1.** Next, create the file `terraform/lambda_analyzer.tf`. This file is responsible for provisioning all the AWS infrastructure required to run the Lambda Analyzer function. It automatically performs the following tasks:
 
@@ -306,6 +306,6 @@ output "analyzer_role_arn" {
 }
 ```
 
-#### Next
+### Next
 
 - [Monitoring](5-Workshop/5.5-Monitoring/)

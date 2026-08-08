@@ -72,7 +72,7 @@ Click `Confirm subscription`:
 
 ![Deploy Infrastructure](/workshop-fcaj-intern/images/5-Workshop/5.3-Infrastructure/5.3.8-Deploy-infrastructure/deploy_11.png)
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Triển khai Lambda Collector](5-Workshop/5.4-Deploy-Lambda/)
 

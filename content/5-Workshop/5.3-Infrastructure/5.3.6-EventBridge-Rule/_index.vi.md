@@ -21,7 +21,7 @@ resource "aws_cloudwatch_event_rule" "schedule" {
 }
 ```
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Khai báo Outputs](../5.3.7-Outputs/)
 

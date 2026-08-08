@@ -6,13 +6,13 @@ chapter : false
 pre : " <b> 5.1. </b> "
 ---
 
-#### Giới thiệu về kiến trúc Serverless và Event-driven
+### Giới thiệu về kiến trúc Serverless và Event-driven
 
 + **Kiến trúc Serverless** cho phép xây dựng và vận hành ứng dụng mà không cần quản lý máy chủ. Các dịch vụ như AWS Lambda, Amazon S3, Amazon SQS, Amazon SNS và Amazon API Gateway là managed service, có khả năng tự động co giãn theo tải và tính phí theo mức sử dụng. Kiến trúc này phù hợp với CloudCost Insight vì hệ thống có số lượng request thấp, chạy theo lịch định kỳ và cần tối ưu chi phí vận hành.
 
 + **Kiến trúc Event-driven** giúp các thành phần giao tiếp với nhau thông qua event thay vì gọi trực tiếp. Các thành phần được tách rời, dễ mở rộng và có khả năng chịu lỗi tốt hơn. Trong CloudCost Insight, Amazon SQS đóng vai trò hàng đợi trung gian giữa Lambda Collector và Lambda Analyzer; Dead Letter Queue lưu các message không thể xử lý thành công sau số lần retry cho phép.
 
-#### Tổng quan về workshop
+### Tổng quan về workshop
 
 Trong workshop này, chúng ta sẽ xây dựng hệ thống **CloudCost Insight** để tự động giám sát, phân tích và cảnh báo chi phí AWS. Toàn bộ hạ tầng được triển khai bằng **Terraform** theo mô hình **Infrastructure as Code**, giúp có thể tái tạo, cập nhật và dọn dẹp tài nguyên một cách nhất quán.
 
@@ -30,6 +30,6 @@ Hệ thống gồm các luồng hoạt động chính sau:
 
 Sau khi hoàn thành workshop, bạn sẽ có một hệ thống FinOps cơ bản có khả năng tự động thu thập dữ liệu chi phí, phát hiện bất thường, gửi cảnh báo, trực quan hóa dữ liệu, bảo vệ Dashboard bằng xác thực người dùng và triển khai hạ tầng bằng quy trình CI/CD.
 
-#### Nội dung tiếp theo
+### Nội dung tiếp theo
 
 - [Các bước chuẩn bị](5-Workshop/5.2-Prerequisite/)

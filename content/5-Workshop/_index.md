@@ -8,7 +8,7 @@ pre: " <b> 5. </b> "
 
 # Building an AWS Cost Monitoring, Analysis, and Alerting System with Serverless Architecture
 
-#### Overview
+### Overview
 
 **CloudCost Insight** is a Serverless FinOps system that automatically collects, analyzes, visualizes, and alerts on AWS service usage costs on a scheduled basis. Instead of manually checking the AWS Billing Console, the system retrieves cost data from AWS Cost Explorer, detects cases where costs exceed thresholds or increase abnormally, and then proactively sends email alerts.
 
@@ -24,7 +24,7 @@ The system consists of four main workflows that work together:
 
 + **Testing and CI/CD workflow:** Source code is automatically checked by GitHub Actions before being merged into the `main` branch, including the Hugo Workshop, Python Lambda, Terraform, and Dashboard JavaScript. After Terraform changes are merged into `main`, GitHub Actions automatically performs Terraform Apply through HCP Terraform. Branch protection and GitHub Environment help control changes before updating the AWS production infrastructure.
 
-#### Content
+### Content
 
 1. [Introduction](5.1-Workshop-overview/)
 2. [Prerequisites](5.2-Prerequisite/)
